@@ -94,8 +94,8 @@ namespace academia
                     Close();
         }
 
-        private void btCancelar_Click(object sender, EventArgs e)
-        {//btCancelar
+        private void lbSair_Click(object sender, EventArgs e)
+        {//lbSair
             if (MessageBox.Show("Os dados não salvos serão perdidos!\nDeseja mesmo retornar?", "Retornar", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
                 Close();
         }
