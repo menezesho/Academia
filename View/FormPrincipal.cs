@@ -69,14 +69,8 @@ namespace projetofinal
 
         private void btInscreverAluno_Click(object sender, EventArgs e)
         {//btInscreverAluno
-            FormInscreverAluno Fia = new FormInscreverAluno();
-            Fia.ShowDialog();
-        }
-
-        private void btInscreverProf_Click(object sender, EventArgs e)
-        {//btInscreverProf
-            FormInscreverProf Fip = new FormInscreverProf();
-            Fip.ShowDialog();
+            FormInscrever Fi = new FormInscrever();
+            Fi.ShowDialog();
         }
 
         private void btEditParticipantes_Click(object sender, EventArgs e)

@@ -29,6 +29,11 @@ namespace projetofinal
             tbSenha.Text = " Senha";
             tbSenha.Font = new Font("Segoe UI Light", 14F, FontStyle.Italic);
             tbSenha.UseSystemPasswordChar = false;
+
+            //temporário
+            tbUsuario.Text = "joao-ds";
+            tbSenha.Text = "321654";
+            selecionado = "professor";
         }
 
         private void btLogin_Click(object sender, EventArgs e)
@@ -67,10 +72,8 @@ namespace projetofinal
                             Fp.btEditAula.Visible = false;
                             Fp.btEditAluno.Visible = false;
                             Fp.btEditProf.Visible = false;
-                            Fp.btInscreverAluno.Visible = false;
-                            Fp.btInscreverProf.Visible = false;
+                            Fp.btInscrever.Visible = false;
                             Fp.btEditParticipantes.Visible = false;
-                            Fp.lbInscrever.Visible = false;
 
                         }
                         else
@@ -122,14 +125,18 @@ namespace projetofinal
         private void btAreaAluno_Click(object sender, EventArgs e)
         {//btAreaAluno
             btAreaProf.BackColor = Color.FromArgb(68, 68, 68);
+            btAreaProf.Height = 30;
             btAreaAluno.BackColor = Color.MediumSeaGreen;
+            btAreaAluno.Height = 35;
             selecionado = "aluno";
         }
 
         private void btAreaProf_Click(object sender, EventArgs e)
         {//btAreaProf
             btAreaAluno.BackColor = Color.FromArgb(68, 68, 68);
+            btAreaAluno.Height = 30;
             btAreaProf.BackColor = Color.MediumSeaGreen;
+            btAreaProf.Height = 35;
             selecionado = "professor";
         }
 

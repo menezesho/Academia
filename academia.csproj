@@ -102,11 +102,11 @@
     <Compile Include="View\FormEditProf.designer.cs">
       <DependentUpon>FormEditProf.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\FormInscreverAluno.cs">
+    <Compile Include="View\FormInscrever.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\FormInscreverAluno.designer.cs">
-      <DependentUpon>FormInscreverAluno.cs</DependentUpon>
+    <Compile Include="View\FormInscrever.designer.cs">
+      <DependentUpon>FormInscrever.cs</DependentUpon>
     </Compile>
     <Compile Include="View\FormInscreverProf.cs">
       <SubType>Form</SubType>
@@ -162,8 +162,8 @@
     <EmbeddedResource Include="View\FormEditProf.resx">
       <DependentUpon>FormEditProf.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\FormInscreverAluno.resx">
-      <DependentUpon>FormInscreverAluno.cs</DependentUpon>
+    <EmbeddedResource Include="View\FormInscrever.resx">
+      <DependentUpon>FormInscrever.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\FormInscreverProf.resx">
       <DependentUpon>FormInscreverProf.cs</DependentUpon>

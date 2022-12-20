@@ -34,13 +34,11 @@ namespace projetofinal
             this.btCadProf = new System.Windows.Forms.Button();
             this.lbSair = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.lbInscrever = new System.Windows.Forms.Label();
             this.btEditAluno = new System.Windows.Forms.Button();
             this.btCadAluno = new System.Windows.Forms.Button();
             this.btEditAula = new System.Windows.Forms.Button();
             this.btCadAula = new System.Windows.Forms.Button();
-            this.btInscreverAluno = new System.Windows.Forms.Button();
-            this.btInscreverProf = new System.Windows.Forms.Button();
+            this.btInscrever = new System.Windows.Forms.Button();
             this.btEditParticipantes = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -54,7 +52,7 @@ namespace projetofinal
             this.btEditProf.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
             this.btEditProf.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
             this.btEditProf.Image = ((System.Drawing.Image)(resources.GetObject("btEditProf.Image")));
-            this.btEditProf.Location = new System.Drawing.Point(688, 236);
+            this.btEditProf.Location = new System.Drawing.Point(690, 269);
             this.btEditProf.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btEditProf.Name = "btEditProf";
             this.btEditProf.Size = new System.Drawing.Size(60, 60);
@@ -65,12 +63,12 @@ namespace projetofinal
             // btCadProf
             // 
             this.btCadProf.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btCadProf.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
+            this.btCadProf.BackColor = System.Drawing.Color.MediumSeaGreen;
             this.btCadProf.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btCadProf.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btCadProf.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
             this.btCadProf.ForeColor = System.Drawing.Color.White;
-            this.btCadProf.Location = new System.Drawing.Point(444, 236);
+            this.btCadProf.Location = new System.Drawing.Point(446, 269);
             this.btCadProf.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btCadProf.Name = "btCadProf";
             this.btCadProf.Size = new System.Drawing.Size(238, 60);
@@ -94,27 +92,12 @@ namespace projetofinal
             // 
             this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(93, 100);
+            this.pictureBox1.Location = new System.Drawing.Point(95, 133);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(304, 325);
+            this.pictureBox1.Size = new System.Drawing.Size(304, 264);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 43;
             this.pictureBox1.TabStop = false;
-            // 
-            // lbInscrever
-            // 
-            this.lbInscrever.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lbInscrever.BackColor = System.Drawing.Color.MediumSeaGreen;
-            this.lbInscrever.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lbInscrever.Font = new System.Drawing.Font("Segoe UI Semibold", 16F, System.Drawing.FontStyle.Bold);
-            this.lbInscrever.ForeColor = System.Drawing.Color.White;
-            this.lbInscrever.Location = new System.Drawing.Point(444, 310);
-            this.lbInscrever.Name = "lbInscrever";
-            this.lbInscrever.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
-            this.lbInscrever.Size = new System.Drawing.Size(304, 115);
-            this.lbInscrever.TabIndex = 134;
-            this.lbInscrever.Text = "INSCREVER";
-            this.lbInscrever.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // btEditAluno
             // 
@@ -125,7 +108,7 @@ namespace projetofinal
             this.btEditAluno.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
             this.btEditAluno.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
             this.btEditAluno.Image = ((System.Drawing.Image)(resources.GetObject("btEditAluno.Image")));
-            this.btEditAluno.Location = new System.Drawing.Point(688, 168);
+            this.btEditAluno.Location = new System.Drawing.Point(690, 201);
             this.btEditAluno.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btEditAluno.Name = "btEditAluno";
             this.btEditAluno.Size = new System.Drawing.Size(60, 60);
@@ -136,12 +119,12 @@ namespace projetofinal
             // btCadAluno
             // 
             this.btCadAluno.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btCadAluno.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
+            this.btCadAluno.BackColor = System.Drawing.Color.MediumSeaGreen;
             this.btCadAluno.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btCadAluno.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btCadAluno.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
             this.btCadAluno.ForeColor = System.Drawing.Color.White;
-            this.btCadAluno.Location = new System.Drawing.Point(444, 168);
+            this.btCadAluno.Location = new System.Drawing.Point(446, 201);
             this.btCadAluno.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btCadAluno.Name = "btCadAluno";
             this.btCadAluno.Size = new System.Drawing.Size(238, 60);
@@ -159,7 +142,7 @@ namespace projetofinal
             this.btEditAula.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
             this.btEditAula.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
             this.btEditAula.Image = ((System.Drawing.Image)(resources.GetObject("btEditAula.Image")));
-            this.btEditAula.Location = new System.Drawing.Point(688, 100);
+            this.btEditAula.Location = new System.Drawing.Point(690, 133);
             this.btEditAula.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btEditAula.Name = "btEditAula";
             this.btEditAula.Size = new System.Drawing.Size(60, 60);
@@ -170,12 +153,12 @@ namespace projetofinal
             // btCadAula
             // 
             this.btCadAula.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btCadAula.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
+            this.btCadAula.BackColor = System.Drawing.Color.MediumSeaGreen;
             this.btCadAula.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btCadAula.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btCadAula.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
             this.btCadAula.ForeColor = System.Drawing.Color.White;
-            this.btCadAula.Location = new System.Drawing.Point(444, 100);
+            this.btCadAula.Location = new System.Drawing.Point(446, 133);
             this.btCadAula.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btCadAula.Name = "btCadAula";
             this.btCadAula.Size = new System.Drawing.Size(238, 60);
@@ -184,39 +167,22 @@ namespace projetofinal
             this.btCadAula.UseVisualStyleBackColor = false;
             this.btCadAula.Click += new System.EventHandler(this.btCadAula_Click);
             // 
-            // btInscreverAluno
+            // btInscrever
             // 
-            this.btInscreverAluno.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btInscreverAluno.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
-            this.btInscreverAluno.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btInscreverAluno.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btInscreverAluno.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
-            this.btInscreverAluno.ForeColor = System.Drawing.Color.White;
-            this.btInscreverAluno.Location = new System.Drawing.Point(453, 355);
-            this.btInscreverAluno.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btInscreverAluno.Name = "btInscreverAluno";
-            this.btInscreverAluno.Size = new System.Drawing.Size(107, 60);
-            this.btInscreverAluno.TabIndex = 140;
-            this.btInscreverAluno.Text = "ALUNO";
-            this.btInscreverAluno.UseVisualStyleBackColor = false;
-            this.btInscreverAluno.Click += new System.EventHandler(this.btInscreverAluno_Click);
-            // 
-            // btInscreverProf
-            // 
-            this.btInscreverProf.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btInscreverProf.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
-            this.btInscreverProf.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btInscreverProf.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btInscreverProf.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
-            this.btInscreverProf.ForeColor = System.Drawing.Color.White;
-            this.btInscreverProf.Location = new System.Drawing.Point(632, 355);
-            this.btInscreverProf.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btInscreverProf.Name = "btInscreverProf";
-            this.btInscreverProf.Size = new System.Drawing.Size(107, 60);
-            this.btInscreverProf.TabIndex = 141;
-            this.btInscreverProf.Text = "PROFESSOR";
-            this.btInscreverProf.UseVisualStyleBackColor = false;
-            this.btInscreverProf.Click += new System.EventHandler(this.btInscreverProf_Click);
+            this.btInscrever.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btInscrever.BackColor = System.Drawing.Color.MediumSeaGreen;
+            this.btInscrever.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btInscrever.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btInscrever.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
+            this.btInscrever.ForeColor = System.Drawing.Color.White;
+            this.btInscrever.Location = new System.Drawing.Point(446, 337);
+            this.btInscrever.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btInscrever.Name = "btInscrever";
+            this.btInscrever.Size = new System.Drawing.Size(238, 60);
+            this.btInscrever.TabIndex = 140;
+            this.btInscrever.Text = "INSCREVER NA AULA";
+            this.btInscrever.UseVisualStyleBackColor = false;
+            this.btInscrever.Click += new System.EventHandler(this.btInscreverAluno_Click);
             // 
             // btEditParticipantes
             // 
@@ -227,7 +193,7 @@ namespace projetofinal
             this.btEditParticipantes.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
             this.btEditParticipantes.ForeColor = System.Drawing.Color.White;
             this.btEditParticipantes.Image = ((System.Drawing.Image)(resources.GetObject("btEditParticipantes.Image")));
-            this.btEditParticipantes.Location = new System.Drawing.Point(566, 355);
+            this.btEditParticipantes.Location = new System.Drawing.Point(690, 337);
             this.btEditParticipantes.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btEditParticipantes.Name = "btEditParticipantes";
             this.btEditParticipantes.Size = new System.Drawing.Size(60, 60);
@@ -241,8 +207,7 @@ namespace projetofinal
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(884, 521);
             this.Controls.Add(this.btEditParticipantes);
-            this.Controls.Add(this.btInscreverProf);
-            this.Controls.Add(this.btInscreverAluno);
+            this.Controls.Add(this.btInscrever);
             this.Controls.Add(this.btEditAula);
             this.Controls.Add(this.btCadAula);
             this.Controls.Add(this.btEditAluno);
@@ -250,7 +215,6 @@ namespace projetofinal
             this.Controls.Add(this.lbSair);
             this.Controls.Add(this.btEditProf);
             this.Controls.Add(this.btCadProf);
-            this.Controls.Add(this.lbInscrever);
             this.Controls.Add(this.pictureBox1);
             this.DoubleBuffered = true;
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.86792F);
@@ -273,13 +237,11 @@ namespace projetofinal
         private System.Windows.Forms.PictureBox pictureBox1;
         internal System.Windows.Forms.Button btEditProf;
         internal System.Windows.Forms.Button btCadProf;
-        internal System.Windows.Forms.Label lbInscrever;
         internal System.Windows.Forms.Button btEditAluno;
         internal System.Windows.Forms.Button btCadAluno;
         internal System.Windows.Forms.Button btEditAula;
         internal System.Windows.Forms.Button btCadAula;
-        internal System.Windows.Forms.Button btInscreverAluno;
-        internal System.Windows.Forms.Button btInscreverProf;
+        internal System.Windows.Forms.Button btInscrever;
         internal System.Windows.Forms.Button btEditParticipantes;
     }
 }
