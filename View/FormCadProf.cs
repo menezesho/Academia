@@ -71,16 +71,16 @@ namespace projetofinal
                 var emailVerificado = verificacao.verificarEmail(tbEmail.Text);
                 var cpfVerificado = Verificacao.verificarCpf(mtbCpf.Text);
                 var celularVerificado = Verificacao.verificarCelular(mtbCelular.Text);
-                if (emailVerificado)
+                if (cpfVerificado)
                 {
-                    if (cpfVerificado)
+                    if (celularVerificado)
                     {
-                        if (celularVerificado)
+                        if (emailVerificado)
                         {
                             try
                             {
                                 SqlConnection conexao = new SqlConnection(conec.ConexaoBD());
-                                string sqlSelect = @"SELECT * FROM aluno WHERE cpf=@cpf";
+                                string sqlSelect = @"SELECT * FROM professor WHERE cpf=@cpf";
                                 SqlCommand comandoSelect = new SqlCommand(sqlSelect, conexao);
 
                                 comandoSelect.Parameters.AddWithValue("@cpf", mtbCpf.Text);
@@ -99,7 +99,7 @@ namespace projetofinal
 
                                     //preparado para a string de insert muito louca?
 
-                                    string sqlInsert = @"INSERT INTO aluno (nome, cpf, idade, celular, email, rua, numero, bairro, cidade, estado, usuario, senha";
+                                    string sqlInsert = @"INSERT INTO professor (nome, cpf, idade, celular, email, rua, numero, bairro, cidade, estado, usuario, senha";
 
                                     if (mtbApto.Text != "")
                                         sqlInsert = sqlInsert + ", apto";
@@ -141,20 +141,23 @@ namespace projetofinal
                         }
                         else
                         {
-                            MessageBox.Show("Insira o número de celular corretamente!", "Cadastrar", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            MessageBox.Show("E-mail inválido, tente novamente!", "Cadastrar", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                             tpDadosPessoais.Focus();
+                            tbEmail.Focus();
                         }
                     }
                     else
                     {
-                        MessageBox.Show("Insira o CPF corretamente!", "Cadastrar", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        MessageBox.Show("Insira o número de celular corretamente!", "Cadastrar", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         tpDadosPessoais.Focus();
+                        mtbCelular.Focus();
                     }
                 }
                 else
                 {
-                    MessageBox.Show("E-mail inválido, tente novamente!", "Cadastrar", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("Insira o CPF corretamente!", "Cadastrar", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     tpDadosPessoais.Focus();
+                    mtbCpf.Focus();
                 }
             }
         }

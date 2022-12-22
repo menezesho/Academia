@@ -586,7 +586,6 @@ namespace projetofinal
             this.btLimpar.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btLimpar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
             this.btLimpar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btLimpar.FlatAppearance.BorderSize = 2;
             this.btLimpar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btLimpar.Font = new System.Drawing.Font("Segoe UI Semibold", 14F, System.Drawing.FontStyle.Bold);
             this.btLimpar.ForeColor = System.Drawing.Color.White;
@@ -604,7 +603,6 @@ namespace projetofinal
             this.btCadastrar.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btCadastrar.BackColor = System.Drawing.Color.MediumSeaGreen;
             this.btCadastrar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btCadastrar.FlatAppearance.BorderSize = 2;
             this.btCadastrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btCadastrar.Font = new System.Drawing.Font("Segoe UI Semibold", 14F, System.Drawing.FontStyle.Bold);
             this.btCadastrar.ForeColor = System.Drawing.Color.White;
