@@ -118,9 +118,9 @@ namespace projetofinal
             this.lbidade.Location = new System.Drawing.Point(388, 132);
             this.lbidade.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbidade.Name = "lbidade";
-            this.lbidade.Size = new System.Drawing.Size(61, 25);
+            this.lbidade.Size = new System.Drawing.Size(69, 25);
             this.lbidade.TabIndex = 2;
-            this.lbidade.Text = "Idade";
+            this.lbidade.Text = "Idade*";
             // 
             // lbcpf
             // 
@@ -131,9 +131,9 @@ namespace projetofinal
             this.lbcpf.Location = new System.Drawing.Point(102, 132);
             this.lbcpf.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbcpf.Name = "lbcpf";
-            this.lbcpf.Size = new System.Drawing.Size(45, 25);
+            this.lbcpf.Size = new System.Drawing.Size(53, 25);
             this.lbcpf.TabIndex = 1;
-            this.lbcpf.Text = "CPF";
+            this.lbcpf.Text = "CPF*";
             // 
             // lbnome
             // 
@@ -144,9 +144,9 @@ namespace projetofinal
             this.lbnome.Location = new System.Drawing.Point(60, 62);
             this.lbnome.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbnome.Name = "lbnome";
-            this.lbnome.Size = new System.Drawing.Size(65, 25);
+            this.lbnome.Size = new System.Drawing.Size(73, 25);
             this.lbnome.TabIndex = 0;
-            this.lbnome.Text = "Nome";
+            this.lbnome.Text = "Nome*";
             // 
             // mtbCelular
             // 
@@ -198,9 +198,9 @@ namespace projetofinal
             this.lbemail.Location = new System.Drawing.Point(60, 202);
             this.lbemail.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbemail.Name = "lbemail";
-            this.lbemail.Size = new System.Drawing.Size(68, 25);
+            this.lbemail.Size = new System.Drawing.Size(76, 25);
             this.lbemail.TabIndex = 9;
-            this.lbemail.Text = "E-mail";
+            this.lbemail.Text = "E-mail*";
             // 
             // lbcelular
             // 
@@ -211,9 +211,9 @@ namespace projetofinal
             this.lbcelular.Location = new System.Drawing.Point(252, 132);
             this.lbcelular.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbcelular.Name = "lbcelular";
-            this.lbcelular.Size = new System.Drawing.Size(73, 25);
+            this.lbcelular.Size = new System.Drawing.Size(81, 25);
             this.lbcelular.TabIndex = 8;
-            this.lbcelular.Text = "Celular";
+            this.lbcelular.Text = "Celular*";
             // 
             // lbRua
             // 
@@ -224,9 +224,9 @@ namespace projetofinal
             this.lbRua.Location = new System.Drawing.Point(58, 24);
             this.lbRua.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbRua.Name = "lbRua";
-            this.lbRua.Size = new System.Drawing.Size(46, 25);
+            this.lbRua.Size = new System.Drawing.Size(54, 25);
             this.lbRua.TabIndex = 7;
-            this.lbRua.Text = "Rua";
+            this.lbRua.Text = "Rua*";
             // 
             // lbaltura
             // 
@@ -338,9 +338,9 @@ namespace projetofinal
             this.lbBairro.Location = new System.Drawing.Point(58, 234);
             this.lbBairro.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbBairro.Name = "lbBairro";
-            this.lbBairro.Size = new System.Drawing.Size(65, 25);
+            this.lbBairro.Size = new System.Drawing.Size(73, 25);
             this.lbBairro.TabIndex = 23;
-            this.lbBairro.Text = "Bairro";
+            this.lbBairro.Text = "Bairro*";
             // 
             // tbCidade
             // 
@@ -364,9 +364,9 @@ namespace projetofinal
             this.lbCidade.Location = new System.Drawing.Point(58, 164);
             this.lbCidade.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbCidade.Name = "lbCidade";
-            this.lbCidade.Size = new System.Drawing.Size(72, 25);
+            this.lbCidade.Size = new System.Drawing.Size(80, 25);
             this.lbCidade.TabIndex = 25;
-            this.lbCidade.Text = "Cidade";
+            this.lbCidade.Text = "Cidade*";
             // 
             // checkApto
             // 
@@ -405,9 +405,9 @@ namespace projetofinal
             this.lbEstado.Location = new System.Drawing.Point(365, 95);
             this.lbEstado.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbEstado.Name = "lbEstado";
-            this.lbEstado.Size = new System.Drawing.Size(70, 25);
+            this.lbEstado.Size = new System.Drawing.Size(78, 25);
             this.lbEstado.TabIndex = 95;
-            this.lbEstado.Text = "Estado";
+            this.lbEstado.Text = "Estado*";
             // 
             // cbEstado
             // 
@@ -462,9 +462,9 @@ namespace projetofinal
             this.lbNum.Location = new System.Drawing.Point(70, 94);
             this.lbNum.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbNum.Name = "lbNum";
-            this.lbNum.Size = new System.Drawing.Size(60, 25);
+            this.lbNum.Size = new System.Drawing.Size(68, 25);
             this.lbNum.TabIndex = 93;
-            this.lbNum.Text = "Num.";
+            this.lbNum.Text = "Num.*";
             // 
             // lbNovoAluno
             // 
@@ -674,9 +674,9 @@ namespace projetofinal
             this.lbSenha.Location = new System.Drawing.Point(65, 169);
             this.lbSenha.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbSenha.Name = "lbSenha";
-            this.lbSenha.Size = new System.Drawing.Size(65, 25);
+            this.lbSenha.Size = new System.Drawing.Size(73, 25);
             this.lbSenha.TabIndex = 3;
-            this.lbSenha.Text = "Senha";
+            this.lbSenha.Text = "Senha*";
             // 
             // tbSenha
             // 
@@ -701,9 +701,9 @@ namespace projetofinal
             this.lbUsuario.Location = new System.Drawing.Point(64, 99);
             this.lbUsuario.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbUsuario.Name = "lbUsuario";
-            this.lbUsuario.Size = new System.Drawing.Size(78, 25);
+            this.lbUsuario.Size = new System.Drawing.Size(86, 25);
             this.lbUsuario.TabIndex = 1;
-            this.lbUsuario.Text = "Usuário";
+            this.lbUsuario.Text = "Usuário*";
             // 
             // tbUsuario
             // 
