@@ -19,6 +19,15 @@ namespace academia.Class
             return regExp.IsMatch(celular);
         }
 
+        public bool verificarEmail(string email)
+        {
+            bool validacao = email.Contains("@") && email.Contains(".com");
+            if (validacao)
+                return true;
+            else
+                return false;
+        }
+
         /*public static bool verificarData(string data)
         {
             var regExp = new Regex(@"^\d{2}.\d{2}.\d{4}");

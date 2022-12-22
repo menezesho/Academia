@@ -32,7 +32,6 @@
             this.btLimpar = new System.Windows.Forms.Button();
             this.btCadastrar = new System.Windows.Forms.Button();
             this.lbHorario = new System.Windows.Forms.Label();
-            this.lbNovoCadastro = new System.Windows.Forms.Label();
             this.tbNome = new System.Windows.Forms.TextBox();
             this.lbData = new System.Windows.Forms.Label();
             this.lbnome = new System.Windows.Forms.Label();
@@ -40,6 +39,7 @@
             this.dtpData = new System.Windows.Forms.DateTimePicker();
             this.lbSair = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.lbNovoCadastro = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -85,26 +85,13 @@
             this.lbHorario.AutoSize = true;
             this.lbHorario.Font = new System.Drawing.Font("Segoe UI Semibold", 14F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
             this.lbHorario.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
-            this.lbHorario.Location = new System.Drawing.Point(276, 226);
+            this.lbHorario.Location = new System.Drawing.Point(309, 226);
             this.lbHorario.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbHorario.Name = "lbHorario";
             this.lbHorario.Size = new System.Drawing.Size(78, 25);
             this.lbHorario.TabIndex = 54;
             this.lbHorario.Text = "Horário";
             this.lbHorario.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lbNovoCadastro
-            // 
-            this.lbNovoCadastro.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lbNovoCadastro.Font = new System.Drawing.Font("Segoe UI", 22F, System.Drawing.FontStyle.Bold);
-            this.lbNovoCadastro.ForeColor = System.Drawing.Color.MediumSeaGreen;
-            this.lbNovoCadastro.Location = new System.Drawing.Point(77, 75);
-            this.lbNovoCadastro.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lbNovoCadastro.Name = "lbNovoCadastro";
-            this.lbNovoCadastro.Size = new System.Drawing.Size(329, 43);
-            this.lbNovoCadastro.TabIndex = 58;
-            this.lbNovoCadastro.Text = "NOVA AULA";
-            this.lbNovoCadastro.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // tbNome
             // 
@@ -125,7 +112,7 @@
             this.lbData.AutoSize = true;
             this.lbData.Font = new System.Drawing.Font("Segoe UI Semibold", 14F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
             this.lbData.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
-            this.lbData.Location = new System.Drawing.Point(77, 226);
+            this.lbData.Location = new System.Drawing.Point(125, 226);
             this.lbData.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbData.Name = "lbData";
             this.lbData.Size = new System.Drawing.Size(55, 25);
@@ -169,10 +156,10 @@
             "15h",
             "16h",
             "17h"});
-            this.cbHora.Location = new System.Drawing.Point(276, 253);
+            this.cbHora.Location = new System.Drawing.Point(293, 253);
             this.cbHora.Margin = new System.Windows.Forms.Padding(2);
             this.cbHora.Name = "cbHora";
-            this.cbHora.Size = new System.Drawing.Size(127, 29);
+            this.cbHora.Size = new System.Drawing.Size(110, 29);
             this.cbHora.TabIndex = 2;
             // 
             // dtpData
@@ -188,7 +175,7 @@
             this.dtpData.MaxDate = new System.DateTime(2030, 12, 31, 0, 0, 0, 0);
             this.dtpData.MinDate = new System.DateTime(2022, 1, 1, 0, 0, 0, 0);
             this.dtpData.Name = "dtpData";
-            this.dtpData.Size = new System.Drawing.Size(126, 31);
+            this.dtpData.Size = new System.Drawing.Size(151, 31);
             this.dtpData.TabIndex = 1;
             this.dtpData.Value = new System.DateTime(2022, 10, 31, 0, 0, 0, 0);
             // 
@@ -213,6 +200,19 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 140;
             this.pictureBox1.TabStop = false;
+            // 
+            // lbNovoCadastro
+            // 
+            this.lbNovoCadastro.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lbNovoCadastro.Font = new System.Drawing.Font("Segoe UI", 22F, System.Drawing.FontStyle.Bold);
+            this.lbNovoCadastro.ForeColor = System.Drawing.Color.MediumSeaGreen;
+            this.lbNovoCadastro.Location = new System.Drawing.Point(77, 75);
+            this.lbNovoCadastro.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbNovoCadastro.Name = "lbNovoCadastro";
+            this.lbNovoCadastro.Size = new System.Drawing.Size(329, 43);
+            this.lbNovoCadastro.TabIndex = 58;
+            this.lbNovoCadastro.Text = "NOVA AULA";
+            this.lbNovoCadastro.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // FormCadAula
             // 
@@ -251,7 +251,6 @@
         private System.Windows.Forms.Button btLimpar;
         private System.Windows.Forms.Button btCadastrar;
         private System.Windows.Forms.Label lbHorario;
-        private System.Windows.Forms.Label lbNovoCadastro;
         private System.Windows.Forms.TextBox tbNome;
         private System.Windows.Forms.Label lbData;
         private System.Windows.Forms.Label lbnome;
@@ -259,5 +258,6 @@
         private System.Windows.Forms.DateTimePicker dtpData;
         private System.Windows.Forms.Label lbSair;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label lbNovoCadastro;
     }
 }
