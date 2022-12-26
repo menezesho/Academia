@@ -56,7 +56,7 @@ namespace projetofinal
             this.btEditProf.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btEditProf.Name = "btEditProf";
             this.btEditProf.Size = new System.Drawing.Size(60, 60);
-            this.btEditProf.TabIndex = 3;
+            this.btEditProf.TabIndex = 5;
             this.btEditProf.UseVisualStyleBackColor = false;
             this.btEditProf.Click += new System.EventHandler(this.btEditProf_Click);
             // 
@@ -72,8 +72,8 @@ namespace projetofinal
             this.btCadProf.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btCadProf.Name = "btCadProf";
             this.btCadProf.Size = new System.Drawing.Size(238, 60);
-            this.btCadProf.TabIndex = 2;
-            this.btCadProf.Text = "CADASTRAR PROFESSOR";
+            this.btCadProf.TabIndex = 4;
+            this.btCadProf.Text = "CADASTRAR &PROFESSOR";
             this.btCadProf.UseVisualStyleBackColor = false;
             this.btCadProf.Click += new System.EventHandler(this.btCadProf_Click);
             // 
@@ -112,7 +112,7 @@ namespace projetofinal
             this.btEditAluno.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btEditAluno.Name = "btEditAluno";
             this.btEditAluno.Size = new System.Drawing.Size(60, 60);
-            this.btEditAluno.TabIndex = 137;
+            this.btEditAluno.TabIndex = 3;
             this.btEditAluno.UseVisualStyleBackColor = false;
             this.btEditAluno.Click += new System.EventHandler(this.btEditAluno_Click);
             // 
@@ -128,8 +128,8 @@ namespace projetofinal
             this.btCadAluno.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btCadAluno.Name = "btCadAluno";
             this.btCadAluno.Size = new System.Drawing.Size(238, 60);
-            this.btCadAluno.TabIndex = 136;
-            this.btCadAluno.Text = "CADASTRAR ALUNO";
+            this.btCadAluno.TabIndex = 2;
+            this.btCadAluno.Text = "CADASTRAR &ALUNO";
             this.btCadAluno.UseVisualStyleBackColor = false;
             this.btCadAluno.Click += new System.EventHandler(this.btCadAluno_Click);
             // 
@@ -146,7 +146,7 @@ namespace projetofinal
             this.btEditAula.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btEditAula.Name = "btEditAula";
             this.btEditAula.Size = new System.Drawing.Size(60, 60);
-            this.btEditAula.TabIndex = 139;
+            this.btEditAula.TabIndex = 1;
             this.btEditAula.UseVisualStyleBackColor = false;
             this.btEditAula.Click += new System.EventHandler(this.btEditAula_Click);
             // 
@@ -162,8 +162,8 @@ namespace projetofinal
             this.btCadAula.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btCadAula.Name = "btCadAula";
             this.btCadAula.Size = new System.Drawing.Size(238, 60);
-            this.btCadAula.TabIndex = 138;
-            this.btCadAula.Text = "CADASTRAR AULA";
+            this.btCadAula.TabIndex = 0;
+            this.btCadAula.Text = "&NOVA AULA";
             this.btCadAula.UseVisualStyleBackColor = false;
             this.btCadAula.Click += new System.EventHandler(this.btCadAula_Click);
             // 
@@ -179,8 +179,8 @@ namespace projetofinal
             this.btInscrever.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btInscrever.Name = "btInscrever";
             this.btInscrever.Size = new System.Drawing.Size(238, 60);
-            this.btInscrever.TabIndex = 140;
-            this.btInscrever.Text = "INSCREVER NA AULA";
+            this.btInscrever.TabIndex = 6;
+            this.btInscrever.Text = "&INSCREVER NA AULA";
             this.btInscrever.UseVisualStyleBackColor = false;
             this.btInscrever.Click += new System.EventHandler(this.btInscreverAluno_Click);
             // 
@@ -197,7 +197,7 @@ namespace projetofinal
             this.btEditParticipantes.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btEditParticipantes.Name = "btEditParticipantes";
             this.btEditParticipantes.Size = new System.Drawing.Size(60, 60);
-            this.btEditParticipantes.TabIndex = 142;
+            this.btEditParticipantes.TabIndex = 7;
             this.btEditParticipantes.UseVisualStyleBackColor = false;
             this.btEditParticipantes.Click += new System.EventHandler(this.btEditParticipantes_Click);
             // 

@@ -29,9 +29,9 @@ namespace projetofinal
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormEditAluno));
             this.dgalunos = new System.Windows.Forms.DataGridView();
             this.tbBusca = new System.Windows.Forms.TextBox();
@@ -77,9 +77,12 @@ namespace projetofinal
             this.tbSenha = new System.Windows.Forms.TextBox();
             this.lbUsuario = new System.Windows.Forms.Label();
             this.tbUsuario = new System.Windows.Forms.TextBox();
-            this.lbAjustes = new System.Windows.Forms.Label();
+            this.lbListaAlunos = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.lbSair = new System.Windows.Forms.Label();
+            this.lbBuscar = new System.Windows.Forms.Label();
+            this.btCpf = new System.Windows.Forms.Button();
+            this.btNome = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgalunos)).BeginInit();
             this.tcDados.SuspendLayout();
             this.tpDadosPessoais.SuspendLayout();
@@ -98,42 +101,43 @@ namespace projetofinal
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgalunos.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.dgalunos.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.MediumSeaGreen;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgalunos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.MediumSeaGreen;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgalunos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgalunos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 9F);
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.MediumSeaGreen;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgalunos.DefaultCellStyle = dataGridViewCellStyle5;
-            this.dgalunos.Location = new System.Drawing.Point(39, 167);
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9F);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.MediumSeaGreen;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgalunos.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dgalunos.Location = new System.Drawing.Point(39, 177);
             this.dgalunos.Margin = new System.Windows.Forms.Padding(2);
             this.dgalunos.MultiSelect = false;
             this.dgalunos.Name = "dgalunos";
             this.dgalunos.ReadOnly = true;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 9F);
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.MediumSeaGreen;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgalunos.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 9F);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.MediumSeaGreen;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgalunos.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgalunos.RowHeadersVisible = false;
             this.dgalunos.RowHeadersWidth = 51;
             this.dgalunos.RowTemplate.Height = 29;
             this.dgalunos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgalunos.Size = new System.Drawing.Size(552, 323);
-            this.dgalunos.TabIndex = 19;
+            this.dgalunos.Size = new System.Drawing.Size(552, 313);
+            this.dgalunos.TabIndex = 4;
+            this.dgalunos.TabStop = false;
             this.dgalunos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgalunos_CellClick);
             // 
             // tbBusca
@@ -144,12 +148,12 @@ namespace projetofinal
             this.tbBusca.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tbBusca.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.tbBusca.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
-            this.tbBusca.Location = new System.Drawing.Point(39, 134);
+            this.tbBusca.Location = new System.Drawing.Point(169, 134);
             this.tbBusca.Margin = new System.Windows.Forms.Padding(2);
             this.tbBusca.MaxLength = 100;
             this.tbBusca.Name = "tbBusca";
-            this.tbBusca.Size = new System.Drawing.Size(507, 29);
-            this.tbBusca.TabIndex = 18;
+            this.tbBusca.Size = new System.Drawing.Size(388, 29);
+            this.tbBusca.TabIndex = 3;
             this.tbBusca.Enter += new System.EventHandler(this.tbBusca_Enter);
             this.tbBusca.Leave += new System.EventHandler(this.tbBusca_Leave);
             // 
@@ -166,7 +170,7 @@ namespace projetofinal
             this.btRelatorio.Margin = new System.Windows.Forms.Padding(2);
             this.btRelatorio.Name = "btRelatorio";
             this.btRelatorio.Size = new System.Drawing.Size(60, 69);
-            this.btRelatorio.TabIndex = 16;
+            this.btRelatorio.TabIndex = 22;
             this.btRelatorio.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btRelatorio.UseVisualStyleBackColor = false;
             // 
@@ -183,7 +187,7 @@ namespace projetofinal
             this.btLimpar.Margin = new System.Windows.Forms.Padding(2);
             this.btLimpar.Name = "btLimpar";
             this.btLimpar.Size = new System.Drawing.Size(60, 69);
-            this.btLimpar.TabIndex = 14;
+            this.btLimpar.TabIndex = 23;
             this.btLimpar.UseVisualStyleBackColor = false;
             this.btLimpar.Click += new System.EventHandler(this.btLimpar_Click);
             // 
@@ -200,7 +204,7 @@ namespace projetofinal
             this.btExcluir.Margin = new System.Windows.Forms.Padding(2);
             this.btExcluir.Name = "btExcluir";
             this.btExcluir.Size = new System.Drawing.Size(60, 69);
-            this.btExcluir.TabIndex = 15;
+            this.btExcluir.TabIndex = 24;
             this.btExcluir.UseVisualStyleBackColor = false;
             this.btExcluir.Click += new System.EventHandler(this.btExcluir_Click);
             // 
@@ -217,7 +221,7 @@ namespace projetofinal
             this.btSalvar.Margin = new System.Windows.Forms.Padding(2);
             this.btSalvar.Name = "btSalvar";
             this.btSalvar.Size = new System.Drawing.Size(60, 69);
-            this.btSalvar.TabIndex = 17;
+            this.btSalvar.TabIndex = 0;
             this.btSalvar.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btSalvar.UseVisualStyleBackColor = false;
             this.btSalvar.Click += new System.EventHandler(this.btSalvar_Click);
@@ -234,7 +238,7 @@ namespace projetofinal
             this.tcDados.Name = "tcDados";
             this.tcDados.SelectedIndex = 0;
             this.tcDados.Size = new System.Drawing.Size(519, 356);
-            this.tcDados.TabIndex = 130;
+            this.tcDados.TabIndex = 5;
             // 
             // tpDadosPessoais
             // 
@@ -269,7 +273,7 @@ namespace projetofinal
             this.mtbIdade.Name = "mtbIdade";
             this.mtbIdade.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.mtbIdade.Size = new System.Drawing.Size(63, 29);
-            this.mtbIdade.TabIndex = 4;
+            this.mtbIdade.TabIndex = 9;
             this.mtbIdade.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.mtbIdade.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
             this.mtbIdade.ValidatingType = typeof(System.DateTime);
@@ -285,7 +289,7 @@ namespace projetofinal
             this.mtbCelular.Mask = "(00) 00000-0000";
             this.mtbCelular.Name = "mtbCelular";
             this.mtbCelular.Size = new System.Drawing.Size(143, 29);
-            this.mtbCelular.TabIndex = 3;
+            this.mtbCelular.TabIndex = 8;
             this.mtbCelular.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.mtbCelular.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
             // 
@@ -339,7 +343,7 @@ namespace projetofinal
             this.tbNome.MaxLength = 100;
             this.tbNome.Name = "tbNome";
             this.tbNome.Size = new System.Drawing.Size(390, 29);
-            this.tbNome.TabIndex = 1;
+            this.tbNome.TabIndex = 6;
             // 
             // lbcelular
             // 
@@ -378,7 +382,7 @@ namespace projetofinal
             this.tbEmail.MaxLength = 100;
             this.tbEmail.Name = "tbEmail";
             this.tbEmail.Size = new System.Drawing.Size(390, 29);
-            this.tbEmail.TabIndex = 5;
+            this.tbEmail.TabIndex = 10;
             // 
             // mtbCpf
             // 
@@ -392,7 +396,7 @@ namespace projetofinal
             this.mtbCpf.Mask = "000,000,000-00";
             this.mtbCpf.Name = "mtbCpf";
             this.mtbCpf.Size = new System.Drawing.Size(129, 29);
-            this.mtbCpf.TabIndex = 2;
+            this.mtbCpf.TabIndex = 7;
             this.mtbCpf.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.mtbCpf.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
             // 
@@ -432,7 +436,7 @@ namespace projetofinal
             this.mtbApto.Name = "mtbApto";
             this.mtbApto.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.mtbApto.Size = new System.Drawing.Size(85, 29);
-            this.mtbApto.TabIndex = 9;
+            this.mtbApto.TabIndex = 14;
             this.mtbApto.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.mtbApto.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
             this.mtbApto.ValidatingType = typeof(System.DateTime);
@@ -449,7 +453,7 @@ namespace projetofinal
             this.mtbNumero.Name = "mtbNumero";
             this.mtbNumero.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.mtbNumero.Size = new System.Drawing.Size(85, 29);
-            this.mtbNumero.TabIndex = 7;
+            this.mtbNumero.TabIndex = 12;
             this.mtbNumero.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.mtbNumero.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
             this.mtbNumero.ValidatingType = typeof(System.DateTime);
@@ -465,7 +469,7 @@ namespace projetofinal
             this.tbRua.MaxLength = 100;
             this.tbRua.Name = "tbRua";
             this.tbRua.Size = new System.Drawing.Size(393, 29);
-            this.tbRua.TabIndex = 6;
+            this.tbRua.TabIndex = 11;
             // 
             // lbRua
             // 
@@ -504,7 +508,7 @@ namespace projetofinal
             this.tbBairro.MaxLength = 50;
             this.tbBairro.Name = "tbBairro";
             this.tbBairro.Size = new System.Drawing.Size(393, 29);
-            this.tbBairro.TabIndex = 12;
+            this.tbBairro.TabIndex = 17;
             // 
             // checkApto
             // 
@@ -517,8 +521,9 @@ namespace projetofinal
             this.checkApto.Margin = new System.Windows.Forms.Padding(2);
             this.checkApto.Name = "checkApto";
             this.checkApto.Size = new System.Drawing.Size(12, 11);
-            this.checkApto.TabIndex = 8;
+            this.checkApto.TabIndex = 13;
             this.checkApto.UseVisualStyleBackColor = true;
+            this.checkApto.CheckedChanged += new System.EventHandler(this.checkApto_CheckedChanged);
             // 
             // lbCidade
             // 
@@ -544,7 +549,7 @@ namespace projetofinal
             this.tbCidade.MaxLength = 50;
             this.tbCidade.Name = "tbCidade";
             this.tbCidade.Size = new System.Drawing.Size(392, 29);
-            this.tbCidade.TabIndex = 11;
+            this.tbCidade.TabIndex = 16;
             // 
             // lbApto
             // 
@@ -627,7 +632,7 @@ namespace projetofinal
             this.cbEstado.Margin = new System.Windows.Forms.Padding(2);
             this.cbEstado.Name = "cbEstado";
             this.cbEstado.Size = new System.Drawing.Size(102, 29);
-            this.cbEstado.TabIndex = 10;
+            this.cbEstado.TabIndex = 15;
             // 
             // tpInfoAdicionais
             // 
@@ -658,7 +663,7 @@ namespace projetofinal
             this.mtbAltura.Name = "mtbAltura";
             this.mtbAltura.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.mtbAltura.Size = new System.Drawing.Size(85, 29);
-            this.mtbAltura.TabIndex = 14;
+            this.mtbAltura.TabIndex = 19;
             this.mtbAltura.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.mtbAltura.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
             this.mtbAltura.ValidatingType = typeof(System.DateTime);
@@ -675,7 +680,7 @@ namespace projetofinal
             this.mtbPeso.Name = "mtbPeso";
             this.mtbPeso.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.mtbPeso.Size = new System.Drawing.Size(85, 29);
-            this.mtbPeso.TabIndex = 13;
+            this.mtbPeso.TabIndex = 18;
             this.mtbPeso.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.mtbPeso.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
             this.mtbPeso.ValidatingType = typeof(System.DateTime);
@@ -770,7 +775,7 @@ namespace projetofinal
             this.tbSenha.MaxLength = 30;
             this.tbSenha.Name = "tbSenha";
             this.tbSenha.Size = new System.Drawing.Size(390, 29);
-            this.tbSenha.TabIndex = 16;
+            this.tbSenha.TabIndex = 21;
             this.tbSenha.UseSystemPasswordChar = true;
             // 
             // lbUsuario
@@ -798,20 +803,20 @@ namespace projetofinal
             this.tbUsuario.MaxLength = 30;
             this.tbUsuario.Name = "tbUsuario";
             this.tbUsuario.Size = new System.Drawing.Size(390, 29);
-            this.tbUsuario.TabIndex = 15;
+            this.tbUsuario.TabIndex = 20;
             // 
-            // lbAjustes
+            // lbListaAlunos
             // 
-            this.lbAjustes.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.lbAjustes.Font = new System.Drawing.Font("Segoe UI", 22F, System.Drawing.FontStyle.Bold);
-            this.lbAjustes.ForeColor = System.Drawing.Color.MediumSeaGreen;
-            this.lbAjustes.Location = new System.Drawing.Point(60, 49);
-            this.lbAjustes.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lbAjustes.Name = "lbAjustes";
-            this.lbAjustes.Size = new System.Drawing.Size(1119, 43);
-            this.lbAjustes.TabIndex = 131;
-            this.lbAjustes.Text = "AJUSTES DE CADASTRO";
-            this.lbAjustes.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lbListaAlunos.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.lbListaAlunos.Font = new System.Drawing.Font("Segoe UI", 22F, System.Drawing.FontStyle.Bold);
+            this.lbListaAlunos.ForeColor = System.Drawing.Color.MediumSeaGreen;
+            this.lbListaAlunos.Location = new System.Drawing.Point(39, 49);
+            this.lbListaAlunos.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbListaAlunos.Name = "lbListaAlunos";
+            this.lbListaAlunos.Size = new System.Drawing.Size(1161, 43);
+            this.lbListaAlunos.TabIndex = 131;
+            this.lbListaAlunos.Text = "LISTA DE ALUNOS";
+            this.lbListaAlunos.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // pictureBox2
             // 
@@ -835,14 +840,62 @@ namespace projetofinal
             this.lbSair.TabIndex = 143;
             this.lbSair.Click += new System.EventHandler(this.lbSair_Click);
             // 
+            // lbBuscar
+            // 
+            this.lbBuscar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbBuscar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lbBuscar.Image = ((System.Drawing.Image)(resources.GetObject("lbBuscar.Image")));
+            this.lbBuscar.Location = new System.Drawing.Point(562, 134);
+            this.lbBuscar.Name = "lbBuscar";
+            this.lbBuscar.Size = new System.Drawing.Size(29, 29);
+            this.lbBuscar.TabIndex = 144;
+            this.lbBuscar.Click += new System.EventHandler(this.lbBuscar_Click);
+            // 
+            // btCpf
+            // 
+            this.btCpf.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btCpf.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
+            this.btCpf.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btCpf.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btCpf.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
+            this.btCpf.ForeColor = System.Drawing.Color.White;
+            this.btCpf.Location = new System.Drawing.Point(99, 133);
+            this.btCpf.Margin = new System.Windows.Forms.Padding(2);
+            this.btCpf.Name = "btCpf";
+            this.btCpf.Size = new System.Drawing.Size(60, 30);
+            this.btCpf.TabIndex = 2;
+            this.btCpf.Text = "&CPF";
+            this.btCpf.UseVisualStyleBackColor = false;
+            this.btCpf.Click += new System.EventHandler(this.btCpf_Click);
+            // 
+            // btNome
+            // 
+            this.btNome.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btNome.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
+            this.btNome.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btNome.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btNome.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
+            this.btNome.ForeColor = System.Drawing.Color.White;
+            this.btNome.Location = new System.Drawing.Point(39, 133);
+            this.btNome.Margin = new System.Windows.Forms.Padding(2);
+            this.btNome.Name = "btNome";
+            this.btNome.Size = new System.Drawing.Size(60, 30);
+            this.btNome.TabIndex = 1;
+            this.btNome.Text = "&Nome";
+            this.btNome.UseVisualStyleBackColor = false;
+            this.btNome.Click += new System.EventHandler(this.btNome_Click);
+            // 
             // FormEditAluno
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1241, 619);
+            this.Controls.Add(this.btNome);
+            this.Controls.Add(this.btCpf);
+            this.Controls.Add(this.lbBuscar);
             this.Controls.Add(this.lbSair);
             this.Controls.Add(this.pictureBox2);
-            this.Controls.Add(this.lbAjustes);
+            this.Controls.Add(this.lbListaAlunos);
             this.Controls.Add(this.tcDados);
             this.Controls.Add(this.btRelatorio);
             this.Controls.Add(this.btExcluir);
@@ -922,8 +975,11 @@ namespace projetofinal
         private System.Windows.Forms.TextBox tbSenha;
         private System.Windows.Forms.Label lbUsuario;
         private System.Windows.Forms.TextBox tbUsuario;
-        private System.Windows.Forms.Label lbAjustes;
+        private System.Windows.Forms.Label lbListaAlunos;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label lbSair;
+        private System.Windows.Forms.Label lbBuscar;
+        private System.Windows.Forms.Button btCpf;
+        private System.Windows.Forms.Button btNome;
     }
 }

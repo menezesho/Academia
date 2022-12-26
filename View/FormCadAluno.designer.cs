@@ -294,7 +294,7 @@ namespace projetofinal
             this.btLimpar.Name = "btLimpar";
             this.btLimpar.Size = new System.Drawing.Size(256, 40);
             this.btLimpar.TabIndex = 17;
-            this.btLimpar.Text = "Limpar";
+            this.btLimpar.Text = "&Limpar";
             this.btLimpar.UseVisualStyleBackColor = false;
             this.btLimpar.Click += new System.EventHandler(this.btLimpar_Click);
             // 
@@ -312,7 +312,7 @@ namespace projetofinal
             this.btCadastrar.Name = "btCadastrar";
             this.btCadastrar.Size = new System.Drawing.Size(256, 40);
             this.btCadastrar.TabIndex = 18;
-            this.btCadastrar.Text = "Cadastrar";
+            this.btCadastrar.Text = "&Cadastrar";
             this.btCadastrar.UseVisualStyleBackColor = false;
             this.btCadastrar.Click += new System.EventHandler(this.btCadastrar_Click);
             // 

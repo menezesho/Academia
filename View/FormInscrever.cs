@@ -33,7 +33,7 @@ namespace academia
             SendKeys.SendWait("{ENTER}");
         }
 
-            private void FormInserirNaAula_Load(object sender, EventArgs e)
+        private void FormInserirNaAula_Load(object sender, EventArgs e)
         {
             cbNome.Text = "Selecione";
             mtbCpf.Clear();
@@ -74,63 +74,8 @@ namespace academia
             }
         }
 
-        private void btInserir_Click(object sender, EventArgs e)
-        {//btInserir
-            if (mtbCpf.Text == "" || tbHora.Text == "")
-                MessageBox.Show("Preencha todos os campos!", "Inscrever", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            else
-            {
-                if (selecionado != "")
-                {
-                    try
-                    {
-                        SqlConnection conexao = new SqlConnection(conec.ConexaoBD());
-                        string sqlSelect = "";
-                        if (selecionado == "aluno")
-                            sqlSelect = @"SELECT * FROM participante WHERE id_aula=@idaula AND id_aluno=@idpessoa";
-                        else
-                            sqlSelect = @"SELECT * FROM participante WHERE id_aula=@idaula AND id_professor=@idpessoa";
-                        SqlCommand comandoSelect = new SqlCommand(sqlSelect, conexao);
-
-                        comandoSelect.Parameters.AddWithValue("@idaula", int.Parse(cbAula.SelectedValue.ToString()));
-                        comandoSelect.Parameters.AddWithValue("@idpessoa", int.Parse(cbNome.SelectedValue.ToString()));
-
-                        conexao.Open();
-                        SqlDataReader dados = comandoSelect.ExecuteReader();
-                        if (dados.Read())
-                        {
-                            MessageBox.Show("'" + cbNome.Text + "' já está inscrito nesta aula!", "Inscrever", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                            conexao.Close();
-                        }
-                        else
-                        {
-                            conexao.Close();
-                            SqlConnection conexao2 = new SqlConnection(conec.ConexaoBD());
-                            string sqlInsert = "";
-                            if (selecionado == "aluno")
-                                sqlInsert = @"INSERT INTO participante (id_aula, id_aluno) VALUES (@idaula, @idpessoa)";
-                            else
-                                sqlInsert = @"INSERT INTO participante (id_aula, id_professor) VALUES (@idaula, @idpessoa)";
-                            SqlCommand comandoInsert = new SqlCommand(sqlInsert, conexao2);
-
-                            comandoInsert.Parameters.AddWithValue("@idaula", int.Parse(cbAula.SelectedValue.ToString()));
-                            comandoInsert.Parameters.AddWithValue("@idpessoa", int.Parse(cbNome.SelectedValue.ToString()));
-
-                            conexao2.Open();
-                            comandoInsert.CommandText = sqlInsert;
-                            comandoInsert.ExecuteNonQuery();
-                            conexao2.Close();
-                            MessageBox.Show("Concluído com sucesso\n'" + cbNome.Text + "' foi inserido na aula '" + cbAula.Text + "'!", "Inserir", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        }
-                    }
-                    catch (Exception erro)
-                    {
-                        MessageBox.Show(erro.Message, "Erro na conexão, tente novamente!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
-                }
-                else
-                    MessageBox.Show("Selecione uma das opções de inscrição!", "Inscrever", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-            }
+        private void btInscrever_Click(object sender, EventArgs e)
+        {
         }
 
         private void cbNome_SelectedIndexChanged(object sender, EventArgs e)
@@ -287,5 +232,6 @@ namespace academia
         }
 
         #endregion
+
     }
 }

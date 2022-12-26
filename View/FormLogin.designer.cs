@@ -86,7 +86,7 @@ namespace projetofinal
             this.btAreaProf.Name = "btAreaProf";
             this.btAreaProf.Size = new System.Drawing.Size(120, 30);
             this.btAreaProf.TabIndex = 2;
-            this.btAreaProf.Text = "Área do Profes.";
+            this.btAreaProf.Text = "Área do &Profes.";
             this.btAreaProf.UseVisualStyleBackColor = false;
             this.btAreaProf.Click += new System.EventHandler(this.btAreaProf_Click);
             // 
@@ -139,7 +139,7 @@ namespace projetofinal
             this.btAreaAluno.Name = "btAreaAluno";
             this.btAreaAluno.Size = new System.Drawing.Size(120, 30);
             this.btAreaAluno.TabIndex = 1;
-            this.btAreaAluno.Text = "Área do Aluno";
+            this.btAreaAluno.Text = "Área do &Aluno";
             this.btAreaAluno.UseVisualStyleBackColor = false;
             this.btAreaAluno.Click += new System.EventHandler(this.btAreaAluno_Click);
             // 
@@ -172,7 +172,7 @@ namespace projetofinal
             this.btLogin.Name = "btLogin";
             this.btLogin.Size = new System.Drawing.Size(240, 40);
             this.btLogin.TabIndex = 0;
-            this.btLogin.Text = "Login";
+            this.btLogin.Text = "&Login";
             this.btLogin.UseVisualStyleBackColor = false;
             this.btLogin.Click += new System.EventHandler(this.btLogin_Click);
             // 

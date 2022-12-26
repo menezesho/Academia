@@ -36,7 +36,7 @@
             this.lbHorario = new System.Windows.Forms.Label();
             this.lbData = new System.Windows.Forms.Label();
             this.btLimpar = new System.Windows.Forms.Button();
-            this.btInserir = new System.Windows.Forms.Button();
+            this.btInscrever = new System.Windows.Forms.Button();
             this.lb2 = new System.Windows.Forms.Label();
             this.cbAula = new System.Windows.Forms.ComboBox();
             this.lb1 = new System.Windows.Forms.Label();
@@ -154,28 +154,28 @@
             this.btLimpar.Name = "btLimpar";
             this.btLimpar.Size = new System.Drawing.Size(255, 40);
             this.btLimpar.TabIndex = 9;
-            this.btLimpar.Text = "Limpar";
+            this.btLimpar.Text = "&Limpar";
             this.btLimpar.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btLimpar.UseVisualStyleBackColor = false;
             this.btLimpar.Click += new System.EventHandler(this.btLimpar_Click);
             // 
-            // btInserir
+            // btInscrever
             // 
-            this.btInserir.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btInserir.BackColor = System.Drawing.Color.MediumSeaGreen;
-            this.btInserir.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btInserir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btInserir.Font = new System.Drawing.Font("Segoe UI Semibold", 14F, System.Drawing.FontStyle.Bold);
-            this.btInserir.ForeColor = System.Drawing.Color.White;
-            this.btInserir.Location = new System.Drawing.Point(339, 408);
-            this.btInserir.Margin = new System.Windows.Forms.Padding(2);
-            this.btInserir.Name = "btInserir";
-            this.btInserir.Size = new System.Drawing.Size(255, 40);
-            this.btInserir.TabIndex = 0;
-            this.btInserir.Text = "Inserir";
-            this.btInserir.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btInserir.UseVisualStyleBackColor = false;
-            this.btInserir.Click += new System.EventHandler(this.btInserir_Click);
+            this.btInscrever.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btInscrever.BackColor = System.Drawing.Color.MediumSeaGreen;
+            this.btInscrever.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btInscrever.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btInscrever.Font = new System.Drawing.Font("Segoe UI Semibold", 14F, System.Drawing.FontStyle.Bold);
+            this.btInscrever.ForeColor = System.Drawing.Color.White;
+            this.btInscrever.Location = new System.Drawing.Point(339, 408);
+            this.btInscrever.Margin = new System.Windows.Forms.Padding(2);
+            this.btInscrever.Name = "btInscrever";
+            this.btInscrever.Size = new System.Drawing.Size(255, 40);
+            this.btInscrever.TabIndex = 0;
+            this.btInscrever.Text = "&Inscrever";
+            this.btInscrever.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btInscrever.UseVisualStyleBackColor = false;
+            this.btInscrever.Click += new System.EventHandler(this.btInscrever_Click);
             // 
             // lb2
             // 
@@ -271,7 +271,7 @@
             this.btAluno.Name = "btAluno";
             this.btAluno.Size = new System.Drawing.Size(120, 30);
             this.btAluno.TabIndex = 1;
-            this.btAluno.Text = "Aluno";
+            this.btAluno.Text = "&Aluno";
             this.btAluno.UseVisualStyleBackColor = false;
             this.btAluno.Click += new System.EventHandler(this.btAreaAluno_Click);
             // 
@@ -288,7 +288,7 @@
             this.btProf.Name = "btProf";
             this.btProf.Size = new System.Drawing.Size(120, 30);
             this.btProf.TabIndex = 2;
-            this.btProf.Text = "Professor";
+            this.btProf.Text = "&Professor";
             this.btProf.UseVisualStyleBackColor = false;
             this.btProf.Click += new System.EventHandler(this.btAreaProf_Click);
             // 
@@ -375,7 +375,7 @@
             this.Controls.Add(this.lbHorario);
             this.Controls.Add(this.lbData);
             this.Controls.Add(this.btLimpar);
-            this.Controls.Add(this.btInserir);
+            this.Controls.Add(this.btInscrever);
             this.Controls.Add(this.lb2);
             this.Controls.Add(this.cbAula);
             this.Controls.Add(this.lb1);
@@ -403,7 +403,7 @@
         private System.Windows.Forms.Label lbHorario;
         private System.Windows.Forms.Label lbData;
         private System.Windows.Forms.Button btLimpar;
-        private System.Windows.Forms.Button btInserir;
+        private System.Windows.Forms.Button btInscrever;
         private System.Windows.Forms.Label lb2;
         private System.Windows.Forms.ComboBox cbAula;
         private System.Windows.Forms.Label lb1;

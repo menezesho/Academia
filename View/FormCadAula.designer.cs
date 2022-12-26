@@ -55,8 +55,8 @@
             this.btLimpar.Margin = new System.Windows.Forms.Padding(2);
             this.btLimpar.Name = "btLimpar";
             this.btLimpar.Size = new System.Drawing.Size(161, 40);
-            this.btLimpar.TabIndex = 4;
-            this.btLimpar.Text = "Limpar";
+            this.btLimpar.TabIndex = 3;
+            this.btLimpar.Text = "&Limpar";
             this.btLimpar.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btLimpar.UseVisualStyleBackColor = false;
             this.btLimpar.Click += new System.EventHandler(this.btLimpar_Click);
@@ -73,8 +73,8 @@
             this.btCadastrar.Margin = new System.Windows.Forms.Padding(2);
             this.btCadastrar.Name = "btCadastrar";
             this.btCadastrar.Size = new System.Drawing.Size(161, 40);
-            this.btCadastrar.TabIndex = 5;
-            this.btCadastrar.Text = "Cadastrar";
+            this.btCadastrar.TabIndex = 4;
+            this.btCadastrar.Text = "&Cadastrar";
             this.btCadastrar.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btCadastrar.UseVisualStyleBackColor = false;
             this.btCadastrar.Click += new System.EventHandler(this.btCadastrar_Click);

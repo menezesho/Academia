@@ -553,6 +553,19 @@
         RK5CYII=
 </value>
   </data>
+  <data name="lbBuscar.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAYAAAByDd+UAAAABGdBTUEAALGPC/xhBQAAAaNJREFUSEvN
+        lr1NA0EUhK8ESqAESjj5bMsiogOoAEqAjBA6gA5wSIhEjshJaACZiMQBzLeas+7k5xPetSWP9LR+Pzvj
+        3X17d9VBYDabHU8mk6vxeHyda03TnMNjys1Q4Zkm/O7IFrLa1DFU8E2xhO8pLrC5DNG5qWNQJLF3u0UQ
+        F39+YTeG/9WL3SLAA5/dGEOCPl8a4oGmquv6yKkQRYKKtWfStcGmUC5P0A1EHNHUFFrhhcZ0RptWqlye
+        ILGokSxK/Y1DPcBD3m4ME6wE9ZsVhaRcbOfC1ld8e0Gt4oSYxkeHVhjKAXjI241BAYV2E+SHZ6XYM/Vs
+        rUM9wEPebgwKKLSb4OtAnK68k/G8fHVsyUpd2oNyeYLAoumx17E3j4tIVPF8wRbKpWvRbi/b6TlrovCQ
+        sxvDkzcKRuiKds8ZHuJ2Y3jiVoLAor3rsVfBCIctqC06nU6nlyUmno//Cu7UTB2jLdK9+9HIlhTZaDS6
+        NXUMFSG4tLt/WPDL7v7BNlj0Sbb2vZlhw5+JvON42aowneUO7NPUw1Bh+31ZZP3na1X9AWue6VV3lVi6
+        AAAAAElFTkSuQmCC
+</value>
+  </data>
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>79</value>
   </metadata>
