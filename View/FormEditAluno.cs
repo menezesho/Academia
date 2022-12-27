@@ -363,7 +363,7 @@ namespace projetofinal
 
         #endregion
 
-        #region Máscara Busca
+        #region Máscara - Busca
 
         private void tbBusca_Enter(object sender, EventArgs e)
         {
@@ -382,7 +382,6 @@ namespace projetofinal
                 tbBusca.Font = new Font("Segoe UI Light", 12F, FontStyle.Italic);
             }
         }
-
 
         #endregion
 
@@ -406,7 +405,11 @@ namespace projetofinal
             selecionado = "cpf";
         }
 
+
+
+
         #endregion
 
+        
     }
 }

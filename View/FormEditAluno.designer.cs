@@ -271,7 +271,6 @@ namespace projetofinal
             this.mtbIdade.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.mtbIdade.Mask = "000";
             this.mtbIdade.Name = "mtbIdade";
-            this.mtbIdade.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.mtbIdade.Size = new System.Drawing.Size(63, 29);
             this.mtbIdade.TabIndex = 9;
             this.mtbIdade.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -434,7 +433,6 @@ namespace projetofinal
             this.mtbApto.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.mtbApto.Mask = "00000";
             this.mtbApto.Name = "mtbApto";
-            this.mtbApto.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.mtbApto.Size = new System.Drawing.Size(85, 29);
             this.mtbApto.TabIndex = 14;
             this.mtbApto.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -451,7 +449,6 @@ namespace projetofinal
             this.mtbNumero.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.mtbNumero.Mask = "00000";
             this.mtbNumero.Name = "mtbNumero";
-            this.mtbNumero.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.mtbNumero.Size = new System.Drawing.Size(85, 29);
             this.mtbNumero.TabIndex = 12;
             this.mtbNumero.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -661,7 +658,6 @@ namespace projetofinal
             this.mtbAltura.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.mtbAltura.Mask = "000";
             this.mtbAltura.Name = "mtbAltura";
-            this.mtbAltura.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.mtbAltura.Size = new System.Drawing.Size(85, 29);
             this.mtbAltura.TabIndex = 19;
             this.mtbAltura.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -678,7 +674,6 @@ namespace projetofinal
             this.mtbPeso.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.mtbPeso.Mask = "000";
             this.mtbPeso.Name = "mtbPeso";
-            this.mtbPeso.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.mtbPeso.Size = new System.Drawing.Size(85, 29);
             this.mtbPeso.TabIndex = 18;
             this.mtbPeso.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
