@@ -58,7 +58,6 @@ namespace projetofinal
             this.lbRua = new System.Windows.Forms.Label();
             this.lbBairro = new System.Windows.Forms.Label();
             this.tbBairro = new System.Windows.Forms.TextBox();
-            this.checkApto = new System.Windows.Forms.CheckBox();
             this.lbCidade = new System.Windows.Forms.Label();
             this.tbCidade = new System.Windows.Forms.TextBox();
             this.lbApto = new System.Windows.Forms.Label();
@@ -267,6 +266,7 @@ namespace projetofinal
             this.mtbIdade.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.mtbIdade.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.mtbIdade.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
+            this.mtbIdade.HidePromptOnLeave = true;
             this.mtbIdade.Location = new System.Drawing.Point(387, 160);
             this.mtbIdade.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.mtbIdade.Mask = "000";
@@ -408,7 +408,6 @@ namespace projetofinal
             this.tpEndereco.Controls.Add(this.lbRua);
             this.tpEndereco.Controls.Add(this.lbBairro);
             this.tpEndereco.Controls.Add(this.tbBairro);
-            this.tpEndereco.Controls.Add(this.checkApto);
             this.tpEndereco.Controls.Add(this.lbCidade);
             this.tpEndereco.Controls.Add(this.tbCidade);
             this.tpEndereco.Controls.Add(this.lbApto);
@@ -429,7 +428,8 @@ namespace projetofinal
             this.mtbApto.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.mtbApto.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.mtbApto.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
-            this.mtbApto.Location = new System.Drawing.Point(208, 122);
+            this.mtbApto.HidePromptOnLeave = true;
+            this.mtbApto.Location = new System.Drawing.Point(204, 122);
             this.mtbApto.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.mtbApto.Mask = "00000";
             this.mtbApto.Name = "mtbApto";
@@ -445,6 +445,7 @@ namespace projetofinal
             this.mtbNumero.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.mtbNumero.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.mtbNumero.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
+            this.mtbNumero.HidePromptOnLeave = true;
             this.mtbNumero.Location = new System.Drawing.Point(58, 122);
             this.mtbNumero.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.mtbNumero.Mask = "00000";
@@ -507,21 +508,6 @@ namespace projetofinal
             this.tbBairro.Size = new System.Drawing.Size(393, 29);
             this.tbBairro.TabIndex = 17;
             // 
-            // checkApto
-            // 
-            this.checkApto.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.checkApto.AutoSize = true;
-            this.checkApto.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.checkApto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.checkApto.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
-            this.checkApto.Location = new System.Drawing.Point(192, 131);
-            this.checkApto.Margin = new System.Windows.Forms.Padding(2);
-            this.checkApto.Name = "checkApto";
-            this.checkApto.Size = new System.Drawing.Size(12, 11);
-            this.checkApto.TabIndex = 13;
-            this.checkApto.UseVisualStyleBackColor = true;
-            this.checkApto.CheckedChanged += new System.EventHandler(this.checkApto_CheckedChanged);
-            // 
             // lbCidade
             // 
             this.lbCidade.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -554,7 +540,7 @@ namespace projetofinal
             this.lbApto.AutoSize = true;
             this.lbApto.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
             this.lbApto.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
-            this.lbApto.Location = new System.Drawing.Point(221, 95);
+            this.lbApto.Location = new System.Drawing.Point(217, 95);
             this.lbApto.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbApto.Name = "lbApto";
             this.lbApto.Size = new System.Drawing.Size(59, 25);
@@ -654,6 +640,7 @@ namespace projetofinal
             this.mtbAltura.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.mtbAltura.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.mtbAltura.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
+            this.mtbAltura.HidePromptOnLeave = true;
             this.mtbAltura.Location = new System.Drawing.Point(217, 179);
             this.mtbAltura.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.mtbAltura.Mask = "000";
@@ -670,6 +657,7 @@ namespace projetofinal
             this.mtbPeso.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.mtbPeso.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.mtbPeso.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
+            this.mtbPeso.HidePromptOnLeave = true;
             this.mtbPeso.Location = new System.Drawing.Point(217, 109);
             this.mtbPeso.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.mtbPeso.Mask = "000";
@@ -951,7 +939,6 @@ namespace projetofinal
         private System.Windows.Forms.Label lbRua;
         private System.Windows.Forms.Label lbBairro;
         private System.Windows.Forms.TextBox tbBairro;
-        private System.Windows.Forms.CheckBox checkApto;
         private System.Windows.Forms.Label lbCidade;
         private System.Windows.Forms.TextBox tbCidade;
         private System.Windows.Forms.Label lbApto;

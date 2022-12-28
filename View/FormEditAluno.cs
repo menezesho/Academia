@@ -63,7 +63,20 @@ namespace projetofinal
             tbUsuario.Clear();
             tbSenha.Clear();
 
-            checkApto.Checked = false;
+            tbNome.Enabled = false;
+            mtbIdade.Enabled = false;
+            mtbCelular.Enabled = false;
+            tbEmail.Enabled = false;
+            mtbPeso.Enabled = false;
+            mtbAltura.Enabled = false;
+            tbRua.Enabled = false;
+            mtbNumero.Enabled = false;
+            mtbApto.Enabled = false;
+            tbBairro.Enabled = false;
+            tbCidade.Enabled = false;
+            cbEstado.Enabled = false;
+            tbUsuario.Enabled = false;
+            tbSenha.Enabled = false;
 
             tbBusca.Clear();
 
@@ -89,6 +102,21 @@ namespace projetofinal
             cbEstado.Text = dgalunos.CurrentRow.Cells[13].Value.ToString();
             tbUsuario.Text = dgalunos.CurrentRow.Cells[14].Value.ToString();
             tbSenha.Text = dgalunos.CurrentRow.Cells[15].Value.ToString();
+
+            tbNome.Enabled = true;
+            mtbIdade.Enabled = true;
+            mtbCelular.Enabled = true;
+            tbEmail.Enabled = true;
+            mtbPeso.Enabled = true;
+            mtbAltura.Enabled = true;
+            tbRua.Enabled = true;
+            mtbNumero.Enabled = true;
+            mtbApto.Enabled = true;
+            tbBairro.Enabled = true;
+            tbCidade.Enabled = true;
+            cbEstado.Enabled = true;
+            tbUsuario.Enabled = true;
+            tbSenha.Enabled = true;
         }
 
         private void lbBuscar_Click(object sender, EventArgs e)
@@ -157,6 +185,21 @@ namespace projetofinal
                 tbUsuario.Clear();
                 tbSenha.Clear();
 
+                tbNome.Enabled = false;
+                mtbIdade.Enabled = false;
+                mtbCelular.Enabled = false;
+                tbEmail.Enabled = false;
+                mtbPeso.Enabled = false;
+                mtbAltura.Enabled = false;
+                tbRua.Enabled = false;
+                mtbNumero.Enabled = false;
+                mtbApto.Enabled = false;
+                tbBairro.Enabled = false;
+                tbCidade.Enabled = false;
+                cbEstado.Enabled = false;
+                tbUsuario.Enabled = false;
+                tbSenha.Enabled = false;
+
                 tbBusca.Text = " Busca...";
                 tbBusca.Font = new Font("Segoe UI Light", 12F, FontStyle.Italic);
 
@@ -210,7 +253,20 @@ namespace projetofinal
                         tbUsuario.Clear();
                         tbSenha.Clear();
 
-                        checkApto.Checked = false;
+                        tbNome.Enabled = false;
+                        mtbIdade.Enabled = false;
+                        mtbCelular.Enabled = false;
+                        tbEmail.Enabled = false;
+                        mtbPeso.Enabled = false;
+                        mtbAltura.Enabled = false;
+                        tbRua.Enabled = false;
+                        mtbNumero.Enabled = false;
+                        mtbApto.Enabled = false;
+                        tbBairro.Enabled = false;
+                        tbCidade.Enabled = false;
+                        cbEstado.Enabled = false;
+                        tbUsuario.Enabled = false;
+                        tbSenha.Enabled = false;
                     }
                     catch (Exception erro)
                     {
@@ -247,15 +303,19 @@ namespace projetofinal
 
                                     //preparado para a string de insert muito louca?
 
-                                    string sqlUpdate = @"UPDATE aluno SET nome=@nome, cpf=@cpf, idade=@idade, celular=@celular, email=@email, rua=@rua, numero=@numero, bairro=@bairro, cidade=@cidade, estado=@estado";
+                                    string sqlUpdate = @"UPDATE aluno SET nome=@nome, idade=@idade, celular=@celular, email=@email, rua=@rua, numero=@numero, bairro=@bairro, cidade=@cidade, estado=@estado, usuario=@usuario, senha=@senha";
 
                                     if (mtbPeso.Text != "")
                                         sqlUpdate = sqlUpdate + ", peso='" + int.Parse(mtbPeso.Text) + "'";
+                                    else
+                                        sqlUpdate = sqlUpdate + ", peso=NULL";
                                     if (mtbAltura.Text != "")
                                         sqlUpdate = sqlUpdate + ", altura='" + int.Parse(mtbAltura.Text) + "'";
-                                    if (checkApto.Checked == true)
+                                    else
+                                        sqlUpdate = sqlUpdate + ", altura=NULL";
+                                    if (mtbApto.Text != "")
                                         sqlUpdate = sqlUpdate + ", apto='" + int.Parse(mtbApto.Text) + "'";
-                                    if (checkApto.Checked == false)
+                                    else
                                         sqlUpdate = sqlUpdate + ", apto=NULL";
 
                                     sqlUpdate = sqlUpdate + " WHERE idaluno=@idaluno";
@@ -264,7 +324,6 @@ namespace projetofinal
 
                                     comandoUpdate.Parameters.AddWithValue("@idaluno", id);
                                     comandoUpdate.Parameters.AddWithValue("@nome", tbNome.Text);
-                                    comandoUpdate.Parameters.AddWithValue("@cpf", mtbCpf.Text);
                                     comandoUpdate.Parameters.AddWithValue("@idade", int.Parse(mtbIdade.Text));
                                     comandoUpdate.Parameters.AddWithValue("@celular", mtbCelular.Text);
                                     comandoUpdate.Parameters.AddWithValue("@email", tbEmail.Text);
@@ -301,7 +360,20 @@ namespace projetofinal
                                     tbUsuario.Clear();
                                     tbSenha.Clear();
 
-                                    checkApto.Checked = false;
+                                    tbNome.Enabled = false;
+                                    mtbIdade.Enabled = false;
+                                    mtbCelular.Enabled = false;
+                                    tbEmail.Enabled = false;
+                                    mtbPeso.Enabled = false;
+                                    mtbAltura.Enabled = false;
+                                    tbRua.Enabled = false;
+                                    mtbNumero.Enabled = false;
+                                    mtbApto.Enabled = false;
+                                    tbBairro.Enabled = false;
+                                    tbCidade.Enabled = false;
+                                    cbEstado.Enabled = false;
+                                    tbUsuario.Enabled = false;
+                                    tbSenha.Enabled = false;
                                 }
                                 catch (Exception erro)
                                 {
@@ -329,20 +401,6 @@ namespace projetofinal
                         mtbCpf.Focus();
                     }
                 }
-            }
-        }
-
-        private void checkApto_CheckedChanged(object sender, EventArgs e)
-        {//change checkbox
-            if (checkApto.Checked == true)
-            {
-                mtbApto.Enabled = true;
-                mtbApto.Clear();
-            }
-            else
-            {
-                mtbApto.Enabled = false;
-                mtbApto.Clear();
             }
         }
 
@@ -405,11 +463,7 @@ namespace projetofinal
             selecionado = "cpf";
         }
 
-
-
-
         #endregion
 
-        
     }
 }

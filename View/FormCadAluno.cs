@@ -35,9 +35,6 @@ namespace projetofinal
             cbEstado.SelectedIndex = 0;
             tbUsuario.Clear();
             tbSenha.Clear();
-
-            checkApto.Checked = false;
-            mtbApto.Enabled = false;
         }
 
         private void btLimpar_Click(object sender, EventArgs e)
@@ -263,20 +260,6 @@ namespace projetofinal
             //}
         }
 
-        private void checkApto_CheckedChanged(object sender, EventArgs e)
-        {//change checkbox
-            if (checkApto.Checked == true)
-            {
-                mtbApto.Enabled = true;
-                mtbApto.Clear();
-            }
-            else
-            {
-                mtbApto.Enabled = false;
-                mtbApto.Clear();
-            }
-        }
-
         #region Retornar
 
         private void FormCadAluno_KeyDown(object sender, KeyEventArgs e)
@@ -293,5 +276,6 @@ namespace projetofinal
         }
 
         #endregion
+
     }
 }
