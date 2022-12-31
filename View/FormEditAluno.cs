@@ -17,7 +17,6 @@ namespace projetofinal
         Verificacao verificacao = new Verificacao();
         AlunoDAO alunoDAO = new AlunoDAO();
         int id = 0;
-        string selecionado = "";
 
         public FormEditAluno()
         {
@@ -119,31 +118,68 @@ namespace projetofinal
             tbSenha.Enabled = true;
         }
 
+        private void lbLimparBusca_Click(object sender, EventArgs e)
+        {//lbLimparBusca
+            tbBusca.Text = " Busca...";
+            tbBusca.Font = new Font("Segoe UI Light", 12F, FontStyle.Italic);
+            dgalunos.DataSource = alunoDAO.listarAlunos();
+            lbBuscar.Focus();
+        }
+        private void lbTipoFiltro_Click(object sender, EventArgs e)
+        {//lbTipoFIltro
+            lbTipoFiltro.Text = "";
+            cbFiltro.SelectedItem = null;
+        }
+
+        private void cbFiltro_SelectedIndexChanged(object sender, EventArgs e)
+        {//index change cbTipoFiltro
+            if (cbFiltro.SelectedIndex == 0)
+                lbTipoFiltro.Text = "x Nome";
+            if (cbFiltro.SelectedIndex == 1)
+                lbTipoFiltro.Text = "x CPF";
+            if (cbFiltro.SelectedIndex == 2)
+                lbTipoFiltro.Text = "x E-mail";
+            if (cbFiltro.SelectedIndex == 3)
+                lbTipoFiltro.Text = "x Usuário";
+        }
+
         private void lbBuscar_Click(object sender, EventArgs e)
         {//lbBuscar
-            if (tbBusca.Text == "" || tbBusca.Text == " Busca...")
-                MessageBox.Show("Nenhum dado foi digitado!", "Buscar", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            if (cbFiltro.SelectedItem == null)
+                MessageBox.Show("Selecione o filtro!", "Buscar", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             else
             {
-                if (selecionado == "")
-                    MessageBox.Show("Selecione o método de busca!", "Buscar", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                if (tbBusca.Text == "" || tbBusca.Text == " Busca...")
+                    MessageBox.Show("Nenhum dado foi digitado!", "Buscar", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 else
                 {
                     try
                     {
                         SqlConnection conexao = new SqlConnection(conec.ConexaoBD());
                         string sql = "";
-                        if (selecionado == "nome")
+                        if (cbFiltro.SelectedIndex == 0)
                         {
                             sql = @"SELECT idaluno AS ID, nome AS Nome, cpf AS CPF, idade AS Idade, celular AS Celular, email AS 'E-mail',
                                 peso AS 'Peso(kg)', altura AS 'Altura(cm)', rua AS Rua, numero AS 'Num.', apto AS 'Apto.', bairro AS Bairro,
                                 cidade AS Cidade, estado AS Estado, usuario AS Usuário, senha AS Senha FROM aluno WHERE nome LIKE @busca ORDER BY nome";
                         }
-                        if (selecionado == "cpf")
+                        if (cbFiltro.SelectedIndex == 1)
                         {
                             sql = @"SELECT idaluno AS ID, nome AS Nome, cpf AS CPF, idade AS Idade, celular AS Celular, email AS 'E-mail',
                                 peso AS 'Peso(kg)', altura AS 'Altura(cm)', rua AS Rua, numero AS 'Num.', apto AS 'Apto.', bairro AS Bairro,
                                 cidade AS Cidade, estado AS Estado, usuario AS Usuário, senha AS Senha FROM aluno WHERE cpf LIKE @busca ORDER BY nome";
+                        }
+                        if (cbFiltro.SelectedIndex == 2)
+                        {
+                            sql = @"SELECT idaluno AS ID, nome AS Nome, cpf AS CPF, idade AS Idade, celular AS Celular, email AS 'E-mail',
+                                peso AS 'Peso(kg)', altura AS 'Altura(cm)', rua AS Rua, numero AS 'Num.', apto AS 'Apto.', bairro AS Bairro,
+                                cidade AS Cidade, estado AS Estado, usuario AS Usuário, senha AS Senha FROM aluno WHERE email LIKE @busca ORDER BY nome";
+                        }
+                        if (cbFiltro.SelectedIndex == 3)
+                        {
+                            sql = @"SELECT idaluno AS ID, nome AS Nome, cpf AS CPF, idade AS Idade, celular AS Celular, email AS 'E-mail',
+                                peso AS 'Peso(kg)', altura AS 'Altura(cm)', rua AS Rua, numero AS 'Num.', apto AS 'Apto.', bairro AS Bairro,
+                                cidade AS Cidade, estado AS Estado, usuario AS Usuário, senha AS Senha FROM aluno WHERE usuario LIKE @busca ORDER BY nome";
                         }
                         SqlCommand comando = new SqlCommand(sql, conexao);
 
@@ -199,17 +235,6 @@ namespace projetofinal
                 cbEstado.Enabled = false;
                 tbUsuario.Enabled = false;
                 tbSenha.Enabled = false;
-
-                tbBusca.Text = " Busca...";
-                tbBusca.Font = new Font("Segoe UI Light", 12F, FontStyle.Italic);
-
-                selecionado = "";
-                btNome.BackColor = Color.FromArgb(68, 68, 68);
-                btNome.Height = 30;
-                btCpf.BackColor = Color.FromArgb(68, 68, 68);
-                btCpf.Height = 30;
-
-                dgalunos.DataSource = alunoDAO.listarAlunos();
             }
         }
 
@@ -439,28 +464,6 @@ namespace projetofinal
                 tbBusca.Text = " Busca...";
                 tbBusca.Font = new Font("Segoe UI Light", 12F, FontStyle.Italic);
             }
-        }
-
-        #endregion
-
-        #region Tipos de busca
-
-        private void btNome_Click(object sender, EventArgs e)
-        {//btNome
-            btCpf.BackColor = Color.FromArgb(68, 68, 68);
-            btCpf.Height = 30;
-            btNome.BackColor = Color.MediumSeaGreen;
-            btNome.Height = 35;
-            selecionado = "nome";
-        }
-
-        private void btCpf_Click(object sender, EventArgs e)
-        {//btCpf
-            btNome.BackColor = Color.FromArgb(68, 68, 68);
-            btNome.Height = 30;
-            btCpf.BackColor = Color.MediumSeaGreen;
-            btCpf.Height = 35;
-            selecionado = "cpf";
         }
 
         #endregion

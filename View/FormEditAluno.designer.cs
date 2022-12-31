@@ -29,9 +29,9 @@ namespace projetofinal
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormEditAluno));
             this.dgalunos = new System.Windows.Forms.DataGridView();
             this.tbBusca = new System.Windows.Forms.TextBox();
@@ -80,8 +80,10 @@ namespace projetofinal
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.lbSair = new System.Windows.Forms.Label();
             this.lbBuscar = new System.Windows.Forms.Label();
-            this.btCpf = new System.Windows.Forms.Button();
-            this.btNome = new System.Windows.Forms.Button();
+            this.lbLimparBusca = new System.Windows.Forms.Label();
+            this.cbFiltro = new System.Windows.Forms.ComboBox();
+            this.lbFiltro = new System.Windows.Forms.Label();
+            this.lbTipoFiltro = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgalunos)).BeginInit();
             this.tcDados.SuspendLayout();
             this.tpDadosPessoais.SuspendLayout();
@@ -100,36 +102,36 @@ namespace projetofinal
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgalunos.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.dgalunos.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.MediumSeaGreen;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgalunos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.MediumSeaGreen;
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgalunos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
             this.dgalunos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9F);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.MediumSeaGreen;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgalunos.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Segoe UI", 9F);
+            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.MediumSeaGreen;
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgalunos.DefaultCellStyle = dataGridViewCellStyle11;
             this.dgalunos.Location = new System.Drawing.Point(39, 177);
             this.dgalunos.Margin = new System.Windows.Forms.Padding(2);
             this.dgalunos.MultiSelect = false;
             this.dgalunos.Name = "dgalunos";
             this.dgalunos.ReadOnly = true;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 9F);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.MediumSeaGreen;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgalunos.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle12.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Segoe UI", 9F);
+            dataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.MediumSeaGreen;
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgalunos.RowHeadersDefaultCellStyle = dataGridViewCellStyle12;
             this.dgalunos.RowHeadersVisible = false;
             this.dgalunos.RowHeadersWidth = 51;
             this.dgalunos.RowTemplate.Height = 29;
@@ -147,11 +149,11 @@ namespace projetofinal
             this.tbBusca.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tbBusca.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.tbBusca.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
-            this.tbBusca.Location = new System.Drawing.Point(169, 134);
+            this.tbBusca.Location = new System.Drawing.Point(86, 134);
             this.tbBusca.Margin = new System.Windows.Forms.Padding(2);
             this.tbBusca.MaxLength = 100;
             this.tbBusca.Name = "tbBusca";
-            this.tbBusca.Size = new System.Drawing.Size(388, 29);
+            this.tbBusca.Size = new System.Drawing.Size(471, 29);
             this.tbBusca.TabIndex = 3;
             this.tbBusca.Enter += new System.EventHandler(this.tbBusca_Enter);
             this.tbBusca.Leave += new System.EventHandler(this.tbBusca_Leave);
@@ -834,47 +836,74 @@ namespace projetofinal
             this.lbBuscar.TabIndex = 144;
             this.lbBuscar.Click += new System.EventHandler(this.lbBuscar_Click);
             // 
-            // btCpf
+            // lbLimparBusca
             // 
-            this.btCpf.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btCpf.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
-            this.btCpf.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btCpf.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btCpf.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
-            this.btCpf.ForeColor = System.Drawing.Color.White;
-            this.btCpf.Location = new System.Drawing.Point(99, 133);
-            this.btCpf.Margin = new System.Windows.Forms.Padding(2);
-            this.btCpf.Name = "btCpf";
-            this.btCpf.Size = new System.Drawing.Size(60, 30);
-            this.btCpf.TabIndex = 2;
-            this.btCpf.Text = "&CPF";
-            this.btCpf.UseVisualStyleBackColor = false;
-            this.btCpf.Click += new System.EventHandler(this.btCpf_Click);
+            this.lbLimparBusca.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbLimparBusca.BackColor = System.Drawing.SystemColors.Window;
+            this.lbLimparBusca.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lbLimparBusca.Image = ((System.Drawing.Image)(resources.GetObject("lbLimparBusca.Image")));
+            this.lbLimparBusca.Location = new System.Drawing.Point(532, 138);
+            this.lbLimparBusca.Name = "lbLimparBusca";
+            this.lbLimparBusca.Size = new System.Drawing.Size(20, 20);
+            this.lbLimparBusca.TabIndex = 145;
+            this.lbLimparBusca.Click += new System.EventHandler(this.lbLimparBusca_Click);
             // 
-            // btNome
+            // cbFiltro
             // 
-            this.btNome.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btNome.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
-            this.btNome.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btNome.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btNome.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
-            this.btNome.ForeColor = System.Drawing.Color.White;
-            this.btNome.Location = new System.Drawing.Point(39, 133);
-            this.btNome.Margin = new System.Windows.Forms.Padding(2);
-            this.btNome.Name = "btNome";
-            this.btNome.Size = new System.Drawing.Size(60, 30);
-            this.btNome.TabIndex = 1;
-            this.btNome.Text = "&Nome";
-            this.btNome.UseVisualStyleBackColor = false;
-            this.btNome.Click += new System.EventHandler(this.btNome_Click);
+            this.cbFiltro.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.cbFiltro.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.cbFiltro.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbFiltro.DropDownWidth = 100;
+            this.cbFiltro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cbFiltro.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.cbFiltro.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
+            this.cbFiltro.FormattingEnabled = true;
+            this.cbFiltro.IntegralHeight = false;
+            this.cbFiltro.Items.AddRange(new object[] {
+            "Nome",
+            "CPF",
+            "E-mail",
+            "Usuário"});
+            this.cbFiltro.Location = new System.Drawing.Point(39, 134);
+            this.cbFiltro.Margin = new System.Windows.Forms.Padding(2);
+            this.cbFiltro.Name = "cbFiltro";
+            this.cbFiltro.Size = new System.Drawing.Size(43, 29);
+            this.cbFiltro.TabIndex = 98;
+            this.cbFiltro.SelectedIndexChanged += new System.EventHandler(this.cbFiltro_SelectedIndexChanged);
+            // 
+            // lbFiltro
+            // 
+            this.lbFiltro.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbFiltro.BackColor = System.Drawing.SystemColors.Window;
+            this.lbFiltro.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lbFiltro.Image = ((System.Drawing.Image)(resources.GetObject("lbFiltro.Image")));
+            this.lbFiltro.Location = new System.Drawing.Point(39, 136);
+            this.lbFiltro.Name = "lbFiltro";
+            this.lbFiltro.Size = new System.Drawing.Size(25, 25);
+            this.lbFiltro.TabIndex = 146;
+            // 
+            // lbTipoFiltro
+            // 
+            this.lbTipoFiltro.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lbTipoFiltro.AutoSize = true;
+            this.lbTipoFiltro.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lbTipoFiltro.Font = new System.Drawing.Font("Segoe UI Semibold", 8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
+            this.lbTipoFiltro.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
+            this.lbTipoFiltro.Location = new System.Drawing.Point(89, 119);
+            this.lbTipoFiltro.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbTipoFiltro.Name = "lbTipoFiltro";
+            this.lbTipoFiltro.Size = new System.Drawing.Size(10, 13);
+            this.lbTipoFiltro.TabIndex = 11;
+            this.lbTipoFiltro.Text = " ";
+            this.lbTipoFiltro.Click += new System.EventHandler(this.lbTipoFiltro_Click);
             // 
             // FormEditAluno
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1241, 619);
-            this.Controls.Add(this.btNome);
-            this.Controls.Add(this.btCpf);
+            this.Controls.Add(this.lbTipoFiltro);
+            this.Controls.Add(this.lbLimparBusca);
             this.Controls.Add(this.lbBuscar);
             this.Controls.Add(this.lbSair);
             this.Controls.Add(this.pictureBox2);
@@ -886,6 +915,8 @@ namespace projetofinal
             this.Controls.Add(this.tbBusca);
             this.Controls.Add(this.btLimpar);
             this.Controls.Add(this.dgalunos);
+            this.Controls.Add(this.lbFiltro);
+            this.Controls.Add(this.cbFiltro);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.KeyPreview = true;
             this.Margin = new System.Windows.Forms.Padding(2);
@@ -961,7 +992,9 @@ namespace projetofinal
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label lbSair;
         private System.Windows.Forms.Label lbBuscar;
-        private System.Windows.Forms.Button btCpf;
-        private System.Windows.Forms.Button btNome;
+        private System.Windows.Forms.Label lbLimparBusca;
+        private System.Windows.Forms.ComboBox cbFiltro;
+        private System.Windows.Forms.Label lbFiltro;
+        private System.Windows.Forms.Label lbTipoFiltro;
     }
 }

@@ -566,6 +566,22 @@
         AAAAAElFTkSuQmCC
 </value>
   </data>
+  <data name="lbLimparBusca.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAYAAABWdVznAAAABGdBTUEAALGPC/xhBQAAAHpJREFUKFNj
+        cHZ2TnNxcSlgIABcXV0NgOrqGUCKgfg/Pk1Qxe+B+ABYAJ8mmGKgSy44ODgIQIWxa8KpGAaQNRFUDANI
+        mr4RVAwCUJO/gTQBNVRChbEDZGeAFENtwh562NwMUoxVEz4PYmgiJjRQNAGJBnyKYQCiyeUNALWhYehO
+        gpRGAAAAAElFTkSuQmCC
+</value>
+  </data>
+  <data name="lbFiltro.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAYAAABWdVznAAAABGdBTUEAALGPC/xhBQAAAIZJREFUKFNj
+        cHFxcQDiemKwq6trPoOzs3MAkPMfiD8A8QEc+AEQg9QcYAABoM4EkACIBgsgAaCYAVDuPdDgCw4ODgJQ
+        YeyacCqGAWRNHh4eCngVwwBQwQSgQpC7G4D4AV7FIABVCNMA8SQ+MDg1FAAxKJLeE6UBBIAKQckFZMsG
+        qBAUMDAAAE+wZdB7OhFOAAAAAElFTkSuQmCC
+</value>
+  </data>
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>79</value>
   </metadata>
