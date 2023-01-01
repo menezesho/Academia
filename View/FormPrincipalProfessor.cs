@@ -10,16 +10,16 @@ using System.Windows.Forms;
 
 namespace projetofinal
 {
-    public partial class FormPrincipal : Form
+    public partial class FormPrincipalProfessor : Form
     {
         public string usuarioAtual = "";
 
-        public FormPrincipal()
+        public FormPrincipalProfessor()
         {
             InitializeComponent();
         }
 
-        public FormPrincipal(string usuario)
+        public FormPrincipalProfessor(string usuario)
         {
             InitializeComponent();
             usuarioAtual = usuario;

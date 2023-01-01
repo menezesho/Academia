@@ -29,6 +29,7 @@ namespace projetofinal
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormCadAluno));
             this.mtbCpf = new System.Windows.Forms.MaskedTextBox();
             this.tbNome = new System.Windows.Forms.TextBox();
@@ -72,12 +73,14 @@ namespace projetofinal
             this.lbUsuario = new System.Windows.Forms.Label();
             this.tbUsuario = new System.Windows.Forms.TextBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.epValida = new System.Windows.Forms.ErrorProvider(this.components);
             this.tcDados.SuspendLayout();
             this.tpDadosPessoais.SuspendLayout();
             this.tpEndereco.SuspendLayout();
             this.tpInfoAdicionais.SuspendLayout();
             this.tpLogin.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.epValida)).BeginInit();
             this.SuspendLayout();
             // 
             // mtbCpf
@@ -712,6 +715,11 @@ namespace projetofinal
             this.pictureBox2.TabIndex = 141;
             this.pictureBox2.TabStop = false;
             // 
+            // epValida
+            // 
+            this.epValida.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
+            this.epValida.ContainerControl = this;
+            // 
             // FormCadAluno
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -743,6 +751,7 @@ namespace projetofinal
             this.tpLogin.ResumeLayout(false);
             this.tpLogin.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.epValida)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -790,6 +799,7 @@ namespace projetofinal
         private System.Windows.Forms.MaskedTextBox mtbNumero;
         private System.Windows.Forms.MaskedTextBox mtbAltura;
         private System.Windows.Forms.MaskedTextBox mtbPeso;
+        public System.Windows.Forms.ErrorProvider epValida;
     }
 }
 

@@ -58,7 +58,7 @@ namespace projetofinal
                     if (dados.Read())
                     {
                         MessageBox.Show("Login autenticado com sucesso!", "Login", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        FormPrincipal Fp = new FormPrincipal(tbUsuario.Text);
+                        FormPrincipalProfessor Fpp = new FormPrincipalProfessor(tbUsuario.Text);
                         tbUsuario.Clear();
                         tbSenha.Clear();
                         conexao.Close();
@@ -66,14 +66,14 @@ namespace projetofinal
 
                         if(selecionado == "aluno")
                         {
-                            Fp.btCadAula.Visible = false;
-                            Fp.btCadAluno.Visible = false;
-                            Fp.btCadProf.Visible = false;
-                            Fp.btEditAula.Visible = false;
-                            Fp.btEditAluno.Visible = false;
-                            Fp.btEditProf.Visible = false;
-                            Fp.btInscrever.Visible = false;
-                            Fp.btEditParticipantes.Visible = false;
+                            Fpp.btCadAula.Visible = false;
+                            Fpp.btCadAluno.Visible = false;
+                            Fpp.btCadProf.Visible = false;
+                            Fpp.btEditAula.Visible = false;
+                            Fpp.btEditAluno.Visible = false;
+                            Fpp.btEditProf.Visible = false;
+                            Fpp.btInscrever.Visible = false;
+                            Fpp.btEditParticipantes.Visible = false;
 
                         }
                         else
@@ -86,7 +86,7 @@ namespace projetofinal
                         tbSenha.Text = " Senha";
                         tbSenha.Font = new Font("Segoe UI Light", 14F, FontStyle.Italic);
                         tbSenha.UseSystemPasswordChar = false;
-                        Fp.Show();
+                        Fpp.Show();
                     }
                     else
                     {

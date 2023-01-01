@@ -44,7 +44,7 @@ namespace projetofinal
                 SqlDataReader dados = comando.ExecuteReader();
                 if (dados.Read())
                 {
-                    FormPrincipal Fp = new FormPrincipal();
+                    FormPrincipalProfessor Fp = new FormPrincipalProfessor();
                     cbNome.Text = "";
                     tbSenha.Clear();
                     Fp.Show();

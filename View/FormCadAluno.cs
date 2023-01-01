@@ -70,10 +70,13 @@ namespace projetofinal
                 var celularVerificado = Verificacao.verificarCelular(mtbCelular.Text);
                 if (cpfVerificado)
                 {
+                    epValida.Clear();
                     if (celularVerificado)
                     {
+                        epValida.Clear();
                         if (emailVerificado)
                         {
+                            epValida.Clear();
                             try
                             {
                                 SqlConnection conexao = new SqlConnection(conec.ConexaoBD());
@@ -136,7 +139,8 @@ namespace projetofinal
                                     comandoInsert.ExecuteNonQuery();
                                     conexao2.Close();
                                     MessageBox.Show("Cadastro efetuado com sucesso!", "Cadastrar", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                                    tpDadosPessoais.Focus();
+                                    tcDados.SelectedTab = tpDadosPessoais;
+                                    epValida.Clear();
                                 }
                             }
                             catch (Exception erro)
@@ -147,22 +151,25 @@ namespace projetofinal
                         else
                         {
                             MessageBox.Show("E-mail inválido, tente novamente!", "Cadastrar", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                            tpDadosPessoais.Focus();
+                            tcDados.SelectedTab = tpDadosPessoais;
                             tbEmail.Focus();
+                            epValida.SetError(tbEmail, "O campo deve conter um e-mail válido!");
                         }
                     }
                     else
                     {
                         MessageBox.Show("Insira o número de celular corretamente!", "Cadastrar", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                        tpDadosPessoais.Focus();
+                        tcDados.SelectedTab = tpDadosPessoais;
                         mtbCelular.Focus();
+                        epValida.SetError(mtbCelular, "O campo deve ser preenchido por completo!");
                     }
                 }
                 else
                 {
                     MessageBox.Show("Insira o CPF corretamente!", "Cadastrar", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    tpDadosPessoais.Focus();
+                    tcDados.SelectedTab = tpDadosPessoais;
                     mtbCpf.Focus();
+                    epValida.SetError(mtbCpf, "O campo deve ser preenchido por completo!");
                 }
             }
 

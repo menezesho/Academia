@@ -27,7 +27,7 @@ namespace academia.DAO
                 SqlDataReader dados = comando.ExecuteReader();
                 if (dados.Read())
                 {
-                    FormPrincipal Fp = new FormPrincipal();
+                    FormPrincipalProfessor Fp = new FormPrincipalProfessor();
                     MessageBox.Show("Login realizado com sucesso!", "Login", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     Fp.ShowDialog();
                     conexao.Close();

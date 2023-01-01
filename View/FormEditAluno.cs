@@ -44,7 +44,6 @@ namespace projetofinal
             dgalunos.Columns["Usuário"].Width = 100;
             dgalunos.Columns["Senha"].Visible = false;
 
-
             id = 0;
             tbNome.Clear();
             mtbCpf.Clear();
@@ -116,6 +115,8 @@ namespace projetofinal
             cbEstado.Enabled = true;
             tbUsuario.Enabled = true;
             tbSenha.Enabled = true;
+
+            tcDados.SelectedTab = tpDadosPessoais;
         }
 
         private void lbLimparBusca_Click(object sender, EventArgs e)
@@ -126,7 +127,7 @@ namespace projetofinal
             lbBuscar.Focus();
         }
         private void lbTipoFiltro_Click(object sender, EventArgs e)
-        {//lbTipoFIltro
+        {//lbTipoFiltro
             lbTipoFiltro.Text = "";
             cbFiltro.SelectedItem = null;
         }
@@ -235,12 +236,16 @@ namespace projetofinal
                 cbEstado.Enabled = false;
                 tbUsuario.Enabled = false;
                 tbSenha.Enabled = false;
+
+                tcDados.SelectedTab = tpDadosPessoais;
             }
         }
 
         private void btExcluir_Click(object sender, EventArgs e)
         {//btExcluir
-            if (id != 0)
+            if (id == 0)
+                MessageBox.Show("Nenhum cadastro foi selecionado, tente novamente!", "Excluir", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            else
             {
                 if (MessageBox.Show("Deseja mesmo excluir este cadastro?", "Excluir", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
                 {
@@ -292,6 +297,8 @@ namespace projetofinal
                         cbEstado.Enabled = false;
                         tbUsuario.Enabled = false;
                         tbSenha.Enabled = false;
+
+                        tcDados.SelectedTab = tpDadosPessoais;
                     }
                     catch (Exception erro)
                     {
@@ -299,8 +306,6 @@ namespace projetofinal
                     }
                 }
             }
-            else
-                MessageBox.Show("Nenhum cadastro foi selecionado, tente novamente!", "Excluir", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
 
         private void btSalvar_Click(object sender, EventArgs e)
@@ -399,6 +404,8 @@ namespace projetofinal
                                     cbEstado.Enabled = false;
                                     tbUsuario.Enabled = false;
                                     tbSenha.Enabled = false;
+
+                                    tcDados.SelectedTab = tpDadosPessoais;
                                 }
                                 catch (Exception erro)
                                 {

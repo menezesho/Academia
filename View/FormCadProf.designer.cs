@@ -29,6 +29,7 @@ namespace projetofinal
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormCadProf));
             this.tcDados = new System.Windows.Forms.TabControl();
             this.tpDadosPessoais = new System.Windows.Forms.TabPage();
@@ -66,11 +67,13 @@ namespace projetofinal
             this.lbNovoProfessor = new System.Windows.Forms.Label();
             this.btLimpar = new System.Windows.Forms.Button();
             this.btCadastrar = new System.Windows.Forms.Button();
+            this.epValida = new System.Windows.Forms.ErrorProvider(this.components);
             this.tcDados.SuspendLayout();
             this.tpDadosPessoais.SuspendLayout();
             this.tpEndereco.SuspendLayout();
             this.tpLogin.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.epValida)).BeginInit();
             this.SuspendLayout();
             // 
             // tcDados
@@ -615,6 +618,10 @@ namespace projetofinal
             this.btCadastrar.UseVisualStyleBackColor = false;
             this.btCadastrar.Click += new System.EventHandler(this.btCadastrar_Click);
             // 
+            // epValida
+            // 
+            this.epValida.ContainerControl = this;
+            // 
             // FormCadProf
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -644,6 +651,7 @@ namespace projetofinal
             this.tpLogin.ResumeLayout(false);
             this.tpLogin.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.epValida)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -686,5 +694,6 @@ namespace projetofinal
         private System.Windows.Forms.Label lbNovoProfessor;
         private System.Windows.Forms.Button btLimpar;
         private System.Windows.Forms.Button btCadastrar;
+        private System.Windows.Forms.ErrorProvider epValida;
     }
 }

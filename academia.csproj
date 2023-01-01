@@ -126,11 +126,11 @@
     <Compile Include="View\FormLoginGeral.designer.cs">
       <DependentUpon>FormLoginGeral.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\FormPrincipal.cs">
+    <Compile Include="View\FormPrincipalProfessor.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\FormPrincipal.designer.cs">
-      <DependentUpon>FormPrincipal.cs</DependentUpon>
+    <Compile Include="View\FormPrincipalProfessor.designer.cs">
+      <DependentUpon>FormPrincipalProfessor.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -174,8 +174,8 @@
     <EmbeddedResource Include="View\FormLoginGeral.resx">
       <DependentUpon>FormLoginGeral.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\FormPrincipal.resx">
-      <DependentUpon>FormPrincipal.cs</DependentUpon>
+    <EmbeddedResource Include="View\FormPrincipalProfessor.resx">
+      <DependentUpon>FormPrincipalProfessor.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="BD_ACADEMIADataSet.xsc">
       <DependentUpon>BD_ACADEMIADataSet.xsd</DependentUpon>
