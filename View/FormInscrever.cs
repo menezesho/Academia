@@ -46,7 +46,57 @@ namespace academia
 
         private void btInscrever_Click(object sender, EventArgs e)
         {//btInscrever
+            if(mtbData.Text == "" || tbHora.Text == "" || tbProfessor.Text == "")
+                MessageBox.Show("Selecione a aula que deseja se inscrever!", "Inscrever", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            else
+            {
+                try
+                {
+                    SqlConnection conexao = new SqlConnection(conec.ConexaoBD());
+                    string sqlSelect = @"SELECT * FROM aula WHERE dia=@data AND hora=@hora";
+                    SqlCommand comandoSelect = new SqlCommand(sqlSelect, conexao);
 
+                    comandoSelect.Parameters.AddWithValue("@data", Convert.ToDateTime(dtpData.Text));
+                    comandoSelect.Parameters.AddWithValue("@hora", cbHora.Text);
+
+                    conexao.Open();
+                    SqlDataReader dados = comandoSelect.ExecuteReader();
+                    if (dados.Read())
+                    {
+                        MessageBox.Show("Conflito de data e hora, tente novamente!", "Cadastrar", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        conexao.Close();
+                    }
+                    else
+                    {
+                        conexao.Close();
+                        SqlConnection conexao2 = new SqlConnection(conec.ConexaoBD());
+                        string sqlInsert = "";
+                        sqlInsert = "INSERT INTO aula (nome, dia, hora, id_professor";
+                        SqlCommand comandoInsert = new SqlCommand(sqlInsert, conexao2);
+
+                        if (mtbTotal.Text != "")
+                            sqlInsert = sqlInsert + ", total) VALUES(@nome, @data, @hora, @idprofessor, @total)";
+                        else
+                            sqlInsert = sqlInsert + ") VALUES(@nome, @data, @hora, @idprofessor)";
+
+                        comandoInsert.Parameters.AddWithValue("@nome", tbNome.Text);
+                        comandoInsert.Parameters.AddWithValue("@data", Convert.ToDateTime(dtpData.Text));
+                        comandoInsert.Parameters.AddWithValue("@hora", cbHora.Text);
+                        comandoInsert.Parameters.AddWithValue("@idprofessor", id);
+                        comandoInsert.Parameters.AddWithValue("@total", mtbTotal.Text);
+
+                        conexao2.Open();
+                        comandoInsert.CommandText = sqlInsert;
+                        comandoInsert.ExecuteNonQuery();
+                        conexao2.Close();
+                        MessageBox.Show("Cadastro efetuado com sucesso!", "Cadastrar", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                }
+                catch (Exception erro)
+                {
+                    MessageBox.Show(erro.Message, "Erro na conexão, tente novamente!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
         }
 
         private void cbAula_SelectedIndexChanged(object sender, EventArgs e)
@@ -61,7 +111,8 @@ namespace academia
                         WHERE idaula=@idaula";
                     SqlCommand comando = new SqlCommand(sql, conexao);
 
-                    comando.Parameters.AddWithValue("@idaula", int.Parse(cbAula.SelectedValue.ToString()));
+                    int idAula = int.Parse(cbAula.SelectedValue.ToString());
+                    comando.Parameters.AddWithValue("@idaula", idAula);
 
                     conexao.Open();
                     comando.CommandText = sql;
