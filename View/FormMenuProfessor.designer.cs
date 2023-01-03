@@ -109,7 +109,7 @@ namespace projetofinal
             this.btVerParticipantes.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btVerParticipantes.Name = "btVerParticipantes";
             this.btVerParticipantes.Size = new System.Drawing.Size(250, 75);
-            this.btVerParticipantes.TabIndex = 7;
+            this.btVerParticipantes.TabIndex = 2;
             this.btVerParticipantes.Text = "&VER PARTICIPANTES";
             this.btVerParticipantes.UseVisualStyleBackColor = false;
             this.btVerParticipantes.Click += new System.EventHandler(this.btVerParticipantes_Click);
@@ -126,7 +126,7 @@ namespace projetofinal
             this.btAjustes.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btAjustes.Name = "btAjustes";
             this.btAjustes.Size = new System.Drawing.Size(104, 35);
-            this.btAjustes.TabIndex = 46;
+            this.btAjustes.TabIndex = 3;
             this.btAjustes.Text = "&AJUSTES";
             this.btAjustes.UseVisualStyleBackColor = false;
             this.btAjustes.Click += new System.EventHandler(this.btAjustes_Click);

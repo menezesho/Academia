@@ -63,7 +63,7 @@
             this.btEditarAluno.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btEditarAluno.Name = "btEditarAluno";
             this.btEditarAluno.Size = new System.Drawing.Size(250, 75);
-            this.btEditarAluno.TabIndex = 48;
+            this.btEditarAluno.TabIndex = 1;
             this.btEditarAluno.Text = "EDITAR ALUNO";
             this.btEditarAluno.UseVisualStyleBackColor = false;
             this.btEditarAluno.Click += new System.EventHandler(this.btEditarAluno_Click);
@@ -80,7 +80,7 @@
             this.btNovoAluno.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btNovoAluno.Name = "btNovoAluno";
             this.btNovoAluno.Size = new System.Drawing.Size(250, 75);
-            this.btNovoAluno.TabIndex = 47;
+            this.btNovoAluno.TabIndex = 0;
             this.btNovoAluno.Text = "NOVO &ALUNO";
             this.btNovoAluno.UseVisualStyleBackColor = false;
             this.btNovoAluno.Click += new System.EventHandler(this.btNovoAluno_Click);
@@ -97,7 +97,7 @@
             this.btEditarProfessor.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btEditarProfessor.Name = "btEditarProfessor";
             this.btEditarProfessor.Size = new System.Drawing.Size(250, 75);
-            this.btEditarProfessor.TabIndex = 52;
+            this.btEditarProfessor.TabIndex = 3;
             this.btEditarProfessor.Text = "EDITAR PROFESSOR";
             this.btEditarProfessor.UseVisualStyleBackColor = false;
             this.btEditarProfessor.Click += new System.EventHandler(this.btEditarProfessor_Click);
@@ -114,7 +114,7 @@
             this.btNovoProfessor.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btNovoProfessor.Name = "btNovoProfessor";
             this.btNovoProfessor.Size = new System.Drawing.Size(250, 75);
-            this.btNovoProfessor.TabIndex = 51;
+            this.btNovoProfessor.TabIndex = 2;
             this.btNovoProfessor.Text = "NOVO &PROFESSOR";
             this.btNovoProfessor.UseVisualStyleBackColor = false;
             this.btNovoProfessor.Click += new System.EventHandler(this.btNovoProfessor_Click);

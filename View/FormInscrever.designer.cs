@@ -57,7 +57,7 @@
             this.tbProfessor.MaxLength = 100;
             this.tbProfessor.Name = "tbProfessor";
             this.tbProfessor.Size = new System.Drawing.Size(351, 29);
-            this.tbProfessor.TabIndex = 166;
+            this.tbProfessor.TabIndex = 1;
             this.tbProfessor.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // lbProfessor
@@ -122,7 +122,7 @@
             this.tbHora.MaxLength = 100;
             this.tbHora.Name = "tbHora";
             this.tbHora.Size = new System.Drawing.Size(94, 29);
-            this.tbHora.TabIndex = 159;
+            this.tbHora.TabIndex = 3;
             this.tbHora.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // mtbData
@@ -138,7 +138,7 @@
             this.mtbData.Mask = "00/00/0000";
             this.mtbData.Name = "mtbData";
             this.mtbData.Size = new System.Drawing.Size(126, 29);
-            this.mtbData.TabIndex = 158;
+            this.mtbData.TabIndex = 2;
             this.mtbData.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.mtbData.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
             // 
@@ -180,7 +180,7 @@
             this.btInscrever.Margin = new System.Windows.Forms.Padding(2);
             this.btInscrever.Name = "btInscrever";
             this.btInscrever.Size = new System.Drawing.Size(351, 40);
-            this.btInscrever.TabIndex = 156;
+            this.btInscrever.TabIndex = 4;
             this.btInscrever.Text = "&Inscrever";
             this.btInscrever.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btInscrever.UseVisualStyleBackColor = false;
@@ -216,7 +216,7 @@
             this.cbAula.Margin = new System.Windows.Forms.Padding(2);
             this.cbAula.Name = "cbAula";
             this.cbAula.Size = new System.Drawing.Size(351, 29);
-            this.cbAula.TabIndex = 157;
+            this.cbAula.TabIndex = 0;
             this.cbAula.ValueMember = "IDAULA";
             this.cbAula.SelectedIndexChanged += new System.EventHandler(this.cbAula_SelectedIndexChanged);
             this.cbAula.Click += new System.EventHandler(this.cbAula_Click);

@@ -154,7 +154,7 @@ namespace projetofinal
             this.tbBusca.MaxLength = 100;
             this.tbBusca.Name = "tbBusca";
             this.tbBusca.Size = new System.Drawing.Size(471, 29);
-            this.tbBusca.TabIndex = 3;
+            this.tbBusca.TabIndex = 1;
             this.tbBusca.Enter += new System.EventHandler(this.tbBusca_Enter);
             this.tbBusca.Leave += new System.EventHandler(this.tbBusca_Leave);
             // 
@@ -171,7 +171,7 @@ namespace projetofinal
             this.btRelatorio.Margin = new System.Windows.Forms.Padding(2);
             this.btRelatorio.Name = "btRelatorio";
             this.btRelatorio.Size = new System.Drawing.Size(60, 69);
-            this.btRelatorio.TabIndex = 22;
+            this.btRelatorio.TabIndex = 18;
             this.btRelatorio.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btRelatorio.UseVisualStyleBackColor = false;
             // 
@@ -188,7 +188,7 @@ namespace projetofinal
             this.btLimpar.Margin = new System.Windows.Forms.Padding(2);
             this.btLimpar.Name = "btLimpar";
             this.btLimpar.Size = new System.Drawing.Size(60, 69);
-            this.btLimpar.TabIndex = 23;
+            this.btLimpar.TabIndex = 19;
             this.btLimpar.UseVisualStyleBackColor = false;
             this.btLimpar.Click += new System.EventHandler(this.btLimpar_Click);
             // 
@@ -205,7 +205,7 @@ namespace projetofinal
             this.btExcluir.Margin = new System.Windows.Forms.Padding(2);
             this.btExcluir.Name = "btExcluir";
             this.btExcluir.Size = new System.Drawing.Size(60, 69);
-            this.btExcluir.TabIndex = 24;
+            this.btExcluir.TabIndex = 20;
             this.btExcluir.UseVisualStyleBackColor = false;
             this.btExcluir.Click += new System.EventHandler(this.btExcluir_Click);
             // 
@@ -222,7 +222,7 @@ namespace projetofinal
             this.btSalvar.Margin = new System.Windows.Forms.Padding(2);
             this.btSalvar.Name = "btSalvar";
             this.btSalvar.Size = new System.Drawing.Size(60, 69);
-            this.btSalvar.TabIndex = 0;
+            this.btSalvar.TabIndex = 21;
             this.btSalvar.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btSalvar.UseVisualStyleBackColor = false;
             this.btSalvar.Click += new System.EventHandler(this.btSalvar_Click);
@@ -239,7 +239,7 @@ namespace projetofinal
             this.tcDados.Name = "tcDados";
             this.tcDados.SelectedIndex = 0;
             this.tcDados.Size = new System.Drawing.Size(519, 356);
-            this.tcDados.TabIndex = 5;
+            this.tcDados.TabIndex = 2;
             // 
             // tpDadosPessoais
             // 
@@ -274,7 +274,7 @@ namespace projetofinal
             this.mtbIdade.Mask = "000";
             this.mtbIdade.Name = "mtbIdade";
             this.mtbIdade.Size = new System.Drawing.Size(63, 29);
-            this.mtbIdade.TabIndex = 9;
+            this.mtbIdade.TabIndex = 6;
             this.mtbIdade.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.mtbIdade.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
             this.mtbIdade.ValidatingType = typeof(System.DateTime);
@@ -290,7 +290,7 @@ namespace projetofinal
             this.mtbCelular.Mask = "(00) 00000-0000";
             this.mtbCelular.Name = "mtbCelular";
             this.mtbCelular.Size = new System.Drawing.Size(143, 29);
-            this.mtbCelular.TabIndex = 8;
+            this.mtbCelular.TabIndex = 5;
             this.mtbCelular.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.mtbCelular.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
             // 
@@ -344,7 +344,7 @@ namespace projetofinal
             this.tbNome.MaxLength = 100;
             this.tbNome.Name = "tbNome";
             this.tbNome.Size = new System.Drawing.Size(390, 29);
-            this.tbNome.TabIndex = 6;
+            this.tbNome.TabIndex = 3;
             // 
             // lbcelular
             // 
@@ -383,7 +383,7 @@ namespace projetofinal
             this.tbEmail.MaxLength = 100;
             this.tbEmail.Name = "tbEmail";
             this.tbEmail.Size = new System.Drawing.Size(390, 29);
-            this.tbEmail.TabIndex = 10;
+            this.tbEmail.TabIndex = 7;
             // 
             // mtbCpf
             // 
@@ -397,7 +397,7 @@ namespace projetofinal
             this.mtbCpf.Mask = "000,000,000-00";
             this.mtbCpf.Name = "mtbCpf";
             this.mtbCpf.Size = new System.Drawing.Size(129, 29);
-            this.mtbCpf.TabIndex = 7;
+            this.mtbCpf.TabIndex = 4;
             this.mtbCpf.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.mtbCpf.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
             // 
@@ -436,7 +436,7 @@ namespace projetofinal
             this.mtbApto.Mask = "00000";
             this.mtbApto.Name = "mtbApto";
             this.mtbApto.Size = new System.Drawing.Size(85, 29);
-            this.mtbApto.TabIndex = 14;
+            this.mtbApto.TabIndex = 10;
             this.mtbApto.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.mtbApto.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
             this.mtbApto.ValidatingType = typeof(System.DateTime);
@@ -453,7 +453,7 @@ namespace projetofinal
             this.mtbNumero.Mask = "00000";
             this.mtbNumero.Name = "mtbNumero";
             this.mtbNumero.Size = new System.Drawing.Size(85, 29);
-            this.mtbNumero.TabIndex = 12;
+            this.mtbNumero.TabIndex = 9;
             this.mtbNumero.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.mtbNumero.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
             this.mtbNumero.ValidatingType = typeof(System.DateTime);
@@ -469,7 +469,7 @@ namespace projetofinal
             this.tbRua.MaxLength = 100;
             this.tbRua.Name = "tbRua";
             this.tbRua.Size = new System.Drawing.Size(393, 29);
-            this.tbRua.TabIndex = 11;
+            this.tbRua.TabIndex = 8;
             // 
             // lbRua
             // 
@@ -508,7 +508,7 @@ namespace projetofinal
             this.tbBairro.MaxLength = 50;
             this.tbBairro.Name = "tbBairro";
             this.tbBairro.Size = new System.Drawing.Size(393, 29);
-            this.tbBairro.TabIndex = 17;
+            this.tbBairro.TabIndex = 13;
             // 
             // lbCidade
             // 
@@ -534,7 +534,7 @@ namespace projetofinal
             this.tbCidade.MaxLength = 50;
             this.tbCidade.Name = "tbCidade";
             this.tbCidade.Size = new System.Drawing.Size(392, 29);
-            this.tbCidade.TabIndex = 16;
+            this.tbCidade.TabIndex = 12;
             // 
             // lbApto
             // 
@@ -617,7 +617,7 @@ namespace projetofinal
             this.cbEstado.Margin = new System.Windows.Forms.Padding(2);
             this.cbEstado.Name = "cbEstado";
             this.cbEstado.Size = new System.Drawing.Size(102, 29);
-            this.cbEstado.TabIndex = 15;
+            this.cbEstado.TabIndex = 11;
             // 
             // tpInfoAdicionais
             // 
@@ -648,7 +648,7 @@ namespace projetofinal
             this.mtbAltura.Mask = "000";
             this.mtbAltura.Name = "mtbAltura";
             this.mtbAltura.Size = new System.Drawing.Size(85, 29);
-            this.mtbAltura.TabIndex = 19;
+            this.mtbAltura.TabIndex = 15;
             this.mtbAltura.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.mtbAltura.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
             this.mtbAltura.ValidatingType = typeof(System.DateTime);
@@ -665,7 +665,7 @@ namespace projetofinal
             this.mtbPeso.Mask = "000";
             this.mtbPeso.Name = "mtbPeso";
             this.mtbPeso.Size = new System.Drawing.Size(85, 29);
-            this.mtbPeso.TabIndex = 18;
+            this.mtbPeso.TabIndex = 14;
             this.mtbPeso.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.mtbPeso.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
             this.mtbPeso.ValidatingType = typeof(System.DateTime);
@@ -760,7 +760,7 @@ namespace projetofinal
             this.tbSenha.MaxLength = 30;
             this.tbSenha.Name = "tbSenha";
             this.tbSenha.Size = new System.Drawing.Size(390, 29);
-            this.tbSenha.TabIndex = 21;
+            this.tbSenha.TabIndex = 17;
             this.tbSenha.UseSystemPasswordChar = true;
             // 
             // lbUsuario
@@ -788,7 +788,7 @@ namespace projetofinal
             this.tbUsuario.MaxLength = 30;
             this.tbUsuario.Name = "tbUsuario";
             this.tbUsuario.Size = new System.Drawing.Size(390, 29);
-            this.tbUsuario.TabIndex = 20;
+            this.tbUsuario.TabIndex = 16;
             // 
             // lbListaAlunos
             // 
@@ -867,7 +867,7 @@ namespace projetofinal
             this.cbFiltro.Margin = new System.Windows.Forms.Padding(2);
             this.cbFiltro.Name = "cbFiltro";
             this.cbFiltro.Size = new System.Drawing.Size(43, 29);
-            this.cbFiltro.TabIndex = 98;
+            this.cbFiltro.TabIndex = 0;
             this.cbFiltro.SelectedIndexChanged += new System.EventHandler(this.cbFiltro_SelectedIndexChanged);
             // 
             // lbFiltro
@@ -894,7 +894,7 @@ namespace projetofinal
             this.lbTipoFiltro.Text = " ";
             this.lbTipoFiltro.Click += new System.EventHandler(this.lbTipoFiltro_Click);
             // 
-            // FormEditAluno
+            // FormEditarAluno
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -918,7 +918,7 @@ namespace projetofinal
             this.KeyPreview = true;
             this.Margin = new System.Windows.Forms.Padding(2);
             this.MinimumSize = new System.Drawing.Size(1257, 658);
-            this.Name = "FormEditAluno";
+            this.Name = "FormEditarAluno";
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Ajustes";

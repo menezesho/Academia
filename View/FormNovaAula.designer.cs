@@ -58,7 +58,7 @@
             this.btLimpar.Margin = new System.Windows.Forms.Padding(2);
             this.btLimpar.Name = "btLimpar";
             this.btLimpar.Size = new System.Drawing.Size(210, 40);
-            this.btLimpar.TabIndex = 3;
+            this.btLimpar.TabIndex = 4;
             this.btLimpar.Text = "&Limpar";
             this.btLimpar.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btLimpar.UseVisualStyleBackColor = false;
@@ -76,7 +76,7 @@
             this.btCadastrar.Margin = new System.Windows.Forms.Padding(2);
             this.btCadastrar.Name = "btCadastrar";
             this.btCadastrar.Size = new System.Drawing.Size(210, 40);
-            this.btCadastrar.TabIndex = 4;
+            this.btCadastrar.TabIndex = 5;
             this.btCadastrar.Text = "&Cadastrar";
             this.btCadastrar.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btCadastrar.UseVisualStyleBackColor = false;
@@ -243,7 +243,7 @@
             this.mtbTotal.Mask = "000";
             this.mtbTotal.Name = "mtbTotal";
             this.mtbTotal.Size = new System.Drawing.Size(86, 29);
-            this.mtbTotal.TabIndex = 143;
+            this.mtbTotal.TabIndex = 3;
             this.mtbTotal.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.mtbTotal.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
             this.mtbTotal.ValidatingType = typeof(System.DateTime);

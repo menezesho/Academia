@@ -93,7 +93,7 @@
             this.tbHora.MaxLength = 100;
             this.tbHora.Name = "tbHora";
             this.tbHora.Size = new System.Drawing.Size(94, 29);
-            this.tbHora.TabIndex = 145;
+            this.tbHora.TabIndex = 3;
             this.tbHora.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // mtbData
@@ -109,7 +109,7 @@
             this.mtbData.Mask = "00/00/0000";
             this.mtbData.Name = "mtbData";
             this.mtbData.Size = new System.Drawing.Size(126, 29);
-            this.mtbData.TabIndex = 144;
+            this.mtbData.TabIndex = 2;
             this.mtbData.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.mtbData.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
             // 
@@ -151,7 +151,7 @@
             this.btCancelar.Margin = new System.Windows.Forms.Padding(2);
             this.btCancelar.Name = "btCancelar";
             this.btCancelar.Size = new System.Drawing.Size(351, 40);
-            this.btCancelar.TabIndex = 142;
+            this.btCancelar.TabIndex = 4;
             this.btCancelar.Text = "&Cancelar";
             this.btCancelar.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btCancelar.UseVisualStyleBackColor = false;
@@ -187,7 +187,7 @@
             this.cbAula.Margin = new System.Windows.Forms.Padding(2);
             this.cbAula.Name = "cbAula";
             this.cbAula.Size = new System.Drawing.Size(351, 29);
-            this.cbAula.TabIndex = 143;
+            this.cbAula.TabIndex = 0;
             this.cbAula.ValueMember = "IDAULA";
             this.cbAula.SelectedIndexChanged += new System.EventHandler(this.cbAula_SelectedIndexChanged);
             this.cbAula.Click += new System.EventHandler(this.cbAula_Click);
@@ -205,7 +205,7 @@
             this.tbProfessor.MaxLength = 100;
             this.tbProfessor.Name = "tbProfessor";
             this.tbProfessor.Size = new System.Drawing.Size(351, 29);
-            this.tbProfessor.TabIndex = 154;
+            this.tbProfessor.TabIndex = 1;
             this.tbProfessor.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // lbProfessor

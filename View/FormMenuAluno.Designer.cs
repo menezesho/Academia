@@ -62,7 +62,7 @@
             this.btRealizarInscrição.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btRealizarInscrição.Name = "btRealizarInscrição";
             this.btRealizarInscrição.Size = new System.Drawing.Size(250, 75);
-            this.btRealizarInscrição.TabIndex = 47;
+            this.btRealizarInscrição.TabIndex = 0;
             this.btRealizarInscrição.Text = "&REALIZAR INSCRIÇÃO";
             this.btRealizarInscrição.UseVisualStyleBackColor = false;
             this.btRealizarInscrição.Click += new System.EventHandler(this.btRealizarInscrição_Click);
@@ -79,7 +79,7 @@
             this.btCancelarInscrição.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btCancelarInscrição.Name = "btCancelarInscrição";
             this.btCancelarInscrição.Size = new System.Drawing.Size(250, 75);
-            this.btCancelarInscrição.TabIndex = 46;
+            this.btCancelarInscrição.TabIndex = 1;
             this.btCancelarInscrição.Text = "&CANCELAR INSCRIÇÃO";
             this.btCancelarInscrição.UseVisualStyleBackColor = false;
             this.btCancelarInscrição.Click += new System.EventHandler(this.btCancelarInscrição_Click);
@@ -96,7 +96,7 @@
             this.btAjustes.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btAjustes.Name = "btAjustes";
             this.btAjustes.Size = new System.Drawing.Size(104, 35);
-            this.btAjustes.TabIndex = 49;
+            this.btAjustes.TabIndex = 2;
             this.btAjustes.Text = "&AJUSTES";
             this.btAjustes.UseVisualStyleBackColor = false;
             // 

@@ -50,7 +50,6 @@ namespace projetofinal
             this.lbRua = new System.Windows.Forms.Label();
             this.lbBairro = new System.Windows.Forms.Label();
             this.tbBairro = new System.Windows.Forms.TextBox();
-            this.checkApto = new System.Windows.Forms.CheckBox();
             this.lbCidade = new System.Windows.Forms.Label();
             this.tbCidade = new System.Windows.Forms.TextBox();
             this.lbApto = new System.Windows.Forms.Label();
@@ -257,7 +256,6 @@ namespace projetofinal
             this.tpEndereco.Controls.Add(this.lbRua);
             this.tpEndereco.Controls.Add(this.lbBairro);
             this.tpEndereco.Controls.Add(this.tbBairro);
-            this.tpEndereco.Controls.Add(this.checkApto);
             this.tpEndereco.Controls.Add(this.lbCidade);
             this.tpEndereco.Controls.Add(this.tbCidade);
             this.tpEndereco.Controls.Add(this.lbApto);
@@ -357,21 +355,6 @@ namespace projetofinal
             this.tbBairro.Name = "tbBairro";
             this.tbBairro.Size = new System.Drawing.Size(393, 29);
             this.tbBairro.TabIndex = 12;
-            // 
-            // checkApto
-            // 
-            this.checkApto.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.checkApto.AutoSize = true;
-            this.checkApto.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.checkApto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.checkApto.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
-            this.checkApto.Location = new System.Drawing.Point(192, 131);
-            this.checkApto.Margin = new System.Windows.Forms.Padding(2);
-            this.checkApto.Name = "checkApto";
-            this.checkApto.Size = new System.Drawing.Size(12, 11);
-            this.checkApto.TabIndex = 8;
-            this.checkApto.UseVisualStyleBackColor = true;
-            this.checkApto.CheckedChanged += new System.EventHandler(this.checkApto_CheckedChanged);
             // 
             // lbCidade
             // 
@@ -622,7 +605,7 @@ namespace projetofinal
             // 
             this.epValida.ContainerControl = this;
             // 
-            // FormCadProf
+            // FormNovoProfessor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -637,7 +620,7 @@ namespace projetofinal
             this.KeyPreview = true;
             this.Margin = new System.Windows.Forms.Padding(2);
             this.MinimumSize = new System.Drawing.Size(674, 740);
-            this.Name = "FormCadProf";
+            this.Name = "FormNovoProfessor";
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Novo Professor";
@@ -677,7 +660,6 @@ namespace projetofinal
         private System.Windows.Forms.Label lbRua;
         private System.Windows.Forms.Label lbBairro;
         private System.Windows.Forms.TextBox tbBairro;
-        private System.Windows.Forms.CheckBox checkApto;
         private System.Windows.Forms.Label lbCidade;
         private System.Windows.Forms.TextBox tbCidade;
         private System.Windows.Forms.Label lbApto;

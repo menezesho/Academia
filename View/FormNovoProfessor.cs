@@ -34,9 +34,6 @@ namespace projetofinal
             tbBairro.Clear();
             tbCidade.Clear();
             cbEstado.SelectedIndex = 0;
-
-            checkApto.Checked = false;
-            mtbApto.Enabled = false;
         }
 
         private void btLimpar_Click(object sender, EventArgs e)
@@ -54,16 +51,13 @@ namespace projetofinal
                 tbBairro.Clear();
                 tbCidade.Clear();
                 cbEstado.SelectedIndex = 0;
+                tbUsuario.Clear();
+                tbSenha.Clear();
             }
         }
 
         private void btCadastrar_Click(object sender, EventArgs e)
         {//btCadastrar
-
-
-
-
-
             if (tbNome.Text == "" || mtbCpf.Text == "" || mtbIdade.Text == "" || mtbCelular.Text == "" || tbEmail.Text == "" || tbRua.Text == "" || mtbNumero.Text == "" || tbBairro.Text == "" || tbCidade.Text == "" || cbEstado.SelectedIndex == 0 || tbUsuario.Text == "" || tbSenha.Text == "")
                 MessageBox.Show("Preencha todos os campos obrigatórios!", "Cadastrar", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             else
@@ -73,10 +67,13 @@ namespace projetofinal
                 var celularVerificado = Verificacao.verificarCelular(mtbCelular.Text);
                 if (cpfVerificado)
                 {
+                    epValida.Clear();
                     if (celularVerificado)
                     {
+                        epValida.Clear();
                         if (emailVerificado)
                         {
+                            epValida.Clear();
                             try
                             {
                                 SqlConnection conexao = new SqlConnection(conec.ConexaoBD());
@@ -163,20 +160,6 @@ namespace projetofinal
                     mtbCpf.Focus();
                     epValida.SetError(mtbCpf, "O campo deve ser preenchido por completo!");
                 }
-            }
-        }
-
-        private void checkApto_CheckedChanged(object sender, EventArgs e)
-        {//change checkbox
-            if (checkApto.Checked == true)
-            {
-                mtbApto.Enabled = true;
-                mtbApto.Clear();
-            }
-            else
-            {
-                mtbApto.Enabled = false;
-                mtbApto.Clear();
             }
         }
 
