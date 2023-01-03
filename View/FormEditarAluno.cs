@@ -11,14 +11,14 @@ using System.Windows.Forms;
 
 namespace projetofinal
 {
-    public partial class FormEditAluno : Form
+    public partial class FormEditarAluno : Form
     {
         Conexao conec = new Conexao();
         Verificacao verificacao = new Verificacao();
         AlunoDAO alunoDAO = new AlunoDAO();
         int id = 0;
 
-        public FormEditAluno()
+        public FormEditarAluno()
         {
             InitializeComponent();
         }

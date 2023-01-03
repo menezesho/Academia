@@ -117,13 +117,17 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <metadata name="aULABindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>193, 17</value>
-  </metadata>
-  <metadata name="bD_ACADEMIADataSet.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="lbSair.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAACEAAAAhCAYAAABX5MJvAAAABGdBTUEAALGPC/xhBQAAAOhJREFUWEft
+        l+0NwiAYhPnhAG4koTCBC7iFQ/jDQRzC0epB3lSgVMqnmvAkl7Z5ucultZiygQ/n/KiUOtUSxaYhpeTQ
+        XEsUmwaMo4QBxt8sQaNdlHgXYBwlDDA2KYH950CncWAsKrEF5Z7p8jO0uFUJnRcvYi1uVSJexFvslBBC
+        XHB9z9E0TQ8c7dwbxa7BMFbCmRUqXASDniVmZF4p/g0Gf3Engs88pmq/iRK83Py3owQr9+v7RJ8dc8vb
+        9b+jxLsA4yhhgHFVAnomyPFSbBowhkpki2LTgHGUMOhvUZh1kSqi2EECjL0AiF7WnDfpt/MAAAAASUVO
+        RK5CYII=
+</value>
+  </data>
   <data name="pictureBox1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAtAAAADICAYAAADBTdZDAAAABGdBTUEAALGPC/xhBQAAABl0RVh0U29m
@@ -484,19 +488,6 @@
         xpg82ReNMcYYY4wxebIvGmOMMcYYY/JkXzTGGGOMMcbkCMX/BwQNwMkIHTXaAAAAAElFTkSuQmCC
 </value>
   </data>
-  <data name="lbSair.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAACEAAAAhCAYAAABX5MJvAAAABGdBTUEAALGPC/xhBQAAAOhJREFUWEft
-        l+0NwiAYhPnhAG4koTCBC7iFQ/jDQRzC0epB3lSgVMqnmvAkl7Z5ucultZiygQ/n/KiUOtUSxaYhpeTQ
-        XEsUmwaMo4QBxt8sQaNdlHgXYBwlDDA2KYH950CncWAsKrEF5Z7p8jO0uFUJnRcvYi1uVSJexFvslBBC
-        XHB9z9E0TQ8c7dwbxa7BMFbCmRUqXASDniVmZF4p/g0Gf3Engs88pmq/iRK83Py3owQr9+v7RJ8dc8vb
-        9b+jxLsA4yhhgHFVAnomyPFSbBowhkpki2LTgHGUMOhvUZh1kSqi2EECjL0AiF7WnDfpt/MAAAAASUVO
-        RK5CYII=
-</value>
-  </data>
-  <metadata name="aULATableAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>352, 17</value>
-  </metadata>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         AAABAAEAyMgAAAEAIAAIhwIAFgAAACgAAADIAAAAkAEAAAEAIAAAAAAAAHECAMqZAADKmQAAAAAAAAAA

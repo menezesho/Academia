@@ -1,7 +1,7 @@
 ﻿
 namespace projetofinal
 {
-    partial class FormCadProf
+    partial class FormNovoProfessor
     {
         /// <summary>
         /// Required designer variable.
@@ -30,7 +30,7 @@ namespace projetofinal
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormCadProf));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormNovoProfessor));
             this.tcDados = new System.Windows.Forms.TabControl();
             this.tpDadosPessoais = new System.Windows.Forms.TabPage();
             this.mtbIdade = new System.Windows.Forms.MaskedTextBox();

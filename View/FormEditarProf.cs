@@ -12,14 +12,14 @@ using System.Windows.Forms;
 
 namespace projetofinal
 {
-    public partial class FormEditProf : Form
+    public partial class FormEditarProf : Form
     {
         Conexao conec = new Conexao();
         Verificacao verificacao = new Verificacao();
         ProfessorDAO professorDAO = new ProfessorDAO();
         int id = 0;
 
-        public FormEditProf()
+        public FormEditarProf()
         {
             InitializeComponent();
         }

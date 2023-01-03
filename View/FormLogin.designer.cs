@@ -39,6 +39,8 @@ namespace projetofinal
             this.btAreaAluno = new System.Windows.Forms.Button();
             this.tbUsuario = new System.Windows.Forms.TextBox();
             this.btLogin = new System.Windows.Forms.Button();
+            this.btAreaAdmin = new System.Windows.Forms.Button();
+            this.lbSelecione = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
@@ -51,12 +53,12 @@ namespace projetofinal
             this.tbSenha.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tbSenha.Font = new System.Drawing.Font("Segoe UI", 14F);
             this.tbSenha.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
-            this.tbSenha.Location = new System.Drawing.Point(102, 290);
+            this.tbSenha.Location = new System.Drawing.Point(108, 331);
             this.tbSenha.Margin = new System.Windows.Forms.Padding(2);
             this.tbSenha.MaxLength = 30;
             this.tbSenha.Name = "tbSenha";
             this.tbSenha.Size = new System.Drawing.Size(240, 32);
-            this.tbSenha.TabIndex = 4;
+            this.tbSenha.TabIndex = 5;
             this.tbSenha.UseSystemPasswordChar = true;
             this.tbSenha.Enter += new System.EventHandler(this.tbSenha_Enter);
             this.tbSenha.Leave += new System.EventHandler(this.tbSenha_Leave);
@@ -65,7 +67,7 @@ namespace projetofinal
             // 
             this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(102, 118);
+            this.pictureBox1.Location = new System.Drawing.Point(108, 93);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(240, 62);
@@ -81,12 +83,12 @@ namespace projetofinal
             this.btAreaProf.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btAreaProf.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
             this.btAreaProf.ForeColor = System.Drawing.Color.White;
-            this.btAreaProf.Location = new System.Drawing.Point(222, 201);
+            this.btAreaProf.Location = new System.Drawing.Point(188, 220);
             this.btAreaProf.Margin = new System.Windows.Forms.Padding(2);
             this.btAreaProf.Name = "btAreaProf";
-            this.btAreaProf.Size = new System.Drawing.Size(120, 30);
+            this.btAreaProf.Size = new System.Drawing.Size(80, 30);
             this.btAreaProf.TabIndex = 2;
-            this.btAreaProf.Text = "Área do &Profes.";
+            this.btAreaProf.Text = "&Professor";
             this.btAreaProf.UseVisualStyleBackColor = false;
             this.btAreaProf.Click += new System.EventHandler(this.btAreaProf_Click);
             // 
@@ -95,7 +97,7 @@ namespace projetofinal
             this.lbSair.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.lbSair.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lbSair.Image = ((System.Drawing.Image)(resources.GetObject("lbSair.Image")));
-            this.lbSair.Location = new System.Drawing.Point(385, 455);
+            this.lbSair.Location = new System.Drawing.Point(416, 497);
             this.lbSair.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbSair.Name = "lbSair";
             this.lbSair.Size = new System.Drawing.Size(35, 35);
@@ -106,7 +108,7 @@ namespace projetofinal
             // 
             this.pictureBox3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(66, 254);
+            this.pictureBox3.Location = new System.Drawing.Point(72, 295);
             this.pictureBox3.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(32, 32);
@@ -118,7 +120,7 @@ namespace projetofinal
             // 
             this.pictureBox4.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
-            this.pictureBox4.Location = new System.Drawing.Point(66, 290);
+            this.pictureBox4.Location = new System.Drawing.Point(72, 331);
             this.pictureBox4.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(32, 32);
@@ -134,12 +136,12 @@ namespace projetofinal
             this.btAreaAluno.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btAreaAluno.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
             this.btAreaAluno.ForeColor = System.Drawing.Color.White;
-            this.btAreaAluno.Location = new System.Drawing.Point(102, 201);
+            this.btAreaAluno.Location = new System.Drawing.Point(109, 220);
             this.btAreaAluno.Margin = new System.Windows.Forms.Padding(2);
             this.btAreaAluno.Name = "btAreaAluno";
-            this.btAreaAluno.Size = new System.Drawing.Size(120, 30);
+            this.btAreaAluno.Size = new System.Drawing.Size(80, 30);
             this.btAreaAluno.TabIndex = 1;
-            this.btAreaAluno.Text = "Área do &Aluno";
+            this.btAreaAluno.Text = "&Aluno";
             this.btAreaAluno.UseVisualStyleBackColor = false;
             this.btAreaAluno.Click += new System.EventHandler(this.btAreaAluno_Click);
             // 
@@ -150,12 +152,12 @@ namespace projetofinal
             this.tbUsuario.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tbUsuario.Font = new System.Drawing.Font("Segoe UI", 14F);
             this.tbUsuario.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
-            this.tbUsuario.Location = new System.Drawing.Point(102, 254);
+            this.tbUsuario.Location = new System.Drawing.Point(108, 295);
             this.tbUsuario.Margin = new System.Windows.Forms.Padding(2);
             this.tbUsuario.MaxLength = 30;
             this.tbUsuario.Name = "tbUsuario";
             this.tbUsuario.Size = new System.Drawing.Size(240, 32);
-            this.tbUsuario.TabIndex = 3;
+            this.tbUsuario.TabIndex = 4;
             this.tbUsuario.Enter += new System.EventHandler(this.tbUsuario_Enter);
             this.tbUsuario.Leave += new System.EventHandler(this.tbUsuario_Leave);
             // 
@@ -167,7 +169,7 @@ namespace projetofinal
             this.btLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btLogin.Font = new System.Drawing.Font("Segoe UI Semibold", 14F, System.Drawing.FontStyle.Bold);
             this.btLogin.ForeColor = System.Drawing.Color.White;
-            this.btLogin.Location = new System.Drawing.Point(102, 347);
+            this.btLogin.Location = new System.Drawing.Point(108, 388);
             this.btLogin.Margin = new System.Windows.Forms.Padding(2);
             this.btLogin.Name = "btLogin";
             this.btLogin.Size = new System.Drawing.Size(240, 40);
@@ -176,12 +178,44 @@ namespace projetofinal
             this.btLogin.UseVisualStyleBackColor = false;
             this.btLogin.Click += new System.EventHandler(this.btLogin_Click);
             // 
+            // btAreaAdmin
+            // 
+            this.btAreaAdmin.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btAreaAdmin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
+            this.btAreaAdmin.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btAreaAdmin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btAreaAdmin.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
+            this.btAreaAdmin.ForeColor = System.Drawing.Color.White;
+            this.btAreaAdmin.Location = new System.Drawing.Point(267, 220);
+            this.btAreaAdmin.Margin = new System.Windows.Forms.Padding(2);
+            this.btAreaAdmin.Name = "btAreaAdmin";
+            this.btAreaAdmin.Size = new System.Drawing.Size(80, 30);
+            this.btAreaAdmin.TabIndex = 3;
+            this.btAreaAdmin.Text = "Admi&n.";
+            this.btAreaAdmin.UseVisualStyleBackColor = false;
+            this.btAreaAdmin.Click += new System.EventHandler(this.btAreaAdmin_Click);
+            // 
+            // lbSelecione
+            // 
+            this.lbSelecione.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lbSelecione.AutoSize = true;
+            this.lbSelecione.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
+            this.lbSelecione.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
+            this.lbSelecione.Location = new System.Drawing.Point(188, 197);
+            this.lbSelecione.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbSelecione.Name = "lbSelecione";
+            this.lbSelecione.Size = new System.Drawing.Size(81, 21);
+            this.lbSelecione.TabIndex = 142;
+            this.lbSelecione.Text = "Selecione:";
+            // 
             // FormLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(431, 499);
+            this.ClientSize = new System.Drawing.Size(462, 541);
+            this.Controls.Add(this.lbSelecione);
+            this.Controls.Add(this.btAreaAdmin);
             this.Controls.Add(this.btLogin);
             this.Controls.Add(this.tbUsuario);
             this.Controls.Add(this.btAreaAluno);
@@ -195,8 +229,6 @@ namespace projetofinal
             this.KeyPreview = true;
             this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(447, 538);
-            this.MinimumSize = new System.Drawing.Size(447, 538);
             this.Name = "FormLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Acesso Restrito";
@@ -220,5 +252,7 @@ namespace projetofinal
         private System.Windows.Forms.TextBox tbUsuario;
         private System.Windows.Forms.Button btLogin;
         private System.Windows.Forms.TextBox tbSenha;
+        private System.Windows.Forms.Button btAreaAdmin;
+        private System.Windows.Forms.Label lbSelecione;
     }
 }

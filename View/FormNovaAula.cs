@@ -12,13 +12,20 @@ using System.Windows.Forms;
 
 namespace academia
 {
-    public partial class FormCadAula : Form
+    public partial class FormNovaAula : Form
     {
         Conexao conec = new Conexao();
+        int id = 0;
 
-        public FormCadAula()
+        public FormNovaAula()
         {
             InitializeComponent();
+        }
+
+        public FormNovaAula(int id)
+        {
+            InitializeComponent();
+            this.id = id;
         }
 
         private void FormCadAula_Load(object sender, EventArgs e)
@@ -64,12 +71,20 @@ namespace academia
                     {
                         conexao.Close();
                         SqlConnection conexao2 = new SqlConnection(conec.ConexaoBD());
-                        string sqlInsert = @"INSERT INTO aula (nome, dia, hora) VALUES (@nome, @data, @hora)";
+                        string sqlInsert = "";
+                        sqlInsert = "INSERT INTO aula (nome, dia, hora, id_professor";
                         SqlCommand comandoInsert = new SqlCommand(sqlInsert, conexao2);
+
+                        if (mtbTotal.Text != "")
+                            sqlInsert = sqlInsert + ", total) VALUES(@nome, @data, @hora, @idprofessor, @total)";
+                        else
+                            sqlInsert = sqlInsert + ") VALUES(@nome, @data, @hora, @idprofessor)";
 
                         comandoInsert.Parameters.AddWithValue("@nome", tbNome.Text);
                         comandoInsert.Parameters.AddWithValue("@data", Convert.ToDateTime(dtpData.Text));
                         comandoInsert.Parameters.AddWithValue("@hora", cbHora.Text);
+                        comandoInsert.Parameters.AddWithValue("@idprofessor", id);
+                        comandoInsert.Parameters.AddWithValue("@total", mtbTotal.Text);
 
                         conexao2.Open();
                         comandoInsert.CommandText = sqlInsert;

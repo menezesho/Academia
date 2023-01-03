@@ -59,48 +59,54 @@
     <Compile Include="DAO\LoginDAO.cs" />
     <Compile Include="DAO\ProfessorDAO.cs" />
     <Compile Include="Class\Program.cs" />
+    <Compile Include="View\FormMenuAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FormMenuAdmin.Designer.cs">
+      <DependentUpon>FormMenuAdmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\FormMenuAluno.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FormMenuAluno.Designer.cs">
+      <DependentUpon>FormMenuAluno.cs</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="View\FormCadAluno.cs">
+    <Compile Include="View\FormNovoAluno.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\FormCadAluno.designer.cs">
-      <DependentUpon>FormCadAluno.cs</DependentUpon>
+    <Compile Include="View\FormNovoAluno.designer.cs">
+      <DependentUpon>FormNovoAluno.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\FormCadAula.cs">
+    <Compile Include="View\FormNovaAula.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\FormCadAula.designer.cs">
-      <DependentUpon>FormCadAula.cs</DependentUpon>
+    <Compile Include="View\FormNovaAula.designer.cs">
+      <DependentUpon>FormNovaAula.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\FormCadProf.cs">
+    <Compile Include="View\FormNovoProfessor.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\FormCadProf.designer.cs">
-      <DependentUpon>FormCadProf.cs</DependentUpon>
+    <Compile Include="View\FormNovoProfessor.designer.cs">
+      <DependentUpon>FormNovoProfessor.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\FormEditAluno.cs">
+    <Compile Include="View\FormEditarAluno.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\FormEditAluno.designer.cs">
-      <DependentUpon>FormEditAluno.cs</DependentUpon>
+    <Compile Include="View\FormEditarAluno.designer.cs">
+      <DependentUpon>FormEditarAluno.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\FormEditParticipantes.cs">
+    <Compile Include="View\FormCancelarInscricao.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\FormEditParticipantes.designer.cs">
-      <DependentUpon>FormEditParticipantes.cs</DependentUpon>
+    <Compile Include="View\FormCancelarInscricao.designer.cs">
+      <DependentUpon>FormCancelarInscricao.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\FormEditAula.cs">
+    <Compile Include="View\FormEditarProf.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\FormEditAula.designer.cs">
-      <DependentUpon>FormEditAula.cs</DependentUpon>
-    </Compile>
-    <Compile Include="View\FormEditProf.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\FormEditProf.designer.cs">
-      <DependentUpon>FormEditProf.cs</DependentUpon>
+    <Compile Include="View\FormEditarProf.designer.cs">
+      <DependentUpon>FormEditarProf.cs</DependentUpon>
     </Compile>
     <Compile Include="View\FormInscrever.cs">
       <SubType>Form</SubType>
@@ -108,30 +114,24 @@
     <Compile Include="View\FormInscrever.designer.cs">
       <DependentUpon>FormInscrever.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\FormInscreverProf.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\FormInscreverProf.designer.cs">
-      <DependentUpon>FormInscreverProf.cs</DependentUpon>
-    </Compile>
     <Compile Include="View\FormLogin.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="View\FormLogin.designer.cs">
       <DependentUpon>FormLogin.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\FormLoginGeral.cs">
+    <Compile Include="View\FormMenuProfessor.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\FormLoginGeral.designer.cs">
-      <DependentUpon>FormLoginGeral.cs</DependentUpon>
+    <Compile Include="View\FormMenuProfessor.designer.cs">
+      <DependentUpon>FormMenuProfessor.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\FormPrincipalProfessor.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\FormPrincipalProfessor.designer.cs">
-      <DependentUpon>FormPrincipalProfessor.cs</DependentUpon>
-    </Compile>
+    <EmbeddedResource Include="View\FormMenuAdmin.resx">
+      <DependentUpon>FormMenuAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\FormMenuAluno.resx">
+      <DependentUpon>FormMenuAluno.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -141,41 +141,32 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="View\FormCadAluno.resx">
-      <DependentUpon>FormCadAluno.cs</DependentUpon>
+    <EmbeddedResource Include="View\FormNovoAluno.resx">
+      <DependentUpon>FormNovoAluno.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\FormCadAula.resx">
-      <DependentUpon>FormCadAula.cs</DependentUpon>
+    <EmbeddedResource Include="View\FormNovaAula.resx">
+      <DependentUpon>FormNovaAula.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\FormCadProf.resx">
-      <DependentUpon>FormCadProf.cs</DependentUpon>
+    <EmbeddedResource Include="View\FormNovoProfessor.resx">
+      <DependentUpon>FormNovoProfessor.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\FormEditAluno.resx">
-      <DependentUpon>FormEditAluno.cs</DependentUpon>
+    <EmbeddedResource Include="View\FormEditarAluno.resx">
+      <DependentUpon>FormEditarAluno.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\FormEditParticipantes.resx">
-      <DependentUpon>FormEditParticipantes.cs</DependentUpon>
+    <EmbeddedResource Include="View\FormCancelarInscricao.resx">
+      <DependentUpon>FormCancelarInscricao.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\FormEditAula.resx">
-      <DependentUpon>FormEditAula.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\FormEditProf.resx">
-      <DependentUpon>FormEditProf.cs</DependentUpon>
+    <EmbeddedResource Include="View\FormEditarProf.resx">
+      <DependentUpon>FormEditarProf.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\FormInscrever.resx">
       <DependentUpon>FormInscrever.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\FormInscreverProf.resx">
-      <DependentUpon>FormInscreverProf.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="View\FormLogin.resx">
       <DependentUpon>FormLogin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\FormLoginGeral.resx">
-      <DependentUpon>FormLoginGeral.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\FormPrincipalProfessor.resx">
-      <DependentUpon>FormPrincipalProfessor.cs</DependentUpon>
+    <EmbeddedResource Include="View\FormMenuProfessor.resx">
+      <DependentUpon>FormMenuProfessor.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="BD_ACADEMIADataSet.xsc">
       <DependentUpon>BD_ACADEMIADataSet.xsd</DependentUpon>
@@ -244,6 +235,7 @@
     <Content Include="Images\outros\icon-logout.png" />
     <Content Include="Images\outros\icon-search.png" />
     <Content Include="Images\outros\logo-academia.png" />
+    <Content Include="SQL\bd_academia.sql" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
