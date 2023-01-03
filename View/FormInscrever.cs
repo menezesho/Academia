@@ -20,6 +20,7 @@ namespace academia
         bool carregouForm = false;
         string nome = "";
         int id = 0;
+        int idAula = 0;
 
         public FormInscrever()
         {
@@ -53,43 +54,34 @@ namespace academia
                 try
                 {
                     SqlConnection conexao = new SqlConnection(conec.ConexaoBD());
-                    string sqlSelect = @"SELECT * FROM aula WHERE dia=@data AND hora=@hora";
+                    string sqlSelect = @"SELECT * FROM participante WHERE id_aula = @idaula AND id_aluno = @idaluno";
                     SqlCommand comandoSelect = new SqlCommand(sqlSelect, conexao);
 
-                    comandoSelect.Parameters.AddWithValue("@data", Convert.ToDateTime(dtpData.Text));
-                    comandoSelect.Parameters.AddWithValue("@hora", cbHora.Text);
+                    comandoSelect.Parameters.AddWithValue("@idaluno", id);
+                    comandoSelect.Parameters.AddWithValue("@idaula", idAula);
 
                     conexao.Open();
                     SqlDataReader dados = comandoSelect.ExecuteReader();
                     if (dados.Read())
                     {
-                        MessageBox.Show("Conflito de data e hora, tente novamente!", "Cadastrar", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Você já está inscrito nesta aula!", "Inscrever", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         conexao.Close();
                     }
                     else
                     {
                         conexao.Close();
                         SqlConnection conexao2 = new SqlConnection(conec.ConexaoBD());
-                        string sqlInsert = "";
-                        sqlInsert = "INSERT INTO aula (nome, dia, hora, id_professor";
+                        string sqlInsert = @"INSERT INTO participante (id_aula, id_aluno) VALUES (@idaula, @idaluno);";
                         SqlCommand comandoInsert = new SqlCommand(sqlInsert, conexao2);
 
-                        if (mtbTotal.Text != "")
-                            sqlInsert = sqlInsert + ", total) VALUES(@nome, @data, @hora, @idprofessor, @total)";
-                        else
-                            sqlInsert = sqlInsert + ") VALUES(@nome, @data, @hora, @idprofessor)";
-
-                        comandoInsert.Parameters.AddWithValue("@nome", tbNome.Text);
-                        comandoInsert.Parameters.AddWithValue("@data", Convert.ToDateTime(dtpData.Text));
-                        comandoInsert.Parameters.AddWithValue("@hora", cbHora.Text);
-                        comandoInsert.Parameters.AddWithValue("@idprofessor", id);
-                        comandoInsert.Parameters.AddWithValue("@total", mtbTotal.Text);
+                        comandoInsert.Parameters.AddWithValue("@idaula", idAula);
+                        comandoInsert.Parameters.AddWithValue("@idaluno", id);
 
                         conexao2.Open();
                         comandoInsert.CommandText = sqlInsert;
                         comandoInsert.ExecuteNonQuery();
                         conexao2.Close();
-                        MessageBox.Show("Cadastro efetuado com sucesso!", "Cadastrar", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("Inscrição realizada com sucesso!", "Inscrever", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                 }
                 catch (Exception erro)
@@ -111,7 +103,7 @@ namespace academia
                         WHERE idaula=@idaula";
                     SqlCommand comando = new SqlCommand(sql, conexao);
 
-                    int idAula = int.Parse(cbAula.SelectedValue.ToString());
+                    idAula = int.Parse(cbAula.SelectedValue.ToString());
                     comando.Parameters.AddWithValue("@idaula", idAula);
 
                     conexao.Open();
@@ -137,9 +129,9 @@ namespace academia
         {
             if (!carregouForm)
             {
-                cbAula.DataSource = aulaDAO.listarAulas();
+                cbAula.DataSource = aulaDAO.listarAulasDisponiveis();
                 cbAula.ValueMember = "ID";
-                cbAula.DisplayMember = "Aula";
+                cbAula.DisplayMember = "Nome";
                 carregouForm = true;
             }
         }
