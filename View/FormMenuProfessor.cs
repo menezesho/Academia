@@ -32,7 +32,7 @@ namespace projetofinal
         private void FormPrincipal_Load(object sender, EventArgs e)
         {
             lbMensagem.Text = "Olá, " + nome + "!";
-            lbInfoUsuario.Text = "Usuário: " + usuario + "\nNível de acesso: 2";
+            lbInfoUsuario.Text = "Usuário: " + usuario.ToLower() + "\nNível de acesso: 2";
         }
 
         #region Retornar

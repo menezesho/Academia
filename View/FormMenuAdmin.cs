@@ -31,7 +31,7 @@ namespace academia
         private void FormMenuAdmin_Load(object sender, EventArgs e)
         {
             lbMensagem.Text = "Olá, " + nome + "!";
-            lbInfoUsuario.Text = "Usuário: " + usuario + "\nNível de acesso: 1";
+            lbInfoUsuario.Text = "Usuário: " + usuario.ToLower() + "\nNível de acesso: 3";
         }
 
         #region Retornar
@@ -61,8 +61,8 @@ namespace academia
 
         private void btNovoAluno_Click(object sender, EventArgs e)
         {//btNovoAluno
-            FormNovaAula Fnaula = new FormNovaAula();
-            Fnaula.ShowDialog();
+            FormNovoAluno Fnaluno = new FormNovoAluno();
+            Fnaluno.ShowDialog();
         }
 
         private void btEditarAluno_Click(object sender, EventArgs e)

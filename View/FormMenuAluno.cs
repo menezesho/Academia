@@ -33,7 +33,7 @@ namespace academia
         private void FormMenuAluno_Load(object sender, EventArgs e)
         {
             lbMensagem.Text = "Olá, " + nome + "!";
-            lbInfoUsuario.Text = "Usuário: " + usuario + "\nNível de acesso: 1";
+            lbInfoUsuario.Text = "Usuário: " + usuario.ToLower() + "\nNível de acesso: 1";
         }
 
         #region Retornar
@@ -61,7 +61,7 @@ namespace academia
 
         private void btRealizarInscrição_Click(object sender, EventArgs e)
         {//btRealizarInscrição
-            FormInscrever Fi = new FormInscrever(nome);
+            FormInscrever Fi = new FormInscrever(id, nome);
             Fi.ShowDialog();
         }
 

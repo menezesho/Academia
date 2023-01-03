@@ -35,9 +35,9 @@ namespace projetofinal
             tbSenha.UseSystemPasswordChar = false;
 
             //temporário
-            tbUsuario.Text = "joao-ds";
+            tbUsuario.Text = "henrique-mo";
             tbSenha.Text = "321654";
-            selecionado = 2;
+            selecionado = 1;
         }
 
         private void btLogin_Click(object sender, EventArgs e)
@@ -48,16 +48,16 @@ namespace projetofinal
                 {
                     if (tbUsuario.Text == "admin" && tbSenha.Text == "123")
                     {
+                        nome = "Administrador";
+                        usuario = "admin";
                         MessageBox.Show("Login autenticado com sucesso!", "Login", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        FormMenuAdmin Fmadmin = new FormMenuAdmin(usuario, nome);
                         tbUsuario.Text = " Usuário";
                         tbUsuario.Font = new Font("Segoe UI Light", 14F, FontStyle.Italic);
                         tbSenha.Text = " Senha";
                         tbSenha.Font = new Font("Segoe UI Light", 14F, FontStyle.Italic);
                         tbSenha.UseSystemPasswordChar = false;
-                        nome = "Administrador";
-                        usuario = "admin";
                         this.Hide();
+                        FormMenuAdmin Fmadmin = new FormMenuAdmin(usuario, nome);
                         Fmadmin.Show();
                     }
                     else

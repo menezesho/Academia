@@ -88,7 +88,7 @@
             this.lbHorario.AutoSize = true;
             this.lbHorario.Font = new System.Drawing.Font("Segoe UI Semibold", 14F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
             this.lbHorario.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
-            this.lbHorario.Location = new System.Drawing.Point(274, 219);
+            this.lbHorario.Location = new System.Drawing.Point(272, 219);
             this.lbHorario.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbHorario.Name = "lbHorario";
             this.lbHorario.Size = new System.Drawing.Size(86, 25);
@@ -159,10 +159,10 @@
             "15h",
             "16h",
             "17h"});
-            this.cbHora.Location = new System.Drawing.Point(277, 246);
+            this.cbHora.Location = new System.Drawing.Point(258, 246);
             this.cbHora.Margin = new System.Windows.Forms.Padding(2);
             this.cbHora.Name = "cbHora";
-            this.cbHora.Size = new System.Drawing.Size(81, 29);
+            this.cbHora.Size = new System.Drawing.Size(115, 29);
             this.cbHora.TabIndex = 2;
             // 
             // dtpData

@@ -17,18 +17,19 @@ namespace academia
     {
         Conexao conec = new Conexao();
         AulaDAO aulaDAO = new AulaDAO();
-        AlunoDAO alunoDAO = new AlunoDAO();
-        ProfessorDAO professorDAO = new ProfessorDAO();
+        bool carregouForm = false;
         string nome = "";
+        int id = 0;
 
         public FormInscrever()
         {
             InitializeComponent();
         }
 
-        public FormInscrever(string nome)
+        public FormInscrever(int id, string nome)
         {
             InitializeComponent();
+            this.id = id;
             this.nome = nome;
         }
 
@@ -40,21 +41,7 @@ namespace academia
 
         private void FormInserirNaAula_Load(object sender, EventArgs e)
         {
-            this.aULATableAdapter.Fill(this.bD_ACADEMIADataSet.AULA);
-            tbNome.Text = nome;
-            cbAula.Text = "Selecione";
-            mtbData.Clear();
-            tbHora.Clear();
-        }
-
-        private void btLimpar_Click(object sender, EventArgs e)
-        {//btLimpar
-            if (MessageBox.Show("Os dados não salvos serão perdidos.\nDeseja mesmo limpar todos os campos?", "Limpar", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
-            {
-                cbAula.SelectedIndex = 0;
-                mtbData.Clear();
-                tbHora.Clear();
-            }
+            cbAula.SelectedIndex = 0;
         }
 
         private void btInscrever_Click(object sender, EventArgs e)
@@ -64,30 +51,46 @@ namespace academia
 
         private void cbAula_SelectedIndexChanged(object sender, EventArgs e)
         {//item changed AULA
-            try
+            if (carregouForm)
             {
-                SqlConnection conexao = new SqlConnection(conec.ConexaoBD());
-                string sql = @"SELECT * FROM aula WHERE idaula=@idaula";
-                SqlCommand comando = new SqlCommand(sql, conexao);
-
-                comando.Parameters.AddWithValue("@idaula", int.Parse(cbAula.SelectedValue.ToString()));
-
-                conexao.Open();
-                comando.CommandText = sql;
-                comando.ExecuteNonQuery();
-                SqlDataReader dados = comando.ExecuteReader();
-                if (dados.Read())
+                try
                 {
-                    mtbData.Text = dados["dia"].ToString();
-                    tbHora.Text = dados["hora"].ToString();
-                }
-                conexao.Close();
-            }
-            catch (Exception erro)
-            {
-                MessageBox.Show(erro.Message, "Erro na conexão, tente novamente!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+                    SqlConnection conexao = new SqlConnection(conec.ConexaoBD());
+                    string sql = @"SELECT aula.idaula AS 'ID', aula.nome AS 'Aula', aula.dia AS 'Data', aula.hora AS 'Horário', professor.nome AS 'Professor' FROM aula INNER JOIN professor
+                        ON professor.idprofessor = aula.id_professor
+                        WHERE idaula=@idaula";
+                    SqlCommand comando = new SqlCommand(sql, conexao);
 
+                    comando.Parameters.AddWithValue("@idaula", int.Parse(cbAula.SelectedValue.ToString()));
+
+                    conexao.Open();
+                    comando.CommandText = sql;
+                    comando.ExecuteNonQuery();
+                    SqlDataReader dados = comando.ExecuteReader();
+                    if (dados.Read())
+                    {
+                        tbProfessor.Text = dados["Professor"].ToString();
+                        mtbData.Text = dados["Data"].ToString();
+                        tbHora.Text = dados["Horário"].ToString();
+                    }
+                    conexao.Close();
+                }
+                catch (Exception erro)
+                {
+                    MessageBox.Show(erro.Message, "Erro na conexão, tente novamente!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
+        private void cbAula_Click(object sender, EventArgs e)
+        {
+            if (!carregouForm)
+            {
+                cbAula.DataSource = aulaDAO.listarAulas();
+                cbAula.ValueMember = "ID";
+                cbAula.DisplayMember = "Aula";
+                carregouForm = true;
+            }
         }
 
         #region Retornar
