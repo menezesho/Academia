@@ -29,9 +29,9 @@ namespace projetofinal
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormEditarAluno));
             this.dgalunos = new System.Windows.Forms.DataGridView();
             this.tbBusca = new System.Windows.Forms.TextBox();
@@ -102,36 +102,36 @@ namespace projetofinal
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgalunos.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.dgalunos.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.MediumSeaGreen;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgalunos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.MediumSeaGreen;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgalunos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dgalunos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9F);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.MediumSeaGreen;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgalunos.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dgalunos.Location = new System.Drawing.Point(37, 177);
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 9F);
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.MediumSeaGreen;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgalunos.DefaultCellStyle = dataGridViewCellStyle5;
+            this.dgalunos.Location = new System.Drawing.Point(39, 177);
             this.dgalunos.Margin = new System.Windows.Forms.Padding(2);
             this.dgalunos.MultiSelect = false;
             this.dgalunos.Name = "dgalunos";
             this.dgalunos.ReadOnly = true;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 9F);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.MediumSeaGreen;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgalunos.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 9F);
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.MediumSeaGreen;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgalunos.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.dgalunos.RowHeadersVisible = false;
             this.dgalunos.RowHeadersWidth = 51;
             this.dgalunos.RowTemplate.Height = 29;
@@ -149,7 +149,7 @@ namespace projetofinal
             this.tbBusca.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tbBusca.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.tbBusca.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
-            this.tbBusca.Location = new System.Drawing.Point(84, 134);
+            this.tbBusca.Location = new System.Drawing.Point(86, 134);
             this.tbBusca.Margin = new System.Windows.Forms.Padding(2);
             this.tbBusca.MaxLength = 100;
             this.tbBusca.Name = "tbBusca";
@@ -167,7 +167,7 @@ namespace projetofinal
             this.btRelatorio.Font = new System.Drawing.Font("Segoe UI Semibold", 14F, System.Drawing.FontStyle.Bold);
             this.btRelatorio.ForeColor = System.Drawing.Color.White;
             this.btRelatorio.Image = ((System.Drawing.Image)(resources.GetObject("btRelatorio.Image")));
-            this.btRelatorio.Location = new System.Drawing.Point(1138, 165);
+            this.btRelatorio.Location = new System.Drawing.Point(1140, 165);
             this.btRelatorio.Margin = new System.Windows.Forms.Padding(2);
             this.btRelatorio.Name = "btRelatorio";
             this.btRelatorio.Size = new System.Drawing.Size(60, 69);
@@ -184,7 +184,7 @@ namespace projetofinal
             this.btLimpar.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold);
             this.btLimpar.ForeColor = System.Drawing.Color.White;
             this.btLimpar.Image = ((System.Drawing.Image)(resources.GetObject("btLimpar.Image")));
-            this.btLimpar.Location = new System.Drawing.Point(1138, 248);
+            this.btLimpar.Location = new System.Drawing.Point(1140, 248);
             this.btLimpar.Margin = new System.Windows.Forms.Padding(2);
             this.btLimpar.Name = "btLimpar";
             this.btLimpar.Size = new System.Drawing.Size(60, 69);
@@ -201,7 +201,7 @@ namespace projetofinal
             this.btExcluir.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold);
             this.btExcluir.ForeColor = System.Drawing.Color.White;
             this.btExcluir.Image = ((System.Drawing.Image)(resources.GetObject("btExcluir.Image")));
-            this.btExcluir.Location = new System.Drawing.Point(1138, 331);
+            this.btExcluir.Location = new System.Drawing.Point(1140, 331);
             this.btExcluir.Margin = new System.Windows.Forms.Padding(2);
             this.btExcluir.Name = "btExcluir";
             this.btExcluir.Size = new System.Drawing.Size(60, 69);
@@ -218,7 +218,7 @@ namespace projetofinal
             this.btSalvar.Font = new System.Drawing.Font("Segoe UI Semibold", 14F, System.Drawing.FontStyle.Bold);
             this.btSalvar.ForeColor = System.Drawing.Color.White;
             this.btSalvar.Image = ((System.Drawing.Image)(resources.GetObject("btSalvar.Image")));
-            this.btSalvar.Location = new System.Drawing.Point(1138, 414);
+            this.btSalvar.Location = new System.Drawing.Point(1140, 414);
             this.btSalvar.Margin = new System.Windows.Forms.Padding(2);
             this.btSalvar.Name = "btSalvar";
             this.btSalvar.Size = new System.Drawing.Size(60, 69);
@@ -235,7 +235,7 @@ namespace projetofinal
             this.tcDados.Controls.Add(this.tpInfoAdicionais);
             this.tcDados.Controls.Add(this.tpLogin);
             this.tcDados.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tcDados.Location = new System.Drawing.Point(614, 134);
+            this.tcDados.Location = new System.Drawing.Point(616, 134);
             this.tcDados.Name = "tcDados";
             this.tcDados.SelectedIndex = 0;
             this.tcDados.Size = new System.Drawing.Size(519, 356);
@@ -795,7 +795,7 @@ namespace projetofinal
             this.lbListaAlunos.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lbListaAlunos.Font = new System.Drawing.Font("Segoe UI", 22F, System.Drawing.FontStyle.Bold);
             this.lbListaAlunos.ForeColor = System.Drawing.Color.MediumSeaGreen;
-            this.lbListaAlunos.Location = new System.Drawing.Point(37, 49);
+            this.lbListaAlunos.Location = new System.Drawing.Point(39, 49);
             this.lbListaAlunos.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbListaAlunos.Name = "lbListaAlunos";
             this.lbListaAlunos.Size = new System.Drawing.Size(1161, 43);
@@ -807,7 +807,7 @@ namespace projetofinal
             // 
             this.pictureBox2.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(567, 536);
+            this.pictureBox2.Location = new System.Drawing.Point(569, 536);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(100, 30);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -819,7 +819,7 @@ namespace projetofinal
             this.lbSair.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.lbSair.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lbSair.Image = ((System.Drawing.Image)(resources.GetObject("lbSair.Image")));
-            this.lbSair.Location = new System.Drawing.Point(1192, 575);
+            this.lbSair.Location = new System.Drawing.Point(1194, 575);
             this.lbSair.Name = "lbSair";
             this.lbSair.Size = new System.Drawing.Size(35, 35);
             this.lbSair.TabIndex = 143;
@@ -830,7 +830,7 @@ namespace projetofinal
             this.lbBuscar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lbBuscar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lbBuscar.Image = ((System.Drawing.Image)(resources.GetObject("lbBuscar.Image")));
-            this.lbBuscar.Location = new System.Drawing.Point(560, 134);
+            this.lbBuscar.Location = new System.Drawing.Point(562, 134);
             this.lbBuscar.Name = "lbBuscar";
             this.lbBuscar.Size = new System.Drawing.Size(29, 29);
             this.lbBuscar.TabIndex = 144;
@@ -842,7 +842,7 @@ namespace projetofinal
             this.lbLimparBusca.BackColor = System.Drawing.SystemColors.Window;
             this.lbLimparBusca.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lbLimparBusca.Image = ((System.Drawing.Image)(resources.GetObject("lbLimparBusca.Image")));
-            this.lbLimparBusca.Location = new System.Drawing.Point(530, 138);
+            this.lbLimparBusca.Location = new System.Drawing.Point(532, 138);
             this.lbLimparBusca.Name = "lbLimparBusca";
             this.lbLimparBusca.Size = new System.Drawing.Size(20, 20);
             this.lbLimparBusca.TabIndex = 145;
@@ -863,7 +863,7 @@ namespace projetofinal
             "CPF",
             "E-mail",
             "Usuário"});
-            this.cbFiltro.Location = new System.Drawing.Point(37, 134);
+            this.cbFiltro.Location = new System.Drawing.Point(39, 134);
             this.cbFiltro.Margin = new System.Windows.Forms.Padding(2);
             this.cbFiltro.Name = "cbFiltro";
             this.cbFiltro.Size = new System.Drawing.Size(43, 29);
@@ -875,7 +875,7 @@ namespace projetofinal
             this.lbFiltro.BackColor = System.Drawing.SystemColors.Window;
             this.lbFiltro.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lbFiltro.Image = ((System.Drawing.Image)(resources.GetObject("lbFiltro.Image")));
-            this.lbFiltro.Location = new System.Drawing.Point(37, 136);
+            this.lbFiltro.Location = new System.Drawing.Point(39, 136);
             this.lbFiltro.Name = "lbFiltro";
             this.lbFiltro.Size = new System.Drawing.Size(25, 25);
             this.lbFiltro.TabIndex = 146;
@@ -886,7 +886,7 @@ namespace projetofinal
             this.lbTipoFiltro.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lbTipoFiltro.Font = new System.Drawing.Font("Segoe UI Semibold", 8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
             this.lbTipoFiltro.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
-            this.lbTipoFiltro.Location = new System.Drawing.Point(87, 119);
+            this.lbTipoFiltro.Location = new System.Drawing.Point(89, 119);
             this.lbTipoFiltro.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbTipoFiltro.Name = "lbTipoFiltro";
             this.lbTipoFiltro.Size = new System.Drawing.Size(10, 13);

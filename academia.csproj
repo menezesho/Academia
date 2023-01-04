@@ -59,6 +59,12 @@
     <Compile Include="DAO\LoginDAO.cs" />
     <Compile Include="DAO\ProfessorDAO.cs" />
     <Compile Include="Class\Program.cs" />
+    <Compile Include="View\FormEditarAula.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FormEditarAula.Designer.cs">
+      <DependentUpon>FormEditarAula.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\FormMenuAdmin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -126,6 +132,9 @@
     <Compile Include="View\FormMenuProfessor.designer.cs">
       <DependentUpon>FormMenuProfessor.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="View\FormEditarAula.resx">
+      <DependentUpon>FormEditarAula.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\FormMenuAdmin.resx">
       <DependentUpon>FormMenuAdmin.cs</DependentUpon>
     </EmbeddedResource>
