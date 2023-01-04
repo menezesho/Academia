@@ -21,6 +21,8 @@ namespace academia
         string nome = "";
         int id = 0;
         int idAula = 0;
+        int contador = 0;
+        string testeContador = "";
 
         public FormInscrever()
         {
@@ -71,11 +73,19 @@ namespace academia
                     {
                         conexao.Close();
                         SqlConnection conexao2 = new SqlConnection(conec.ConexaoBD());
-                        string sqlInsert = @"INSERT INTO participante (id_aula, id_aluno) VALUES (@idaula, @idaluno);";
+                        string sqlInsert = "";
+                        sqlInsert = @"INSERT INTO participante (id_aula, id_aluno) VALUES (@idaula, @idaluno);
+                            UPDATE aula SET contador =";
+                        if (testeContador == "")
+                            sqlInsert = sqlInsert + " NULL WHERE idaula = @idaula;";
+                        else
+                            sqlInsert = sqlInsert + " @contador WHERE idaula = @idaula;";
+
                         SqlCommand comandoInsert = new SqlCommand(sqlInsert, conexao2);
 
                         comandoInsert.Parameters.AddWithValue("@idaula", idAula);
                         comandoInsert.Parameters.AddWithValue("@idaluno", id);
+                        comandoInsert.Parameters.AddWithValue("@contador", contador + 1);
 
                         conexao2.Open();
                         comandoInsert.CommandText = sqlInsert;
@@ -98,9 +108,8 @@ namespace academia
                 try
                 {
                     SqlConnection conexao = new SqlConnection(conec.ConexaoBD());
-                    string sql = @"SELECT aula.idaula AS 'ID', aula.nome AS 'Aula', aula.dia AS 'Data', aula.hora AS 'Horário', professor.nome AS 'Professor' FROM aula INNER JOIN professor
-                        ON professor.idprofessor = aula.id_professor
-                        WHERE idaula=@idaula";
+                    string sql = @"SELECT aula.idaula AS 'ID', aula.nome AS 'Aula', aula.dia AS 'Data', aula.hora AS 'Horário', contador AS 'Contador', professor.nome AS 'Professor'
+                        FROM aula INNER JOIN professor ON professor.idprofessor = aula.id_professor WHERE idaula=@idaula";
                     SqlCommand comando = new SqlCommand(sql, conexao);
 
                     idAula = int.Parse(cbAula.SelectedValue.ToString());
@@ -115,6 +124,9 @@ namespace academia
                         tbProfessor.Text = dados["Professor"].ToString();
                         mtbData.Text = dados["Data"].ToString();
                         tbHora.Text = dados["Horário"].ToString();
+                        testeContador = dados["Contador"].ToString();
+                        if (testeContador != "")
+                            contador = int.Parse(testeContador);
                     }
                     conexao.Close();
                 }

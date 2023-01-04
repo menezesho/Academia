@@ -29,7 +29,7 @@ namespace academia.DAO
         public DataTable listarAulasDisponiveis()
         {
             SqlConnection conexao = new SqlConnection(conec.ConexaoBD());
-            string sql = @"SELECT idaula AS 'ID', nome as 'Nome' FROM AULA WHERE CONTADOR < TOTAL;";
+            string sql = @"SELECT idaula AS 'ID', nome as 'Nome' FROM AULA WHERE CONTADOR < TOTAL OR TOTAL IS NULL;";
             SqlCommand comando = new SqlCommand(sql, conexao);
             conexao.Open();
             comando.ExecuteNonQuery();

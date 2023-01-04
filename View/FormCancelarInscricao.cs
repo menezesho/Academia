@@ -19,6 +19,9 @@ namespace academia.View
         bool carregouForm = false;
         string nome = "";
         int id = 0;
+        int idAula = 0;
+        int contador = 0;
+        string testeContador = "";
 
         public FormCancelarInscricao()
         {
@@ -38,8 +41,40 @@ namespace academia.View
         }
 
         private void btCancelar_Click(object sender, EventArgs e)
-        {
+        {//btCancelar
+            if (mtbData.Text == "" || tbHora.Text == "" || tbProfessor.Text == "")
+                MessageBox.Show("Selecione a aula que deseja se cancelar a inscrição!", "Cancelar", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            else
+            {
+                try
+                {
+                    SqlConnection conexao2 = new SqlConnection(conec.ConexaoBD());
+                    string sqlDelete = "";
+                    sqlDelete = @"DELETE FROM participante WHERE id_aula = @idaula AND id_aluno = @idaluno;
+                            UPDATE aula SET contador =";
+                    if (testeContador == "")
+                        sqlDelete = sqlDelete + " NULL WHERE idaula = @idaula;";
+                    else
+                        sqlDelete = sqlDelete + " @contador WHERE idaula = @idaula;";
 
+                    SqlCommand comandoDelete = new SqlCommand(sqlDelete, conexao2);
+
+                    comandoDelete.Parameters.AddWithValue("@idaula", idAula);
+                    comandoDelete.Parameters.AddWithValue("@idaluno", id);
+                    comandoDelete.Parameters.AddWithValue("@contador", contador - 1);
+
+                    conexao2.Open();
+                    comandoDelete.CommandText = sqlDelete;
+                    comandoDelete.ExecuteNonQuery();
+                    conexao2.Close();
+
+                    MessageBox.Show("Inscrição cancelada com sucesso!", "Cancelar", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                catch (Exception erro)
+                {
+                    MessageBox.Show(erro.Message, "Erro na conexão, tente novamente!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
         }
 
         private void cbAula_SelectedIndexChanged(object sender, EventArgs e)
@@ -49,11 +84,11 @@ namespace academia.View
                 try
                 {
                     SqlConnection conexao = new SqlConnection(conec.ConexaoBD());
-                    string sql = @"SELECT aula.idaula AS 'ID', aula.nome AS 'Aula', aula.dia AS 'Data', aula.hora AS 'Horário', professor.nome AS 'Professor' FROM aula INNER JOIN professor
-                        ON professor.idprofessor = aula.id_professor
-                        WHERE idaula=@idaula";
+                    string sql = @"SELECT aula.idaula AS 'ID', aula.nome AS 'Aula', aula.dia AS 'Data', aula.hora AS 'Horário', contador AS 'Contador', professor.nome AS 'Professor'
+                        FROM aula INNER JOIN professor ON professor.idprofessor = aula.id_professor WHERE idaula=@idaula";
                     SqlCommand comando = new SqlCommand(sql, conexao);
 
+                    idAula = int.Parse(cbAula.SelectedValue.ToString());
                     comando.Parameters.AddWithValue("@idaula", int.Parse(cbAula.SelectedValue.ToString()));
 
                     conexao.Open();
@@ -65,6 +100,9 @@ namespace academia.View
                         tbProfessor.Text = dados["Professor"].ToString();
                         mtbData.Text = dados["Data"].ToString();
                         tbHora.Text = dados["Horário"].ToString();
+                        testeContador = dados["Contador"].ToString();
+                        if (testeContador != "")
+                            contador = int.Parse(testeContador);
                     }
                     conexao.Close();
                 }
@@ -79,10 +117,31 @@ namespace academia.View
         {
             if (!carregouForm)
             {
-                cbAula.DataSource = aulaDAO.listarAulasFiltradas(id);
-                cbAula.ValueMember = "ID";
-                cbAula.DisplayMember = "Aula";
-                carregouForm = true;
+                try
+                {
+                    SqlConnection conexao = new SqlConnection(conec.ConexaoBD());
+                    string sqlSelect = @"SELECT * FROM participante WHERE id_aluno = @idaluno";
+                    SqlCommand comandoSelect = new SqlCommand(sqlSelect, conexao);
+
+                    comandoSelect.Parameters.AddWithValue("@idaluno", id);
+
+                    conexao.Open();
+                    SqlDataReader dados = comandoSelect.ExecuteReader();
+                    if (dados.Read())
+                    {
+                        cbAula.DataSource = aulaDAO.listarAulasFiltradas(id);
+                        cbAula.ValueMember = "ID";
+                        cbAula.DisplayMember = "Aula";
+                        carregouForm = true;
+                    }
+                    else
+                        MessageBox.Show("Nenhuma inscrição foi realizada!", "Cancelar", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                catch (Exception erro)
+                {
+                    MessageBox.Show(erro.Message, "Erro na conexão, tente novamente!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                
             }
         }
 

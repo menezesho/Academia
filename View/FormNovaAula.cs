@@ -76,7 +76,7 @@ namespace academia
                         SqlCommand comandoInsert = new SqlCommand(sqlInsert, conexao2);
 
                         if (mtbTotal.Text != "")
-                            sqlInsert = sqlInsert + ", total) VALUES(@nome, @data, @hora, @idprofessor, @total)";
+                            sqlInsert = sqlInsert + ", total, contador) VALUES(@nome, @data, @hora, @idprofessor, @total, 0)";
                         else
                             sqlInsert = sqlInsert + ") VALUES(@nome, @data, @hora, @idprofessor)";
 
