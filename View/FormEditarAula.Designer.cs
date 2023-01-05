@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormEditarAula));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lbTipoFiltro = new System.Windows.Forms.Label();
             this.lbLimparBusca = new System.Windows.Forms.Label();
             this.lbBuscar = new System.Windows.Forms.Label();
@@ -70,6 +70,7 @@
             this.lbTipoFiltro.Size = new System.Drawing.Size(10, 13);
             this.lbTipoFiltro.TabIndex = 151;
             this.lbTipoFiltro.Text = " ";
+            this.lbTipoFiltro.Click += new System.EventHandler(this.lbTipoFiltro_Click);
             // 
             // lbLimparBusca
             // 
@@ -81,6 +82,7 @@
             this.lbLimparBusca.Name = "lbLimparBusca";
             this.lbLimparBusca.Size = new System.Drawing.Size(20, 20);
             this.lbLimparBusca.TabIndex = 160;
+            this.lbLimparBusca.Click += new System.EventHandler(this.lbLimparBusca_Click);
             // 
             // lbBuscar
             // 
@@ -91,6 +93,7 @@
             this.lbBuscar.Name = "lbBuscar";
             this.lbBuscar.Size = new System.Drawing.Size(29, 29);
             this.lbBuscar.TabIndex = 159;
+            this.lbBuscar.Click += new System.EventHandler(this.lbBuscar_Click);
             // 
             // lbSair
             // 
@@ -101,6 +104,7 @@
             this.lbSair.Name = "lbSair";
             this.lbSair.Size = new System.Drawing.Size(35, 35);
             this.lbSair.TabIndex = 158;
+            this.lbSair.Click += new System.EventHandler(this.lbSair_Click);
             // 
             // pictureBox2
             // 
@@ -184,6 +188,7 @@
             this.btExcluir.Size = new System.Drawing.Size(60, 69);
             this.btExcluir.TabIndex = 154;
             this.btExcluir.UseVisualStyleBackColor = false;
+            this.btExcluir.Click += new System.EventHandler(this.btExcluir_Click);
             // 
             // btSalvar
             // 
@@ -201,6 +206,7 @@
             this.btSalvar.TabIndex = 155;
             this.btSalvar.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btSalvar.UseVisualStyleBackColor = false;
+            this.btSalvar.Click += new System.EventHandler(this.btSalvar_Click);
             // 
             // tbBusca
             // 
@@ -216,6 +222,8 @@
             this.tbBusca.Name = "tbBusca";
             this.tbBusca.Size = new System.Drawing.Size(471, 29);
             this.tbBusca.TabIndex = 148;
+            this.tbBusca.Enter += new System.EventHandler(this.tbBusca_Enter);
+            this.tbBusca.Leave += new System.EventHandler(this.tbBusca_Leave);
             // 
             // btLimpar
             // 
@@ -232,6 +240,7 @@
             this.btLimpar.Size = new System.Drawing.Size(60, 69);
             this.btLimpar.TabIndex = 153;
             this.btLimpar.UseVisualStyleBackColor = false;
+            this.btLimpar.Click += new System.EventHandler(this.btLimpar_Click);
             // 
             // dgaulas
             // 
@@ -242,36 +251,36 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgaulas.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.dgaulas.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle16.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle16.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle16.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle16.SelectionBackColor = System.Drawing.Color.MediumSeaGreen;
-            dataGridViewCellStyle16.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle16.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgaulas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle16;
+            dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle19.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle19.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle19.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle19.SelectionBackColor = System.Drawing.Color.MediumSeaGreen;
+            dataGridViewCellStyle19.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle19.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgaulas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle19;
             this.dgaulas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle17.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle17.Font = new System.Drawing.Font("Segoe UI", 9F);
-            dataGridViewCellStyle17.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle17.SelectionBackColor = System.Drawing.Color.MediumSeaGreen;
-            dataGridViewCellStyle17.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgaulas.DefaultCellStyle = dataGridViewCellStyle17;
+            dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle20.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle20.Font = new System.Drawing.Font("Segoe UI", 9F);
+            dataGridViewCellStyle20.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle20.SelectionBackColor = System.Drawing.Color.MediumSeaGreen;
+            dataGridViewCellStyle20.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle20.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgaulas.DefaultCellStyle = dataGridViewCellStyle20;
             this.dgaulas.Location = new System.Drawing.Point(39, 177);
             this.dgaulas.Margin = new System.Windows.Forms.Padding(2);
             this.dgaulas.MultiSelect = false;
             this.dgaulas.Name = "dgaulas";
             this.dgaulas.ReadOnly = true;
-            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle18.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle18.Font = new System.Drawing.Font("Segoe UI", 9F);
-            dataGridViewCellStyle18.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle18.SelectionBackColor = System.Drawing.Color.MediumSeaGreen;
-            dataGridViewCellStyle18.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle18.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgaulas.RowHeadersDefaultCellStyle = dataGridViewCellStyle18;
+            dataGridViewCellStyle21.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle21.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle21.Font = new System.Drawing.Font("Segoe UI", 9F);
+            dataGridViewCellStyle21.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle21.SelectionBackColor = System.Drawing.Color.MediumSeaGreen;
+            dataGridViewCellStyle21.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle21.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgaulas.RowHeadersDefaultCellStyle = dataGridViewCellStyle21;
             this.dgaulas.RowHeadersVisible = false;
             this.dgaulas.RowHeadersWidth = 51;
             this.dgaulas.RowTemplate.Height = 29;
@@ -279,6 +288,7 @@
             this.dgaulas.Size = new System.Drawing.Size(552, 313);
             this.dgaulas.TabIndex = 150;
             this.dgaulas.TabStop = false;
+            this.dgaulas.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgaulas_CellClick);
             // 
             // lbFiltro
             // 
@@ -308,6 +318,7 @@
             this.cbFiltro.Name = "cbFiltro";
             this.cbFiltro.Size = new System.Drawing.Size(43, 29);
             this.cbFiltro.TabIndex = 147;
+            this.cbFiltro.SelectedIndexChanged += new System.EventHandler(this.cbFiltro_SelectedIndexChanged);
             // 
             // mtbTotal
             // 
@@ -442,12 +453,14 @@
             this.Controls.Add(this.lbFiltro);
             this.Controls.Add(this.cbFiltro);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.KeyPreview = true;
             this.MinimumSize = new System.Drawing.Size(1257, 658);
             this.Name = "FormEditarAula";
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Ajustes";
             this.Load += new System.EventHandler(this.FormEditarAula_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FormListAluno_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgaulas)).EndInit();
             this.ResumeLayout(false);

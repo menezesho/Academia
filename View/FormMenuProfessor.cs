@@ -68,7 +68,8 @@ namespace projetofinal
 
         private void btEditarAula_Click(object sender, EventArgs e)
         {//btEditarAula
-            FormEditarAula Feaula = FormEditarAula();
+            FormEditarAula Feaula = new FormEditarAula(id);
+            Feaula.ShowDialog();
         }
 
         private void btVerParticipantes_Click(object sender, EventArgs e)

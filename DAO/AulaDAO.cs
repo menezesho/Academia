@@ -54,5 +54,20 @@ namespace academia.DAO
             conexao.Close();
             return tabelaAulas;
         }
+
+        public DataTable listarAulasProfessor(int id)
+        {
+            SqlConnection conexao = new SqlConnection(conec.ConexaoBD());
+            string sql = @"SELECT idaula AS 'ID', nome AS 'Aula', dia AS Data, hora AS Horário, total AS 'Total', contador AS 'Contador', id_professor as 'Professor' FROM aula WHERE id_professor = @id;";
+            SqlCommand comando = new SqlCommand(sql, conexao);
+            comando.Parameters.AddWithValue("@id", id);
+            conexao.Open();
+            comando.ExecuteNonQuery();
+            DataTable tabelaAulas = new DataTable();
+            SqlDataAdapter da = new SqlDataAdapter(comando);
+            da.Fill(tabelaAulas);
+            conexao.Close();
+            return tabelaAulas;
+        }
     }
 }

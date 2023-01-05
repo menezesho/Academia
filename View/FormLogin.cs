@@ -35,9 +35,9 @@ namespace projetofinal
             tbSenha.UseSystemPasswordChar = false;
 
             //temporário
-            tbUsuario.Text = "henrique-mo";
+            tbUsuario.Text = "joao-ds";
             tbSenha.Text = "321654";
-            selecionado = 1;
+            selecionado = 2;
         }
 
         private void btLogin_Click(object sender, EventArgs e)
