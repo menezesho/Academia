@@ -92,6 +92,7 @@ namespace academia
                         comandoInsert.ExecuteNonQuery();
                         conexao2.Close();
                         MessageBox.Show("Inscrição realizada com sucesso!", "Inscrever", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        cbAula.DataSource = aulaDAO.listarAulasDisponiveis();
                     }
                 }
                 catch (Exception erro)

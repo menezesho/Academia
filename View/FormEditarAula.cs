@@ -235,8 +235,8 @@ namespace academia
 
                         if (mtbTotal.Text != "")
                         {
-                            contador = int.Parse(contador.ToString());
-                            sqlUpdate = sqlUpdate + "contador = @contador,";
+                            //contador = int.Parse(contador.ToString());
+                            //sqlUpdate = sqlUpdate + "contador = @contador,";
 
                             if (contador <= int.Parse(mtbTotal.Text))
                             {
@@ -251,7 +251,7 @@ namespace academia
                         }
                         else
                         {
-                            sqlUpdate = sqlUpdate + " total = NULL, contador = NULL";
+                            sqlUpdate = sqlUpdate + " total = NULL";
                         }
                         sqlUpdate = sqlUpdate + " WHERE idaula=@idaula";
 

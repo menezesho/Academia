@@ -69,6 +69,7 @@ namespace academia.View
                     conexao2.Close();
 
                     MessageBox.Show("Inscrição cancelada com sucesso!", "Cancelar", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    cbAula.DataSource = aulaDAO.listarAulasFiltradas(id);
                 }
                 catch (Exception erro)
                 {
