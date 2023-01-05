@@ -92,7 +92,12 @@ namespace academia
                         comandoInsert.ExecuteNonQuery();
                         conexao2.Close();
                         MessageBox.Show("Inscrição realizada com sucesso!", "Inscrever", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        cbAula.DataSource = aulaDAO.listarAulasDisponiveis();
+                        cbAula.DataSource = null;
+                        cbAula.Items.Add("Selecione");
+                        cbAula.SelectedIndex = 0;
+                        tbProfessor.Clear();
+                        mtbData.Clear();
+                        tbHora.Clear();
                     }
                 }
                 catch (Exception erro)
@@ -106,46 +111,64 @@ namespace academia
         {//item changed AULA
             if (carregouForm)
             {
-                try
+                if (cbAula.DataSource != null)
                 {
-                    SqlConnection conexao = new SqlConnection(conec.ConexaoBD());
-                    string sql = @"SELECT aula.idaula AS 'ID', aula.nome AS 'Aula', aula.dia AS 'Data', aula.hora AS 'Horário', contador AS 'Contador', professor.nome AS 'Professor'
-                        FROM aula INNER JOIN professor ON professor.idprofessor = aula.id_professor WHERE idaula=@idaula";
-                    SqlCommand comando = new SqlCommand(sql, conexao);
-
-                    idAula = int.Parse(cbAula.SelectedValue.ToString());
-                    comando.Parameters.AddWithValue("@idaula", idAula);
-
-                    conexao.Open();
-                    comando.CommandText = sql;
-                    comando.ExecuteNonQuery();
-                    SqlDataReader dados = comando.ExecuteReader();
-                    if (dados.Read())
+                    try
                     {
-                        tbProfessor.Text = dados["Professor"].ToString();
-                        mtbData.Text = dados["Data"].ToString();
-                        tbHora.Text = dados["Horário"].ToString();
-                        testeContador = dados["Contador"].ToString();
-                        if (testeContador != "")
-                            contador = int.Parse(testeContador);
+                        SqlConnection conexao = new SqlConnection(conec.ConexaoBD());
+                        string sql = @"SELECT aula.idaula AS 'ID', aula.nome AS 'Aula', aula.dia AS 'Data', aula.hora AS 'Horário', contador AS 'Contador', professor.nome AS 'Professor'
+                        FROM aula INNER JOIN professor ON professor.idprofessor = aula.id_professor WHERE idaula=@idaula";
+                        SqlCommand comando = new SqlCommand(sql, conexao);
+
+                        idAula = int.Parse(cbAula.SelectedValue.ToString());
+                        comando.Parameters.AddWithValue("@idaula", idAula);
+
+                        conexao.Open();
+                        comando.CommandText = sql;
+                        comando.ExecuteNonQuery();
+                        SqlDataReader dados = comando.ExecuteReader();
+                        if (dados.Read())
+                        {
+                            tbProfessor.Text = dados["Professor"].ToString();
+                            mtbData.Text = dados["Data"].ToString();
+                            tbHora.Text = dados["Horário"].ToString();
+                            testeContador = dados["Contador"].ToString();
+                            if (testeContador != "")
+                                contador = int.Parse(testeContador);
+                        }
+                        conexao.Close();
                     }
-                    conexao.Close();
-                }
-                catch (Exception erro)
-                {
-                    MessageBox.Show(erro.Message, "Erro na conexão, tente novamente!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    catch (Exception erro)
+                    {
+                        MessageBox.Show(erro.Message, "Erro na conexão, tente novamente!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
             }
         }
 
         private void cbAula_Click(object sender, EventArgs e)
         {
-            if (!carregouForm)
+            try
             {
-                cbAula.DataSource = aulaDAO.listarAulasDisponiveis();
-                cbAula.ValueMember = "ID";
-                cbAula.DisplayMember = "Nome";
-                carregouForm = true;
+                SqlConnection conexao = new SqlConnection(conec.ConexaoBD());
+                string sqlSelect = @"SELECT * FROM AULA WHERE (CONTADOR < TOTAL) OR TOTAL IS NULL;";
+                SqlCommand comandoSelect = new SqlCommand(sqlSelect, conexao);
+
+                conexao.Open();
+                SqlDataReader dados = comandoSelect.ExecuteReader();
+                if (dados.Read())
+                {
+                    cbAula.DataSource = aulaDAO.listarAulasDisponiveis();
+                    cbAula.ValueMember = "ID";
+                    cbAula.DisplayMember = "Nome";
+                    carregouForm = true;
+                }
+                else
+                    MessageBox.Show("Nenhuma aula está disponível para realizar a inscrição!", "Inscrever", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            catch (Exception erro)
+            {
+                MessageBox.Show(erro.Message, "Erro na conexão, tente novamente!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -153,15 +176,13 @@ namespace academia
 
         private void lbSair_Click(object sender, EventArgs e)
         {//lbSair
-            if (MessageBox.Show("Os dados não salvos serão perdidos!\nDeseja mesmo retornar?", "Retornar", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
-                Close();
+            Close();
         }
 
         private void FormInscreverAluno_KeyDown(object sender, KeyEventArgs e)
         {//ESC para retornar
             if (e.KeyValue.Equals(27))
-                if (MessageBox.Show("Os dados não salvos serão perdidos!\nDeseja mesmo retornar?", "Retornar", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
-                    Close();
+                Close();
         }
 
         #endregion
