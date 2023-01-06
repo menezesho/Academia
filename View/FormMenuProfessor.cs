@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Windows.Forms;
 
@@ -15,6 +16,7 @@ namespace projetofinal
         public string usuario = "";
         public string nome = "";
         public int id = 0;
+        public int acesso = 2;
 
         public FormMenuProfessor()
         {
@@ -77,12 +79,12 @@ namespace projetofinal
 
         }
 
-        private void btAjustes_Click(object sender, EventArgs e)
-        {//btAjustes
-
+        private void btAlterarSenha_Click(object sender, EventArgs e)
+        {//btAlterarSenha
+            FormAlterarSenha Fas = new FormAlterarSenha(id, acesso);
+            Fas.ShowDialog();
         }
 
         #endregion
-
     }
 }

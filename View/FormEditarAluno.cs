@@ -252,7 +252,8 @@ namespace projetofinal
                     try
                     {
                         SqlConnection conexao = new SqlConnection(conec.ConexaoBD());
-                        string sqlDelete = @"DELETE FROM aluno WHERE idaluno=@idaluno";
+                        string sqlDelete = @"DELETE FROM aluno WHERE IDALUNO = @idaluno;
+                            DELETE FROM participante WHERE id_aluno = @idaluno;";
                         SqlCommand comandoDelete = new SqlCommand(sqlDelete, conexao);
 
                         comandoDelete.Parameters.AddWithValue("@idaluno", id);

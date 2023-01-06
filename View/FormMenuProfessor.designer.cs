@@ -35,7 +35,7 @@ namespace projetofinal
             this.btEditarAula = new System.Windows.Forms.Button();
             this.btNovaAula = new System.Windows.Forms.Button();
             this.btVerParticipantes = new System.Windows.Forms.Button();
-            this.btAjustes = new System.Windows.Forms.Button();
+            this.btAlterarSenha = new System.Windows.Forms.Button();
             this.lbMensagem = new System.Windows.Forms.Label();
             this.lbInfoUsuario = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -114,22 +114,22 @@ namespace projetofinal
             this.btVerParticipantes.UseVisualStyleBackColor = false;
             this.btVerParticipantes.Click += new System.EventHandler(this.btVerParticipantes_Click);
             // 
-            // btAjustes
+            // btAlterarSenha
             // 
-            this.btAjustes.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btAjustes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
-            this.btAjustes.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btAjustes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btAjustes.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold);
-            this.btAjustes.ForeColor = System.Drawing.Color.White;
-            this.btAjustes.Location = new System.Drawing.Point(622, 390);
-            this.btAjustes.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btAjustes.Name = "btAjustes";
-            this.btAjustes.Size = new System.Drawing.Size(104, 35);
-            this.btAjustes.TabIndex = 3;
-            this.btAjustes.Text = "&AJUSTES";
-            this.btAjustes.UseVisualStyleBackColor = false;
-            this.btAjustes.Click += new System.EventHandler(this.btAjustes_Click);
+            this.btAlterarSenha.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btAlterarSenha.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
+            this.btAlterarSenha.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btAlterarSenha.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btAlterarSenha.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold);
+            this.btAlterarSenha.ForeColor = System.Drawing.Color.White;
+            this.btAlterarSenha.Location = new System.Drawing.Point(618, 390);
+            this.btAlterarSenha.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btAlterarSenha.Name = "btAlterarSenha";
+            this.btAlterarSenha.Size = new System.Drawing.Size(112, 35);
+            this.btAlterarSenha.TabIndex = 3;
+            this.btAlterarSenha.Text = "&ALTERAR SENHA";
+            this.btAlterarSenha.UseVisualStyleBackColor = false;
+            this.btAlterarSenha.Click += new System.EventHandler(this.btAlterarSenha_Click);
             // 
             // lbMensagem
             // 
@@ -164,7 +164,7 @@ namespace projetofinal
             this.ClientSize = new System.Drawing.Size(1035, 571);
             this.Controls.Add(this.lbInfoUsuario);
             this.Controls.Add(this.lbMensagem);
-            this.Controls.Add(this.btAjustes);
+            this.Controls.Add(this.btAlterarSenha);
             this.Controls.Add(this.btVerParticipantes);
             this.Controls.Add(this.btEditarAula);
             this.Controls.Add(this.btNovaAula);
@@ -192,7 +192,7 @@ namespace projetofinal
         internal System.Windows.Forms.Button btEditarAula;
         internal System.Windows.Forms.Button btNovaAula;
         internal System.Windows.Forms.Button btVerParticipantes;
-        internal System.Windows.Forms.Button btAjustes;
+        internal System.Windows.Forms.Button btAlterarSenha;
         private System.Windows.Forms.Label lbMensagem;
         private System.Windows.Forms.Label lbInfoUsuario;
     }

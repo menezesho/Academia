@@ -32,7 +32,7 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btRealizarInscrição = new System.Windows.Forms.Button();
             this.btCancelarInscrição = new System.Windows.Forms.Button();
-            this.btAjustes = new System.Windows.Forms.Button();
+            this.btAlterarSenha = new System.Windows.Forms.Button();
             this.lbMensagem = new System.Windows.Forms.Label();
             this.lbInfoUsuario = new System.Windows.Forms.Label();
             this.lbSair = new System.Windows.Forms.Label();
@@ -84,21 +84,22 @@
             this.btCancelarInscrição.UseVisualStyleBackColor = false;
             this.btCancelarInscrição.Click += new System.EventHandler(this.btCancelarInscrição_Click);
             // 
-            // btAjustes
+            // btAlterarSenha
             // 
-            this.btAjustes.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btAjustes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
-            this.btAjustes.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btAjustes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btAjustes.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold);
-            this.btAjustes.ForeColor = System.Drawing.Color.White;
-            this.btAjustes.Location = new System.Drawing.Point(622, 336);
-            this.btAjustes.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btAjustes.Name = "btAjustes";
-            this.btAjustes.Size = new System.Drawing.Size(104, 35);
-            this.btAjustes.TabIndex = 2;
-            this.btAjustes.Text = "&AJUSTES";
-            this.btAjustes.UseVisualStyleBackColor = false;
+            this.btAlterarSenha.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btAlterarSenha.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
+            this.btAlterarSenha.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btAlterarSenha.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btAlterarSenha.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold);
+            this.btAlterarSenha.ForeColor = System.Drawing.Color.White;
+            this.btAlterarSenha.Location = new System.Drawing.Point(618, 336);
+            this.btAlterarSenha.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btAlterarSenha.Name = "btAlterarSenha";
+            this.btAlterarSenha.Size = new System.Drawing.Size(112, 35);
+            this.btAlterarSenha.TabIndex = 2;
+            this.btAlterarSenha.Text = "&ALTERAR SENHA";
+            this.btAlterarSenha.UseVisualStyleBackColor = false;
+            this.btAlterarSenha.Click += new System.EventHandler(this.btAlterarSenha_Click);
             // 
             // lbMensagem
             // 
@@ -145,7 +146,7 @@
             this.Controls.Add(this.lbSair);
             this.Controls.Add(this.lbInfoUsuario);
             this.Controls.Add(this.lbMensagem);
-            this.Controls.Add(this.btAjustes);
+            this.Controls.Add(this.btAlterarSenha);
             this.Controls.Add(this.btRealizarInscrição);
             this.Controls.Add(this.btCancelarInscrição);
             this.Controls.Add(this.pictureBox1);
@@ -168,7 +169,7 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         internal System.Windows.Forms.Button btRealizarInscrição;
         internal System.Windows.Forms.Button btCancelarInscrição;
-        internal System.Windows.Forms.Button btAjustes;
+        internal System.Windows.Forms.Button btAlterarSenha;
         private System.Windows.Forms.Label lbMensagem;
         private System.Windows.Forms.Label lbInfoUsuario;
         private System.Windows.Forms.Label lbSair;

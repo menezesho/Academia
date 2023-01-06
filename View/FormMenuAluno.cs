@@ -16,6 +16,7 @@ namespace academia
         public string usuario = "";
         public string nome = "";
         public int id = 0;
+        public int acesso = 1;
 
         public FormMenuAluno()
         {
@@ -35,6 +36,28 @@ namespace academia
             lbMensagem.Text = "Olá, " + nome + "!";
             lbInfoUsuario.Text = "Usuário: " + usuario.ToLower() + "\nNível de acesso: 1";
         }
+
+        #region Menu
+
+        private void btRealizarInscrição_Click(object sender, EventArgs e)
+        {//btRealizarInscrição
+            FormInscrever Fi = new FormInscrever(id, nome);
+            Fi.ShowDialog();
+        }
+
+        private void btCancelarInscrição_Click(object sender, EventArgs e)
+        {//btCancelarInscricao
+            FormCancelarInscricao Fci = new FormCancelarInscricao(id, nome);
+            Fci.ShowDialog();
+        }
+
+        private void btAlterarSenha_Click(object sender, EventArgs e)
+        {//btAlterarSenha
+            FormAlterarSenha Fas = new FormAlterarSenha(id, acesso);
+            Fas.ShowDialog();
+        }
+
+        #endregion
 
         #region Retornar
 
@@ -58,17 +81,6 @@ namespace academia
 
 
         #endregion
-
-        private void btRealizarInscrição_Click(object sender, EventArgs e)
-        {//btRealizarInscrição
-            FormInscrever Fi = new FormInscrever(id, nome);
-            Fi.ShowDialog();
-        }
-
-        private void btCancelarInscrição_Click(object sender, EventArgs e)
-        {//btCancelarInscricao
-            FormCancelarInscricao Fci = new FormCancelarInscricao(id, nome);
-            Fci.ShowDialog();
-        }
+ 
     }
 }
