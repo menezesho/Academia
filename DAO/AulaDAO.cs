@@ -29,7 +29,9 @@ namespace academia.DAO
         public DataTable listarAulasDisponiveis()
         {
             SqlConnection conexao = new SqlConnection(conec.ConexaoBD());
-            string sql = @"SELECT idaula AS 'ID', nome as 'Nome' FROM AULA WHERE CONTADOR < TOTAL OR TOTAL IS NULL;";
+            string sql = @"SELECT idaula AS 'ID', nome as 'Nome'
+                FROM aula
+                WHERE contador < total OR total IS NULL;";
             SqlCommand comando = new SqlCommand(sql, conexao);
             conexao.Open();
             comando.ExecuteNonQuery();
@@ -43,7 +45,10 @@ namespace academia.DAO
         public DataTable listarAulasFiltradas(int id)
         {
             SqlConnection conexao = new SqlConnection(conec.ConexaoBD());
-            string sql = "EXEC P_FILTRAR_AULAS @id;";
+            string sql = @"SELECT aula.idaula AS 'ID', aula.nome AS 'Aula', pr.nome AS 'Professor', aula.dia AS 'Data', aula.hora AS 'Horário', aula.total AS 'Max. Alunos', aula.contador AS 'Contador'
+                FROM aula INNER JOIN participante AS 'pa' ON p.id_aula = aula.idaula
+                INNER JOIN professor AS 'pr' ON pr.idprofessor = aula.id_professor
+                WHERE pa.id_aluno = @id;";
             SqlCommand comando = new SqlCommand(sql, conexao);
             comando.Parameters.AddWithValue("@id", id);
             conexao.Open();
@@ -58,7 +63,9 @@ namespace academia.DAO
         public DataTable listarAulasProfessor(int id)
         {
             SqlConnection conexao = new SqlConnection(conec.ConexaoBD());
-            string sql = @"SELECT idaula AS 'ID', nome AS 'Aula', dia AS Data, hora AS Horário, total AS 'Total', contador AS 'Contador', id_professor as 'Professor' FROM aula WHERE id_professor = @id;";
+            string sql = @"SELECT aula.idaula AS 'ID', aula.nome AS 'Aula', aula.dia AS 'Data', aula.hora AS 'Horário', aula.total AS 'Máx. Alunos', aula.contador AS 'Contador', p.nome AS 'Professor'
+                FROM aula INNER JOIN professor AS p ON aula.id_professor = p.idprofessor
+                WHERE id_professor = @id;";
             SqlCommand comando = new SqlCommand(sql, conexao);
             comando.Parameters.AddWithValue("@id", id);
             conexao.Open();

@@ -720,7 +720,7 @@ namespace projetofinal
             this.epValida.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
             this.epValida.ContainerControl = this;
             // 
-            // FormCadAluno
+            // FormNovoAluno
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -735,7 +735,7 @@ namespace projetofinal
             this.KeyPreview = true;
             this.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.MinimumSize = new System.Drawing.Size(674, 740);
-            this.Name = "FormCadAluno";
+            this.Name = "FormNovoAluno";
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Novo Aluno";

@@ -58,11 +58,11 @@ namespace projetofinal
 
         private void btCadastrar_Click(object sender, EventArgs e)
         {//btCadastrar
-            if (tbNome.Text == "" || mtbCpf.Text == "" || mtbIdade.Text == "" || mtbCelular.Text == "" || tbEmail.Text == "" || tbRua.Text == "" || mtbNumero.Text == "" || tbBairro.Text == "" || tbCidade.Text == "" || cbEstado.SelectedIndex == 0 || tbUsuario.Text == "" || tbSenha.Text == "")
+            if (tbNome.Text.Trim() == "" || mtbCpf.Text == "" || mtbIdade.Text == "" || mtbCelular.Text == "" || tbEmail.Text.Trim() == "" || tbRua.Text.Trim() == "" || mtbNumero.Text == "" || tbBairro.Text.Trim() == "" || tbCidade.Text.Trim() == "" || cbEstado.SelectedIndex == 0 || tbUsuario.Text.Trim() == "" || tbSenha.Text == "")
                 MessageBox.Show("Preencha todos os campos obrigatórios!", "Cadastrar", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             else
             {
-                var emailVerificado = verificacao.verificarEmail(tbEmail.Text);
+                var emailVerificado = verificacao.verificarEmail(tbEmail.Text.Trim());
                 var cpfVerificado = Verificacao.verificarCpf(mtbCpf.Text);
                 var celularVerificado = Verificacao.verificarCelular(mtbCelular.Text);
                 if (cpfVerificado)
@@ -110,17 +110,17 @@ namespace projetofinal
 
                                     SqlCommand comandoInsert = new SqlCommand(sqlInsert, conexao2);
 
-                                    comandoInsert.Parameters.AddWithValue("@nome", tbNome.Text);
+                                    comandoInsert.Parameters.AddWithValue("@nome", tbNome.Text.Trim());
                                     comandoInsert.Parameters.AddWithValue("@cpf", mtbCpf.Text);
                                     comandoInsert.Parameters.AddWithValue("@idade", int.Parse(mtbIdade.Text));
                                     comandoInsert.Parameters.AddWithValue("@celular", mtbCelular.Text);
-                                    comandoInsert.Parameters.AddWithValue("@email", tbEmail.Text);
-                                    comandoInsert.Parameters.AddWithValue("@rua", tbRua.Text);
+                                    comandoInsert.Parameters.AddWithValue("@email", tbEmail.Text.Trim());
+                                    comandoInsert.Parameters.AddWithValue("@rua", tbRua.Text.Trim());
                                     comandoInsert.Parameters.AddWithValue("@numero", mtbNumero.Text);
-                                    comandoInsert.Parameters.AddWithValue("@bairro", tbBairro.Text);
-                                    comandoInsert.Parameters.AddWithValue("@cidade", tbCidade.Text);
+                                    comandoInsert.Parameters.AddWithValue("@bairro", tbBairro.Text.Trim());
+                                    comandoInsert.Parameters.AddWithValue("@cidade", tbCidade.Text.Trim());
                                     comandoInsert.Parameters.AddWithValue("@estado", cbEstado.Text);
-                                    comandoInsert.Parameters.AddWithValue("@usuario", tbUsuario.Text);
+                                    comandoInsert.Parameters.AddWithValue("@usuario", tbUsuario.Text.Trim());
                                     comandoInsert.Parameters.AddWithValue("@senha", tbSenha.Text);
 
                                     conexao2.Open();

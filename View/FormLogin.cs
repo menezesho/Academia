@@ -46,7 +46,7 @@ namespace projetofinal
             {
                 if (selecionado == 3)
                 {
-                    if (tbUsuario.Text == "admin" && tbSenha.Text == "123")
+                    if (tbUsuario.Text.Trim() == "admin" && tbSenha.Text == "123")
                     {
                         nome = "Administrador";
                         usuario = "admin";
@@ -75,7 +75,7 @@ namespace projetofinal
                             sql = @"SELECT * FROM professor WHERE usuario=@usuario AND senha=@senha";
                         SqlCommand comando = new SqlCommand(sql, conexao);
 
-                        comando.Parameters.AddWithValue("@usuario", tbUsuario.Text);
+                        comando.Parameters.AddWithValue("@usuario", tbUsuario.Text.Trim());
                         comando.Parameters.AddWithValue("@senha", tbSenha.Text);
 
                         conexao.Open();
@@ -84,7 +84,7 @@ namespace projetofinal
                         {
                             nome = dados["Nome"].ToString();
                             id = (int)dados[0];
-                            usuario = tbUsuario.Text;
+                            usuario = tbUsuario.Text.Trim();
                             MessageBox.Show("Login autenticado com sucesso!", "Login", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             tbUsuario.Text = " Usuário";
                             tbUsuario.Font = new Font("Segoe UI Light", 14F, FontStyle.Italic);

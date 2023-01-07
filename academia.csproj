@@ -59,10 +59,10 @@
     <Compile Include="DAO\LoginDAO.cs" />
     <Compile Include="DAO\ProfessorDAO.cs" />
     <Compile Include="Class\Program.cs" />
-    <Compile Include="FormAlterarSenha.cs">
+    <Compile Include="View\FormAlterarSenha.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormAlterarSenha.Designer.cs">
+    <Compile Include="View\FormAlterarSenha.Designer.cs">
       <DependentUpon>FormAlterarSenha.cs</DependentUpon>
     </Compile>
     <Compile Include="View\FormEditarAula.cs">
@@ -138,7 +138,7 @@
     <Compile Include="View\FormMenuProfessor.designer.cs">
       <DependentUpon>FormMenuProfessor.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="FormAlterarSenha.resx">
+    <EmbeddedResource Include="View\FormAlterarSenha.resx">
       <DependentUpon>FormAlterarSenha.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\FormEditarAula.resx">

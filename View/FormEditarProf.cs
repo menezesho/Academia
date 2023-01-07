@@ -298,11 +298,11 @@ namespace projetofinal
                 MessageBox.Show("Nenhum cadastro foi selecionado, tente novamente!", "Excluir", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             else
             {
-                if (tbNome.Text == "" || mtbCpf.Text == "" || mtbIdade.Text == "" || mtbCelular.Text == "" || tbEmail.Text == "" || tbRua.Text == "" || mtbNumero.Text == "" || tbBairro.Text == "" || tbCidade.Text == "" || cbEstado.SelectedIndex == 0 || tbUsuario.Text == "" || tbSenha.Text == "")
+                if (tbNome.Text.Trim() == "" || mtbCpf.Text == "" || mtbIdade.Text == "" || mtbCelular.Text == "" || tbEmail.Text.Trim() == "" || tbRua.Text.Trim() == "" || mtbNumero.Text == "" || tbBairro.Text.Trim() == "" || tbCidade.Text.Trim() == "" || cbEstado.SelectedIndex == 0 || tbUsuario.Text.Trim() == "" || tbSenha.Text == "")
                     MessageBox.Show("Preencha todos os campos obrigatórios!", "Editar", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 else
                 {
-                    var emailVerificado = verificacao.verificarEmail(tbEmail.Text);
+                    var emailVerificado = verificacao.verificarEmail(tbEmail.Text.Trim());
                     var cpfVerificado = Verificacao.verificarCpf(mtbCpf.Text);
                     var celularVerificado = Verificacao.verificarCelular(mtbCelular.Text);
                     if (cpfVerificado)
@@ -327,16 +327,16 @@ namespace projetofinal
                                     SqlCommand comandoUpdate = new SqlCommand(sqlUpdate, conexao);
 
                                     comandoUpdate.Parameters.AddWithValue("@idprofessor", id);
-                                    comandoUpdate.Parameters.AddWithValue("@nome", tbNome.Text);
+                                    comandoUpdate.Parameters.AddWithValue("@nome", tbNome.Text.Trim());
                                     comandoUpdate.Parameters.AddWithValue("@idade", int.Parse(mtbIdade.Text));
                                     comandoUpdate.Parameters.AddWithValue("@celular", mtbCelular.Text);
-                                    comandoUpdate.Parameters.AddWithValue("@email", tbEmail.Text);
-                                    comandoUpdate.Parameters.AddWithValue("@rua", tbRua.Text);
+                                    comandoUpdate.Parameters.AddWithValue("@email", tbEmail.Text.Trim());
+                                    comandoUpdate.Parameters.AddWithValue("@rua", tbRua.Text.Trim());
                                     comandoUpdate.Parameters.AddWithValue("@numero", mtbNumero.Text);
-                                    comandoUpdate.Parameters.AddWithValue("@bairro", tbBairro.Text);
-                                    comandoUpdate.Parameters.AddWithValue("@cidade", tbCidade.Text);
+                                    comandoUpdate.Parameters.AddWithValue("@bairro", tbBairro.Text.Trim());
+                                    comandoUpdate.Parameters.AddWithValue("@cidade", tbCidade.Text.Trim());
                                     comandoUpdate.Parameters.AddWithValue("@estado", cbEstado.Text);
-                                    comandoUpdate.Parameters.AddWithValue("@usuario", tbUsuario.Text);
+                                    comandoUpdate.Parameters.AddWithValue("@usuario", tbUsuario.Text.Trim());
                                     comandoUpdate.Parameters.AddWithValue("@senha", tbSenha.Text);
 
                                     conexao.Open();

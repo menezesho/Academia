@@ -47,7 +47,7 @@ namespace academia
 
         private void btCadastrar_Click(object sender, EventArgs e)
         {//btCadastrar
-            if (tbNome.Text == "" || cbHora.Text == "Selecione")
+            if (tbNome.Text.Trim() == "" || cbHora.Text == "Selecione")
                 MessageBox.Show("Preencha os campos vazios!", "Cadastrar", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             else
             {
@@ -82,7 +82,7 @@ namespace academia
                             else
                                 sqlInsert = sqlInsert + ", contador) VALUES(@nome, @data, @hora, @idprofessor, 0)";
 
-                            comandoInsert.Parameters.AddWithValue("@nome", tbNome.Text);
+                            comandoInsert.Parameters.AddWithValue("@nome", tbNome.Text.Trim());
                             comandoInsert.Parameters.AddWithValue("@data", Convert.ToDateTime(dtpData.Text));
                             comandoInsert.Parameters.AddWithValue("@hora", cbHora.Text);
                             comandoInsert.Parameters.AddWithValue("@idprofessor", id);

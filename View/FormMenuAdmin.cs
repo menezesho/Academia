@@ -34,29 +34,6 @@ namespace academia
             lbInfoUsuario.Text = "Usuário: " + usuario.ToLower() + "\nNível de acesso: 3";
         }
 
-        #region Retornar
-
-        private void lbSair_Click(object sender, EventArgs e)
-        {//lbSair
-            if (MessageBox.Show("Deseja mesmo retornar para a tela de login?", "Retornar", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
-                Close();
-        }
-
-        private void FormMenuAdmin_KeyDown(object sender, KeyEventArgs e)
-        {//ESC para retornar
-            if (e.KeyValue.Equals(27))
-                if (MessageBox.Show("Deseja mesmo retornar para a tela de login?", "Retornar", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
-                    Close();
-        }
-
-        private void FormMenuAdmin_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            Program.formLogin.Show();
-        }
-
-
-        #endregion
-
         #region Menu
 
         private void btNovoAluno_Click(object sender, EventArgs e)
@@ -81,6 +58,28 @@ namespace academia
         {//btEditarProfessor
             FormEditarProf Fep = new FormEditarProf();
             Fep.ShowDialog();
+        }
+
+        #endregion
+
+        #region Retornar
+
+        private void FormMenuAdmin_KeyDown(object sender, KeyEventArgs e)
+        {//ESC para retornar
+            if (e.KeyValue.Equals(27))
+                if (MessageBox.Show("Deseja mesmo retornar para a tela de login?", "Retornar", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+                    Close();
+        }
+
+        private void lbSair_Click(object sender, EventArgs e)
+        {//lbSair
+            if (MessageBox.Show("Deseja mesmo retornar para a tela de login?", "Retornar", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+                Close();
+        }
+
+        private void FormMenuAdmin_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Program.formLogin.Show();
         }
 
         #endregion

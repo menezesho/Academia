@@ -37,12 +37,14 @@ namespace academia
         {
             dgaulas.DataSource = aulaDAO.listarAulasProfessor(id);
 
+            //set
+            dgaulas.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgaulas.Columns["ID"].Width = 40;
-            dgaulas.Columns["Aula"].Width = 200;
+            dgaulas.Columns["Aula"].Width = 250;
             dgaulas.Columns["Data"].Width = 90;
-            dgaulas.Columns["Horário"].Width = 40;
-            dgaulas.Columns["Total"].Width = 200;
-            dgaulas.Columns["Professor"].Width = 90;
+            dgaulas.Columns["Horário"].Width = 60;
+            dgaulas.Columns["Máx. Alunos"].Width = 60;
+            dgaulas.Columns["Professor"].Width = 150;
             dgaulas.Columns["Contador"].Visible = false;
 
             idAula = 0;
@@ -84,6 +86,7 @@ namespace academia
             tbBusca.Text = " Busca...";
             tbBusca.Font = new Font("Segoe UI Light", 12F, FontStyle.Italic);
             dgaulas.DataSource = aulaDAO.listarAulasProfessor(id);
+            dgaulas.Columns["Contador"].Visible = false;
             lbBuscar.Focus();
         }
 
@@ -112,36 +115,25 @@ namespace academia
                 else
                 {
                     try
-                    { /*
+                    { 
                         SqlConnection conexao = new SqlConnection(conec.ConexaoBD());
                         string sql = "";
                         if (cbFiltro.SelectedIndex == 0)
                         {
-                            sql = @"SELECT idaluno AS ID, nome AS Nome, cpf AS CPF, idade AS Idade, celular AS Celular, email AS 'E-mail',
-                                peso AS 'Peso(kg)', altura AS 'Altura(cm)', rua AS Rua, numero AS 'Num.', apto AS 'Apto.', bairro AS Bairro,
-                                cidade AS Cidade, estado AS Estado, usuario AS Usuário, senha AS Senha FROM aluno WHERE nome LIKE @busca ORDER BY nome";
+                            sql = @"SELECT aula.idaula AS 'ID', aula.nome AS 'Aula', aula.dia AS 'Data', aula.hora AS 'Horário', aula.total AS 'Máx. Alunos', p.nome AS 'Professor', aula.contador AS 'Contador'
+                                FROM aula inner JOIN professor AS p ON aula.id_professor = p.idprofessor
+                                WHERE aula.id_professor = @id AND aula.nome LIKE @busca ORDER BY aula.nome";
                         }
                         if (cbFiltro.SelectedIndex == 1)
                         {
-                            sql = @"SELECT idaluno AS ID, nome AS Nome, cpf AS CPF, idade AS Idade, celular AS Celular, email AS 'E-mail',
-                                peso AS 'Peso(kg)', altura AS 'Altura(cm)', rua AS Rua, numero AS 'Num.', apto AS 'Apto.', bairro AS Bairro,
-                                cidade AS Cidade, estado AS Estado, usuario AS Usuário, senha AS Senha FROM aluno WHERE cpf LIKE @busca ORDER BY nome";
-                        }
-                        if (cbFiltro.SelectedIndex == 2)
-                        {
-                            sql = @"SELECT idaluno AS ID, nome AS Nome, cpf AS CPF, idade AS Idade, celular AS Celular, email AS 'E-mail',
-                                peso AS 'Peso(kg)', altura AS 'Altura(cm)', rua AS Rua, numero AS 'Num.', apto AS 'Apto.', bairro AS Bairro,
-                                cidade AS Cidade, estado AS Estado, usuario AS Usuário, senha AS Senha FROM aluno WHERE email LIKE @busca ORDER BY nome";
-                        }
-                        if (cbFiltro.SelectedIndex == 3)
-                        {
-                            sql = @"SELECT idaluno AS ID, nome AS Nome, cpf AS CPF, idade AS Idade, celular AS Celular, email AS 'E-mail',
-                                peso AS 'Peso(kg)', altura AS 'Altura(cm)', rua AS Rua, numero AS 'Num.', apto AS 'Apto.', bairro AS Bairro,
-                                cidade AS Cidade, estado AS Estado, usuario AS Usuário, senha AS Senha FROM aluno WHERE usuario LIKE @busca ORDER BY nome";
+                            sql = @"SELECT aula.idaula AS 'ID', aula.nome AS 'Aula', aula.dia AS 'Data', aula.hora AS 'Horário', aula.total AS 'Máx. Alunos', p.nome AS 'Professor', aula.contador AS 'Contador'
+                                FROM aula inner JOIN professor AS p ON aula.id_professor = p.idprofessor
+                                WHERE aula.id_professor = @id AND aula.dia LIKE @busca ORDER BY aula.nome";
                         }
                         SqlCommand comando = new SqlCommand(sql, conexao);
 
                         comando.Parameters.AddWithValue("@busca", "%" + tbBusca.Text + "%");
+                        comando.Parameters.AddWithValue("@id", id);
 
                         conexao.Open();
                         SqlDataAdapter da = new SqlDataAdapter(comando);
@@ -149,7 +141,8 @@ namespace academia
                         da.Fill(resultado);
                         dgaulas.DataSource = resultado.Tables[0];
                         conexao.Close();
-                        */
+                        dgaulas.Columns["Contador"].Visible = false;
+
                     }
                     catch (Exception erro)
                     {
@@ -199,6 +192,7 @@ namespace academia
                         MessageBox.Show("Cadastro excluido com sucesso!", "Excluir", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                         dgaulas.DataSource = aulaDAO.listarAulasProfessor(id);
+                        dgaulas.Columns["Contador"].Visible = false;
 
                         idAula = 0;
                         tbNome.Clear();
@@ -224,7 +218,7 @@ namespace academia
                 MessageBox.Show("Nenhum cadastro foi selecionado, tente novamente!", "Excluir", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             else
             {
-                if (tbNome.Text == "" || cbHora.SelectedIndex == 0)
+                if (tbNome.Text.Trim() == "" || cbHora.SelectedIndex == 0)
                     MessageBox.Show("Preencha todos os campos obrigatórios!", "Editar", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 else
                 {
@@ -258,7 +252,7 @@ namespace academia
                         SqlCommand comandoUpdate = new SqlCommand(sqlUpdate, conexao);
 
                         comandoUpdate.Parameters.AddWithValue("@idaula", idAula);
-                        comandoUpdate.Parameters.AddWithValue("@nome", tbNome.Text);
+                        comandoUpdate.Parameters.AddWithValue("@nome", tbNome.Text.Trim());
                         comandoUpdate.Parameters.AddWithValue("@data", Convert.ToDateTime(dtpData.Text));
                         comandoUpdate.Parameters.AddWithValue("@hora", cbHora.Text);
                         comandoUpdate.Parameters.AddWithValue("@contador", contador);
@@ -270,6 +264,7 @@ namespace academia
                         MessageBox.Show("Dados alterados com sucesso!", "Editar", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                         dgaulas.DataSource = aulaDAO.listarAulasProfessor(id);
+                        dgaulas.Columns["Contador"].Visible = false;
 
                         idAula = 0;
                         tbNome.Clear();
