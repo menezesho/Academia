@@ -23,6 +23,7 @@ namespace academia
         int idAula = 0;
         int contador = 0;
         string testeContador = "";
+        int idProfessor = 0;
 
         public FormInscrever()
         {
@@ -72,32 +73,47 @@ namespace academia
                     else
                     {
                         conexao.Close();
-                        SqlConnection conexao2 = new SqlConnection(conec.ConexaoBD());
-                        string sqlInsert = "";
-                        sqlInsert = @"INSERT INTO participante (id_aula, id_aluno) VALUES (@idaula, @idaluno);
+                        SqlConnection conexao3 = new SqlConnection(conec.ConexaoBD());
+                        string sqlSelect2 = @"SELECT id_professor AS 'ID_PROFESSOR' FROM aula WHERE idaula = @idaula;";
+                        SqlCommand comandoSelect2 = new SqlCommand(sqlSelect2, conexao3);
+
+                        comandoSelect2.Parameters.AddWithValue("@idaula", idAula);
+
+                        conexao3.Open();
+                        SqlDataReader dados2 = comandoSelect2.ExecuteReader();
+                        if (dados2.Read())
+                        {
+                            idProfessor = (int)dados2["ID_PROFESSOR"];
+
+                            conexao3.Close();
+                            SqlConnection conexao2 = new SqlConnection(conec.ConexaoBD());
+                            string sqlInsert = "";
+                            sqlInsert = @"INSERT INTO participante (id_aula, id_aluno, id_professor) VALUES (@idaula, @idaluno, @idprofessor);
                             UPDATE aula SET contador =";
-                        if (testeContador == "")
-                            sqlInsert = sqlInsert + " NULL WHERE idaula = @idaula;";
-                        else
-                            sqlInsert = sqlInsert + " @contador WHERE idaula = @idaula;";
+                            if (testeContador == "")
+                                sqlInsert = sqlInsert + " NULL WHERE idaula = @idaula;";
+                            else
+                                sqlInsert = sqlInsert + " @contador WHERE idaula = @idaula;";
 
-                        SqlCommand comandoInsert = new SqlCommand(sqlInsert, conexao2);
+                            SqlCommand comandoInsert = new SqlCommand(sqlInsert, conexao2);
 
-                        comandoInsert.Parameters.AddWithValue("@idaula", idAula);
-                        comandoInsert.Parameters.AddWithValue("@idaluno", id);
-                        comandoInsert.Parameters.AddWithValue("@contador", contador + 1);
+                            comandoInsert.Parameters.AddWithValue("@idaula", idAula);
+                            comandoInsert.Parameters.AddWithValue("@idaluno", id);
+                            comandoInsert.Parameters.AddWithValue("@idprofessor", idProfessor);
+                            comandoInsert.Parameters.AddWithValue("@contador", contador + 1);
 
-                        conexao2.Open();
-                        comandoInsert.CommandText = sqlInsert;
-                        comandoInsert.ExecuteNonQuery();
-                        conexao2.Close();
-                        MessageBox.Show("Inscrição realizada com sucesso!", "Inscrever", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        cbAula.DataSource = null;
-                        cbAula.Items.Add("Selecione");
-                        cbAula.SelectedIndex = 0;
-                        tbProfessor.Clear();
-                        mtbData.Clear();
-                        tbHora.Clear();
+                            conexao2.Open();
+                            comandoInsert.CommandText = sqlInsert;
+                            comandoInsert.ExecuteNonQuery();
+                            conexao2.Close();
+                            MessageBox.Show("Inscrição realizada com sucesso!", "Inscrever", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            cbAula.DataSource = null;
+                            cbAula.Items.Add("Selecione");
+                            cbAula.SelectedIndex = 0;
+                            tbProfessor.Clear();
+                            mtbData.Clear();
+                            tbHora.Clear();
+                        }
                     }
                 }
                 catch (Exception erro)

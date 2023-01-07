@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormEditarAula));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -58,9 +59,14 @@
             this.lbHorario = new System.Windows.Forms.Label();
             this.lbData = new System.Windows.Forms.Label();
             this.dgalunos = new System.Windows.Forms.DataGridView();
+            this.tcDados = new System.Windows.Forms.TabControl();
+            this.tpDadosGerais = new System.Windows.Forms.TabPage();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgaulas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgalunos)).BeginInit();
+            this.tcDados.SuspendLayout();
+            this.tpDadosGerais.SuspendLayout();
             this.SuspendLayout();
             // 
             // lbTipoFiltro
@@ -98,6 +104,7 @@
             this.lbBuscar.Name = "lbBuscar";
             this.lbBuscar.Size = new System.Drawing.Size(29, 29);
             this.lbBuscar.TabIndex = 159;
+            this.toolTip1.SetToolTip(this.lbBuscar, "Buscar");
             this.lbBuscar.Click += new System.EventHandler(this.lbBuscar_Click);
             // 
             // lbSair
@@ -137,11 +144,11 @@
             // 
             // lbnome
             // 
-            this.lbnome.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lbnome.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.lbnome.AutoSize = true;
             this.lbnome.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
             this.lbnome.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
-            this.lbnome.Location = new System.Drawing.Point(680, 226);
+            this.lbnome.Location = new System.Drawing.Point(44, 83);
             this.lbnome.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbnome.Name = "lbnome";
             this.lbnome.Size = new System.Drawing.Size(73, 25);
@@ -150,11 +157,11 @@
             // 
             // tbNome
             // 
-            this.tbNome.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.tbNome.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.tbNome.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tbNome.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.tbNome.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
-            this.tbNome.Location = new System.Drawing.Point(680, 254);
+            this.tbNome.Location = new System.Drawing.Point(44, 111);
             this.tbNome.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.tbNome.MaxLength = 100;
             this.tbNome.Name = "tbNome";
@@ -176,6 +183,7 @@
             this.btRelatorio.Size = new System.Drawing.Size(60, 69);
             this.btRelatorio.TabIndex = 152;
             this.btRelatorio.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.toolTip1.SetToolTip(this.btRelatorio, "Gerar relatório");
             this.btRelatorio.UseVisualStyleBackColor = false;
             // 
             // btExcluir
@@ -192,6 +200,7 @@
             this.btExcluir.Name = "btExcluir";
             this.btExcluir.Size = new System.Drawing.Size(60, 69);
             this.btExcluir.TabIndex = 154;
+            this.toolTip1.SetToolTip(this.btExcluir, "Excluir cadastro");
             this.btExcluir.UseVisualStyleBackColor = false;
             this.btExcluir.Click += new System.EventHandler(this.btExcluir_Click);
             // 
@@ -210,6 +219,7 @@
             this.btSalvar.Size = new System.Drawing.Size(60, 69);
             this.btSalvar.TabIndex = 155;
             this.btSalvar.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.toolTip1.SetToolTip(this.btSalvar, "Salvar alterações");
             this.btSalvar.UseVisualStyleBackColor = false;
             this.btSalvar.Click += new System.EventHandler(this.btSalvar_Click);
             // 
@@ -244,6 +254,7 @@
             this.btLimpar.Name = "btLimpar";
             this.btLimpar.Size = new System.Drawing.Size(60, 69);
             this.btLimpar.TabIndex = 153;
+            this.toolTip1.SetToolTip(this.btLimpar, "Limpar informações");
             this.btLimpar.UseVisualStyleBackColor = false;
             this.btLimpar.Click += new System.EventHandler(this.btLimpar_Click);
             // 
@@ -326,13 +337,13 @@
             // 
             // mtbTotal
             // 
-            this.mtbTotal.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.mtbTotal.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.mtbTotal.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.mtbTotal.Enabled = false;
             this.mtbTotal.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.mtbTotal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
             this.mtbTotal.HidePromptOnLeave = true;
-            this.mtbTotal.Location = new System.Drawing.Point(1020, 358);
+            this.mtbTotal.Location = new System.Drawing.Point(384, 215);
             this.mtbTotal.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.mtbTotal.Mask = "000";
             this.mtbTotal.Name = "mtbTotal";
@@ -344,11 +355,11 @@
             // 
             // lbLimite
             // 
-            this.lbLimite.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lbLimite.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.lbLimite.AutoSize = true;
             this.lbLimite.Font = new System.Drawing.Font("Segoe UI Semibold", 14F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
             this.lbLimite.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
-            this.lbLimite.Location = new System.Drawing.Point(1022, 331);
+            this.lbLimite.Location = new System.Drawing.Point(386, 188);
             this.lbLimite.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbLimite.Name = "lbLimite";
             this.lbLimite.Size = new System.Drawing.Size(82, 25);
@@ -358,13 +369,13 @@
             // 
             // dtpData
             // 
-            this.dtpData.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.dtpData.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.dtpData.CalendarFont = new System.Drawing.Font("Segoe UI", 12F);
             this.dtpData.CalendarForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
             this.dtpData.CalendarTitleBackColor = System.Drawing.Color.LightGray;
             this.dtpData.Font = new System.Drawing.Font("Segoe UI Semilight", 13.2F, System.Drawing.FontStyle.Italic);
             this.dtpData.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpData.Location = new System.Drawing.Point(680, 358);
+            this.dtpData.Location = new System.Drawing.Point(44, 215);
             this.dtpData.Margin = new System.Windows.Forms.Padding(2);
             this.dtpData.MaxDate = new System.DateTime(2030, 12, 31, 0, 0, 0, 0);
             this.dtpData.MinDate = new System.DateTime(2022, 1, 1, 0, 0, 0, 0);
@@ -375,7 +386,7 @@
             // 
             // cbHora
             // 
-            this.cbHora.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.cbHora.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.cbHora.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cbHora.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbHora.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -395,7 +406,7 @@
             "15h",
             "16h",
             "17h"});
-            this.cbHora.Location = new System.Drawing.Point(858, 358);
+            this.cbHora.Location = new System.Drawing.Point(222, 215);
             this.cbHora.Margin = new System.Windows.Forms.Padding(2);
             this.cbHora.Name = "cbHora";
             this.cbHora.Size = new System.Drawing.Size(115, 29);
@@ -403,11 +414,11 @@
             // 
             // lbHorario
             // 
-            this.lbHorario.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lbHorario.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.lbHorario.AutoSize = true;
             this.lbHorario.Font = new System.Drawing.Font("Segoe UI Semibold", 14F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
             this.lbHorario.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
-            this.lbHorario.Location = new System.Drawing.Point(872, 331);
+            this.lbHorario.Location = new System.Drawing.Point(236, 188);
             this.lbHorario.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbHorario.Name = "lbHorario";
             this.lbHorario.Size = new System.Drawing.Size(86, 25);
@@ -417,11 +428,11 @@
             // 
             // lbData
             // 
-            this.lbData.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lbData.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.lbData.AutoSize = true;
             this.lbData.Font = new System.Drawing.Font("Segoe UI Semibold", 14F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
             this.lbData.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
-            this.lbData.Location = new System.Drawing.Point(717, 331);
+            this.lbData.Location = new System.Drawing.Point(81, 188);
             this.lbData.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbData.Name = "lbData";
             this.lbData.Size = new System.Drawing.Size(63, 25);
@@ -476,23 +487,53 @@
             this.dgalunos.TabIndex = 168;
             this.dgalunos.TabStop = false;
             // 
+            // tcDados
+            // 
+            this.tcDados.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.tcDados.Controls.Add(this.tpDadosGerais);
+            this.tcDados.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tcDados.Location = new System.Drawing.Point(616, 134);
+            this.tcDados.Name = "tcDados";
+            this.tcDados.SelectedIndex = 0;
+            this.tcDados.Size = new System.Drawing.Size(519, 356);
+            this.tcDados.TabIndex = 169;
+            // 
+            // tpDadosGerais
+            // 
+            this.tpDadosGerais.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.tpDadosGerais.Controls.Add(this.tbNome);
+            this.tpDadosGerais.Controls.Add(this.mtbTotal);
+            this.tpDadosGerais.Controls.Add(this.lbnome);
+            this.tpDadosGerais.Controls.Add(this.lbLimite);
+            this.tpDadosGerais.Controls.Add(this.lbData);
+            this.tpDadosGerais.Controls.Add(this.dtpData);
+            this.tpDadosGerais.Controls.Add(this.lbHorario);
+            this.tpDadosGerais.Controls.Add(this.cbHora);
+            this.tpDadosGerais.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
+            this.tpDadosGerais.Location = new System.Drawing.Point(4, 30);
+            this.tpDadosGerais.Name = "tpDadosGerais";
+            this.tpDadosGerais.Padding = new System.Windows.Forms.Padding(3);
+            this.tpDadosGerais.Size = new System.Drawing.Size(511, 322);
+            this.tpDadosGerais.TabIndex = 0;
+            this.tpDadosGerais.Text = "DADOS GERAIS";
+            // 
+            // toolTip1
+            // 
+            this.toolTip1.AutoPopDelay = 4800;
+            this.toolTip1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
+            this.toolTip1.InitialDelay = 100;
+            this.toolTip1.ReshowDelay = 96;
+            // 
             // FormEditarAula
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1241, 619);
-            this.Controls.Add(this.mtbTotal);
-            this.Controls.Add(this.lbLimite);
-            this.Controls.Add(this.dtpData);
-            this.Controls.Add(this.cbHora);
-            this.Controls.Add(this.lbHorario);
-            this.Controls.Add(this.lbData);
+            this.Controls.Add(this.tcDados);
             this.Controls.Add(this.lbTipoFiltro);
             this.Controls.Add(this.lbLimparBusca);
-            this.Controls.Add(this.lbnome);
             this.Controls.Add(this.lbBuscar);
             this.Controls.Add(this.lbSair);
-            this.Controls.Add(this.tbNome);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.lbListaAulas);
             this.Controls.Add(this.btRelatorio);
@@ -516,6 +557,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgaulas)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgalunos)).EndInit();
+            this.tcDados.ResumeLayout(false);
+            this.tpDadosGerais.ResumeLayout(false);
+            this.tpDadosGerais.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -546,5 +590,8 @@
         private System.Windows.Forms.Label lbHorario;
         private System.Windows.Forms.Label lbData;
         private System.Windows.Forms.DataGridView dgalunos;
+        private System.Windows.Forms.TabControl tcDados;
+        private System.Windows.Forms.TabPage tpDadosGerais;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }

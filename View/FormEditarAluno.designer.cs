@@ -29,6 +29,7 @@ namespace projetofinal
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -84,6 +85,7 @@ namespace projetofinal
             this.cbFiltro = new System.Windows.Forms.ComboBox();
             this.lbFiltro = new System.Windows.Forms.Label();
             this.lbTipoFiltro = new System.Windows.Forms.Label();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dgalunos)).BeginInit();
             this.tcDados.SuspendLayout();
             this.tpDadosPessoais.SuspendLayout();
@@ -173,6 +175,7 @@ namespace projetofinal
             this.btRelatorio.Size = new System.Drawing.Size(60, 69);
             this.btRelatorio.TabIndex = 18;
             this.btRelatorio.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.toolTip1.SetToolTip(this.btRelatorio, "Gerar relatório");
             this.btRelatorio.UseVisualStyleBackColor = false;
             // 
             // btLimpar
@@ -189,6 +192,7 @@ namespace projetofinal
             this.btLimpar.Name = "btLimpar";
             this.btLimpar.Size = new System.Drawing.Size(60, 69);
             this.btLimpar.TabIndex = 19;
+            this.toolTip1.SetToolTip(this.btLimpar, "Limpar informações");
             this.btLimpar.UseVisualStyleBackColor = false;
             this.btLimpar.Click += new System.EventHandler(this.btLimpar_Click);
             // 
@@ -206,6 +210,7 @@ namespace projetofinal
             this.btExcluir.Name = "btExcluir";
             this.btExcluir.Size = new System.Drawing.Size(60, 69);
             this.btExcluir.TabIndex = 20;
+            this.toolTip1.SetToolTip(this.btExcluir, "Excluir cadastro");
             this.btExcluir.UseVisualStyleBackColor = false;
             this.btExcluir.Click += new System.EventHandler(this.btExcluir_Click);
             // 
@@ -224,6 +229,7 @@ namespace projetofinal
             this.btSalvar.Size = new System.Drawing.Size(60, 69);
             this.btSalvar.TabIndex = 21;
             this.btSalvar.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.toolTip1.SetToolTip(this.btSalvar, "Salvar alterações");
             this.btSalvar.UseVisualStyleBackColor = false;
             this.btSalvar.Click += new System.EventHandler(this.btSalvar_Click);
             // 
@@ -834,6 +840,7 @@ namespace projetofinal
             this.lbBuscar.Name = "lbBuscar";
             this.lbBuscar.Size = new System.Drawing.Size(29, 29);
             this.lbBuscar.TabIndex = 144;
+            this.toolTip1.SetToolTip(this.lbBuscar, "Buscar");
             this.lbBuscar.Click += new System.EventHandler(this.lbBuscar_Click);
             // 
             // lbLimparBusca
@@ -893,6 +900,13 @@ namespace projetofinal
             this.lbTipoFiltro.TabIndex = 11;
             this.lbTipoFiltro.Text = " ";
             this.lbTipoFiltro.Click += new System.EventHandler(this.lbTipoFiltro_Click);
+            // 
+            // toolTip1
+            // 
+            this.toolTip1.AutoPopDelay = 4800;
+            this.toolTip1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
+            this.toolTip1.InitialDelay = 100;
+            this.toolTip1.ReshowDelay = 96;
             // 
             // FormEditarAluno
             // 
@@ -993,5 +1007,6 @@ namespace projetofinal
         private System.Windows.Forms.ComboBox cbFiltro;
         private System.Windows.Forms.Label lbFiltro;
         private System.Windows.Forms.Label lbTipoFiltro;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }

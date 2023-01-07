@@ -66,35 +66,42 @@ namespace academia
                         comandoSelect1.Parameters.AddWithValue("@id", id);
                         comandoSelect1.Parameters.AddWithValue("@senha", tbSenhaAtual.Text);
 
-
                         conexao.Open();
                         comandoSelect1.CommandText = sqlSelect1;
                         comandoSelect1.ExecuteNonQuery();
                         SqlDataReader dados1 = comandoSelect1.ExecuteReader();
                         if (dados1.Read())
                         {
-                            conexao.Close();
-                            string sqlUpdate = "";
-                            if (acesso == 1)
-                                sqlUpdate = @"UPDATE aluno SET senha=@senha WHERE idaluno=@id";
-                            if (acesso == 2)
-                                sqlUpdate = @"UPDATE professor SET senha=@senha WHERE idprofessor=@id";
-                            SqlCommand comandoUpdate = new SqlCommand(sqlUpdate, conexao);
+                            if (tbSenhaAtual.Text == tbNovaSenha.Text)
+                            {
+                                MessageBox.Show("A senha digitada é a mesma da anterior, tente novamente!", "Alterar Senha", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                tbNovaSenha.Focus();
+                            }
+                            else
+                            {
+                                conexao.Close();
+                                string sqlUpdate = "";
+                                if (acesso == 1)
+                                    sqlUpdate = @"UPDATE aluno SET senha=@senha WHERE idaluno=@id";
+                                if (acesso == 2)
+                                    sqlUpdate = @"UPDATE professor SET senha=@senha WHERE idprofessor=@id";
+                                SqlCommand comandoUpdate = new SqlCommand(sqlUpdate, conexao);
 
-                            comandoUpdate.Parameters.AddWithValue("@senha", tbConfirmarNovaSenha.Text);
-                            comandoUpdate.Parameters.AddWithValue("@id", id);
+                                comandoUpdate.Parameters.AddWithValue("@senha", tbConfirmarNovaSenha.Text);
+                                comandoUpdate.Parameters.AddWithValue("@id", id);
 
-                            conexao.Open();
-                            comandoUpdate.CommandText = sqlUpdate;
-                            comandoUpdate.ExecuteNonQuery();
-                            conexao.Close();
+                                conexao.Open();
+                                comandoUpdate.CommandText = sqlUpdate;
+                                comandoUpdate.ExecuteNonQuery();
+                                conexao.Close();
 
-                            tbSenhaAtual.Clear();
-                            tbNovaSenha.Clear();
-                            tbConfirmarNovaSenha.Clear();
-                            this.Close();
+                                tbSenhaAtual.Clear();
+                                tbNovaSenha.Clear();
+                                tbConfirmarNovaSenha.Clear();
+                                this.Close();
 
-                            MessageBox.Show("Senha alterada com sucesso!", "Alterar Senha", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                MessageBox.Show("Senha alterada com sucesso!", "Alterar Senha", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            }
                         }
                         else
                         {
