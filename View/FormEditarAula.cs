@@ -214,6 +214,22 @@ namespace academia
 
         private void btSalvar_Click(object sender, EventArgs e)
         {//btSalvar
+
+            #region Verificação de espaços
+            if (mtbTotal.Text != "")
+            {
+                try
+                {
+                    int testeTotal = int.Parse(mtbTotal.Text);
+                }
+                catch
+                {
+                    MessageBox.Show("O máximo de alunos informado não é válido, tente novamente!", "Cadastrar", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    return;
+                }
+            }
+            #endregion 
+
             if (idAula == 0)
                 MessageBox.Show("Nenhum cadastro foi selecionado, tente novamente!", "Excluir", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             else
@@ -224,57 +240,76 @@ namespace academia
                 {
                     try
                     {
-                        SqlConnection conexao = new SqlConnection(conec.ConexaoBD());
-                        string sqlUpdate = @"UPDATE aula SET nome=@nome, dia=@data, hora=@hora,";
+                        SqlConnection cn = new SqlConnection(conec.ConexaoBD());
 
-                        if (mtbTotal.Text != "")
+                        string sqlVerificaDiaHora = @"SELECT * FROM aula WHERE (dia=@data AND hora=@hora) AND idaula != @idaula";
+                        SqlCommand cmdVerificaDiaHora = new SqlCommand(sqlVerificaDiaHora, cn);
+
+                        cmdVerificaDiaHora.Parameters.AddWithValue("@idaula", idAula);
+                        cmdVerificaDiaHora.Parameters.AddWithValue("@data", Convert.ToDateTime(dtpData.Text));
+                        cmdVerificaDiaHora.Parameters.AddWithValue("@hora", cbHora.Text);
+
+                        cn.Open();
+                        SqlDataReader dataVerificaDataHora = cmdVerificaDiaHora.ExecuteReader();
+                        if (dataVerificaDataHora.Read())
                         {
-                            //contador = int.Parse(contador.ToString());
-                            //sqlUpdate = sqlUpdate + "contador = @contador,";
-
-                            if (contador <= int.Parse(mtbTotal.Text))
-                            {
-                                sqlUpdate = sqlUpdate + " total = " + int.Parse(mtbTotal.Text);
-                            }
-                            else
-                            {
-                                sqlUpdate = sqlUpdate + " total = " + totalAtual;
-                                MessageBox.Show("O máximo de alunos informado não é válido, pois já existem " + contador + " inscritos!", "Editar", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                                return;
-                            }
+                            MessageBox.Show("Conflito de data e hora, tente novamente!", "Editar", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            cn.Close();
                         }
                         else
                         {
-                            sqlUpdate = sqlUpdate + " total = NULL";
+                            cn.Close();
+                            string sqlUpdate = @"UPDATE aula SET nome=@nome, dia=@data, hora=@hora,";
+                            SqlCommand cmdUpdate = new SqlCommand(sqlUpdate, cn);
+
+                            if (mtbTotal.Text != "")
+                            {
+                                if (contador <= int.Parse(mtbTotal.Text))
+                                {
+                                    if (int.Parse(mtbTotal.Text) != 0)
+                                        sqlUpdate = sqlUpdate + " total = " + int.Parse(mtbTotal.Text);
+                                    else
+                                    {
+                                        MessageBox.Show("O máximo de alunos não pode ser 0, tente novamente!", "Editar", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                                        return;
+                                    }
+                                }
+                                else
+                                {
+                                    sqlUpdate = sqlUpdate + " total = " + totalAtual;
+                                    MessageBox.Show("O máximo de alunos informado não é válido, pois já existem " + contador + " inscritos!", "Editar", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                    return;
+                                }
+                            }
+                            else
+                            {
+                                sqlUpdate = sqlUpdate + " total = NULL";
+                            }
+                            sqlUpdate = sqlUpdate + " WHERE idaula=@idaula";
+
+                            cmdUpdate.Parameters.AddWithValue("@idaula", idAula);
+                            cmdUpdate.Parameters.AddWithValue("@nome", tbNome.Text.Trim());
+                            cmdUpdate.Parameters.AddWithValue("@data", Convert.ToDateTime(dtpData.Text));
+                            cmdUpdate.Parameters.AddWithValue("@hora", cbHora.Text);
+                            cmdUpdate.Parameters.AddWithValue("@contador", contador);
+
+                            cn.Open();
+                            cmdUpdate.CommandText = sqlUpdate;
+                            cmdUpdate.ExecuteNonQuery();
+                            cn.Close();
+
+                            MessageBox.Show("Dados alterados com sucesso!", "Editar", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            dgaulas.DataSource = aulaDAO.listarAulasProfessor(id);
+                            dgaulas.Columns["Contador"].Visible = false;
+                            idAula = 0;
+                            tbNome.Clear();
+                            mtbTotal.Clear();
+                            cbHora.SelectedIndex = 0;
+                            tbNome.Enabled = false;
+                            mtbTotal.Enabled = false;
+                            dtpData.Enabled = false;
+                            cbHora.Enabled = false;
                         }
-                        sqlUpdate = sqlUpdate + " WHERE idaula=@idaula";
-
-                        SqlCommand comandoUpdate = new SqlCommand(sqlUpdate, conexao);
-
-                        comandoUpdate.Parameters.AddWithValue("@idaula", idAula);
-                        comandoUpdate.Parameters.AddWithValue("@nome", tbNome.Text.Trim());
-                        comandoUpdate.Parameters.AddWithValue("@data", Convert.ToDateTime(dtpData.Text));
-                        comandoUpdate.Parameters.AddWithValue("@hora", cbHora.Text);
-                        comandoUpdate.Parameters.AddWithValue("@contador", contador);
-
-                        conexao.Open();
-                        comandoUpdate.CommandText = sqlUpdate;
-                        comandoUpdate.ExecuteNonQuery();
-                        conexao.Close();
-                        MessageBox.Show("Dados alterados com sucesso!", "Editar", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                        dgaulas.DataSource = aulaDAO.listarAulasProfessor(id);
-                        dgaulas.Columns["Contador"].Visible = false;
-
-                        idAula = 0;
-                        tbNome.Clear();
-                        mtbTotal.Clear();
-                        cbHora.SelectedIndex = 0;
-
-                        tbNome.Enabled = false;
-                        mtbTotal.Enabled = false;
-                        dtpData.Enabled = false;
-                        cbHora.Enabled = false;
                     }
                     catch (Exception erro)
                     {

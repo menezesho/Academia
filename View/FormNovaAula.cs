@@ -47,62 +47,80 @@ namespace academia
 
         private void btCadastrar_Click(object sender, EventArgs e)
         {//btCadastrar
-            if (tbNome.Text.Trim() == "" || cbHora.Text == "Selecione")
+
+            #region Verificação de espaços
+            if (mtbTotal.Text != "")
+            {
+                try
+                {
+                    int testeTotal = int.Parse(mtbTotal.Text);
+                }
+                catch
+                {
+                    MessageBox.Show("O máximo de alunos informado não é válido, tente novamente!", "Cadastrar", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    return;
+                }
+            }
+            #endregion
+
+            if (tbNome.Text.Trim() == "" || cbHora.SelectedIndex == 0)
                 MessageBox.Show("Preencha os campos vazios!", "Cadastrar", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             else
             {
-                if (int.Parse(mtbTotal.Text) != 0)
+                try
                 {
-                    try
+                    SqlConnection cn = new SqlConnection(conec.ConexaoBD());
+
+                    string sqlVerificaDiaHora = @"SELECT * FROM aula WHERE dia=@data AND hora=@hora";
+                    SqlCommand cmdVerificaDiaHora = new SqlCommand(sqlVerificaDiaHora, cn);
+
+                    cmdVerificaDiaHora.Parameters.AddWithValue("@data", Convert.ToDateTime(dtpData.Text));
+                    cmdVerificaDiaHora.Parameters.AddWithValue("@hora", cbHora.Text);
+
+                    cn.Open();
+                    SqlDataReader dataVerificaDiaHora = cmdVerificaDiaHora.ExecuteReader();
+                    if (dataVerificaDiaHora.Read())
                     {
-                        SqlConnection conexao = new SqlConnection(conec.ConexaoBD());
-                        string sqlSelect = @"SELECT * FROM aula WHERE dia=@data AND hora=@hora";
-                        SqlCommand comandoSelect = new SqlCommand(sqlSelect, conexao);
+                        MessageBox.Show("Conflito de data e hora, tente novamente!", "Cadastrar", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        cn.Close();
+                    }
+                    else
+                    {
+                        cn.Close();
+                        string sqlInsert = "";
+                        sqlInsert = "INSERT INTO aula (nome, dia, hora, id_professor";
+                        SqlCommand cmdInsert = new SqlCommand(sqlInsert, cn);
 
-                        comandoSelect.Parameters.AddWithValue("@data", Convert.ToDateTime(dtpData.Text));
-                        comandoSelect.Parameters.AddWithValue("@hora", cbHora.Text);
-
-                        conexao.Open();
-                        SqlDataReader dados = comandoSelect.ExecuteReader();
-                        if (dados.Read())
+                        if (mtbTotal.Text != "")
                         {
-                            MessageBox.Show("Conflito de data e hora, tente novamente!", "Cadastrar", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                            conexao.Close();
-                        }
-                        else
-                        {
-                            conexao.Close();
-                            SqlConnection conexao2 = new SqlConnection(conec.ConexaoBD());
-                            string sqlInsert = "";
-                            sqlInsert = "INSERT INTO aula (nome, dia, hora, id_professor";
-                            SqlCommand comandoInsert = new SqlCommand(sqlInsert, conexao2);
-
-                            if (mtbTotal.Text != "")
+                            if (int.Parse(mtbTotal.Text) != 0)
                                 sqlInsert = sqlInsert + ", total, contador) VALUES(@nome, @data, @hora, @idprofessor, @total, 0)";
                             else
-                                sqlInsert = sqlInsert + ", contador) VALUES(@nome, @data, @hora, @idprofessor, 0)";
-
-                            comandoInsert.Parameters.AddWithValue("@nome", tbNome.Text.Trim());
-                            comandoInsert.Parameters.AddWithValue("@data", Convert.ToDateTime(dtpData.Text));
-                            comandoInsert.Parameters.AddWithValue("@hora", cbHora.Text);
-                            comandoInsert.Parameters.AddWithValue("@idprofessor", id);
-                            comandoInsert.Parameters.AddWithValue("@total", mtbTotal.Text);
-
-                            conexao2.Open();
-                            comandoInsert.CommandText = sqlInsert;
-                            comandoInsert.ExecuteNonQuery();
-                            conexao2.Close();
-                            MessageBox.Show("Cadastro efetuado com sucesso!", "Cadastrar", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            {
+                                MessageBox.Show("O máximo de alunos não pode ser 0, tente novamente!", "Cadastrar", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                                return;
+                            }
                         }
-                    }
-                    catch (Exception erro)
-                    {
-                        MessageBox.Show(erro.Message, "Erro na conexão, tente novamente!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        else
+                            sqlInsert = sqlInsert + ", contador) VALUES(@nome, @data, @hora, @idprofessor, 0)";
+
+                        cmdInsert.Parameters.AddWithValue("@nome", tbNome.Text.Trim());
+                        cmdInsert.Parameters.AddWithValue("@data", Convert.ToDateTime(dtpData.Text));
+                        cmdInsert.Parameters.AddWithValue("@hora", cbHora.Text);
+                        cmdInsert.Parameters.AddWithValue("@idprofessor", id);
+                        cmdInsert.Parameters.AddWithValue("@total", mtbTotal.Text);
+
+                        cn.Open();
+                        cmdInsert.CommandText = sqlInsert;
+                        cmdInsert.ExecuteNonQuery();
+                        cn.Close();
+                        MessageBox.Show("Cadastro efetuado com sucesso!", "Cadastrar", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                 }
-                else
-                    MessageBox.Show("O máximo de alunos não pode ser 0, tente novamente!", "Cadastrar", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-
+                catch (Exception erro)
+                {
+                    MessageBox.Show(erro.Message, "Erro na conexão, tente novamente!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
         }
 
