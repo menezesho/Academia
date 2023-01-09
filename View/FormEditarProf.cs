@@ -8,6 +8,7 @@ using System.Data.SqlClient;
 using System.Drawing;
 using System.Security.Policy;
 using System.Text;
+using System.Threading;
 using System.Windows.Forms;
 
 namespace projetofinal
@@ -22,6 +23,12 @@ namespace projetofinal
         public FormEditarProf()
         {
             InitializeComponent();
+        }
+
+        public void tempoMsgBox()
+        {
+            Thread.Sleep(TimeSpan.FromSeconds(1));
+            SendKeys.SendWait("{ENTER}");
         }
 
         private void FormEditProf_Load(object sender, EventArgs e)
@@ -143,12 +150,12 @@ namespace projetofinal
             else
             {
                 if (tbBusca.Text == "" || tbBusca.Text == " Busca...")
-                    MessageBox.Show("Nenhum dado foi digitado!", "Buscar", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    MessageBox.Show("Digite o que deseja buscar!", "Buscar", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 else
                 {
                     try
                     {
-                        SqlConnection conexao = new SqlConnection(conec.ConexaoBD());
+                        SqlConnection cn = new SqlConnection(conec.ConexaoBD());
                         string sql = "";
                         if (cbFiltro.SelectedIndex == 0)
                         {
@@ -174,16 +181,21 @@ namespace projetofinal
                                 rua AS Rua, numero AS 'Num.', apto AS 'Apto.', bairro AS Bairro,
                                 cidade AS Cidade, estado AS Estado, usuario AS Usuário, senha AS Senha FROM professor WHERE usuario LIKE @busca ORDER BY nome";
                         }
-                        SqlCommand comando = new SqlCommand(sql, conexao);
+                        SqlCommand cmd = new SqlCommand(sql, cn);
 
-                        comando.Parameters.AddWithValue("@busca", "%" + tbBusca.Text + "%");
+                        cmd.Parameters.AddWithValue("@busca", "%" + tbBusca.Text + "%");
 
-                        conexao.Open();
-                        SqlDataAdapter da = new SqlDataAdapter(comando);
-                        DataSet resultado = new DataSet();
-                        da.Fill(resultado);
-                        dgprofs.DataSource = resultado.Tables[0];
-                        conexao.Close();
+                        Thread click = new Thread(new ThreadStart(tempoMsgBox));
+                        click.Start();
+                        MessageBox.Show("Buscando...", "Buscar", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        click.Abort();
+
+                        cn.Open();
+                        SqlDataAdapter da = new SqlDataAdapter(cmd);
+                        DataSet ds = new DataSet();
+                        da.Fill(ds);
+                        dgprofs.DataSource = ds.Tables[0];
+                        cn.Close();
                     }
                     catch (Exception erro)
                     {
@@ -232,25 +244,25 @@ namespace projetofinal
         private void btExcluir_Click(object sender, EventArgs e)
         {//btExcluir
             if (id == 0)
-                MessageBox.Show("Nenhum cadastro foi selecionado, tente novamente!", "Excluir", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Nenhum professor foi selecionado!", "Excluir", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             else
             {
                 if (MessageBox.Show("Deseja mesmo excluir este cadastro?", "Excluir", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
                 {
                     try
                     {
-                        SqlConnection conexao = new SqlConnection(conec.ConexaoBD());
+                        SqlConnection cn = new SqlConnection(conec.ConexaoBD());
                         string sqlDelete = @"DELETE FROM participante WHERE id_professor = @idprofessor;
                             DELETE FROM aula WHERE id_professor = @idprofessor;
-                            DELETE FROM professor WHERE idprofessor=@idprofessor;";
-                        SqlCommand comandoDelete = new SqlCommand(sqlDelete, conexao);
+                            DELETE FROM professor WHERE idprofessor = @idprofessor;";
+                        SqlCommand cmdDelete = new SqlCommand(sqlDelete, cn);
 
-                        comandoDelete.Parameters.AddWithValue("@idprofessor", id);
+                        cmdDelete.Parameters.AddWithValue("@idprofessor", id);
 
-                        conexao.Open();
-                        comandoDelete.CommandText = sqlDelete;
-                        comandoDelete.ExecuteNonQuery();
-                        conexao.Close();
+                        cn.Open();
+                        cmdDelete.CommandText = sqlDelete;
+                        cmdDelete.ExecuteNonQuery();
+                        cn.Close();
 
                         MessageBox.Show("Cadastro excluido com sucesso!", "Excluir", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
@@ -297,11 +309,11 @@ namespace projetofinal
         private void btSalvar_Click(object sender, EventArgs e)
         {//btSalvar
             if (id == 0)
-                MessageBox.Show("Nenhum cadastro foi selecionado, tente novamente!", "Excluir", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Nenhum cadastro foi selecionado!", "Salvar", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             else
             {
                 if (tbNome.Text.Trim() == "" || mtbCpf.Text == "" || mtbIdade.Text == "" || mtbCelular.Text == "" || tbEmail.Text.Trim() == "" || tbRua.Text.Trim() == "" || mtbNumero.Text == "" || tbBairro.Text.Trim() == "" || tbCidade.Text.Trim() == "" || cbEstado.SelectedIndex == 0 || tbUsuario.Text.Trim() == "" || tbSenha.Text == "")
-                    MessageBox.Show("Preencha todos os campos obrigatórios!", "Editar", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("Os campos obrigatórios não foram preenchidos!", "Salvar", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 else
                 {
                     var emailVerificado = verificacao.verificarEmail(tbEmail.Text.Trim());
@@ -315,7 +327,7 @@ namespace projetofinal
                             {
                                 try
                                 {
-                                    SqlConnection conexao = new SqlConnection(conec.ConexaoBD());
+                                    SqlConnection cn = new SqlConnection(conec.ConexaoBD());
 
                                     string sqlUpdate = @"UPDATE professor SET nome=@nome, idade=@idade, celular=@celular, email=@email, rua=@rua, numero=@numero, bairro=@bairro, cidade=@cidade, estado=@estado, usuario=@usuario, senha=@senha";
 
@@ -326,26 +338,26 @@ namespace projetofinal
 
                                     sqlUpdate = sqlUpdate + " WHERE idprofessor=@idprofessor";
 
-                                    SqlCommand comandoUpdate = new SqlCommand(sqlUpdate, conexao);
+                                    SqlCommand cmdUpdate = new SqlCommand(sqlUpdate, cn);
 
-                                    comandoUpdate.Parameters.AddWithValue("@idprofessor", id);
-                                    comandoUpdate.Parameters.AddWithValue("@nome", tbNome.Text.Trim());
-                                    comandoUpdate.Parameters.AddWithValue("@idade", int.Parse(mtbIdade.Text));
-                                    comandoUpdate.Parameters.AddWithValue("@celular", mtbCelular.Text);
-                                    comandoUpdate.Parameters.AddWithValue("@email", tbEmail.Text.Trim());
-                                    comandoUpdate.Parameters.AddWithValue("@rua", tbRua.Text.Trim());
-                                    comandoUpdate.Parameters.AddWithValue("@numero", mtbNumero.Text);
-                                    comandoUpdate.Parameters.AddWithValue("@bairro", tbBairro.Text.Trim());
-                                    comandoUpdate.Parameters.AddWithValue("@cidade", tbCidade.Text.Trim());
-                                    comandoUpdate.Parameters.AddWithValue("@estado", cbEstado.Text);
-                                    comandoUpdate.Parameters.AddWithValue("@usuario", tbUsuario.Text.Trim());
-                                    comandoUpdate.Parameters.AddWithValue("@senha", tbSenha.Text);
+                                    cmdUpdate.Parameters.AddWithValue("@idprofessor", id);
+                                    cmdUpdate.Parameters.AddWithValue("@nome", tbNome.Text.Trim());
+                                    cmdUpdate.Parameters.AddWithValue("@idade", int.Parse(mtbIdade.Text));
+                                    cmdUpdate.Parameters.AddWithValue("@celular", mtbCelular.Text);
+                                    cmdUpdate.Parameters.AddWithValue("@email", tbEmail.Text.Trim());
+                                    cmdUpdate.Parameters.AddWithValue("@rua", tbRua.Text.Trim());
+                                    cmdUpdate.Parameters.AddWithValue("@numero", mtbNumero.Text);
+                                    cmdUpdate.Parameters.AddWithValue("@bairro", tbBairro.Text.Trim());
+                                    cmdUpdate.Parameters.AddWithValue("@cidade", tbCidade.Text.Trim());
+                                    cmdUpdate.Parameters.AddWithValue("@estado", cbEstado.Text);
+                                    cmdUpdate.Parameters.AddWithValue("@usuario", tbUsuario.Text.Trim());
+                                    cmdUpdate.Parameters.AddWithValue("@senha", tbSenha.Text);
 
-                                    conexao.Open();
-                                    comandoUpdate.CommandText = sqlUpdate;
-                                    comandoUpdate.ExecuteNonQuery();
-                                    conexao.Close();
-                                    MessageBox.Show("Dados alterados com sucesso!", "Editar", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                    cn.Open();
+                                    cmdUpdate.CommandText = sqlUpdate;
+                                    cmdUpdate.ExecuteNonQuery();
+                                    cn.Close();
+                                    MessageBox.Show("Dados alterados com sucesso!", "Salvar", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                                     dgprofs.DataSource = professorDAO.listarProfs();
 
@@ -386,22 +398,22 @@ namespace projetofinal
                             }
                             else
                             {
-                                MessageBox.Show("E-mail inválido, tente novamente!", "Cadastrar", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                                tpDadosPessoais.Focus();
+                                MessageBox.Show("O E-mail informado é inválido!", "Salvar", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                                tcDados.SelectedTab = tpDadosPessoais;
                                 tbEmail.Focus();
                             }
                         }
                         else
                         {
-                            MessageBox.Show("Insira o número de celular corretamente!", "Cadastrar", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                            tpDadosPessoais.Focus();
+                            MessageBox.Show("O número de celular informado é inválido!", "Salvar", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            tcDados.SelectedTab = tpDadosPessoais;
                             mtbCelular.Focus();
                         }
                     }
                     else
                     {
-                        MessageBox.Show("Insira o CPF corretamente!", "Cadastrar", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                        tpDadosPessoais.Focus();
+                        MessageBox.Show("O CPF informado é inválido!", "Salvar", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        tcDados.SelectedTab = tpDadosPessoais;
                         mtbCpf.Focus();
                     }
                 }
@@ -413,7 +425,7 @@ namespace projetofinal
         private void FormEditProf_KeyDown(object sender, KeyEventArgs e)
         {//ESC para retornar
             if (e.KeyValue.Equals(27))
-                if (MessageBox.Show("Os dados não salvos serão perdidos\nDeseja mesmo retornar?", "Retornar", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+                if (MessageBox.Show("Os dados não salvos serão perdidos!\nDeseja mesmo retornar?", "Retornar", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
                     Close();
         }
 

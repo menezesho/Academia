@@ -64,14 +64,14 @@ namespace academia
             #endregion
 
             if (tbNome.Text.Trim() == "" || cbHora.SelectedIndex == 0)
-                MessageBox.Show("Preencha os campos vazios!", "Cadastrar", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Os campos obrigatórios não foram preenchidos!", "Salvar", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             else
             {
                 try
                 {
                     SqlConnection cn = new SqlConnection(conec.ConexaoBD());
 
-                    string sqlVerificaDiaHora = @"SELECT * FROM aula WHERE dia=@data AND hora=@hora";
+                    string sqlVerificaDiaHora = @"SELECT * FROM aula WHERE dia = @data AND hora = @hora";
                     SqlCommand cmdVerificaDiaHora = new SqlCommand(sqlVerificaDiaHora, cn);
 
                     cmdVerificaDiaHora.Parameters.AddWithValue("@data", Convert.ToDateTime(dtpData.Text));
@@ -97,7 +97,7 @@ namespace academia
                                 sqlInsert = sqlInsert + ", total, contador) VALUES(@nome, @data, @hora, @idprofessor, @total, 0)";
                             else
                             {
-                                MessageBox.Show("O máximo de alunos não pode ser 0, tente novamente!", "Cadastrar", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                                MessageBox.Show("O máximo de alunos deve ser maior que zero!", "Cadastrar", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                                 return;
                             }
                         }

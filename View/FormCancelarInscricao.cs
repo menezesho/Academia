@@ -43,12 +43,13 @@ namespace academia.View
         private void btCancelar_Click(object sender, EventArgs e)
         {//btCancelar
             if (mtbData.Text == "" || tbHora.Text == "" || tbProfessor.Text == "")
-                MessageBox.Show("Selecione a aula que deseja se cancelar a inscrição!", "Cancelar", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Selecione a aula que deseja se cancelar a inscrição!", "Cancelar inscrição", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             else
             {
                 try
                 {
-                    SqlConnection conexao2 = new SqlConnection(conec.ConexaoBD());
+                    SqlConnection cn = new SqlConnection(conec.ConexaoBD());
+
                     string sqlDelete = "";
                     sqlDelete = @"DELETE FROM participante WHERE id_aula = @idaula AND id_aluno = @idaluno;
                             UPDATE aula SET contador =";
@@ -57,18 +58,18 @@ namespace academia.View
                     else
                         sqlDelete = sqlDelete + " @contador WHERE idaula = @idaula;";
 
-                    SqlCommand comandoDelete = new SqlCommand(sqlDelete, conexao2);
+                    SqlCommand cmdDelete = new SqlCommand(sqlDelete, cn);
 
-                    comandoDelete.Parameters.AddWithValue("@idaula", idAula);
-                    comandoDelete.Parameters.AddWithValue("@idaluno", id);
-                    comandoDelete.Parameters.AddWithValue("@contador", contador - 1);
+                    cmdDelete.Parameters.AddWithValue("@idaula", idAula);
+                    cmdDelete.Parameters.AddWithValue("@idaluno", id);
+                    cmdDelete.Parameters.AddWithValue("@contador", contador - 1);
 
-                    conexao2.Open();
-                    comandoDelete.CommandText = sqlDelete;
-                    comandoDelete.ExecuteNonQuery();
-                    conexao2.Close();
+                    cn.Open();
+                    cmdDelete.CommandText = sqlDelete;
+                    cmdDelete.ExecuteNonQuery();
+                    cn.Close();
 
-                    MessageBox.Show("Inscrição cancelada com sucesso!", "Cancelar", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Inscrição cancelada com sucesso!", "Cancelar inscrição", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     cbAula.DataSource = null;
                     cbAula.Items.Add("Selecione");
                     cbAula.SelectedIndex = 0;
@@ -91,28 +92,28 @@ namespace academia.View
                 {
                     try
                     {
-                        SqlConnection conexao = new SqlConnection(conec.ConexaoBD());
+                        SqlConnection cn = new SqlConnection(conec.ConexaoBD());
                         string sql = @"SELECT aula.idaula AS 'ID', aula.nome AS 'Aula', aula.dia AS 'Data', aula.hora AS 'Horário', contador AS 'Contador', professor.nome AS 'Professor'
-                        FROM aula INNER JOIN professor ON professor.idprofessor = aula.id_professor WHERE idaula=@idaula";
-                        SqlCommand comando = new SqlCommand(sql, conexao);
+                        FROM aula INNER JOIN professor ON professor.idprofessor = aula.id_professor WHERE idaula = @idaula";
+                        SqlCommand cmd = new SqlCommand(sql, cn);
 
                         idAula = int.Parse(cbAula.SelectedValue.ToString());
-                        comando.Parameters.AddWithValue("@idaula", int.Parse(cbAula.SelectedValue.ToString()));
+                        cmd.Parameters.AddWithValue("@idaula", int.Parse(cbAula.SelectedValue.ToString()));
 
-                        conexao.Open();
-                        comando.CommandText = sql;
-                        comando.ExecuteNonQuery();
-                        SqlDataReader dados = comando.ExecuteReader();
-                        if (dados.Read())
+                        cn.Open();
+                        cmd.CommandText = sql;
+                        cmd.ExecuteNonQuery();
+                        SqlDataReader data = cmd.ExecuteReader();
+                        if (data.Read())
                         {
-                            tbProfessor.Text = dados["Professor"].ToString();
-                            mtbData.Text = dados["Data"].ToString();
-                            tbHora.Text = dados["Horário"].ToString();
-                            testeContador = dados["Contador"].ToString();
+                            tbProfessor.Text = data["Professor"].ToString();
+                            mtbData.Text = data["Data"].ToString();
+                            tbHora.Text = data["Horário"].ToString();
+                            testeContador = data["Contador"].ToString();
                             if (testeContador != "")
                                 contador = int.Parse(testeContador);
                         }
-                        conexao.Close();
+                        cn.Close();
                     }
                     catch (Exception erro)
                     {
@@ -123,18 +124,19 @@ namespace academia.View
         }
 
         private void cbAula_Click(object sender, EventArgs e)
-        {
+        {//click - cbAula
             try
             {
-                SqlConnection conexao = new SqlConnection(conec.ConexaoBD());
-                string sqlSelect = @"SELECT * FROM participante WHERE id_aluno = @idaluno";
-                SqlCommand comandoSelect = new SqlCommand(sqlSelect, conexao);
+                SqlConnection cn = new SqlConnection(conec.ConexaoBD());
 
-                comandoSelect.Parameters.AddWithValue("@idaluno", id);
+                string sql = @"SELECT * FROM participante WHERE id_aluno = @idaluno";
+                SqlCommand cmd = new SqlCommand(sql, cn);
 
-                conexao.Open();
-                SqlDataReader dados = comandoSelect.ExecuteReader();
-                if (dados.Read())
+                cmd.Parameters.AddWithValue("@idaluno", id);
+
+                cn.Open();
+                SqlDataReader data = cmd.ExecuteReader();
+                if (data.Read())
                 {
                     cbAula.DataSource = aulaDAO.listarAulasFiltradas(id);
                     cbAula.ValueMember = "ID";
@@ -142,7 +144,7 @@ namespace academia.View
                     carregouForm = true;
                 }
                 else
-                    MessageBox.Show("Nenhuma inscrição foi realizada!", "Cancelar", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Nenhuma inscrição foi realizada!", "Cancelar inscrição", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             catch (Exception erro)
             {

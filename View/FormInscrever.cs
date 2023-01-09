@@ -37,12 +37,6 @@ namespace academia
             this.nome = nome;
         }
 
-        //public void tempoMsgBox()
-        //{
-        //    Thread.Sleep(TimeSpan.FromSeconds(1));
-        //    SendKeys.SendWait("{ENTER}");
-        //}
-
         private void FormInserirNaAula_Load(object sender, EventArgs e)
         {
             cbAula.SelectedIndex = 0;
@@ -51,42 +45,40 @@ namespace academia
         private void btInscrever_Click(object sender, EventArgs e)
         {//btInscrever
             if(mtbData.Text == "" || tbHora.Text == "" || tbProfessor.Text == "")
-                MessageBox.Show("Selecione a aula que deseja se inscrever!", "Inscrever", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Nenhuma aula foi selecionada!", "Inscrever", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             else
             {
                 try
                 {
-                    SqlConnection conexao = new SqlConnection(conec.ConexaoBD());
-                    string sqlSelect = @"SELECT * FROM participante WHERE id_aula = @idaula AND id_aluno = @idaluno";
-                    SqlCommand comandoSelect = new SqlCommand(sqlSelect, conexao);
+                    SqlConnection cn = new SqlConnection(conec.ConexaoBD());
+                    string sqlVerificaDuplicidade = @"SELECT * FROM participante WHERE id_aula = @idaula AND id_aluno = @idaluno";
+                    SqlCommand cmdVerificaDuplicidade = new SqlCommand(sqlVerificaDuplicidade, cn);
 
-                    comandoSelect.Parameters.AddWithValue("@idaluno", id);
-                    comandoSelect.Parameters.AddWithValue("@idaula", idAula);
+                    cmdVerificaDuplicidade.Parameters.AddWithValue("@idaluno", id);
+                    cmdVerificaDuplicidade.Parameters.AddWithValue("@idaula", idAula);
 
-                    conexao.Open();
-                    SqlDataReader dados = comandoSelect.ExecuteReader();
-                    if (dados.Read())
+                    cn.Open();
+                    SqlDataReader dataVerificaDuplicidade = cmdVerificaDuplicidade.ExecuteReader();
+                    if (dataVerificaDuplicidade.Read())
                     {
-                        MessageBox.Show("Você já está inscrito nesta aula!", "Inscrever", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        conexao.Close();
+                        MessageBox.Show("Já inscrito nesta aula!", "Inscrever", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        cn.Close();
                     }
                     else
                     {
-                        conexao.Close();
-                        SqlConnection conexao3 = new SqlConnection(conec.ConexaoBD());
-                        string sqlSelect2 = @"SELECT id_professor AS 'ID_PROFESSOR' FROM aula WHERE idaula = @idaula;";
-                        SqlCommand comandoSelect2 = new SqlCommand(sqlSelect2, conexao3);
+                        cn.Close();
+                        string sqlVerificaIdProfessor = @"SELECT id_professor AS 'ID_PROFESSOR' FROM aula WHERE idaula = @idaula;";
+                        SqlCommand cmdVerificaIdProfessor = new SqlCommand(sqlVerificaIdProfessor, cn);
 
-                        comandoSelect2.Parameters.AddWithValue("@idaula", idAula);
+                        cmdVerificaIdProfessor.Parameters.AddWithValue("@idaula", idAula);
 
-                        conexao3.Open();
-                        SqlDataReader dados2 = comandoSelect2.ExecuteReader();
-                        if (dados2.Read())
+                        cn.Open();
+                        SqlDataReader dataVerificaIdProfessor = cmdVerificaIdProfessor.ExecuteReader();
+                        if (dataVerificaIdProfessor.Read())
                         {
-                            idProfessor = (int)dados2["ID_PROFESSOR"];
+                            idProfessor = (int)dataVerificaIdProfessor["ID_PROFESSOR"];
 
-                            conexao3.Close();
-                            SqlConnection conexao2 = new SqlConnection(conec.ConexaoBD());
+                            cn.Close();
                             string sqlInsert = "";
                             sqlInsert = @"INSERT INTO participante (id_aula, id_aluno, id_professor) VALUES (@idaula, @idaluno, @idprofessor);
                             UPDATE aula SET contador =";
@@ -95,17 +87,18 @@ namespace academia
                             else
                                 sqlInsert = sqlInsert + " @contador WHERE idaula = @idaula;";
 
-                            SqlCommand comandoInsert = new SqlCommand(sqlInsert, conexao2);
+                            SqlCommand cmdInsert = new SqlCommand(sqlInsert, cn);
 
-                            comandoInsert.Parameters.AddWithValue("@idaula", idAula);
-                            comandoInsert.Parameters.AddWithValue("@idaluno", id);
-                            comandoInsert.Parameters.AddWithValue("@idprofessor", idProfessor);
-                            comandoInsert.Parameters.AddWithValue("@contador", contador + 1);
+                            cmdInsert.Parameters.AddWithValue("@idaula", idAula);
+                            cmdInsert.Parameters.AddWithValue("@idaluno", id);
+                            cmdInsert.Parameters.AddWithValue("@idprofessor", idProfessor);
+                            cmdInsert.Parameters.AddWithValue("@contador", contador + 1);
 
-                            conexao2.Open();
-                            comandoInsert.CommandText = sqlInsert;
-                            comandoInsert.ExecuteNonQuery();
-                            conexao2.Close();
+                            cn.Open();
+                            cmdInsert.CommandText = sqlInsert;
+                            cmdInsert.ExecuteNonQuery();
+                            cn.Close();
+
                             MessageBox.Show("Inscrição realizada com sucesso!", "Inscrever", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             cbAula.DataSource = null;
                             cbAula.Items.Add("Selecione");
@@ -131,28 +124,28 @@ namespace academia
                 {
                     try
                     {
-                        SqlConnection conexao = new SqlConnection(conec.ConexaoBD());
+                        SqlConnection cn = new SqlConnection(conec.ConexaoBD());
                         string sql = @"SELECT aula.idaula AS 'ID', aula.nome AS 'Aula', aula.dia AS 'Data', aula.hora AS 'Horário', contador AS 'Contador', professor.nome AS 'Professor'
-                        FROM aula INNER JOIN professor ON professor.idprofessor = aula.id_professor WHERE idaula=@idaula";
-                        SqlCommand comando = new SqlCommand(sql, conexao);
+                        FROM aula INNER JOIN professor ON professor.idprofessor = aula.id_professor WHERE idaula = @idaula";
+                        SqlCommand cmd = new SqlCommand(sql, cn);
 
                         idAula = int.Parse(cbAula.SelectedValue.ToString());
-                        comando.Parameters.AddWithValue("@idaula", idAula);
+                        cmd.Parameters.AddWithValue("@idaula", idAula);
 
-                        conexao.Open();
-                        comando.CommandText = sql;
-                        comando.ExecuteNonQuery();
-                        SqlDataReader dados = comando.ExecuteReader();
-                        if (dados.Read())
+                        cn.Open();
+                        cmd.CommandText = sql;
+                        cmd.ExecuteNonQuery();
+                        SqlDataReader data = cmd.ExecuteReader();
+                        if (data.Read())
                         {
-                            tbProfessor.Text = dados["Professor"].ToString();
-                            mtbData.Text = dados["Data"].ToString();
-                            tbHora.Text = dados["Horário"].ToString();
-                            testeContador = dados["Contador"].ToString();
+                            tbProfessor.Text = data["Professor"].ToString();
+                            mtbData.Text = data["Data"].ToString();
+                            tbHora.Text = data["Horário"].ToString();
+                            testeContador = data["Contador"].ToString();
                             if (testeContador != "")
                                 contador = int.Parse(testeContador);
                         }
-                        conexao.Close();
+                        cn.Close();
                     }
                     catch (Exception erro)
                     {
@@ -166,13 +159,13 @@ namespace academia
         {
             try
             {
-                SqlConnection conexao = new SqlConnection(conec.ConexaoBD());
+                SqlConnection cn = new SqlConnection(conec.ConexaoBD());
                 string sqlSelect = @"SELECT * FROM AULA WHERE (CONTADOR < TOTAL) OR TOTAL IS NULL;";
-                SqlCommand comandoSelect = new SqlCommand(sqlSelect, conexao);
+                SqlCommand cmdSelect = new SqlCommand(sqlSelect, cn);
 
-                conexao.Open();
-                SqlDataReader dados = comandoSelect.ExecuteReader();
-                if (dados.Read())
+                cn.Open();
+                SqlDataReader data = cmdSelect.ExecuteReader();
+                if (data.Read())
                 {
                     cbAula.DataSource = aulaDAO.listarAulasDisponiveis();
                     cbAula.ValueMember = "ID";
@@ -180,7 +173,7 @@ namespace academia
                     carregouForm = true;
                 }
                 else
-                    MessageBox.Show("Nenhuma aula está disponível para realizar a inscrição!", "Inscrever", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Nenhuma aula está disponível para inscrições no momento!", "Inscrever", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             catch (Exception erro)
             {

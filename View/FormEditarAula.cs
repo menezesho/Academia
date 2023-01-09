@@ -8,6 +8,7 @@ using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -31,6 +32,12 @@ namespace academia
         {
             InitializeComponent();
             this.id = id;
+        }
+
+        public void tempoMsgBox()
+        {
+            Thread.Sleep(TimeSpan.FromSeconds(1));
+            SendKeys.SendWait("{ENTER}");
         }
 
         private void FormEditarAula_Load(object sender, EventArgs e)
@@ -107,16 +114,16 @@ namespace academia
         private void lbBuscar_Click(object sender, EventArgs e)
         {//lbBuscar
             if (cbFiltro.SelectedItem == null)
-                MessageBox.Show("Selecione o filtro!", "Buscar", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("Nenhum filtro foi selecionado!", "Buscar", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             else
             {
                 if (tbBusca.Text == "" || tbBusca.Text == " Busca...")
-                    MessageBox.Show("Nenhum dado foi digitado!", "Buscar", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    MessageBox.Show("Digite o que deseja buscar!", "Buscar", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 else
                 {
                     try
                     { 
-                        SqlConnection conexao = new SqlConnection(conec.ConexaoBD());
+                        SqlConnection cn = new SqlConnection(conec.ConexaoBD());
                         string sql = "";
                         if (cbFiltro.SelectedIndex == 0)
                         {
@@ -130,17 +137,22 @@ namespace academia
                                 FROM aula inner JOIN professor AS p ON aula.id_professor = p.idprofessor
                                 WHERE aula.id_professor = @id AND aula.dia LIKE @busca ORDER BY aula.nome";
                         }
-                        SqlCommand comando = new SqlCommand(sql, conexao);
+                        SqlCommand cmd = new SqlCommand(sql, cn);
 
-                        comando.Parameters.AddWithValue("@busca", "%" + tbBusca.Text + "%");
-                        comando.Parameters.AddWithValue("@id", id);
+                        cmd.Parameters.AddWithValue("@busca", "%" + tbBusca.Text + "%");
+                        cmd.Parameters.AddWithValue("@id", id);
 
-                        conexao.Open();
-                        SqlDataAdapter da = new SqlDataAdapter(comando);
-                        DataSet resultado = new DataSet();
-                        da.Fill(resultado);
-                        dgaulas.DataSource = resultado.Tables[0];
-                        conexao.Close();
+                        Thread click = new Thread(new ThreadStart(tempoMsgBox));
+                        click.Start();
+                        MessageBox.Show("Buscando...", "Buscar", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        click.Abort();
+
+                        cn.Open();
+                        SqlDataAdapter da = new SqlDataAdapter(cmd);
+                        DataSet ds = new DataSet();
+                        da.Fill(ds);
+                        dgaulas.DataSource = ds.Tables[0];
+                        cn.Close();
                         dgaulas.Columns["Contador"].Visible = false;
 
                     }
@@ -171,25 +183,25 @@ namespace academia
         private void btExcluir_Click(object sender, EventArgs e)
         {//btExcluir
             if (idAula == 0)
-                MessageBox.Show("Nenhuma aula foi selecionada, tente novamente!", "Excluir", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Nenhuma aula foi selecionada!", "Excluir", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             else
             {
                 if (MessageBox.Show("Deseja mesmo excluir esta aula?", "Excluir", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
                 {
                     try
                     {
-                        SqlConnection conexao = new SqlConnection(conec.ConexaoBD());
-                        string sqlDelete = @"DELETE FROM aula WHERE idaula=@idaula";
-                        SqlCommand comandoDelete = new SqlCommand(sqlDelete, conexao);
+                        SqlConnection cn = new SqlConnection(conec.ConexaoBD());
+                        string sqlDelete = @"DELETE FROM aula WHERE idaula = @idaula";
+                        SqlCommand cmdDelete = new SqlCommand(sqlDelete, cn);
 
-                        comandoDelete.Parameters.AddWithValue("@idaula", idAula);
+                        cmdDelete.Parameters.AddWithValue("@idaula", idAula);
 
-                        conexao.Open();
-                        comandoDelete.CommandText = sqlDelete;
-                        comandoDelete.ExecuteNonQuery();
-                        conexao.Close();
+                        cn.Open();
+                        cmdDelete.CommandText = sqlDelete;
+                        cmdDelete.ExecuteNonQuery();
+                        cn.Close();
 
-                        MessageBox.Show("Cadastro excluido com sucesso!", "Excluir", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("Aula excluída com sucesso!", "Excluir", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                         dgaulas.DataSource = aulaDAO.listarAulasProfessor(id);
                         dgaulas.Columns["Contador"].Visible = false;
@@ -224,25 +236,25 @@ namespace academia
                 }
                 catch
                 {
-                    MessageBox.Show("O máximo de alunos informado não é válido, tente novamente!", "Cadastrar", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    MessageBox.Show("O máximo de alunos informado não é válido, tente novamente!", "Salvar", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     return;
                 }
             }
             #endregion 
 
             if (idAula == 0)
-                MessageBox.Show("Nenhum cadastro foi selecionado, tente novamente!", "Excluir", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Nenhuma aula foi selecionada!", "Salvar", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             else
             {
                 if (tbNome.Text.Trim() == "" || cbHora.SelectedIndex == 0)
-                    MessageBox.Show("Preencha todos os campos obrigatórios!", "Editar", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("Os campos obrigatórios não foram preenchidos!", "Salvar", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 else
                 {
                     try
                     {
                         SqlConnection cn = new SqlConnection(conec.ConexaoBD());
 
-                        string sqlVerificaDiaHora = @"SELECT * FROM aula WHERE (dia=@data AND hora=@hora) AND idaula != @idaula";
+                        string sqlVerificaDiaHora = @"SELECT * FROM aula WHERE (dia = @data AND hora = @hora) AND idaula != @idaula";
                         SqlCommand cmdVerificaDiaHora = new SqlCommand(sqlVerificaDiaHora, cn);
 
                         cmdVerificaDiaHora.Parameters.AddWithValue("@idaula", idAula);
@@ -253,13 +265,13 @@ namespace academia
                         SqlDataReader dataVerificaDataHora = cmdVerificaDiaHora.ExecuteReader();
                         if (dataVerificaDataHora.Read())
                         {
-                            MessageBox.Show("Conflito de data e hora, tente novamente!", "Editar", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            MessageBox.Show("Conflito de data e hora, tente novamente!", "Salvar", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             cn.Close();
                         }
                         else
                         {
                             cn.Close();
-                            string sqlUpdate = @"UPDATE aula SET nome=@nome, dia=@data, hora=@hora,";
+                            string sqlUpdate = @"UPDATE aula SET nome = @nome, dia = @data, hora = @hora,";
                             SqlCommand cmdUpdate = new SqlCommand(sqlUpdate, cn);
 
                             if (mtbTotal.Text != "")
@@ -270,14 +282,14 @@ namespace academia
                                         sqlUpdate = sqlUpdate + " total = " + int.Parse(mtbTotal.Text);
                                     else
                                     {
-                                        MessageBox.Show("O máximo de alunos não pode ser 0, tente novamente!", "Editar", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                                        MessageBox.Show("O máximo de alunos deve ser maior que zero!", "Salvar", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                                         return;
                                     }
                                 }
                                 else
                                 {
                                     sqlUpdate = sqlUpdate + " total = " + totalAtual;
-                                    MessageBox.Show("O máximo de alunos informado não é válido, pois já existem " + contador + " inscritos!", "Editar", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                    MessageBox.Show("O máximo de alunos informado não é válido, pois já existem " + contador + " alunos inscritos!", "Salvar", MessageBoxButtons.OK, MessageBoxIcon.Error);
                                     return;
                                 }
                             }
@@ -285,7 +297,7 @@ namespace academia
                             {
                                 sqlUpdate = sqlUpdate + " total = NULL";
                             }
-                            sqlUpdate = sqlUpdate + " WHERE idaula=@idaula";
+                            sqlUpdate = sqlUpdate + " WHERE idaula = @idaula";
 
                             cmdUpdate.Parameters.AddWithValue("@idaula", idAula);
                             cmdUpdate.Parameters.AddWithValue("@nome", tbNome.Text.Trim());
@@ -298,7 +310,7 @@ namespace academia
                             cmdUpdate.ExecuteNonQuery();
                             cn.Close();
 
-                            MessageBox.Show("Dados alterados com sucesso!", "Editar", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            MessageBox.Show("Dados alterados com sucesso!", "Salvar", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             dgaulas.DataSource = aulaDAO.listarAulasProfessor(id);
                             dgaulas.Columns["Contador"].Visible = false;
                             idAula = 0;
@@ -324,7 +336,7 @@ namespace academia
         private void FormListAluno_KeyDown(object sender, KeyEventArgs e)
         {//ESC para retornar
             if (e.KeyValue.Equals(27))
-                if (MessageBox.Show("Os dados não salvos serão perdidos\nDeseja mesmo retornar?", "Retornar", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+                if (MessageBox.Show("Os dados não salvos serão perdidos!\nDeseja mesmo retornar?", "Retornar", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
                     Close();
         }
 

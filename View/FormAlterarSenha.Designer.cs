@@ -41,7 +41,7 @@
             this.lbVerConfirmarNovaSenha = new System.Windows.Forms.Label();
             this.lbAlterarSenha = new System.Windows.Forms.Label();
             this.btLimpar = new System.Windows.Forms.Button();
-            this.btCadastrar = new System.Windows.Forms.Button();
+            this.btSalvar = new System.Windows.Forms.Button();
             this.lbSair = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
@@ -137,7 +137,6 @@
             this.tbSenhaAtual.Size = new System.Drawing.Size(336, 29);
             this.tbSenhaAtual.TabIndex = 0;
             this.tbSenhaAtual.UseSystemPasswordChar = true;
-            this.tbSenhaAtual.MouseCaptureChanged += new System.EventHandler(this.lbVerSenhaAtual_MouseCaptureChanged);
             // 
             // lbVerSenhaAtual
             // 
@@ -214,22 +213,22 @@
             this.btLimpar.UseVisualStyleBackColor = false;
             this.btLimpar.Click += new System.EventHandler(this.btLimpar_Click);
             // 
-            // btCadastrar
+            // btSalvar
             // 
-            this.btCadastrar.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btCadastrar.BackColor = System.Drawing.Color.MediumSeaGreen;
-            this.btCadastrar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btCadastrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btCadastrar.Font = new System.Drawing.Font("Segoe UI Semibold", 14F, System.Drawing.FontStyle.Bold);
-            this.btCadastrar.ForeColor = System.Drawing.Color.White;
-            this.btCadastrar.Location = new System.Drawing.Point(258, 372);
-            this.btCadastrar.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.btCadastrar.Name = "btCadastrar";
-            this.btCadastrar.Size = new System.Drawing.Size(166, 40);
-            this.btCadastrar.TabIndex = 4;
-            this.btCadastrar.Text = "&Cadastrar";
-            this.btCadastrar.UseVisualStyleBackColor = false;
-            this.btCadastrar.Click += new System.EventHandler(this.btCadastrar_Click);
+            this.btSalvar.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btSalvar.BackColor = System.Drawing.Color.MediumSeaGreen;
+            this.btSalvar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btSalvar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btSalvar.Font = new System.Drawing.Font("Segoe UI Semibold", 14F, System.Drawing.FontStyle.Bold);
+            this.btSalvar.ForeColor = System.Drawing.Color.White;
+            this.btSalvar.Location = new System.Drawing.Point(258, 372);
+            this.btSalvar.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.btSalvar.Name = "btSalvar";
+            this.btSalvar.Size = new System.Drawing.Size(166, 40);
+            this.btSalvar.TabIndex = 4;
+            this.btSalvar.Text = "&Salvar";
+            this.btSalvar.UseVisualStyleBackColor = false;
+            this.btSalvar.Click += new System.EventHandler(this.btSalvar_Click);
             // 
             // lbSair
             // 
@@ -249,7 +248,7 @@
             this.ClientSize = new System.Drawing.Size(517, 558);
             this.Controls.Add(this.lbSair);
             this.Controls.Add(this.btLimpar);
-            this.Controls.Add(this.btCadastrar);
+            this.Controls.Add(this.btSalvar);
             this.Controls.Add(this.lbAlterarSenha);
             this.Controls.Add(this.lbVerConfirmarNovaSenha);
             this.Controls.Add(this.lbVerNovaSenha);
@@ -290,7 +289,7 @@
         private System.Windows.Forms.Label lbVerConfirmarNovaSenha;
         private System.Windows.Forms.Label lbAlterarSenha;
         private System.Windows.Forms.Button btLimpar;
-        private System.Windows.Forms.Button btCadastrar;
+        private System.Windows.Forms.Button btSalvar;
         private System.Windows.Forms.Label lbSair;
     }
 }

@@ -62,7 +62,7 @@ namespace projetofinal
         private void btCadastrar_Click(object sender, EventArgs e)
         {//btCadastrar
             if (tbNome.Text.Trim() == "" || mtbCpf.Text == "" || mtbIdade.Text.Trim() == "" || mtbCelular.Text == "" || tbEmail.Text.Trim() == "" || tbRua.Text.Trim() == "" || mtbNumero.Text == "" || tbBairro.Text.Trim() == "" || tbCidade.Text.Trim() == "" || cbEstado.SelectedIndex == 0 || tbUsuario.Text.Trim() == "" || tbSenha.Text == "")
-                MessageBox.Show("Preencha todos os campos obrigatórios!", "Cadastrar", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Os campos obrigatórios não foram preenchidos!", "Cadastrar", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             else
             {
                 var emailVerificado = verificacao.verificarEmail(tbEmail.Text.Trim());
@@ -79,26 +79,23 @@ namespace projetofinal
                             epValida.Clear();
                             try
                             {
-                                SqlConnection conexao = new SqlConnection(conec.ConexaoBD());
-                                string sqlSelect = @"SELECT * FROM aluno WHERE cpf=@cpf";
-                                SqlCommand comandoSelect = new SqlCommand(sqlSelect, conexao);
+                                SqlConnection cn = new SqlConnection(conec.ConexaoBD());
 
-                                comandoSelect.Parameters.AddWithValue("@cpf", mtbCpf.Text);
+                                string sqlVerificaCpf = @"SELECT * FROM aluno WHERE cpf=@cpf";
+                                SqlCommand cmdVerificaCpf = new SqlCommand(sqlVerificaCpf, cn);
 
-                                conexao.Open();
-                                SqlDataReader dados = comandoSelect.ExecuteReader();
-                                if (dados.Read())
+                                cmdVerificaCpf.Parameters.AddWithValue("@cpf", mtbCpf.Text);
+
+                                cn.Open();
+                                SqlDataReader dataVerificaCpf = cmdVerificaCpf.ExecuteReader();
+                                if (dataVerificaCpf.Read())
                                 {
-                                    MessageBox.Show("CPF já cadastrado, tente novamente!", "Cadastrar", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                                    conexao.Close();
+                                    MessageBox.Show("CPF já cadastrado!", "Cadastrar", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                    cn.Close();
                                 }
                                 else
                                 {
-                                    conexao.Close();
-                                    SqlConnection conexao2 = new SqlConnection(conec.ConexaoBD());
-
-                                    //preparado para a string de insert muito louca?
-
+                                    cn.Close();
                                     string sqlInsert = @"INSERT INTO aluno (nome, cpf, idade, celular, email, rua, numero, bairro, cidade, estado, usuario, senha";
 
                                     if (mtbPeso.Text != "")
@@ -119,25 +116,26 @@ namespace projetofinal
 
                                     sqlInsert = sqlInsert + ")";
 
-                                    SqlCommand comandoInsert = new SqlCommand(sqlInsert, conexao2);
+                                    SqlCommand cmdInsert = new SqlCommand(sqlInsert, cn);
 
-                                    comandoInsert.Parameters.AddWithValue("@nome", tbNome.Text.Trim());
-                                    comandoInsert.Parameters.AddWithValue("@cpf", mtbCpf.Text);
-                                    comandoInsert.Parameters.AddWithValue("@idade", int.Parse(mtbIdade.Text));
-                                    comandoInsert.Parameters.AddWithValue("@celular", mtbCelular.Text);
-                                    comandoInsert.Parameters.AddWithValue("@email", tbEmail.Text.Trim());
-                                    comandoInsert.Parameters.AddWithValue("@rua", tbRua.Text.Trim());
-                                    comandoInsert.Parameters.AddWithValue("@numero", mtbNumero.Text);
-                                    comandoInsert.Parameters.AddWithValue("@bairro", tbBairro.Text.Trim());
-                                    comandoInsert.Parameters.AddWithValue("@cidade", tbCidade.Text.Trim());
-                                    comandoInsert.Parameters.AddWithValue("@estado", cbEstado.Text);
-                                    comandoInsert.Parameters.AddWithValue("@usuario", tbUsuario.Text.Trim());
-                                    comandoInsert.Parameters.AddWithValue("@senha", tbSenha.Text);
+                                    cmdInsert.Parameters.AddWithValue("@nome", tbNome.Text.Trim());
+                                    cmdInsert.Parameters.AddWithValue("@cpf", mtbCpf.Text);
+                                    cmdInsert.Parameters.AddWithValue("@idade", int.Parse(mtbIdade.Text));
+                                    cmdInsert.Parameters.AddWithValue("@celular", mtbCelular.Text);
+                                    cmdInsert.Parameters.AddWithValue("@email", tbEmail.Text.Trim());
+                                    cmdInsert.Parameters.AddWithValue("@rua", tbRua.Text.Trim());
+                                    cmdInsert.Parameters.AddWithValue("@numero", mtbNumero.Text);
+                                    cmdInsert.Parameters.AddWithValue("@bairro", tbBairro.Text.Trim());
+                                    cmdInsert.Parameters.AddWithValue("@cidade", tbCidade.Text.Trim());
+                                    cmdInsert.Parameters.AddWithValue("@estado", cbEstado.Text);
+                                    cmdInsert.Parameters.AddWithValue("@usuario", tbUsuario.Text.Trim());
+                                    cmdInsert.Parameters.AddWithValue("@senha", tbSenha.Text);
 
-                                    conexao2.Open();
-                                    comandoInsert.CommandText = sqlInsert;
-                                    comandoInsert.ExecuteNonQuery();
-                                    conexao2.Close();
+                                    cn.Open();
+                                    cmdInsert.CommandText = sqlInsert;
+                                    cmdInsert.ExecuteNonQuery();
+                                    cn.Close();
+
                                     MessageBox.Show("Cadastro efetuado com sucesso!", "Cadastrar", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                     tcDados.SelectedTab = tpDadosPessoais;
                                     epValida.Clear();
@@ -165,7 +163,7 @@ namespace projetofinal
                         }
                         else
                         {
-                            MessageBox.Show("E-mail inválido, tente novamente!", "Cadastrar", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            MessageBox.Show("O E-mail informado é inválido!", "Cadastrar", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                             tcDados.SelectedTab = tpDadosPessoais;
                             tbEmail.Focus();
                             epValida.SetError(tbEmail, "O campo deve conter um e-mail válido!");
@@ -173,7 +171,7 @@ namespace projetofinal
                     }
                     else
                     {
-                        MessageBox.Show("Insira o número de celular corretamente!", "Cadastrar", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        MessageBox.Show("O número de celular informado é inválido!", "Cadastrar", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         tcDados.SelectedTab = tpDadosPessoais;
                         mtbCelular.Focus();
                         epValida.SetError(mtbCelular, "O campo deve ser preenchido por completo!");
@@ -181,7 +179,7 @@ namespace projetofinal
                 }
                 else
                 {
-                    MessageBox.Show("Insira o CPF corretamente!", "Cadastrar", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("O CPF informado é inválido!", "Cadastrar", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     tcDados.SelectedTab = tpDadosPessoais;
                     mtbCpf.Focus();
                     epValida.SetError(mtbCpf, "O campo deve ser preenchido por completo!");

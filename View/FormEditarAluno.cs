@@ -7,6 +7,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Text;
+using System.Threading;
 using System.Windows.Forms;
 
 namespace projetofinal
@@ -23,12 +24,18 @@ namespace projetofinal
             InitializeComponent();
         }
 
+        public void tempoMsgBox()
+        {
+            Thread.Sleep(TimeSpan.FromSeconds(1));
+            SendKeys.SendWait("{ENTER}");
+        }
+
         private void FormEditAluno_Load(object sender, EventArgs e)
         {
             dgalunos.DataSource = alunoDAO.listarAlunos();
-
+            
             //set
-            dgalunos.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            //dgalunos.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgalunos.Columns["ID"].Width = 40;
             dgalunos.Columns["Nome"].Width = 200;
             dgalunos.Columns["CPF"].Width = 90;
@@ -47,21 +54,21 @@ namespace projetofinal
             dgalunos.Columns["Senha"].Visible = false;
 
             //min
-            dgalunos.Columns["ID"].MinimumWidth = 40;
-            dgalunos.Columns["Nome"].MinimumWidth = 200;
-            dgalunos.Columns["CPF"].MinimumWidth = 90;
-            dgalunos.Columns["Idade"].MinimumWidth = 40;
-            dgalunos.Columns["Celular"].MinimumWidth = 90;
-            dgalunos.Columns["E-mail"].MinimumWidth = 200;
-            dgalunos.Columns["Peso(kg)"].MinimumWidth = 60;
-            dgalunos.Columns["Altura(cm)"].MinimumWidth = 70;
-            dgalunos.Columns["Rua"].MinimumWidth = 160;
-            dgalunos.Columns["Num."].MinimumWidth = 40;
-            dgalunos.Columns["Apto."].MinimumWidth = 40;
-            dgalunos.Columns["Bairro"].MinimumWidth = 160;
-            dgalunos.Columns["Cidade"].MinimumWidth = 160;
-            dgalunos.Columns["Estado"].MinimumWidth = 50;
-            dgalunos.Columns["Usuário"].MinimumWidth = 100;
+            //dgalunos.Columns["ID"].MinimumWidth = 40;
+            //dgalunos.Columns["Nome"].MinimumWidth = 200;
+            //dgalunos.Columns["CPF"].MinimumWidth = 90;
+            //dgalunos.Columns["Idade"].MinimumWidth = 40;
+            //dgalunos.Columns["Celular"].MinimumWidth = 90;
+            //dgalunos.Columns["E-mail"].MinimumWidth = 200;
+            //dgalunos.Columns["Peso(kg)"].MinimumWidth = 60;
+            //dgalunos.Columns["Altura(cm)"].MinimumWidth = 70;
+            //dgalunos.Columns["Rua"].MinimumWidth = 160;
+            //dgalunos.Columns["Num."].MinimumWidth = 40;
+            //dgalunos.Columns["Apto."].MinimumWidth = 40;
+            //dgalunos.Columns["Bairro"].MinimumWidth = 160;
+            //dgalunos.Columns["Cidade"].MinimumWidth = 160;
+            //dgalunos.Columns["Estado"].MinimumWidth = 50;
+            //dgalunos.Columns["Usuário"].MinimumWidth = 100;
 
             id = 0;
             tbNome.Clear();
@@ -170,12 +177,12 @@ namespace projetofinal
             else
             {
                 if (tbBusca.Text == "" || tbBusca.Text == " Busca...")
-                    MessageBox.Show("Nenhum dado foi digitado!", "Buscar", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    MessageBox.Show("Digite o que deseja buscar!", "Buscar", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 else
                 {
                     try
                     {
-                        SqlConnection conexao = new SqlConnection(conec.ConexaoBD());
+                        SqlConnection cn = new SqlConnection(conec.ConexaoBD());
                         string sql = "";
                         if (cbFiltro.SelectedIndex == 0)
                         {
@@ -201,16 +208,21 @@ namespace projetofinal
                                 peso AS 'Peso(kg)', altura AS 'Altura(cm)', rua AS Rua, numero AS 'Num.', apto AS 'Apto.', bairro AS Bairro,
                                 cidade AS Cidade, estado AS Estado, usuario AS Usuário, senha AS Senha FROM aluno WHERE usuario LIKE @busca ORDER BY nome";
                         }
-                        SqlCommand comando = new SqlCommand(sql, conexao);
+                        SqlCommand cmd = new SqlCommand(sql, cn);
 
-                        comando.Parameters.AddWithValue("@busca", "%" + tbBusca.Text + "%");
+                        cmd.Parameters.AddWithValue("@busca", "%" + tbBusca.Text + "%");
 
-                        conexao.Open();
-                        SqlDataAdapter da = new SqlDataAdapter(comando);
-                        DataSet resultado = new DataSet();
-                        da.Fill(resultado);
-                        dgalunos.DataSource = resultado.Tables[0];
-                        conexao.Close();
+                        Thread click = new Thread(new ThreadStart(tempoMsgBox));
+                        click.Start();
+                        MessageBox.Show("Buscando...", "Buscar", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        click.Abort();
+
+                        cn.Open();
+                        SqlDataAdapter da = new SqlDataAdapter(cmd);
+                        DataSet ds = new DataSet();
+                        da.Fill(ds);
+                        dgalunos.DataSource = ds.Tables[0];
+                        cn.Close();
                     }
                     catch (Exception erro)
                     {
@@ -263,26 +275,27 @@ namespace projetofinal
         private void btExcluir_Click(object sender, EventArgs e)
         {//btExcluir
             if (id == 0)
-                MessageBox.Show("Nenhum cadastro foi selecionado, tente novamente!", "Excluir", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Nenhum aluno foi selecionado!", "Excluir", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             else
             {
-                if (MessageBox.Show("Deseja mesmo excluir este cadastro?", "Excluir", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+                if (MessageBox.Show("Deseja mesmo excluir o cadastro deste aluno?", "Excluir", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
                 {
                     try
                     {
-                        SqlConnection conexao = new SqlConnection(conec.ConexaoBD());
+                        SqlConnection cn = new SqlConnection(conec.ConexaoBD());
+
                         string sqlDelete = @"DELETE FROM aluno WHERE IDALUNO = @idaluno;
                             DELETE FROM participante WHERE id_aluno = @idaluno;";
-                        SqlCommand comandoDelete = new SqlCommand(sqlDelete, conexao);
+                        SqlCommand cmdDelete = new SqlCommand(sqlDelete, cn);
 
-                        comandoDelete.Parameters.AddWithValue("@idaluno", id);
+                        cmdDelete.Parameters.AddWithValue("@idaluno", id);
 
-                        conexao.Open();
-                        comandoDelete.CommandText = sqlDelete;
-                        comandoDelete.ExecuteNonQuery();
-                        conexao.Close();
+                        cn.Open();
+                        cmdDelete.CommandText = sqlDelete;
+                        cmdDelete.ExecuteNonQuery();
+                        cn.Close();
 
-                        MessageBox.Show("Cadastro excluido com sucesso!", "Excluir", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("Cadastro excluído com sucesso!", "Excluir", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                         dgalunos.DataSource = alunoDAO.listarAlunos();
 
@@ -331,11 +344,11 @@ namespace projetofinal
         private void btSalvar_Click(object sender, EventArgs e)
         {//btSalvar
             if (id == 0)
-                MessageBox.Show("Nenhum cadastro foi selecionado, tente novamente!", "Excluir", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Nenhum aluno foi selecionado!", "Salvar", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             else
             {
                 if (tbNome.Text.Trim() == "" || mtbCpf.Text == "" || mtbIdade.Text == "" || mtbCelular.Text == "" || tbEmail.Text.Trim() == "" || tbRua.Text.Trim() == "" || mtbNumero.Text == "" || tbBairro.Text.Trim() == "" || tbCidade.Text.Trim() == "" || cbEstado.SelectedIndex == 0 || tbUsuario.Text.Trim() == "" || tbSenha.Text == "")
-                    MessageBox.Show("Preencha todos os campos obrigatórios!", "Editar", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("Os campos obrigatórios não foram preenchidos!", "Salvar", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 else
                 {
                     var emailVerificado = verificacao.verificarEmail(tbEmail.Text.Trim());
@@ -349,7 +362,7 @@ namespace projetofinal
                             {
                                 try
                                 {
-                                    SqlConnection conexao = new SqlConnection(conec.ConexaoBD());
+                                    SqlConnection cn = new SqlConnection(conec.ConexaoBD());
 
                                     //preparado para a string de insert muito louca?
 
@@ -370,26 +383,26 @@ namespace projetofinal
 
                                     sqlUpdate = sqlUpdate + " WHERE idaluno=@idaluno";
 
-                                    SqlCommand comandoUpdate = new SqlCommand(sqlUpdate, conexao);
+                                    SqlCommand cmdUpdate = new SqlCommand(sqlUpdate, cn);
 
-                                    comandoUpdate.Parameters.AddWithValue("@idaluno", id);
-                                    comandoUpdate.Parameters.AddWithValue("@nome", tbNome.Text.Trim());
-                                    comandoUpdate.Parameters.AddWithValue("@idade", int.Parse(mtbIdade.Text));
-                                    comandoUpdate.Parameters.AddWithValue("@celular", mtbCelular.Text);
-                                    comandoUpdate.Parameters.AddWithValue("@email", tbEmail.Text.Trim());
-                                    comandoUpdate.Parameters.AddWithValue("@rua", tbRua.Text.Trim());
-                                    comandoUpdate.Parameters.AddWithValue("@numero", mtbNumero.Text);
-                                    comandoUpdate.Parameters.AddWithValue("@bairro", tbBairro.Text.Trim());
-                                    comandoUpdate.Parameters.AddWithValue("@cidade", tbCidade.Text.Trim());
-                                    comandoUpdate.Parameters.AddWithValue("@estado", cbEstado.Text);
-                                    comandoUpdate.Parameters.AddWithValue("@usuario", tbUsuario.Text.Trim());
-                                    comandoUpdate.Parameters.AddWithValue("@senha", tbSenha.Text);
+                                    cmdUpdate.Parameters.AddWithValue("@idaluno", id);
+                                    cmdUpdate.Parameters.AddWithValue("@nome", tbNome.Text.Trim());
+                                    cmdUpdate.Parameters.AddWithValue("@idade", int.Parse(mtbIdade.Text));
+                                    cmdUpdate.Parameters.AddWithValue("@celular", mtbCelular.Text);
+                                    cmdUpdate.Parameters.AddWithValue("@email", tbEmail.Text.Trim());
+                                    cmdUpdate.Parameters.AddWithValue("@rua", tbRua.Text.Trim());
+                                    cmdUpdate.Parameters.AddWithValue("@numero", mtbNumero.Text);
+                                    cmdUpdate.Parameters.AddWithValue("@bairro", tbBairro.Text.Trim());
+                                    cmdUpdate.Parameters.AddWithValue("@cidade", tbCidade.Text.Trim());
+                                    cmdUpdate.Parameters.AddWithValue("@estado", cbEstado.Text);
+                                    cmdUpdate.Parameters.AddWithValue("@usuario", tbUsuario.Text.Trim());
+                                    cmdUpdate.Parameters.AddWithValue("@senha", tbSenha.Text);
 
-                                    conexao.Open();
-                                    comandoUpdate.CommandText = sqlUpdate;
-                                    comandoUpdate.ExecuteNonQuery();
-                                    conexao.Close();
-                                    MessageBox.Show("Dados alterados com sucesso!", "Editar", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                    cn.Open();
+                                    cmdUpdate.CommandText = sqlUpdate;
+                                    cmdUpdate.ExecuteNonQuery();
+                                    cn.Close();
+                                    MessageBox.Show("Dados alterados com sucesso!", "Salvar", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                                     dgalunos.DataSource = alunoDAO.listarAlunos();
 
@@ -434,22 +447,22 @@ namespace projetofinal
                             }
                             else
                             {
-                                MessageBox.Show("E-mail inválido, tente novamente!", "Cadastrar", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                                tpDadosPessoais.Focus();
+                                MessageBox.Show("O E-mail informado é inválido!", "Salvar", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                                tcDados.SelectedTab = tpDadosPessoais;
                                 tbEmail.Focus();
                             }
                         }
                         else
                         {
-                            MessageBox.Show("Insira o número de celular corretamente!", "Cadastrar", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                            tpDadosPessoais.Focus();
+                            MessageBox.Show("O número de celular informado é inválido!", "Salvar", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            tcDados.SelectedTab = tpDadosPessoais;
                             mtbCelular.Focus();
                         }
                     }
                     else
                     {
-                        MessageBox.Show("Insira o CPF corretamente!", "Cadastrar", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                        tpDadosPessoais.Focus();
+                        MessageBox.Show("O CPF informado é inválido!", "Salvar", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        tcDados.SelectedTab = tpDadosPessoais;
                         mtbCpf.Focus();
                     }
                 }
@@ -461,7 +474,7 @@ namespace projetofinal
         private void FormListAluno_KeyDown(object sender, KeyEventArgs e)
         {//ESC para retornar
             if (e.KeyValue.Equals(27))
-                if (MessageBox.Show("Os dados não salvos serão perdidos\nDeseja mesmo retornar?", "Retornar", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+                if (MessageBox.Show("Os dados não salvos serão perdidos!\nDeseja mesmo retornar?", "Retornar", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
                     Close();
         }
 
