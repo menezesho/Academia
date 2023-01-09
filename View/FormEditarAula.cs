@@ -336,14 +336,24 @@ namespace academia
         private void FormListAluno_KeyDown(object sender, KeyEventArgs e)
         {//ESC para retornar
             if (e.KeyValue.Equals(27))
-                if (MessageBox.Show("Os dados não salvos serão perdidos!\nDeseja mesmo retornar?", "Retornar", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+                if (tbNome.Text == "" && cbHora.SelectedIndex == 0 && mtbTotal.Text == "")
                     Close();
+                else
+                {
+                    if (MessageBox.Show("Os dados não salvos serão perdidos!\nDeseja mesmo retornar?", "Retornar", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+                        Close();
+                }
         }
 
         private void lbSair_Click(object sender, EventArgs e)
         {//lbSair
-            if (MessageBox.Show("Os dados não salvos serão perdidos!\nDeseja mesmo retornar?", "Retornar", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+            if (tbNome.Text == "" && cbHora.SelectedIndex == 0 && mtbTotal.Text == "")
                 Close();
+            else
+            {
+                if (MessageBox.Show("Os dados não salvos serão perdidos!\nDeseja mesmo retornar?", "Retornar", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+                    Close();
+            }
         }
 
         #endregion

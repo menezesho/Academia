@@ -59,11 +59,17 @@
     <Compile Include="DAO\LoginDAO.cs" />
     <Compile Include="DAO\ProfessorDAO.cs" />
     <Compile Include="Class\Program.cs" />
-    <Compile Include="View\FormAlterarSenha.cs">
+    <Compile Include="View\FormAtualizarPesoAltura.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\FormAlterarSenha.Designer.cs">
-      <DependentUpon>FormAlterarSenha.cs</DependentUpon>
+    <Compile Include="View\FormAtualizarPesoAltura.Designer.cs">
+      <DependentUpon>FormAtualizarPesoAltura.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\FormRedefinirSenha.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FormRedefinirSenha.Designer.cs">
+      <DependentUpon>FormRedefinirSenha.cs</DependentUpon>
     </Compile>
     <Compile Include="View\FormEditarAula.cs">
       <SubType>Form</SubType>
@@ -138,8 +144,11 @@
     <Compile Include="View\FormMenuProfessor.designer.cs">
       <DependentUpon>FormMenuProfessor.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="View\FormAlterarSenha.resx">
-      <DependentUpon>FormAlterarSenha.cs</DependentUpon>
+    <EmbeddedResource Include="View\FormAtualizarPesoAltura.resx">
+      <DependentUpon>FormAtualizarPesoAltura.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\FormRedefinirSenha.resx">
+      <DependentUpon>FormRedefinirSenha.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\FormEditarAula.resx">
       <DependentUpon>FormEditarAula.cs</DependentUpon>

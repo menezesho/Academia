@@ -12,18 +12,18 @@ using System.Windows.Forms;
 
 namespace academia
 {
-    public partial class FormAlterarSenha : Form
+    public partial class FormRedefinirSenha : Form
     {
         Conexao conec = new Conexao();
         int id = 0;
         int acesso = 0;
 
-        public FormAlterarSenha()
+        public FormRedefinirSenha()
         {
             InitializeComponent();
         }
 
-        public FormAlterarSenha(int id, int acesso)
+        public FormRedefinirSenha(int id, int acesso)
         {
             InitializeComponent();
             this.id = id;

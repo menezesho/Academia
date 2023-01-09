@@ -51,10 +51,16 @@ namespace academia
             Fci.ShowDialog();
         }
 
-        private void btAlterarSenha_Click(object sender, EventArgs e)
+        private void btAtualizarPesoAltura_Click(object sender, EventArgs e)
+        {//btAtualizarPesoAltura
+            FormAtualizarPesoAltura Fapa = new FormAtualizarPesoAltura();
+            Fapa.ShowDialog();
+        }
+
+        private void btRedefinirSenha_Click(object sender, EventArgs e)
         {//btAlterarSenha
-            FormAlterarSenha Fas = new FormAlterarSenha(id, acesso);
-            Fas.ShowDialog();
+            FormRedefinirSenha Frs = new FormRedefinirSenha(id, acesso);
+            Frs.ShowDialog();
         }
 
         #endregion
@@ -81,6 +87,6 @@ namespace academia
 
 
         #endregion
- 
+
     }
 }

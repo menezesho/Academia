@@ -1,6 +1,6 @@
 ﻿namespace academia
 {
-    partial class FormAlterarSenha
+    partial class FormRedefinirSenha
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormAlterarSenha));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormRedefinirSenha));
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.lbNovaSenha = new System.Windows.Forms.Label();
             this.tbNovaSenha = new System.Windows.Forms.TextBox();

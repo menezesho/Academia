@@ -61,6 +61,26 @@ namespace projetofinal
 
         private void btCadastrar_Click(object sender, EventArgs e)
         {//btCadastrar
+
+            #region Verificação de espaços
+            if (mtbIdade.Text != "" || mtbNumero.Text != "" || mtbApto.Text != "" || mtbPeso.Text != "" || mtbAltura.Text != "")
+            {
+                try
+                {
+                    int testeIdade = int.Parse(mtbIdade.Text);
+                    int testeNumero = int.Parse(mtbNumero.Text);
+                    int testeApto = int.Parse(mtbApto.Text);
+                    int testePeso = int.Parse(mtbPeso.Text);
+                    int testeAltura = int.Parse(mtbAltura.Text);
+                }
+                catch
+                {
+                    MessageBox.Show("O máximo de alunos informado não é válido, tente novamente!", "Salvar", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    return;
+                }
+            }
+            #endregion 
+
             if (tbNome.Text.Trim() == "" || mtbCpf.Text == "" || mtbIdade.Text.Trim() == "" || mtbCelular.Text == "" || tbEmail.Text.Trim() == "" || tbRua.Text.Trim() == "" || mtbNumero.Text == "" || tbBairro.Text.Trim() == "" || tbCidade.Text.Trim() == "" || cbEstado.SelectedIndex == 0 || tbUsuario.Text.Trim() == "" || tbSenha.Text == "")
                 MessageBox.Show("Os campos obrigatórios não foram preenchidos!", "Cadastrar", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             else
@@ -192,14 +212,24 @@ namespace projetofinal
         private void FormCadAluno_KeyDown(object sender, KeyEventArgs e)
         {//ESC para retornar
             if (e.KeyValue.Equals(27))
-                if (MessageBox.Show("Os dados não salvos serão perdidos!\nDeseja mesmo retornar?", "Retornar", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+                if (tbNome.Text == "" && mtbCpf.Text == "" && mtbCelular.Text == "" && mtbIdade.Text == "" && tbEmail.Text == "" && tbRua.Text == "" && mtbNumero.Text == "" && mtbApto.Text == "" && cbEstado.SelectedIndex == 0 && tbCidade.Text == "" && tbBairro.Text == "" && mtbPeso.Text == "" && mtbAltura.Text == "" && tbUsuario.Text == "" && tbSenha.Text == "")
                     Close();
+                else
+                {
+                    if (MessageBox.Show("Os dados não salvos serão perdidos!\nDeseja mesmo retornar?", "Retornar", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+                        Close();
+                }
         }
 
         private void lbSair_Click(object sender, EventArgs e)
         {//lbSair
-            if (MessageBox.Show("Os dados não salvos serão perdidos!\nDeseja mesmo retornar?", "Retornar", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+            if (tbNome.Text == "" && mtbCpf.Text == "" && mtbCelular.Text == "" && mtbIdade.Text == "" && tbEmail.Text == "" && tbRua.Text == "" && mtbNumero.Text == "" && mtbApto.Text == "" && cbEstado.SelectedIndex == 0 && tbCidade.Text == "" && tbBairro.Text == "" && mtbPeso.Text == "" && mtbAltura.Text == "" && tbUsuario.Text == "" && tbSenha.Text == "")
                 Close();
+            else
+            {
+                if (MessageBox.Show("Os dados não salvos serão perdidos!\nDeseja mesmo retornar?", "Retornar", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+                    Close();
+            }
         }
 
         #endregion

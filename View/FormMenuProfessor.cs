@@ -81,7 +81,7 @@ namespace projetofinal
 
         private void btAlterarSenha_Click(object sender, EventArgs e)
         {//btAlterarSenha
-            FormAlterarSenha Fas = new FormAlterarSenha(id, acesso);
+            FormRedefinirSenha Fas = new FormRedefinirSenha(id, acesso);
             Fas.ShowDialog();
         }
 
