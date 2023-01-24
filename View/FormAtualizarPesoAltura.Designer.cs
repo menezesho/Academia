@@ -52,6 +52,7 @@
             this.lbSair.Name = "lbSair";
             this.lbSair.Size = new System.Drawing.Size(35, 35);
             this.lbSair.TabIndex = 170;
+            this.lbSair.Click += new System.EventHandler(this.lbSair_Click);
             // 
             // btLimpar
             // 
@@ -68,6 +69,7 @@
             this.btLimpar.TabIndex = 160;
             this.btLimpar.Text = "&Limpar";
             this.btLimpar.UseVisualStyleBackColor = false;
+            this.btLimpar.Click += new System.EventHandler(this.btLimpar_Click);
             // 
             // btSalvar
             // 
@@ -84,6 +86,7 @@
             this.btSalvar.TabIndex = 161;
             this.btSalvar.Text = "&Salvar";
             this.btSalvar.UseVisualStyleBackColor = false;
+            this.btSalvar.Click += new System.EventHandler(this.btSalvar_Click);
             // 
             // lbAlterarPesoAltura
             // 
@@ -125,6 +128,7 @@
             this.mtbAltura.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.mtbAltura.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
             this.mtbAltura.ValidatingType = typeof(System.DateTime);
+            this.mtbAltura.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.mtbAltura_MaskInputRejected);
             // 
             // mtbPeso
             // 
@@ -142,6 +146,7 @@
             this.mtbPeso.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.mtbPeso.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
             this.mtbPeso.ValidatingType = typeof(System.DateTime);
+            this.mtbPeso.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.mtbPeso_MaskInputRejected);
             // 
             // lbaltura
             // 
@@ -195,7 +200,7 @@
             this.lbcm.TabIndex = 176;
             this.lbcm.Text = "cm";
             // 
-            // FormAlterarPesoAltura
+            // FormAtualizarPesoAltura
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -212,11 +217,14 @@
             this.Controls.Add(this.lbAlterarPesoAltura);
             this.Controls.Add(this.pictureBox2);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.KeyPreview = true;
             this.MinimumSize = new System.Drawing.Size(565, 453);
-            this.Name = "FormAlterarPesoAltura";
+            this.Name = "FormAtualizarPesoAltura";
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Ajustes";
+            this.Load += new System.EventHandler(this.FormAtualizarPesoAltura_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FormInscreverAluno_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

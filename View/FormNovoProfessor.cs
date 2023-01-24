@@ -59,27 +59,26 @@ namespace projetofinal
         private void btCadastrar_Click(object sender, EventArgs e)
         {//btCadastrar
 
-            #region Verificação de espaços
-            if (mtbIdade.Text != "" || mtbNumero.Text != "" || mtbApto.Text != "")
-            {
-                try
-                {
-                    int testeIdade = int.Parse(mtbIdade.Text);
-                    int testeNumero = int.Parse(mtbNumero.Text);
-                    int testeApto = int.Parse(mtbApto.Text);
-                }
-                catch
-                {
-                    MessageBox.Show("O máximo de alunos informado não é válido, tente novamente!", "Salvar", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                    return;
-                }
-            }
-            #endregion 
-
             if (tbNome.Text.Trim() == "" || mtbCpf.Text == "" || mtbIdade.Text == "" || mtbCelular.Text == "" || tbEmail.Text.Trim() == "" || tbRua.Text.Trim() == "" || mtbNumero.Text == "" || tbBairro.Text.Trim() == "" || tbCidade.Text.Trim() == "" || cbEstado.SelectedIndex == 0 || tbUsuario.Text.Trim() == "" || tbSenha.Text == "")
                 MessageBox.Show("Os campos obrigatórios não foram preenchidos!", "Cadastrar", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             else
             {
+                #region Verificação de espaços
+                if (mtbIdade.Text != "" || mtbNumero.Text != "" || mtbApto.Text != "")
+                {
+                    try
+                    {
+                        int testeIdade = int.Parse(mtbIdade.Text);
+                        int testeNumero = int.Parse(mtbNumero.Text);
+                        int testeApto = int.Parse(mtbApto.Text);
+                    }
+                    catch
+                    {
+                        MessageBox.Show("Verifique se todos os campos numéricos foram preenchidos corretamente!", "Salvar", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        return;
+                    }
+                }
+                #endregion
                 var emailVerificado = verificacao.verificarEmail(tbEmail.Text.Trim());
                 var cpfVerificado = Verificacao.verificarCpf(mtbCpf.Text);
                 var celularVerificado = Verificacao.verificarCelular(mtbCelular.Text);
@@ -203,6 +202,5 @@ namespace projetofinal
         }
 
         #endregion
-
     }
 }

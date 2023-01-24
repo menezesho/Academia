@@ -33,7 +33,7 @@ namespace projetofinal
         private void FormEditAluno_Load(object sender, EventArgs e)
         {
             dgalunos.DataSource = alunoDAO.listarAlunos();
-            
+
             //set
             //dgalunos.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgalunos.Columns["ID"].Width = 40;
@@ -344,24 +344,7 @@ namespace projetofinal
         private void btSalvar_Click(object sender, EventArgs e)
         {//btSalvar
 
-            #region Verificação de espaços
-            if (mtbIdade.Text != "" || mtbNumero.Text != "" || mtbApto.Text != "" || mtbPeso.Text != "" || mtbAltura.Text != "")
-            {
-                try
-                {
-                    int testeIdade = int.Parse(mtbIdade.Text);
-                    int testeNumero = int.Parse(mtbNumero.Text);
-                    int testeApto = int.Parse(mtbApto.Text);
-                    int testePeso = int.Parse(mtbPeso.Text);
-                    int testeAltura = int.Parse(mtbAltura.Text);
-                }
-                catch
-                {
-                    MessageBox.Show("O máximo de alunos informado não é válido, tente novamente!", "Salvar", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                    return;
-                }
-            }
-            #endregion 
+
 
             if (id == 0)
                 MessageBox.Show("Nenhum aluno foi selecionado!", "Salvar", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -371,6 +354,25 @@ namespace projetofinal
                     MessageBox.Show("Os campos obrigatórios não foram preenchidos!", "Salvar", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 else
                 {
+
+                    #region Verificação de espaços
+                    if (mtbIdade.Text != "" || mtbNumero.Text != "" || mtbApto.Text != "" || mtbPeso.Text != "" || mtbAltura.Text != "")
+                    {
+                        try
+                        {
+                            int testeIdade = int.Parse(mtbIdade.Text);
+                            int testeNumero = int.Parse(mtbNumero.Text);
+                            int testeApto = int.Parse(mtbApto.Text);
+                            int testePeso = int.Parse(mtbPeso.Text);
+                            int testeAltura = int.Parse(mtbAltura.Text);
+                        }
+                        catch
+                        {
+                            MessageBox.Show("Verifique se todos os campos numéricos foram preenchidos corretamente!", "Salvar", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                            return;
+                        }
+                    }
+                    #endregion
                     var emailVerificado = verificacao.verificarEmail(tbEmail.Text.Trim());
                     var cpfVerificado = Verificacao.verificarCpf(mtbCpf.Text);
                     var celularVerificado = Verificacao.verificarCelular(mtbCelular.Text);

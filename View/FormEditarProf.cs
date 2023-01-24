@@ -309,27 +309,28 @@ namespace projetofinal
         private void btSalvar_Click(object sender, EventArgs e)
         {//btSalvar
 
-            #region Verificação de espaços
-            if (mtbIdade.Text != "" || mtbNumero.Text != "" || mtbApto.Text != "")
-            {
-                try
-                {
-                    int testeIdade = int.Parse(mtbIdade.Text);
-                    int testeNumero = int.Parse(mtbNumero.Text);
-                    int testeApto = int.Parse(mtbApto.Text);
-                }
-                catch
-                {
-                    MessageBox.Show("O máximo de alunos informado não é válido, tente novamente!", "Salvar", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                    return;
-                }
-            }
-            #endregion 
+
 
             if (id == 0)
                 MessageBox.Show("Nenhum cadastro foi selecionado!", "Salvar", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             else
             {
+                #region Verificação de espaços
+                if (mtbIdade.Text != "" || mtbNumero.Text != "" || mtbApto.Text != "")
+                {
+                    try
+                    {
+                        int testeIdade = int.Parse(mtbIdade.Text);
+                        int testeNumero = int.Parse(mtbNumero.Text);
+                        int testeApto = int.Parse(mtbApto.Text);
+                    }
+                    catch
+                    {
+                        MessageBox.Show("Verifique se todos os campos numéricos foram preenchidos corretamente!", "Salvar", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        return;
+                    }
+                }
+                #endregion
                 if (tbNome.Text.Trim() == "" || mtbCpf.Text == "" || mtbIdade.Text == "" || mtbCelular.Text == "" || tbEmail.Text.Trim() == "" || tbRua.Text.Trim() == "" || mtbNumero.Text == "" || tbBairro.Text.Trim() == "" || tbCidade.Text.Trim() == "" || cbEstado.SelectedIndex == 0 || tbUsuario.Text.Trim() == "" || tbSenha.Text == "")
                     MessageBox.Show("Os campos obrigatórios não foram preenchidos!", "Salvar", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 else

@@ -379,5 +379,10 @@ namespace academia
         }
 
         #endregion
+
+        private void tbBusca_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

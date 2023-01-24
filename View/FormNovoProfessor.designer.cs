@@ -619,7 +619,7 @@ namespace projetofinal
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.KeyPreview = true;
             this.Margin = new System.Windows.Forms.Padding(2);
-            this.MinimumSize = new System.Drawing.Size(674, 740);
+            this.MinimumSize = new System.Drawing.Size(674, 718);
             this.Name = "FormNovoProfessor";
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

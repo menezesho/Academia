@@ -237,6 +237,7 @@
             this.tbBusca.Name = "tbBusca";
             this.tbBusca.Size = new System.Drawing.Size(471, 29);
             this.tbBusca.TabIndex = 148;
+            this.tbBusca.TextChanged += new System.EventHandler(this.tbBusca_TextChanged);
             this.tbBusca.Enter += new System.EventHandler(this.tbBusca_Enter);
             this.tbBusca.Leave += new System.EventHandler(this.tbBusca_Leave);
             // 
