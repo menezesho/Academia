@@ -20,8 +20,6 @@
 
 ✅ conferir todas as escritas e padronizar elementos
 
-fazer uma contagem de tempo para poder se desinscrever de determinada aula
-
 ✅ arrumar as strings sql no código
 
 ✅ conferir os kwydown de todos os formularios
@@ -36,5 +34,7 @@ implementar botão para gerar relatório (precisa de view)
 
 fazer verificação de senha lgpd
 
-tela pra atualizar o peso e a altura
+✅ tela pra atualizar o peso e a altura
+
+fazer uma contagem de tempo para poder se desinscrever de determinada aula
 
