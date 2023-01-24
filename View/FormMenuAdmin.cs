@@ -21,11 +21,11 @@ namespace academia
             InitializeComponent();
         }
 
-        public FormMenuAdmin(string u, string n)
+        public FormMenuAdmin(string usuario, string nome)
         {
             InitializeComponent();
-            usuario = u;
-            nome = n;
+            this.usuario = usuario;
+            this.nome = nome;
         }
 
         private void FormMenuAdmin_Load(object sender, EventArgs e)

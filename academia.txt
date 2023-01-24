@@ -1,0 +1,40 @@
+✅ Fazer tela inicial para escolher entre area do aluno e area do professor
+
+✅ alterar o nome dos formularios
+
+✅ construir area do aluno e area do professor como tela de login
+
+✅ logo fit gym
+
+✅ desenvolver dois menus principais, de aluno e professor
+
+✅ tela pra atualizar a senha
+
+✅ fazer verificacao de email
+
+✅ implementar solução para remover os espaços da textbox ao salvar no banco
+
+✅ atenção para a seguinte questão: ao excluir um cadastro do banco, deverá excluir também qualquer informação relacionada que esteja em outra tabela
+
+✅ remover o datasource da textbox ao cancelar uma inscrição
+
+✅ conferir todas as escritas e padronizar elementos
+
+fazer uma contagem de tempo para poder se desinscrever de determinada aula
+
+✅ arrumar as strings sql no código
+
+✅ conferir os kwydown de todos os formularios
+
+✅ verificar erro de inscrição de aula sem maximo de alunos informado
+
+✅ adicionar limite de pessoas inscritas na aula
+
+✅ adicionar chave estrangeira de qual professor é essa aula
+
+implementar botão para gerar relatório (precisa de view)
+
+fazer verificação de senha lgpd
+
+tela pra atualizar o peso e a altura
+

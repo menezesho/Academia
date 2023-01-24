@@ -56,9 +56,9 @@ namespace projetofinal
             // 
             this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(199, 141);
+            this.pictureBox1.Location = new System.Drawing.Point(199, 132);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(304, 292);
+            this.pictureBox1.Size = new System.Drawing.Size(304, 324);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 43;
             this.pictureBox1.TabStop = false;
@@ -71,7 +71,7 @@ namespace projetofinal
             this.btEditarAula.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btEditarAula.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
             this.btEditarAula.ForeColor = System.Drawing.Color.White;
-            this.btEditarAula.Location = new System.Drawing.Point(549, 224);
+            this.btEditarAula.Location = new System.Drawing.Point(549, 215);
             this.btEditarAula.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btEditarAula.Name = "btEditarAula";
             this.btEditarAula.Size = new System.Drawing.Size(250, 75);
@@ -88,7 +88,7 @@ namespace projetofinal
             this.btNovaAula.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btNovaAula.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
             this.btNovaAula.ForeColor = System.Drawing.Color.White;
-            this.btNovaAula.Location = new System.Drawing.Point(549, 141);
+            this.btNovaAula.Location = new System.Drawing.Point(549, 132);
             this.btNovaAula.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btNovaAula.Name = "btNovaAula";
             this.btNovaAula.Size = new System.Drawing.Size(250, 75);
@@ -105,7 +105,7 @@ namespace projetofinal
             this.btVerParticipantes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btVerParticipantes.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
             this.btVerParticipantes.ForeColor = System.Drawing.Color.White;
-            this.btVerParticipantes.Location = new System.Drawing.Point(549, 307);
+            this.btVerParticipantes.Location = new System.Drawing.Point(549, 298);
             this.btVerParticipantes.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btVerParticipantes.Name = "btVerParticipantes";
             this.btVerParticipantes.Size = new System.Drawing.Size(250, 75);
@@ -120,12 +120,12 @@ namespace projetofinal
             this.btAlterarSenha.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
             this.btAlterarSenha.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btAlterarSenha.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btAlterarSenha.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold);
+            this.btAlterarSenha.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
             this.btAlterarSenha.ForeColor = System.Drawing.Color.White;
-            this.btAlterarSenha.Location = new System.Drawing.Point(618, 390);
+            this.btAlterarSenha.Location = new System.Drawing.Point(549, 381);
             this.btAlterarSenha.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btAlterarSenha.Name = "btAlterarSenha";
-            this.btAlterarSenha.Size = new System.Drawing.Size(112, 35);
+            this.btAlterarSenha.Size = new System.Drawing.Size(250, 75);
             this.btAlterarSenha.TabIndex = 3;
             this.btAlterarSenha.Text = "&ALTERAR SENHA";
             this.btAlterarSenha.UseVisualStyleBackColor = false;
@@ -136,7 +136,7 @@ namespace projetofinal
             this.lbMensagem.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lbMensagem.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbMensagem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
-            this.lbMensagem.Location = new System.Drawing.Point(199, 212);
+            this.lbMensagem.Location = new System.Drawing.Point(199, 219);
             this.lbMensagem.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbMensagem.Name = "lbMensagem";
             this.lbMensagem.Size = new System.Drawing.Size(304, 26);

@@ -28,18 +28,8 @@ namespace academia
             this.id = id;
         }
 
-        private void mtbPeso_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
-        {
-
-        }
-
-        private void mtbAltura_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
-        {
-
-        }
-
-        private void btSalvar_Click(object sender, EventArgs e)
-        {
+        private void btAtualizar_Click(object sender, EventArgs e)
+        {//btAtualizar
             SqlConnection cn = new SqlConnection(conec.ConexaoBD());
             string sqlUpdate = "update aluno set peso = @peso, altura = @altura where idAluno = @id";
             SqlCommand cmdUpdate = new SqlCommand(sqlUpdate, cn);
@@ -51,10 +41,11 @@ namespace academia
             cmdUpdate.ExecuteNonQuery();
             cn.Close();
             MessageBox.Show("Dados alterados com sucesso!", "Salvar", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            this.Close();
         }
 
         private void btLimpar_Click(object sender, EventArgs e)
-        {
+        {//btLimpar
             if(mtbAltura.Text != "" || mtbPeso.Text != "")
             {
                 if (MessageBox.Show("Os dados não salvos serão perdidos!\nDeseja mesmo limpar todos os campos?", "Limpar", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
@@ -67,8 +58,7 @@ namespace academia
             {
                 mtbPeso.Clear();
                 mtbAltura.Clear();
-            }
-               
+            }  
         }
 
         private void FormAtualizarPesoAltura_Load(object sender, EventArgs e)
