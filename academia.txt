@@ -36,10 +36,6 @@
 
 ✅ implementar botão para gerar relatório (precisa de view)
 
+✅ desenvolver formulário de ver participantes
+
 fazer uma contagem de tempo para poder se desinscrever de determinada aula
-
-desenvolver formulário de ver participantes
-
-erro formulario cancelar inscricao
-
-escrever "selecione" no combo box de aula no formulario de ver inscritos

@@ -36,10 +36,6 @@ namespace projetofinal
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormEditarAluno));
             this.dgalunos = new System.Windows.Forms.DataGridView();
             this.tbBusca = new System.Windows.Forms.TextBox();
-            this.btRelatorio = new System.Windows.Forms.Button();
-            this.btLimpar = new System.Windows.Forms.Button();
-            this.btExcluir = new System.Windows.Forms.Button();
-            this.btSalvar = new System.Windows.Forms.Button();
             this.tcDados = new System.Windows.Forms.TabControl();
             this.tpDadosPessoais = new System.Windows.Forms.TabPage();
             this.mtbIdade = new System.Windows.Forms.MaskedTextBox();
@@ -86,6 +82,9 @@ namespace projetofinal
             this.lbFiltro = new System.Windows.Forms.Label();
             this.lbTipoFiltro = new System.Windows.Forms.Label();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.button1 = new System.Windows.Forms.Button();
+            this.btExcluir = new System.Windows.Forms.Button();
+            this.btRelatorio = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgalunos)).BeginInit();
             this.tcDados.SuspendLayout();
             this.tpDadosPessoais.SuspendLayout();
@@ -121,7 +120,7 @@ namespace projetofinal
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgalunos.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dgalunos.Location = new System.Drawing.Point(39, 177);
+            this.dgalunos.Location = new System.Drawing.Point(39, 154);
             this.dgalunos.Margin = new System.Windows.Forms.Padding(2);
             this.dgalunos.MultiSelect = false;
             this.dgalunos.Name = "dgalunos";
@@ -138,7 +137,7 @@ namespace projetofinal
             this.dgalunos.RowHeadersWidth = 51;
             this.dgalunos.RowTemplate.Height = 29;
             this.dgalunos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgalunos.Size = new System.Drawing.Size(552, 313);
+            this.dgalunos.Size = new System.Drawing.Size(552, 358);
             this.dgalunos.TabIndex = 4;
             this.dgalunos.TabStop = false;
             this.dgalunos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgalunos_CellClick);
@@ -151,7 +150,7 @@ namespace projetofinal
             this.tbBusca.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tbBusca.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.tbBusca.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
-            this.tbBusca.Location = new System.Drawing.Point(86, 134);
+            this.tbBusca.Location = new System.Drawing.Point(86, 111);
             this.tbBusca.Margin = new System.Windows.Forms.Padding(2);
             this.tbBusca.MaxLength = 100;
             this.tbBusca.Name = "tbBusca";
@@ -159,80 +158,6 @@ namespace projetofinal
             this.tbBusca.TabIndex = 1;
             this.tbBusca.Enter += new System.EventHandler(this.tbBusca_Enter);
             this.tbBusca.Leave += new System.EventHandler(this.tbBusca_Leave);
-            // 
-            // btRelatorio
-            // 
-            this.btRelatorio.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.btRelatorio.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
-            this.btRelatorio.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btRelatorio.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btRelatorio.Font = new System.Drawing.Font("Segoe UI Semibold", 14F, System.Drawing.FontStyle.Bold);
-            this.btRelatorio.ForeColor = System.Drawing.Color.White;
-            this.btRelatorio.Image = ((System.Drawing.Image)(resources.GetObject("btRelatorio.Image")));
-            this.btRelatorio.Location = new System.Drawing.Point(1140, 165);
-            this.btRelatorio.Margin = new System.Windows.Forms.Padding(2);
-            this.btRelatorio.Name = "btRelatorio";
-            this.btRelatorio.Size = new System.Drawing.Size(60, 69);
-            this.btRelatorio.TabIndex = 18;
-            this.btRelatorio.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.toolTip1.SetToolTip(this.btRelatorio, "Gerar relatório");
-            this.btRelatorio.UseVisualStyleBackColor = false;
-            this.btRelatorio.Click += new System.EventHandler(this.btRelatorio_Click);
-            // 
-            // btLimpar
-            // 
-            this.btLimpar.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.btLimpar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
-            this.btLimpar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btLimpar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btLimpar.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold);
-            this.btLimpar.ForeColor = System.Drawing.Color.White;
-            this.btLimpar.Image = ((System.Drawing.Image)(resources.GetObject("btLimpar.Image")));
-            this.btLimpar.Location = new System.Drawing.Point(1140, 248);
-            this.btLimpar.Margin = new System.Windows.Forms.Padding(2);
-            this.btLimpar.Name = "btLimpar";
-            this.btLimpar.Size = new System.Drawing.Size(60, 69);
-            this.btLimpar.TabIndex = 19;
-            this.toolTip1.SetToolTip(this.btLimpar, "Limpar informações");
-            this.btLimpar.UseVisualStyleBackColor = false;
-            this.btLimpar.Click += new System.EventHandler(this.btLimpar_Click);
-            // 
-            // btExcluir
-            // 
-            this.btExcluir.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.btExcluir.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
-            this.btExcluir.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btExcluir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btExcluir.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold);
-            this.btExcluir.ForeColor = System.Drawing.Color.White;
-            this.btExcluir.Image = ((System.Drawing.Image)(resources.GetObject("btExcluir.Image")));
-            this.btExcluir.Location = new System.Drawing.Point(1140, 331);
-            this.btExcluir.Margin = new System.Windows.Forms.Padding(2);
-            this.btExcluir.Name = "btExcluir";
-            this.btExcluir.Size = new System.Drawing.Size(60, 69);
-            this.btExcluir.TabIndex = 20;
-            this.toolTip1.SetToolTip(this.btExcluir, "Excluir cadastro");
-            this.btExcluir.UseVisualStyleBackColor = false;
-            this.btExcluir.Click += new System.EventHandler(this.btExcluir_Click);
-            // 
-            // btSalvar
-            // 
-            this.btSalvar.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.btSalvar.BackColor = System.Drawing.Color.MediumSeaGreen;
-            this.btSalvar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btSalvar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btSalvar.Font = new System.Drawing.Font("Segoe UI Semibold", 14F, System.Drawing.FontStyle.Bold);
-            this.btSalvar.ForeColor = System.Drawing.Color.White;
-            this.btSalvar.Image = ((System.Drawing.Image)(resources.GetObject("btSalvar.Image")));
-            this.btSalvar.Location = new System.Drawing.Point(1140, 414);
-            this.btSalvar.Margin = new System.Windows.Forms.Padding(2);
-            this.btSalvar.Name = "btSalvar";
-            this.btSalvar.Size = new System.Drawing.Size(60, 69);
-            this.btSalvar.TabIndex = 21;
-            this.btSalvar.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.toolTip1.SetToolTip(this.btSalvar, "Salvar alterações");
-            this.btSalvar.UseVisualStyleBackColor = false;
-            this.btSalvar.Click += new System.EventHandler(this.btSalvar_Click);
             // 
             // tcDados
             // 
@@ -242,7 +167,7 @@ namespace projetofinal
             this.tcDados.Controls.Add(this.tpInfoAdicionais);
             this.tcDados.Controls.Add(this.tpLogin);
             this.tcDados.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tcDados.Location = new System.Drawing.Point(616, 134);
+            this.tcDados.Location = new System.Drawing.Point(616, 111);
             this.tcDados.Name = "tcDados";
             this.tcDados.SelectedIndex = 0;
             this.tcDados.Size = new System.Drawing.Size(519, 356);
@@ -802,7 +727,7 @@ namespace projetofinal
             this.lbListaAlunos.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lbListaAlunos.Font = new System.Drawing.Font("Segoe UI", 22F, System.Drawing.FontStyle.Bold);
             this.lbListaAlunos.ForeColor = System.Drawing.Color.MediumSeaGreen;
-            this.lbListaAlunos.Location = new System.Drawing.Point(39, 49);
+            this.lbListaAlunos.Location = new System.Drawing.Point(39, 26);
             this.lbListaAlunos.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbListaAlunos.Name = "lbListaAlunos";
             this.lbListaAlunos.Size = new System.Drawing.Size(1161, 43);
@@ -814,7 +739,7 @@ namespace projetofinal
             // 
             this.pictureBox2.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(569, 536);
+            this.pictureBox2.Location = new System.Drawing.Point(551, 557);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(100, 30);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -837,7 +762,7 @@ namespace projetofinal
             this.lbBuscar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lbBuscar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lbBuscar.Image = ((System.Drawing.Image)(resources.GetObject("lbBuscar.Image")));
-            this.lbBuscar.Location = new System.Drawing.Point(562, 134);
+            this.lbBuscar.Location = new System.Drawing.Point(562, 111);
             this.lbBuscar.Name = "lbBuscar";
             this.lbBuscar.Size = new System.Drawing.Size(29, 29);
             this.lbBuscar.TabIndex = 144;
@@ -850,7 +775,7 @@ namespace projetofinal
             this.lbLimparBusca.BackColor = System.Drawing.SystemColors.Window;
             this.lbLimparBusca.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lbLimparBusca.Image = ((System.Drawing.Image)(resources.GetObject("lbLimparBusca.Image")));
-            this.lbLimparBusca.Location = new System.Drawing.Point(532, 138);
+            this.lbLimparBusca.Location = new System.Drawing.Point(532, 115);
             this.lbLimparBusca.Name = "lbLimparBusca";
             this.lbLimparBusca.Size = new System.Drawing.Size(20, 20);
             this.lbLimparBusca.TabIndex = 145;
@@ -871,7 +796,7 @@ namespace projetofinal
             "CPF",
             "E-mail",
             "Usuário"});
-            this.cbFiltro.Location = new System.Drawing.Point(39, 134);
+            this.cbFiltro.Location = new System.Drawing.Point(39, 111);
             this.cbFiltro.Margin = new System.Windows.Forms.Padding(2);
             this.cbFiltro.Name = "cbFiltro";
             this.cbFiltro.Size = new System.Drawing.Size(43, 29);
@@ -883,7 +808,7 @@ namespace projetofinal
             this.lbFiltro.BackColor = System.Drawing.SystemColors.Window;
             this.lbFiltro.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lbFiltro.Image = ((System.Drawing.Image)(resources.GetObject("lbFiltro.Image")));
-            this.lbFiltro.Location = new System.Drawing.Point(39, 136);
+            this.lbFiltro.Location = new System.Drawing.Point(39, 113);
             this.lbFiltro.Name = "lbFiltro";
             this.lbFiltro.Size = new System.Drawing.Size(25, 25);
             this.lbFiltro.TabIndex = 146;
@@ -894,7 +819,7 @@ namespace projetofinal
             this.lbTipoFiltro.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lbTipoFiltro.Font = new System.Drawing.Font("Segoe UI Semibold", 8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
             this.lbTipoFiltro.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
-            this.lbTipoFiltro.Location = new System.Drawing.Point(89, 119);
+            this.lbTipoFiltro.Location = new System.Drawing.Point(89, 96);
             this.lbTipoFiltro.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbTipoFiltro.Name = "lbTipoFiltro";
             this.lbTipoFiltro.Size = new System.Drawing.Size(10, 13);
@@ -909,11 +834,69 @@ namespace projetofinal
             this.toolTip1.InitialDelay = 100;
             this.toolTip1.ReshowDelay = 96;
             // 
+            // button1
+            // 
+            this.button1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.button1.BackColor = System.Drawing.Color.MediumSeaGreen;
+            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Segoe UI Semibold", 14F, System.Drawing.FontStyle.Bold);
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Location = new System.Drawing.Point(900, 472);
+            this.button1.Margin = new System.Windows.Forms.Padding(2);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(235, 40);
+            this.button1.TabIndex = 148;
+            this.button1.Text = "&Salvar";
+            this.button1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.btSalvar_Click);
+            // 
+            // btExcluir
+            // 
+            this.btExcluir.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btExcluir.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
+            this.btExcluir.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btExcluir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btExcluir.Font = new System.Drawing.Font("Segoe UI Semibold", 14F, System.Drawing.FontStyle.Bold);
+            this.btExcluir.ForeColor = System.Drawing.Color.White;
+            this.btExcluir.Location = new System.Drawing.Point(661, 472);
+            this.btExcluir.Margin = new System.Windows.Forms.Padding(2);
+            this.btExcluir.Name = "btExcluir";
+            this.btExcluir.Size = new System.Drawing.Size(235, 40);
+            this.btExcluir.TabIndex = 149;
+            this.btExcluir.Text = "&Excluir";
+            this.btExcluir.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btExcluir.UseVisualStyleBackColor = false;
+            this.btExcluir.Click += new System.EventHandler(this.btExcluir_Click);
+            // 
+            // btRelatorio
+            // 
+            this.btRelatorio.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.btRelatorio.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
+            this.btRelatorio.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btRelatorio.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btRelatorio.Font = new System.Drawing.Font("Segoe UI Semibold", 14F, System.Drawing.FontStyle.Bold);
+            this.btRelatorio.ForeColor = System.Drawing.Color.White;
+            this.btRelatorio.Image = ((System.Drawing.Image)(resources.GetObject("btRelatorio.Image")));
+            this.btRelatorio.Location = new System.Drawing.Point(617, 472);
+            this.btRelatorio.Margin = new System.Windows.Forms.Padding(2);
+            this.btRelatorio.Name = "btRelatorio";
+            this.btRelatorio.Size = new System.Drawing.Size(40, 40);
+            this.btRelatorio.TabIndex = 156;
+            this.btRelatorio.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.toolTip1.SetToolTip(this.btRelatorio, "Gerar relatório");
+            this.btRelatorio.UseVisualStyleBackColor = false;
+            this.btRelatorio.Click += new System.EventHandler(this.btRelatorio_Click);
+            // 
             // FormEditarAluno
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1241, 619);
+            this.Controls.Add(this.btRelatorio);
+            this.Controls.Add(this.btExcluir);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.lbTipoFiltro);
             this.Controls.Add(this.lbLimparBusca);
             this.Controls.Add(this.lbBuscar);
@@ -921,11 +904,7 @@ namespace projetofinal
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.lbListaAlunos);
             this.Controls.Add(this.tcDados);
-            this.Controls.Add(this.btRelatorio);
-            this.Controls.Add(this.btExcluir);
-            this.Controls.Add(this.btSalvar);
             this.Controls.Add(this.tbBusca);
-            this.Controls.Add(this.btLimpar);
             this.Controls.Add(this.dgalunos);
             this.Controls.Add(this.lbFiltro);
             this.Controls.Add(this.cbFiltro);
@@ -959,10 +938,6 @@ namespace projetofinal
 
         private System.Windows.Forms.DataGridView dgalunos;
         private System.Windows.Forms.TextBox tbBusca;
-        private System.Windows.Forms.Button btRelatorio;
-        private System.Windows.Forms.Button btLimpar;
-        private System.Windows.Forms.Button btExcluir;
-        private System.Windows.Forms.Button btSalvar;
         private System.Windows.Forms.TabControl tcDados;
         private System.Windows.Forms.TabPage tpDadosPessoais;
         private System.Windows.Forms.MaskedTextBox mtbIdade;
@@ -1009,5 +984,8 @@ namespace projetofinal
         private System.Windows.Forms.Label lbFiltro;
         private System.Windows.Forms.Label lbTipoFiltro;
         private System.Windows.Forms.ToolTip toolTip1;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btExcluir;
+        private System.Windows.Forms.Button btRelatorio;
     }
 }

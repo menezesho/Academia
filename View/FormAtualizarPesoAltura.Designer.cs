@@ -29,30 +29,15 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormAtualizarPesoAltura));
-            this.lbSair = new System.Windows.Forms.Label();
             this.btLimpar = new System.Windows.Forms.Button();
             this.btAtualizar = new System.Windows.Forms.Button();
-            this.lbAlterarPesoAltura = new System.Windows.Forms.Label();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.mtbAltura = new System.Windows.Forms.MaskedTextBox();
             this.mtbPeso = new System.Windows.Forms.MaskedTextBox();
             this.lbaltura = new System.Windows.Forms.Label();
             this.lbpeso = new System.Windows.Forms.Label();
             this.lbkg = new System.Windows.Forms.Label();
             this.lbcm = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
-            // 
-            // lbSair
-            // 
-            this.lbSair.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.lbSair.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lbSair.Image = ((System.Drawing.Image)(resources.GetObject("lbSair.Image")));
-            this.lbSair.Location = new System.Drawing.Point(502, 404);
-            this.lbSair.Name = "lbSair";
-            this.lbSair.Size = new System.Drawing.Size(35, 35);
-            this.lbSair.TabIndex = 170;
-            this.lbSair.Click += new System.EventHandler(this.lbSair_Click);
             // 
             // btLimpar
             // 
@@ -62,7 +47,7 @@
             this.btLimpar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btLimpar.Font = new System.Drawing.Font("Segoe UI Semibold", 14F, System.Drawing.FontStyle.Bold);
             this.btLimpar.ForeColor = System.Drawing.Color.White;
-            this.btLimpar.Location = new System.Drawing.Point(85, 259);
+            this.btLimpar.Location = new System.Drawing.Point(49, 144);
             this.btLimpar.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.btLimpar.Name = "btLimpar";
             this.btLimpar.Size = new System.Drawing.Size(186, 40);
@@ -79,7 +64,7 @@
             this.btAtualizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btAtualizar.Font = new System.Drawing.Font("Segoe UI Semibold", 14F, System.Drawing.FontStyle.Bold);
             this.btAtualizar.ForeColor = System.Drawing.Color.White;
-            this.btAtualizar.Location = new System.Drawing.Point(275, 259);
+            this.btAtualizar.Location = new System.Drawing.Point(239, 144);
             this.btAtualizar.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.btAtualizar.Name = "btAtualizar";
             this.btAtualizar.Size = new System.Drawing.Size(186, 40);
@@ -88,30 +73,6 @@
             this.btAtualizar.UseVisualStyleBackColor = false;
             this.btAtualizar.Click += new System.EventHandler(this.btAtualizar_Click);
             // 
-            // lbAlterarPesoAltura
-            // 
-            this.lbAlterarPesoAltura.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lbAlterarPesoAltura.Font = new System.Drawing.Font("Segoe UI", 22F, System.Drawing.FontStyle.Bold);
-            this.lbAlterarPesoAltura.ForeColor = System.Drawing.Color.MediumSeaGreen;
-            this.lbAlterarPesoAltura.Location = new System.Drawing.Point(85, 73);
-            this.lbAlterarPesoAltura.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lbAlterarPesoAltura.Name = "lbAlterarPesoAltura";
-            this.lbAlterarPesoAltura.Size = new System.Drawing.Size(378, 43);
-            this.lbAlterarPesoAltura.TabIndex = 169;
-            this.lbAlterarPesoAltura.Text = "ALTERAR PESO E ALTURA";
-            this.lbAlterarPesoAltura.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(224, 345);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(100, 30);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 162;
-            this.pictureBox2.TabStop = false;
-            // 
             // mtbAltura
             // 
             this.mtbAltura.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -119,7 +80,7 @@
             this.mtbAltura.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.mtbAltura.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
             this.mtbAltura.HidePromptOnLeave = true;
-            this.mtbAltura.Location = new System.Drawing.Point(307, 184);
+            this.mtbAltura.Location = new System.Drawing.Point(271, 69);
             this.mtbAltura.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.mtbAltura.Mask = "000";
             this.mtbAltura.Name = "mtbAltura";
@@ -136,7 +97,7 @@
             this.mtbPeso.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.mtbPeso.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
             this.mtbPeso.HidePromptOnLeave = true;
-            this.mtbPeso.Location = new System.Drawing.Point(85, 184);
+            this.mtbPeso.Location = new System.Drawing.Point(49, 69);
             this.mtbPeso.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.mtbPeso.Mask = "000";
             this.mtbPeso.Name = "mtbPeso";
@@ -152,7 +113,7 @@
             this.lbaltura.AutoSize = true;
             this.lbaltura.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
             this.lbaltura.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
-            this.lbaltura.Location = new System.Drawing.Point(331, 156);
+            this.lbaltura.Location = new System.Drawing.Point(295, 41);
             this.lbaltura.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbaltura.Name = "lbaltura";
             this.lbaltura.Size = new System.Drawing.Size(66, 25);
@@ -165,7 +126,7 @@
             this.lbpeso.AutoSize = true;
             this.lbpeso.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
             this.lbpeso.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
-            this.lbpeso.Location = new System.Drawing.Point(116, 156);
+            this.lbpeso.Location = new System.Drawing.Point(80, 41);
             this.lbpeso.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbpeso.Name = "lbpeso";
             this.lbpeso.Size = new System.Drawing.Size(52, 25);
@@ -178,7 +139,7 @@
             this.lbkg.AutoSize = true;
             this.lbkg.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
             this.lbkg.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
-            this.lbkg.Location = new System.Drawing.Point(203, 186);
+            this.lbkg.Location = new System.Drawing.Point(167, 71);
             this.lbkg.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbkg.Name = "lbkg";
             this.lbkg.Size = new System.Drawing.Size(33, 25);
@@ -191,7 +152,7 @@
             this.lbcm.AutoSize = true;
             this.lbcm.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
             this.lbcm.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
-            this.lbcm.Location = new System.Drawing.Point(425, 186);
+            this.lbcm.Location = new System.Drawing.Point(389, 71);
             this.lbcm.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbcm.Name = "lbcm";
             this.lbcm.Size = new System.Drawing.Size(38, 25);
@@ -202,41 +163,33 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(549, 448);
+            this.ClientSize = new System.Drawing.Size(478, 231);
             this.Controls.Add(this.mtbAltura);
             this.Controls.Add(this.mtbPeso);
             this.Controls.Add(this.lbaltura);
             this.Controls.Add(this.lbpeso);
             this.Controls.Add(this.lbkg);
             this.Controls.Add(this.lbcm);
-            this.Controls.Add(this.lbSair);
             this.Controls.Add(this.btLimpar);
             this.Controls.Add(this.btAtualizar);
-            this.Controls.Add(this.lbAlterarPesoAltura);
-            this.Controls.Add(this.pictureBox2);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.KeyPreview = true;
             this.MaximizeBox = false;
-            this.MinimumSize = new System.Drawing.Size(565, 487);
+            this.MinimumSize = new System.Drawing.Size(494, 270);
             this.Name = "FormAtualizarPesoAltura";
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Ajustes";
+            this.Text = "Atualizar Informações";
             this.Load += new System.EventHandler(this.FormAtualizarPesoAltura_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FormInscreverAluno_KeyDown);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Label lbSair;
         private System.Windows.Forms.Button btLimpar;
         private System.Windows.Forms.Button btAtualizar;
-        private System.Windows.Forms.Label lbAlterarPesoAltura;
-        private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.MaskedTextBox mtbAltura;
         private System.Windows.Forms.MaskedTextBox mtbPeso;
         private System.Windows.Forms.Label lbaltura;
