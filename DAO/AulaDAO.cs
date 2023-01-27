@@ -46,8 +46,8 @@ namespace academia.DAO
         {
             SqlConnection conexao = new SqlConnection(conec.ConexaoBD());
             string sql = @"SELECT aula.idaula AS 'ID', aula.nome AS 'Aula', pr.nome AS 'Professor', aula.dia AS 'Data', aula.hora AS 'Horário', aula.total AS 'Max. Alunos', aula.contador AS 'Contador'
-                FROM aula INNER JOIN participante AS 'pa' ON p.id_aula = aula.idaula
-                INNER JOIN professor AS 'pr' ON pr.idprofessor = aula.id_professor
+                FROM aula INNER JOIN participante AS pa ON pa.id_aula = aula.idaula
+                INNER JOIN professor AS pr ON pr.idprofessor = aula.id_professor
                 WHERE pa.id_aluno = @id;";
             SqlCommand comando = new SqlCommand(sql, conexao);
             comando.Parameters.AddWithValue("@id", id);

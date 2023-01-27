@@ -6,6 +6,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.IO;
 using System.Text;
 using System.Threading;
 using System.Windows.Forms;
@@ -343,9 +344,6 @@ namespace projetofinal
 
         private void btSalvar_Click(object sender, EventArgs e)
         {//btSalvar
-
-
-
             if (id == 0)
                 MessageBox.Show("Nenhum aluno foi selecionado!", "Salvar", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             else
@@ -354,25 +352,33 @@ namespace projetofinal
                     MessageBox.Show("Os campos obrigatórios não foram preenchidos!", "Salvar", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 else
                 {
-
                     #region Verificação de espaços
-                    if (mtbIdade.Text != "" || mtbNumero.Text != "" || mtbApto.Text != "" || mtbPeso.Text != "" || mtbAltura.Text != "")
+
+                    try
                     {
-                        try
+                        int testeIdade = int.Parse(mtbIdade.Text);
+                        int testeNumero = int.Parse(mtbNumero.Text);
+                        if (mtbPeso.Text != "")
                         {
-                            int testeIdade = int.Parse(mtbIdade.Text);
-                            int testeNumero = int.Parse(mtbNumero.Text);
-                            int testeApto = int.Parse(mtbApto.Text);
                             int testePeso = int.Parse(mtbPeso.Text);
+                        }
+                        if (mtbAltura.Text != "")
+                        {
                             int testeAltura = int.Parse(mtbAltura.Text);
                         }
-                        catch
+                        if (mtbApto.Text != "")
                         {
-                            MessageBox.Show("Verifique se todos os campos numéricos foram preenchidos corretamente!", "Salvar", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                            return;
+                            int testeApto = int.Parse(mtbApto.Text);
                         }
                     }
+                    catch
+                    {
+                        MessageBox.Show("Verifique se todos os campos numéricos foram preenchidos corretamente!", "Salvar", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        return;
+                    }
+                    
                     #endregion
+
                     var emailVerificado = verificacao.verificarEmail(tbEmail.Text.Trim());
                     var cpfVerificado = Verificacao.verificarCpf(mtbCpf.Text);
                     var celularVerificado = Verificacao.verificarCelular(mtbCelular.Text);
@@ -385,82 +391,100 @@ namespace projetofinal
                                 try
                                 {
                                     SqlConnection cn = new SqlConnection(conec.ConexaoBD());
+                                    string sqlValidaUsuario = @"SELECT usuario FROM aluno WHERE usuario = @usuario AND idaluno != @id;";
+                                    SqlCommand cmdValidaUsuario = new SqlCommand(sqlValidaUsuario, cn);
 
-                                    //preparado para a string de insert muito louca?
-
-                                    string sqlUpdate = @"UPDATE aluno SET nome=@nome, idade=@idade, celular=@celular, email=@email, rua=@rua, numero=@numero, bairro=@bairro, cidade=@cidade, estado=@estado, usuario=@usuario, senha=@senha";
-
-                                    if (mtbPeso.Text != "")
-                                        sqlUpdate = sqlUpdate + ", peso='" + int.Parse(mtbPeso.Text) + "'";
-                                    else
-                                        sqlUpdate = sqlUpdate + ", peso=NULL";
-                                    if (mtbAltura.Text != "")
-                                        sqlUpdate = sqlUpdate + ", altura='" + int.Parse(mtbAltura.Text) + "'";
-                                    else
-                                        sqlUpdate = sqlUpdate + ", altura=NULL";
-                                    if (mtbApto.Text != "")
-                                        sqlUpdate = sqlUpdate + ", apto='" + int.Parse(mtbApto.Text) + "'";
-                                    else
-                                        sqlUpdate = sqlUpdate + ", apto=NULL";
-
-                                    sqlUpdate = sqlUpdate + " WHERE idaluno=@idaluno";
-
-                                    SqlCommand cmdUpdate = new SqlCommand(sqlUpdate, cn);
-
-                                    cmdUpdate.Parameters.AddWithValue("@idaluno", id);
-                                    cmdUpdate.Parameters.AddWithValue("@nome", tbNome.Text.Trim());
-                                    cmdUpdate.Parameters.AddWithValue("@idade", int.Parse(mtbIdade.Text));
-                                    cmdUpdate.Parameters.AddWithValue("@celular", mtbCelular.Text);
-                                    cmdUpdate.Parameters.AddWithValue("@email", tbEmail.Text.Trim());
-                                    cmdUpdate.Parameters.AddWithValue("@rua", tbRua.Text.Trim());
-                                    cmdUpdate.Parameters.AddWithValue("@numero", mtbNumero.Text);
-                                    cmdUpdate.Parameters.AddWithValue("@bairro", tbBairro.Text.Trim());
-                                    cmdUpdate.Parameters.AddWithValue("@cidade", tbCidade.Text.Trim());
-                                    cmdUpdate.Parameters.AddWithValue("@estado", cbEstado.Text);
-                                    cmdUpdate.Parameters.AddWithValue("@usuario", tbUsuario.Text.Trim());
-                                    cmdUpdate.Parameters.AddWithValue("@senha", tbSenha.Text);
+                                    cmdValidaUsuario.Parameters.AddWithValue("@id", id);
+                                    cmdValidaUsuario.Parameters.AddWithValue("@usuario", tbUsuario.Text);
 
                                     cn.Open();
-                                    cmdUpdate.CommandText = sqlUpdate;
-                                    cmdUpdate.ExecuteNonQuery();
-                                    cn.Close();
-                                    MessageBox.Show("Dados alterados com sucesso!", "Salvar", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                    cmdValidaUsuario.CommandText = sqlValidaUsuario;
+                                    cmdValidaUsuario.ExecuteNonQuery();
+                                    SqlDataReader dataValidaUsuario = cmdValidaUsuario.ExecuteReader();
+                                    if (dataValidaUsuario.Read())
+                                    {
+                                        cn.Close();
+                                        MessageBox.Show("Este usuário já está em uso!", "Salvar", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                    }
+                                    else
+                                    {
+                                        cn.Close();
+                                        //preparado para a string de insert muito louca?
 
-                                    dgalunos.DataSource = alunoDAO.listarAlunos();
+                                        string sqlUpdate = @"UPDATE aluno SET nome=@nome, idade=@idade, celular=@celular, email=@email, rua=@rua, numero=@numero, bairro=@bairro, cidade=@cidade, estado=@estado, usuario=@usuario, senha=@senha";
 
-                                    id = 0;
-                                    tbNome.Clear();
-                                    mtbCpf.Clear();
-                                    mtbIdade.Clear();
-                                    mtbCelular.Clear();
-                                    tbEmail.Clear();
-                                    mtbPeso.Clear();
-                                    mtbAltura.Clear();
-                                    tbRua.Clear();
-                                    mtbNumero.Clear();
-                                    mtbApto.Clear();
-                                    tbBairro.Clear();
-                                    tbCidade.Clear();
-                                    cbEstado.SelectedIndex = 0;
-                                    tbUsuario.Clear();
-                                    tbSenha.Clear();
+                                        if (mtbPeso.Text != "")
+                                            sqlUpdate = sqlUpdate + ", peso='" + int.Parse(mtbPeso.Text) + "'";
+                                        else
+                                            sqlUpdate = sqlUpdate + ", peso=NULL";
+                                        if (mtbAltura.Text != "")
+                                            sqlUpdate = sqlUpdate + ", altura='" + int.Parse(mtbAltura.Text) + "'";
+                                        else
+                                            sqlUpdate = sqlUpdate + ", altura=NULL";
+                                        if (mtbApto.Text != "")
+                                            sqlUpdate = sqlUpdate + ", apto='" + int.Parse(mtbApto.Text) + "'";
+                                        else
+                                            sqlUpdate = sqlUpdate + ", apto=NULL";
 
-                                    tbNome.Enabled = false;
-                                    mtbIdade.Enabled = false;
-                                    mtbCelular.Enabled = false;
-                                    tbEmail.Enabled = false;
-                                    mtbPeso.Enabled = false;
-                                    mtbAltura.Enabled = false;
-                                    tbRua.Enabled = false;
-                                    mtbNumero.Enabled = false;
-                                    mtbApto.Enabled = false;
-                                    tbBairro.Enabled = false;
-                                    tbCidade.Enabled = false;
-                                    cbEstado.Enabled = false;
-                                    tbUsuario.Enabled = false;
-                                    tbSenha.Enabled = false;
+                                        sqlUpdate = sqlUpdate + " WHERE idaluno=@idaluno";
 
-                                    tcDados.SelectedTab = tpDadosPessoais;
+                                        SqlCommand cmdUpdate = new SqlCommand(sqlUpdate, cn);
+
+                                        cmdUpdate.Parameters.AddWithValue("@idaluno", id);
+                                        cmdUpdate.Parameters.AddWithValue("@nome", tbNome.Text.Trim());
+                                        cmdUpdate.Parameters.AddWithValue("@idade", int.Parse(mtbIdade.Text));
+                                        cmdUpdate.Parameters.AddWithValue("@celular", mtbCelular.Text);
+                                        cmdUpdate.Parameters.AddWithValue("@email", tbEmail.Text.Trim());
+                                        cmdUpdate.Parameters.AddWithValue("@rua", tbRua.Text.Trim());
+                                        cmdUpdate.Parameters.AddWithValue("@numero", mtbNumero.Text);
+                                        cmdUpdate.Parameters.AddWithValue("@bairro", tbBairro.Text.Trim());
+                                        cmdUpdate.Parameters.AddWithValue("@cidade", tbCidade.Text.Trim());
+                                        cmdUpdate.Parameters.AddWithValue("@estado", cbEstado.Text);
+                                        cmdUpdate.Parameters.AddWithValue("@usuario", tbUsuario.Text.Trim());
+                                        cmdUpdate.Parameters.AddWithValue("@senha", tbSenha.Text);
+
+                                        cn.Open();
+                                        cmdUpdate.CommandText = sqlUpdate;
+                                        cmdUpdate.ExecuteNonQuery();
+                                        cn.Close();
+                                        MessageBox.Show("Dados alterados com sucesso!", "Salvar", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                                        dgalunos.DataSource = alunoDAO.listarAlunos();
+
+                                        id = 0;
+                                        tbNome.Clear();
+                                        mtbCpf.Clear();
+                                        mtbIdade.Clear();
+                                        mtbCelular.Clear();
+                                        tbEmail.Clear();
+                                        mtbPeso.Clear();
+                                        mtbAltura.Clear();
+                                        tbRua.Clear();
+                                        mtbNumero.Clear();
+                                        mtbApto.Clear();
+                                        tbBairro.Clear();
+                                        tbCidade.Clear();
+                                        cbEstado.SelectedIndex = 0;
+                                        tbUsuario.Clear();
+                                        tbSenha.Clear();
+
+                                        tbNome.Enabled = false;
+                                        mtbIdade.Enabled = false;
+                                        mtbCelular.Enabled = false;
+                                        tbEmail.Enabled = false;
+                                        mtbPeso.Enabled = false;
+                                        mtbAltura.Enabled = false;
+                                        tbRua.Enabled = false;
+                                        mtbNumero.Enabled = false;
+                                        mtbApto.Enabled = false;
+                                        tbBairro.Enabled = false;
+                                        tbCidade.Enabled = false;
+                                        cbEstado.Enabled = false;
+                                        tbUsuario.Enabled = false;
+                                        tbSenha.Enabled = false;
+
+                                        tcDados.SelectedTab = tpDadosPessoais;
+                                    }
                                 }
                                 catch (Exception erro)
                                 {
@@ -488,6 +512,48 @@ namespace projetofinal
                         mtbCpf.Focus();
                     }
                 }
+            }
+        }
+
+        private void btRelatorio_Click(object sender, EventArgs e)
+        {//btRelatorio
+            if (MessageBox.Show("Deseja gerar um relatório de todos os alunos?", "Relatório", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
+            {
+                SqlConnection cn = new SqlConnection(conec.ConexaoBD());
+                string endereco = "C:\\Sistemas\\academia\\Relatórios\\relatorio-alunos.csv";
+                using (StreamWriter writer = new StreamWriter(endereco, false, Encoding.GetEncoding("iso-8859-15")))
+                {
+                    writer.WriteLine("ID;Nome;CPF;Idade;Celular;E-mail;Usuário;Peso;Altura;Rua;Número;Apto;Bairro;Cidade;Estado");
+                    using (SqlConnection conn = new SqlConnection(conec.ConexaoBD()))
+                    {
+                        string query = "SELECT * FROM ALUNO;";
+                        SqlCommand sqlComand = new SqlCommand(query, conn);
+                        conn.Open();
+                        using (IDataReader reader = sqlComand.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                writer.WriteLine(Convert.ToString(reader["idaluno"]) + ";" +
+                                    Convert.ToString(reader["nome"]) + ";" +
+                                    Convert.ToString(reader["cpf"]) + ";" +
+                                    Convert.ToString(reader["idade"]) + ";" +
+                                    Convert.ToString(reader["celular"]) + ";" +
+                                    Convert.ToString(reader["email"]) + ";" +
+                                    Convert.ToString(reader["usuario"]) + ";" +
+                                    Convert.ToString(reader["peso"]) + ";" +
+                                    Convert.ToString(reader["altura"]) + ";" +
+                                    Convert.ToString(reader["rua"]) + ";" +
+                                    Convert.ToString(reader["numero"]) + ";" +
+                                    Convert.ToString(reader["apto"]) + ";" +
+                                    Convert.ToString(reader["bairro"]) + ";" +
+                                    Convert.ToString(reader["cidade"]) + ";" +
+                                    Convert.ToString(reader["estado"]));
+                            }
+                        }
+                        conn.Close();
+                    }
+                }
+                MessageBox.Show("Relatório gerado com sucesso!", "Gerar", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
@@ -539,5 +605,6 @@ namespace projetofinal
         }
 
         #endregion
+
     }
 }

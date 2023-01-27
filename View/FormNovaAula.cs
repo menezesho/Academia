@@ -40,8 +40,10 @@ namespace academia
             if (MessageBox.Show("Os dados não salvos serão perdidos!\nDeseja mesmo limpar todos os campos?", "Limpar", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
             {
                 tbNome.Clear();
-                dtpData.Text = "";
                 cbHora.SelectedIndex = 0;
+                mtbTotal.Clear();
+                dtpData.ResetText();
+
             }
         }
 
@@ -114,6 +116,12 @@ namespace academia
                         cmdInsert.CommandText = sqlInsert;
                         cmdInsert.ExecuteNonQuery();
                         cn.Close();
+
+                        tbNome.Clear();
+                        mtbTotal.Clear();
+                        cbHora.SelectedIndex = 0;
+                        dtpData.ResetText();
+
                         MessageBox.Show("Cadastro efetuado com sucesso!", "Cadastrar", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                 }

@@ -29,6 +29,7 @@ namespace projetofinal
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMenuProfessor));
             this.lbSair = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -38,6 +39,7 @@ namespace projetofinal
             this.btAlterarSenha = new System.Windows.Forms.Button();
             this.lbMensagem = new System.Windows.Forms.Label();
             this.lbInfoUsuario = new System.Windows.Forms.Label();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -56,9 +58,9 @@ namespace projetofinal
             // 
             this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(199, 132);
+            this.pictureBox1.Location = new System.Drawing.Point(158, 175);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(304, 324);
+            this.pictureBox1.Size = new System.Drawing.Size(304, 216);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 43;
             this.pictureBox1.TabStop = false;
@@ -69,14 +71,15 @@ namespace projetofinal
             this.btEditarAula.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
             this.btEditarAula.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btEditarAula.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btEditarAula.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
+            this.btEditarAula.Font = new System.Drawing.Font("Segoe UI Semibold", 14F, System.Drawing.FontStyle.Bold);
             this.btEditarAula.ForeColor = System.Drawing.Color.White;
-            this.btEditarAula.Location = new System.Drawing.Point(549, 215);
+            this.btEditarAula.Location = new System.Drawing.Point(508, 258);
             this.btEditarAula.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btEditarAula.Name = "btEditarAula";
-            this.btEditarAula.Size = new System.Drawing.Size(250, 75);
+            this.btEditarAula.Size = new System.Drawing.Size(346, 75);
             this.btEditarAula.TabIndex = 1;
             this.btEditarAula.Text = "&EDITAR AULA";
+            this.toolTip1.SetToolTip(this.btEditarAula, "Editar aula");
             this.btEditarAula.UseVisualStyleBackColor = false;
             this.btEditarAula.Click += new System.EventHandler(this.btEditarAula_Click);
             // 
@@ -86,14 +89,15 @@ namespace projetofinal
             this.btNovaAula.BackColor = System.Drawing.Color.MediumSeaGreen;
             this.btNovaAula.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btNovaAula.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btNovaAula.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
+            this.btNovaAula.Font = new System.Drawing.Font("Segoe UI Semibold", 14F, System.Drawing.FontStyle.Bold);
             this.btNovaAula.ForeColor = System.Drawing.Color.White;
-            this.btNovaAula.Location = new System.Drawing.Point(549, 132);
+            this.btNovaAula.Location = new System.Drawing.Point(508, 175);
             this.btNovaAula.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btNovaAula.Name = "btNovaAula";
-            this.btNovaAula.Size = new System.Drawing.Size(250, 75);
+            this.btNovaAula.Size = new System.Drawing.Size(346, 75);
             this.btNovaAula.TabIndex = 0;
             this.btNovaAula.Text = "&NOVA AULA";
+            this.toolTip1.SetToolTip(this.btNovaAula, "Nova aula");
             this.btNovaAula.UseVisualStyleBackColor = false;
             this.btNovaAula.Click += new System.EventHandler(this.btNovaAula_Click);
             // 
@@ -103,16 +107,17 @@ namespace projetofinal
             this.btVerParticipantes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
             this.btVerParticipantes.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btVerParticipantes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btVerParticipantes.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
+            this.btVerParticipantes.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
             this.btVerParticipantes.ForeColor = System.Drawing.Color.White;
-            this.btVerParticipantes.Location = new System.Drawing.Point(549, 298);
+            this.btVerParticipantes.Location = new System.Drawing.Point(508, 341);
             this.btVerParticipantes.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btVerParticipantes.Name = "btVerParticipantes";
-            this.btVerParticipantes.Size = new System.Drawing.Size(250, 75);
+            this.btVerParticipantes.Size = new System.Drawing.Size(198, 50);
             this.btVerParticipantes.TabIndex = 2;
             this.btVerParticipantes.Text = "&VER PARTICIPANTES";
+            this.toolTip1.SetToolTip(this.btVerParticipantes, "Visualizar participantes e aulas");
             this.btVerParticipantes.UseVisualStyleBackColor = false;
-            this.btVerParticipantes.Click += new System.EventHandler(this.btVerParticipantes_Click);
+            this.btVerParticipantes.Click += new System.EventHandler(this.btVerInscritos_Click);
             // 
             // btAlterarSenha
             // 
@@ -120,14 +125,15 @@ namespace projetofinal
             this.btAlterarSenha.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
             this.btAlterarSenha.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btAlterarSenha.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btAlterarSenha.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
+            this.btAlterarSenha.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
             this.btAlterarSenha.ForeColor = System.Drawing.Color.White;
-            this.btAlterarSenha.Location = new System.Drawing.Point(549, 381);
+            this.btAlterarSenha.Location = new System.Drawing.Point(712, 341);
             this.btAlterarSenha.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btAlterarSenha.Name = "btAlterarSenha";
-            this.btAlterarSenha.Size = new System.Drawing.Size(250, 75);
+            this.btAlterarSenha.Size = new System.Drawing.Size(142, 50);
             this.btAlterarSenha.TabIndex = 3;
             this.btAlterarSenha.Text = "&ALTERAR SENHA";
+            this.toolTip1.SetToolTip(this.btAlterarSenha, "Alterar senha");
             this.btAlterarSenha.UseVisualStyleBackColor = false;
             this.btAlterarSenha.Click += new System.EventHandler(this.btAlterarSenha_Click);
             // 
@@ -136,7 +142,7 @@ namespace projetofinal
             this.lbMensagem.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lbMensagem.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbMensagem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
-            this.lbMensagem.Location = new System.Drawing.Point(199, 219);
+            this.lbMensagem.Location = new System.Drawing.Point(158, 208);
             this.lbMensagem.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbMensagem.Name = "lbMensagem";
             this.lbMensagem.Size = new System.Drawing.Size(304, 26);
@@ -156,6 +162,13 @@ namespace projetofinal
             this.lbInfoUsuario.TabIndex = 62;
             this.lbInfoUsuario.Text = "Usuário...";
             this.lbInfoUsuario.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            // 
+            // toolTip1
+            // 
+            this.toolTip1.AutoPopDelay = 4800;
+            this.toolTip1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
+            this.toolTip1.InitialDelay = 100;
+            this.toolTip1.ReshowDelay = 96;
             // 
             // FormMenuProfessor
             // 
@@ -195,5 +208,6 @@ namespace projetofinal
         internal System.Windows.Forms.Button btAlterarSenha;
         private System.Windows.Forms.Label lbMensagem;
         private System.Windows.Forms.Label lbInfoUsuario;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }

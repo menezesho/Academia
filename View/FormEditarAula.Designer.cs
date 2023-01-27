@@ -185,6 +185,7 @@
             this.btRelatorio.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.toolTip1.SetToolTip(this.btRelatorio, "Gerar relatório");
             this.btRelatorio.UseVisualStyleBackColor = false;
+            this.btRelatorio.Click += new System.EventHandler(this.btRelatorio_Click);
             // 
             // btExcluir
             // 
@@ -237,7 +238,6 @@
             this.tbBusca.Name = "tbBusca";
             this.tbBusca.Size = new System.Drawing.Size(471, 29);
             this.tbBusca.TabIndex = 148;
-            this.tbBusca.TextChanged += new System.EventHandler(this.tbBusca_TextChanged);
             this.tbBusca.Enter += new System.EventHandler(this.tbBusca_Enter);
             this.tbBusca.Leave += new System.EventHandler(this.tbBusca_Leave);
             // 

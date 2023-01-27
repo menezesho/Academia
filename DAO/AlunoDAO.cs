@@ -31,7 +31,7 @@ namespace academia.DAO
         public DataTable listarAlunosEspecificos(int id)
         {
             SqlConnection conexao = new SqlConnection(conec.ConexaoBD());
-            string sql = @"SELECT ALUNO.IDALUNO AS 'ID', ALUNO.NOME AS 'Nome', ALUNO.CPF AS 'CPF' FROM ALUNO JOIN PARTICIPANTE ON PARTICIPANTE.ID_ALUNO = ALUNO.IDALUNO WHERE PARTICIPANTE.ID_AULA = @id";
+            string sql = @"SELECT ALUNO.IDALUNO AS 'ID', ALUNO.NOME AS 'Nome', ALUNO.CPF AS 'CPF', ALUNO.EMAIL AS 'E-mail', ALUNO.USUARIO AS 'Usuário' FROM ALUNO JOIN PARTICIPANTE ON PARTICIPANTE.ID_ALUNO = ALUNO.IDALUNO WHERE PARTICIPANTE.ID_AULA = @id";
             SqlCommand comando = new SqlCommand(sql, conexao);
             comando.Parameters.AddWithValue("@id", id);
             conexao.Open();

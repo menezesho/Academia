@@ -28,6 +28,26 @@ namespace academia.Class
                 return false;
         }
 
+        public bool verificarSenha(string senha)
+        {
+            string caracteresEspeciais = ".+-[]*~_@#:?";
+            string alfabeto = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+
+            bool validacao = false;
+            for (int i = 0; i < caracteresEspeciais.Length; i++)
+            {
+                if (senha.Contains(caracteresEspeciais[i].ToString()) && senha.Length >= 8)
+                {
+                    for (int j = 0; j < alfabeto.Length; j++)
+                    {
+                        if (senha.Contains(alfabeto[j].ToString()))
+                            validacao = true;
+                    }
+                }  
+            }
+            return validacao;
+        }
+
         /*public static bool verificarData(string data)
         {
             var regExp = new Regex(@"^\d{2}.\d{2}.\d{4}");

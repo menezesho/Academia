@@ -6,6 +6,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading;
@@ -331,6 +332,12 @@ namespace academia
             }
         }
 
+        private void btRelatorio_Click(object sender, EventArgs e)
+        {//btRelatorio
+            FormRelatorioAulas Fra = new FormRelatorioAulas();
+            Fra.ShowDialog();
+        }
+
         #region Retornar
 
         private void FormListAluno_KeyDown(object sender, KeyEventArgs e)
@@ -380,9 +387,5 @@ namespace academia
 
         #endregion
 
-        private void tbBusca_TextChanged(object sender, EventArgs e)
-        {
-
-        }
     }
 }

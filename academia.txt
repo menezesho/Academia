@@ -30,11 +30,16 @@
 
 ✅ adicionar chave estrangeira de qual professor é essa aula
 
-implementar botão para gerar relatório (precisa de view)
-
-fazer verificação de senha lgpd
+✅ fazer verificação de senha lgpd
 
 ✅ tela pra atualizar o peso e a altura
 
+✅ implementar botão para gerar relatório (precisa de view)
+
 fazer uma contagem de tempo para poder se desinscrever de determinada aula
 
+desenvolver formulário de ver participantes
+
+erro formulario cancelar inscricao
+
+escrever "selecione" no combo box de aula no formulario de ver inscritos

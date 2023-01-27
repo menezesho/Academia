@@ -342,79 +342,102 @@ SELECT IDPROFESSOR, NOME, CPF, IDADE, CELULAR, EMAIL, SENHA, RUA, NUMERO, APTO, 
             </Mappings>
             <Sources />
           </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="RELATORIO_AULATableAdapter" GeneratorDataComponentClassName="RELATORIO_AULATableAdapter" Name="RELATORIO_AULA" UserDataComponentName="RELATORIO_AULATableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="BD_ACADEMIAConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        AULA.IDAULA, AULA.NOME, AULA.DIA, AULA.HORA, AULA.TOTAL, PROFESSOR.NOME AS Expr1
+FROM            AULA INNER JOIN
+                         PROFESSOR ON AULA.ID_PROFESSOR = PROFESSOR.IDPROFESSOR</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="IDAULA" DataSetColumn="IDAULA" />
+              <Mapping SourceColumn="NOME" DataSetColumn="NOME" />
+              <Mapping SourceColumn="DIA" DataSetColumn="DIA" />
+              <Mapping SourceColumn="HORA" DataSetColumn="HORA" />
+              <Mapping SourceColumn="TOTAL" DataSetColumn="TOTAL" />
+              <Mapping SourceColumn="Expr1" DataSetColumn="Expr1" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
         </Tables>
         <Sources />
       </DataSource>
     </xs:appinfo>
   </xs:annotation>
-  <xs:element name="BD_ACADEMIADataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_UserDSName="BD_ACADEMIADataSet" msprop:Generator_DataSetName="BD_ACADEMIADataSet">
+  <xs:element name="BD_ACADEMIADataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="BD_ACADEMIADataSet" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="BD_ACADEMIADataSet">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="ALUNO" msprop:Generator_RowEvHandlerName="ALUNORowChangeEventHandler" msprop:Generator_RowDeletedName="ALUNORowDeleted" msprop:Generator_RowDeletingName="ALUNORowDeleting" msprop:Generator_RowEvArgName="ALUNORowChangeEvent" msprop:Generator_TablePropName="ALUNO" msprop:Generator_RowChangedName="ALUNORowChanged" msprop:Generator_RowChangingName="ALUNORowChanging" msprop:Generator_TableClassName="ALUNODataTable" msprop:Generator_RowClassName="ALUNORow" msprop:Generator_TableVarName="tableALUNO" msprop:Generator_UserTableName="ALUNO">
+        <xs:element name="ALUNO" msprop:Generator_RowClassName="ALUNORow" msprop:Generator_RowEvHandlerName="ALUNORowChangeEventHandler" msprop:Generator_RowDeletedName="ALUNORowDeleted" msprop:Generator_RowDeletingName="ALUNORowDeleting" msprop:Generator_RowEvArgName="ALUNORowChangeEvent" msprop:Generator_TablePropName="ALUNO" msprop:Generator_RowChangedName="ALUNORowChanged" msprop:Generator_UserTableName="ALUNO" msprop:Generator_RowChangingName="ALUNORowChanging" msprop:Generator_TableClassName="ALUNODataTable" msprop:Generator_TableVarName="tableALUNO">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="IDALUNO" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnPropNameInRow="IDALUNO" msprop:Generator_ColumnPropNameInTable="IDALUNOColumn" msprop:Generator_ColumnVarNameInTable="columnIDALUNO" msprop:Generator_UserColumnName="IDALUNO" type="xs:int" />
-              <xs:element name="NOME" msprop:Generator_ColumnPropNameInRow="NOME" msprop:Generator_ColumnPropNameInTable="NOMEColumn" msprop:Generator_ColumnVarNameInTable="columnNOME" msprop:Generator_UserColumnName="NOME">
+              <xs:element name="IDALUNO" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_UserColumnName="IDALUNO" msprop:Generator_ColumnPropNameInTable="IDALUNOColumn" msprop:Generator_ColumnPropNameInRow="IDALUNO" msprop:Generator_ColumnVarNameInTable="columnIDALUNO" type="xs:int" />
+              <xs:element name="NOME" msprop:Generator_UserColumnName="NOME" msprop:Generator_ColumnPropNameInTable="NOMEColumn" msprop:Generator_ColumnPropNameInRow="NOME" msprop:Generator_ColumnVarNameInTable="columnNOME">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="50" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="CPF" msprop:Generator_ColumnPropNameInRow="CPF" msprop:Generator_ColumnPropNameInTable="CPFColumn" msprop:Generator_ColumnVarNameInTable="columnCPF" msprop:Generator_UserColumnName="CPF">
+              <xs:element name="CPF" msprop:Generator_UserColumnName="CPF" msprop:Generator_ColumnPropNameInTable="CPFColumn" msprop:Generator_ColumnPropNameInRow="CPF" msprop:Generator_ColumnVarNameInTable="columnCPF">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="11" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="IDADE" msprop:Generator_ColumnPropNameInRow="IDADE" msprop:Generator_ColumnPropNameInTable="IDADEColumn" msprop:Generator_ColumnVarNameInTable="columnIDADE" msprop:Generator_UserColumnName="IDADE" type="xs:int" />
-              <xs:element name="CELULAR" msprop:Generator_ColumnPropNameInRow="CELULAR" msprop:Generator_ColumnPropNameInTable="CELULARColumn" msprop:Generator_ColumnVarNameInTable="columnCELULAR" msprop:Generator_UserColumnName="CELULAR">
+              <xs:element name="IDADE" msprop:Generator_UserColumnName="IDADE" msprop:Generator_ColumnPropNameInTable="IDADEColumn" msprop:Generator_ColumnPropNameInRow="IDADE" msprop:Generator_ColumnVarNameInTable="columnIDADE" type="xs:int" />
+              <xs:element name="CELULAR" msprop:Generator_UserColumnName="CELULAR" msprop:Generator_ColumnPropNameInTable="CELULARColumn" msprop:Generator_ColumnPropNameInRow="CELULAR" msprop:Generator_ColumnVarNameInTable="columnCELULAR">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="11" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="EMAIL" msprop:Generator_ColumnPropNameInRow="EMAIL" msprop:Generator_ColumnPropNameInTable="EMAILColumn" msprop:Generator_ColumnVarNameInTable="columnEMAIL" msprop:Generator_UserColumnName="EMAIL">
+              <xs:element name="EMAIL" msprop:Generator_UserColumnName="EMAIL" msprop:Generator_ColumnPropNameInTable="EMAILColumn" msprop:Generator_ColumnPropNameInRow="EMAIL" msprop:Generator_ColumnVarNameInTable="columnEMAIL">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="50" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="PESO" msprop:Generator_ColumnPropNameInRow="PESO" msprop:Generator_ColumnPropNameInTable="PESOColumn" msprop:Generator_ColumnVarNameInTable="columnPESO" msprop:Generator_UserColumnName="PESO" type="xs:int" minOccurs="0" />
-              <xs:element name="ALTURA" msprop:Generator_ColumnPropNameInRow="ALTURA" msprop:Generator_ColumnPropNameInTable="ALTURAColumn" msprop:Generator_ColumnVarNameInTable="columnALTURA" msprop:Generator_UserColumnName="ALTURA" type="xs:int" minOccurs="0" />
-              <xs:element name="RUA" msprop:Generator_ColumnPropNameInRow="RUA" msprop:Generator_ColumnPropNameInTable="RUAColumn" msprop:Generator_ColumnVarNameInTable="columnRUA" msprop:Generator_UserColumnName="RUA">
+              <xs:element name="PESO" msprop:Generator_UserColumnName="PESO" msprop:Generator_ColumnPropNameInTable="PESOColumn" msprop:Generator_ColumnPropNameInRow="PESO" msprop:Generator_ColumnVarNameInTable="columnPESO" type="xs:int" minOccurs="0" />
+              <xs:element name="ALTURA" msprop:Generator_UserColumnName="ALTURA" msprop:Generator_ColumnPropNameInTable="ALTURAColumn" msprop:Generator_ColumnPropNameInRow="ALTURA" msprop:Generator_ColumnVarNameInTable="columnALTURA" type="xs:int" minOccurs="0" />
+              <xs:element name="RUA" msprop:Generator_UserColumnName="RUA" msprop:Generator_ColumnPropNameInTable="RUAColumn" msprop:Generator_ColumnPropNameInRow="RUA" msprop:Generator_ColumnVarNameInTable="columnRUA">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="100" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="NUMERO" msprop:Generator_ColumnPropNameInRow="NUMERO" msprop:Generator_ColumnPropNameInTable="NUMEROColumn" msprop:Generator_ColumnVarNameInTable="columnNUMERO" msprop:Generator_UserColumnName="NUMERO" type="xs:int" />
-              <xs:element name="APTO" msprop:Generator_ColumnPropNameInRow="APTO" msprop:Generator_ColumnPropNameInTable="APTOColumn" msprop:Generator_ColumnVarNameInTable="columnAPTO" msprop:Generator_UserColumnName="APTO" minOccurs="0">
+              <xs:element name="NUMERO" msprop:Generator_UserColumnName="NUMERO" msprop:Generator_ColumnPropNameInTable="NUMEROColumn" msprop:Generator_ColumnPropNameInRow="NUMERO" msprop:Generator_ColumnVarNameInTable="columnNUMERO" type="xs:int" />
+              <xs:element name="APTO" msprop:Generator_UserColumnName="APTO" msprop:Generator_ColumnPropNameInTable="APTOColumn" msprop:Generator_ColumnPropNameInRow="APTO" msprop:Generator_ColumnVarNameInTable="columnAPTO" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="5" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="BAIRRO" msprop:Generator_ColumnPropNameInRow="BAIRRO" msprop:Generator_ColumnPropNameInTable="BAIRROColumn" msprop:Generator_ColumnVarNameInTable="columnBAIRRO" msprop:Generator_UserColumnName="BAIRRO">
+              <xs:element name="BAIRRO" msprop:Generator_UserColumnName="BAIRRO" msprop:Generator_ColumnPropNameInTable="BAIRROColumn" msprop:Generator_ColumnPropNameInRow="BAIRRO" msprop:Generator_ColumnVarNameInTable="columnBAIRRO">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="50" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="CIDADE" msprop:Generator_ColumnPropNameInRow="CIDADE" msprop:Generator_ColumnPropNameInTable="CIDADEColumn" msprop:Generator_ColumnVarNameInTable="columnCIDADE" msprop:Generator_UserColumnName="CIDADE">
+              <xs:element name="CIDADE" msprop:Generator_UserColumnName="CIDADE" msprop:Generator_ColumnPropNameInTable="CIDADEColumn" msprop:Generator_ColumnPropNameInRow="CIDADE" msprop:Generator_ColumnVarNameInTable="columnCIDADE">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="50" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="ESTADO" msprop:Generator_ColumnPropNameInRow="ESTADO" msprop:Generator_ColumnPropNameInTable="ESTADOColumn" msprop:Generator_ColumnVarNameInTable="columnESTADO" msprop:Generator_UserColumnName="ESTADO">
+              <xs:element name="ESTADO" msprop:Generator_UserColumnName="ESTADO" msprop:Generator_ColumnPropNameInTable="ESTADOColumn" msprop:Generator_ColumnPropNameInRow="ESTADO" msprop:Generator_ColumnVarNameInTable="columnESTADO">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="2" />
@@ -424,7 +447,118 @@ SELECT IDPROFESSOR, NOME, CPF, IDADE, CELULAR, EMAIL, SENHA, RUA, NUMERO, APTO, 
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="AULA" msprop:Generator_RowEvHandlerName="AULARowChangeEventHandler" msprop:Generator_RowDeletedName="AULARowDeleted" msprop:Generator_RowDeletingName="AULARowDeleting" msprop:Generator_RowEvArgName="AULARowChangeEvent" msprop:Generator_TablePropName="AULA" msprop:Generator_RowChangedName="AULARowChanged" msprop:Generator_RowChangingName="AULARowChanging" msprop:Generator_TableClassName="AULADataTable" msprop:Generator_RowClassName="AULARow" msprop:Generator_TableVarName="tableAULA" msprop:Generator_UserTableName="AULA">
+        <xs:element name="AULA" msprop:Generator_RowClassName="AULARow" msprop:Generator_RowEvHandlerName="AULARowChangeEventHandler" msprop:Generator_RowDeletedName="AULARowDeleted" msprop:Generator_RowDeletingName="AULARowDeleting" msprop:Generator_RowEvArgName="AULARowChangeEvent" msprop:Generator_TablePropName="AULA" msprop:Generator_RowChangedName="AULARowChanged" msprop:Generator_UserTableName="AULA" msprop:Generator_RowChangingName="AULARowChanging" msprop:Generator_TableClassName="AULADataTable" msprop:Generator_TableVarName="tableAULA">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="IDAULA" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_UserColumnName="IDAULA" msprop:Generator_ColumnPropNameInTable="IDAULAColumn" msprop:Generator_ColumnPropNameInRow="IDAULA" msprop:Generator_ColumnVarNameInTable="columnIDAULA" type="xs:int" />
+              <xs:element name="NOME" msprop:Generator_UserColumnName="NOME" msprop:Generator_ColumnPropNameInTable="NOMEColumn" msprop:Generator_ColumnPropNameInRow="NOME" msprop:Generator_ColumnVarNameInTable="columnNOME">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DIA" msprop:Generator_UserColumnName="DIA" msprop:Generator_ColumnPropNameInTable="DIAColumn" msprop:Generator_ColumnPropNameInRow="DIA" msprop:Generator_ColumnVarNameInTable="columnDIA" type="xs:dateTime" />
+              <xs:element name="HORA" msprop:Generator_UserColumnName="HORA" msprop:Generator_ColumnPropNameInTable="HORAColumn" msprop:Generator_ColumnPropNameInRow="HORA" msprop:Generator_ColumnVarNameInTable="columnHORA">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="3" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="PARTICIPANTE" msprop:Generator_RowClassName="PARTICIPANTERow" msprop:Generator_RowEvHandlerName="PARTICIPANTERowChangeEventHandler" msprop:Generator_RowDeletedName="PARTICIPANTERowDeleted" msprop:Generator_RowDeletingName="PARTICIPANTERowDeleting" msprop:Generator_RowEvArgName="PARTICIPANTERowChangeEvent" msprop:Generator_TablePropName="PARTICIPANTE" msprop:Generator_RowChangedName="PARTICIPANTERowChanged" msprop:Generator_UserTableName="PARTICIPANTE" msprop:Generator_RowChangingName="PARTICIPANTERowChanging" msprop:Generator_TableClassName="PARTICIPANTEDataTable" msprop:Generator_TableVarName="tablePARTICIPANTE">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="IDPARTICIPANTE" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_UserColumnName="IDPARTICIPANTE" msprop:Generator_ColumnPropNameInTable="IDPARTICIPANTEColumn" msprop:Generator_ColumnPropNameInRow="IDPARTICIPANTE" msprop:Generator_ColumnVarNameInTable="columnIDPARTICIPANTE" type="xs:int" />
+              <xs:element name="ID_AULA" msprop:Generator_UserColumnName="ID_AULA" msprop:Generator_ColumnPropNameInTable="ID_AULAColumn" msprop:Generator_ColumnPropNameInRow="ID_AULA" msprop:Generator_ColumnVarNameInTable="columnID_AULA" type="xs:int" />
+              <xs:element name="ID_ALUNO" msprop:Generator_UserColumnName="ID_ALUNO" msprop:Generator_ColumnPropNameInTable="ID_ALUNOColumn" msprop:Generator_ColumnPropNameInRow="ID_ALUNO" msprop:Generator_ColumnVarNameInTable="columnID_ALUNO" type="xs:int" minOccurs="0" />
+              <xs:element name="ID_PROFESSOR" msprop:Generator_UserColumnName="ID_PROFESSOR" msprop:Generator_ColumnPropNameInTable="ID_PROFESSORColumn" msprop:Generator_ColumnPropNameInRow="ID_PROFESSOR" msprop:Generator_ColumnVarNameInTable="columnID_PROFESSOR" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="PROFESSOR" msprop:Generator_RowClassName="PROFESSORRow" msprop:Generator_RowEvHandlerName="PROFESSORRowChangeEventHandler" msprop:Generator_RowDeletedName="PROFESSORRowDeleted" msprop:Generator_RowDeletingName="PROFESSORRowDeleting" msprop:Generator_RowEvArgName="PROFESSORRowChangeEvent" msprop:Generator_TablePropName="PROFESSOR" msprop:Generator_RowChangedName="PROFESSORRowChanged" msprop:Generator_UserTableName="PROFESSOR" msprop:Generator_RowChangingName="PROFESSORRowChanging" msprop:Generator_TableClassName="PROFESSORDataTable" msprop:Generator_TableVarName="tablePROFESSOR">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="IDPROFESSOR" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_UserColumnName="IDPROFESSOR" msprop:Generator_ColumnPropNameInTable="IDPROFESSORColumn" msprop:Generator_ColumnPropNameInRow="IDPROFESSOR" msprop:Generator_ColumnVarNameInTable="columnIDPROFESSOR" type="xs:int" />
+              <xs:element name="NOME" msprop:Generator_UserColumnName="NOME" msprop:Generator_ColumnPropNameInTable="NOMEColumn" msprop:Generator_ColumnPropNameInRow="NOME" msprop:Generator_ColumnVarNameInTable="columnNOME">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CPF" msprop:Generator_UserColumnName="CPF" msprop:Generator_ColumnPropNameInTable="CPFColumn" msprop:Generator_ColumnPropNameInRow="CPF" msprop:Generator_ColumnVarNameInTable="columnCPF">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="11" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="IDADE" msprop:Generator_UserColumnName="IDADE" msprop:Generator_ColumnPropNameInTable="IDADEColumn" msprop:Generator_ColumnPropNameInRow="IDADE" msprop:Generator_ColumnVarNameInTable="columnIDADE" type="xs:int" />
+              <xs:element name="CELULAR" msprop:Generator_UserColumnName="CELULAR" msprop:Generator_ColumnPropNameInTable="CELULARColumn" msprop:Generator_ColumnPropNameInRow="CELULAR" msprop:Generator_ColumnVarNameInTable="columnCELULAR">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="11" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="EMAIL" msprop:Generator_UserColumnName="EMAIL" msprop:Generator_ColumnPropNameInTable="EMAILColumn" msprop:Generator_ColumnPropNameInRow="EMAIL" msprop:Generator_ColumnVarNameInTable="columnEMAIL">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="SENHA" msprop:Generator_UserColumnName="SENHA" msprop:Generator_ColumnPropNameInTable="SENHAColumn" msprop:Generator_ColumnPropNameInRow="SENHA" msprop:Generator_ColumnVarNameInTable="columnSENHA">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="RUA" msprop:Generator_UserColumnName="RUA" msprop:Generator_ColumnPropNameInTable="RUAColumn" msprop:Generator_ColumnPropNameInRow="RUA" msprop:Generator_ColumnVarNameInTable="columnRUA">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="NUMERO" msprop:Generator_UserColumnName="NUMERO" msprop:Generator_ColumnPropNameInTable="NUMEROColumn" msprop:Generator_ColumnPropNameInRow="NUMERO" msprop:Generator_ColumnVarNameInTable="columnNUMERO" type="xs:int" />
+              <xs:element name="APTO" msprop:Generator_UserColumnName="APTO" msprop:Generator_ColumnPropNameInTable="APTOColumn" msprop:Generator_ColumnPropNameInRow="APTO" msprop:Generator_ColumnVarNameInTable="columnAPTO" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="5" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="BAIRRO" msprop:Generator_UserColumnName="BAIRRO" msprop:Generator_ColumnPropNameInTable="BAIRROColumn" msprop:Generator_ColumnPropNameInRow="BAIRRO" msprop:Generator_ColumnVarNameInTable="columnBAIRRO">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CIDADE" msprop:Generator_UserColumnName="CIDADE" msprop:Generator_ColumnPropNameInTable="CIDADEColumn" msprop:Generator_ColumnPropNameInRow="CIDADE" msprop:Generator_ColumnVarNameInTable="columnCIDADE">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ESTADO" msprop:Generator_UserColumnName="ESTADO" msprop:Generator_ColumnPropNameInTable="ESTADOColumn" msprop:Generator_ColumnPropNameInRow="ESTADO" msprop:Generator_ColumnVarNameInTable="columnESTADO">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="RELATORIO_AULA" msprop:Generator_RowEvHandlerName="RELATORIO_AULARowChangeEventHandler" msprop:Generator_RowDeletedName="RELATORIO_AULARowDeleted" msprop:Generator_RowDeletingName="RELATORIO_AULARowDeleting" msprop:Generator_RowEvArgName="RELATORIO_AULARowChangeEvent" msprop:Generator_TablePropName="RELATORIO_AULA" msprop:Generator_RowChangedName="RELATORIO_AULARowChanged" msprop:Generator_RowChangingName="RELATORIO_AULARowChanging" msprop:Generator_TableClassName="RELATORIO_AULADataTable" msprop:Generator_RowClassName="RELATORIO_AULARow" msprop:Generator_TableVarName="tableRELATORIO_AULA" msprop:Generator_UserTableName="RELATORIO_AULA">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="IDAULA" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnPropNameInRow="IDAULA" msprop:Generator_ColumnPropNameInTable="IDAULAColumn" msprop:Generator_ColumnVarNameInTable="columnIDAULA" msprop:Generator_UserColumnName="IDAULA" type="xs:int" />
@@ -443,92 +577,11 @@ SELECT IDPROFESSOR, NOME, CPF, IDADE, CELULAR, EMAIL, SENHA, RUA, NUMERO, APTO, 
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-            </xs:sequence>
-          </xs:complexType>
-        </xs:element>
-        <xs:element name="PARTICIPANTE" msprop:Generator_RowEvHandlerName="PARTICIPANTERowChangeEventHandler" msprop:Generator_RowDeletedName="PARTICIPANTERowDeleted" msprop:Generator_RowDeletingName="PARTICIPANTERowDeleting" msprop:Generator_RowEvArgName="PARTICIPANTERowChangeEvent" msprop:Generator_TablePropName="PARTICIPANTE" msprop:Generator_RowChangedName="PARTICIPANTERowChanged" msprop:Generator_RowChangingName="PARTICIPANTERowChanging" msprop:Generator_TableClassName="PARTICIPANTEDataTable" msprop:Generator_RowClassName="PARTICIPANTERow" msprop:Generator_TableVarName="tablePARTICIPANTE" msprop:Generator_UserTableName="PARTICIPANTE">
-          <xs:complexType>
-            <xs:sequence>
-              <xs:element name="IDPARTICIPANTE" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnPropNameInRow="IDPARTICIPANTE" msprop:Generator_ColumnPropNameInTable="IDPARTICIPANTEColumn" msprop:Generator_ColumnVarNameInTable="columnIDPARTICIPANTE" msprop:Generator_UserColumnName="IDPARTICIPANTE" type="xs:int" />
-              <xs:element name="ID_AULA" msprop:Generator_ColumnPropNameInRow="ID_AULA" msprop:Generator_ColumnPropNameInTable="ID_AULAColumn" msprop:Generator_ColumnVarNameInTable="columnID_AULA" msprop:Generator_UserColumnName="ID_AULA" type="xs:int" />
-              <xs:element name="ID_ALUNO" msprop:Generator_ColumnPropNameInRow="ID_ALUNO" msprop:Generator_ColumnPropNameInTable="ID_ALUNOColumn" msprop:Generator_ColumnVarNameInTable="columnID_ALUNO" msprop:Generator_UserColumnName="ID_ALUNO" type="xs:int" minOccurs="0" />
-              <xs:element name="ID_PROFESSOR" msprop:Generator_ColumnPropNameInRow="ID_PROFESSOR" msprop:Generator_ColumnPropNameInTable="ID_PROFESSORColumn" msprop:Generator_ColumnVarNameInTable="columnID_PROFESSOR" msprop:Generator_UserColumnName="ID_PROFESSOR" type="xs:int" minOccurs="0" />
-            </xs:sequence>
-          </xs:complexType>
-        </xs:element>
-        <xs:element name="PROFESSOR" msprop:Generator_RowEvHandlerName="PROFESSORRowChangeEventHandler" msprop:Generator_RowDeletedName="PROFESSORRowDeleted" msprop:Generator_RowDeletingName="PROFESSORRowDeleting" msprop:Generator_RowEvArgName="PROFESSORRowChangeEvent" msprop:Generator_TablePropName="PROFESSOR" msprop:Generator_RowChangedName="PROFESSORRowChanged" msprop:Generator_RowChangingName="PROFESSORRowChanging" msprop:Generator_TableClassName="PROFESSORDataTable" msprop:Generator_RowClassName="PROFESSORRow" msprop:Generator_TableVarName="tablePROFESSOR" msprop:Generator_UserTableName="PROFESSOR">
-          <xs:complexType>
-            <xs:sequence>
-              <xs:element name="IDPROFESSOR" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnPropNameInRow="IDPROFESSOR" msprop:Generator_ColumnPropNameInTable="IDPROFESSORColumn" msprop:Generator_ColumnVarNameInTable="columnIDPROFESSOR" msprop:Generator_UserColumnName="IDPROFESSOR" type="xs:int" />
-              <xs:element name="NOME" msprop:Generator_ColumnPropNameInRow="NOME" msprop:Generator_ColumnPropNameInTable="NOMEColumn" msprop:Generator_ColumnVarNameInTable="columnNOME" msprop:Generator_UserColumnName="NOME">
+              <xs:element name="TOTAL" msprop:Generator_ColumnPropNameInRow="TOTAL" msprop:Generator_ColumnPropNameInTable="TOTALColumn" msprop:Generator_ColumnVarNameInTable="columnTOTAL" msprop:Generator_UserColumnName="TOTAL" type="xs:int" minOccurs="0" />
+              <xs:element name="Expr1" msprop:Generator_ColumnPropNameInRow="Expr1" msprop:Generator_ColumnPropNameInTable="Expr1Column" msprop:Generator_ColumnVarNameInTable="columnExpr1" msprop:Generator_UserColumnName="Expr1">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="50" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="CPF" msprop:Generator_ColumnPropNameInRow="CPF" msprop:Generator_ColumnPropNameInTable="CPFColumn" msprop:Generator_ColumnVarNameInTable="columnCPF" msprop:Generator_UserColumnName="CPF">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="11" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="IDADE" msprop:Generator_ColumnPropNameInRow="IDADE" msprop:Generator_ColumnPropNameInTable="IDADEColumn" msprop:Generator_ColumnVarNameInTable="columnIDADE" msprop:Generator_UserColumnName="IDADE" type="xs:int" />
-              <xs:element name="CELULAR" msprop:Generator_ColumnPropNameInRow="CELULAR" msprop:Generator_ColumnPropNameInTable="CELULARColumn" msprop:Generator_ColumnVarNameInTable="columnCELULAR" msprop:Generator_UserColumnName="CELULAR">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="11" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="EMAIL" msprop:Generator_ColumnPropNameInRow="EMAIL" msprop:Generator_ColumnPropNameInTable="EMAILColumn" msprop:Generator_ColumnVarNameInTable="columnEMAIL" msprop:Generator_UserColumnName="EMAIL">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="50" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="SENHA" msprop:Generator_ColumnPropNameInRow="SENHA" msprop:Generator_ColumnPropNameInTable="SENHAColumn" msprop:Generator_ColumnVarNameInTable="columnSENHA" msprop:Generator_UserColumnName="SENHA">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="30" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="RUA" msprop:Generator_ColumnPropNameInRow="RUA" msprop:Generator_ColumnPropNameInTable="RUAColumn" msprop:Generator_ColumnVarNameInTable="columnRUA" msprop:Generator_UserColumnName="RUA">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="100" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="NUMERO" msprop:Generator_ColumnPropNameInRow="NUMERO" msprop:Generator_ColumnPropNameInTable="NUMEROColumn" msprop:Generator_ColumnVarNameInTable="columnNUMERO" msprop:Generator_UserColumnName="NUMERO" type="xs:int" />
-              <xs:element name="APTO" msprop:Generator_ColumnPropNameInRow="APTO" msprop:Generator_ColumnPropNameInTable="APTOColumn" msprop:Generator_ColumnVarNameInTable="columnAPTO" msprop:Generator_UserColumnName="APTO" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="5" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="BAIRRO" msprop:Generator_ColumnPropNameInRow="BAIRRO" msprop:Generator_ColumnPropNameInTable="BAIRROColumn" msprop:Generator_ColumnVarNameInTable="columnBAIRRO" msprop:Generator_UserColumnName="BAIRRO">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="50" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="CIDADE" msprop:Generator_ColumnPropNameInRow="CIDADE" msprop:Generator_ColumnPropNameInTable="CIDADEColumn" msprop:Generator_ColumnVarNameInTable="columnCIDADE" msprop:Generator_UserColumnName="CIDADE">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="50" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="ESTADO" msprop:Generator_ColumnPropNameInRow="ESTADO" msprop:Generator_ColumnPropNameInTable="ESTADOColumn" msprop:Generator_ColumnVarNameInTable="columnESTADO" msprop:Generator_UserColumnName="ESTADO">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="2" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
@@ -553,12 +606,17 @@ SELECT IDPROFESSOR, NOME, CPF, IDADE, CELULAR, EMAIL, SENHA, RUA, NUMERO, APTO, 
       <xs:selector xpath=".//mstns:PROFESSOR" />
       <xs:field xpath="mstns:IDPROFESSOR" />
     </xs:unique>
+    <xs:unique name="RELATORIO_AULA_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:RELATORIO_AULA" />
+      <xs:field xpath="mstns:IDAULA" />
+    </xs:unique>
   </xs:element>
   <xs:annotation>
     <xs:appinfo>
-      <msdata:Relationship name="FK__PARTICIPA__ID_AL__57A801BA" msdata:parent="ALUNO" msdata:child="PARTICIPANTE" msdata:parentkey="IDALUNO" msdata:childkey="ID_ALUNO" msprop:Generator_UserParentTable="ALUNO" msprop:Generator_UserChildTable="PARTICIPANTE" msprop:Generator_RelationVarName="relationFK__PARTICIPA__ID_AL__57A801BA" msprop:Generator_ChildPropName="GetPARTICIPANTERows" msprop:Generator_ParentPropName="ALUNORow" msprop:Generator_UserRelationName="FK__PARTICIPA__ID_AL__57A801BA" />
-      <msdata:Relationship name="FK__PARTICIPA__ID_AU__56B3DD81" msdata:parent="AULA" msdata:child="PARTICIPANTE" msdata:parentkey="IDAULA" msdata:childkey="ID_AULA" msprop:Generator_UserParentTable="AULA" msprop:Generator_UserChildTable="PARTICIPANTE" msprop:Generator_RelationVarName="relationFK__PARTICIPA__ID_AU__56B3DD81" msprop:Generator_ChildPropName="GetPARTICIPANTERows" msprop:Generator_ParentPropName="AULARow" msprop:Generator_UserRelationName="FK__PARTICIPA__ID_AU__56B3DD81" />
-      <msdata:Relationship name="FK__PARTICIPA__ID_PR__589C25F3" msdata:parent="PROFESSOR" msdata:child="PARTICIPANTE" msdata:parentkey="IDPROFESSOR" msdata:childkey="ID_PROFESSOR" msprop:Generator_UserParentTable="PROFESSOR" msprop:Generator_UserChildTable="PARTICIPANTE" msprop:Generator_RelationVarName="relationFK__PARTICIPA__ID_PR__589C25F3" msprop:Generator_UserRelationName="FK__PARTICIPA__ID_PR__589C25F3" msprop:Generator_ChildPropName="GetPARTICIPANTERows" msprop:Generator_ParentPropName="PROFESSORRow" />
+      <msdata:Relationship name="FK__PARTICIPA__ID_AL__57A801BA" msdata:parent="ALUNO" msdata:child="PARTICIPANTE" msdata:parentkey="IDALUNO" msdata:childkey="ID_ALUNO" msprop:Generator_UserParentTable="ALUNO" msprop:Generator_UserChildTable="PARTICIPANTE" msprop:Generator_RelationVarName="relationFK__PARTICIPA__ID_AL__57A801BA" msprop:Generator_ChildPropName="GetPARTICIPANTERows" msprop:Generator_UserRelationName="FK__PARTICIPA__ID_AL__57A801BA" msprop:Generator_ParentPropName="ALUNORow" />
+      <msdata:Relationship name="FK__PARTICIPA__ID_AU__56B3DD81" msdata:parent="AULA" msdata:child="PARTICIPANTE" msdata:parentkey="IDAULA" msdata:childkey="ID_AULA" msprop:Generator_UserParentTable="AULA" msprop:Generator_UserChildTable="PARTICIPANTE" msprop:Generator_RelationVarName="relationFK__PARTICIPA__ID_AU__56B3DD81" msprop:Generator_ChildPropName="GetPARTICIPANTERows" msprop:Generator_UserRelationName="FK__PARTICIPA__ID_AU__56B3DD81" msprop:Generator_ParentPropName="AULARow" />
+      <msdata:Relationship name="FK__PARTICIPA__ID_PR__589C25F3" msdata:parent="PROFESSOR" msdata:child="PARTICIPANTE" msdata:parentkey="IDPROFESSOR" msdata:childkey="ID_PROFESSOR" msprop:Generator_UserParentTable="PROFESSOR" msprop:Generator_UserChildTable="PARTICIPANTE" msprop:Generator_RelationVarName="relationFK__PARTICIPA__ID_PR__589C25F3" msprop:Generator_ChildPropName="GetPARTICIPANTERows" msprop:Generator_ParentPropName="PROFESSORRow" msprop:Generator_UserRelationName="FK__PARTICIPA__ID_PR__589C25F3" />
+      <msdata:Relationship name="FK__PARTICIPA__ID_AU__5A4F643B" msdata:parent="RELATORIO_AULA" msdata:child="PARTICIPANTE" msdata:parentkey="IDAULA" msdata:childkey="ID_AULA" msprop:Generator_UserParentTable="RELATORIO_AULA" msprop:Generator_UserChildTable="PARTICIPANTE" msprop:Generator_RelationVarName="relationFK__PARTICIPA__ID_AU__5A4F643B" msprop:Generator_UserRelationName="FK__PARTICIPA__ID_AU__5A4F643B" msprop:Generator_ChildPropName="GetPARTICIPANTERows" msprop:Generator_ParentPropName="RELATORIO_AULARow" />
     </xs:appinfo>
   </xs:annotation>
 </xs:schema>

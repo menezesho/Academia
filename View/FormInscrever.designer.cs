@@ -241,6 +241,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.KeyPreview = true;
             this.Margin = new System.Windows.Forms.Padding(2);
+            this.MaximizeBox = false;
             this.MinimumSize = new System.Drawing.Size(551, 644);
             this.Name = "FormInscrever";
             this.ShowInTaskbar = false;

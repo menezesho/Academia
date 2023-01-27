@@ -28,43 +28,10 @@ namespace academia
             this.id = id;
         }
 
-        private void btAtualizar_Click(object sender, EventArgs e)
-        {//btAtualizar
-            SqlConnection cn = new SqlConnection(conec.ConexaoBD());
-            string sqlUpdate = "update aluno set peso = @peso, altura = @altura where idAluno = @id";
-            SqlCommand cmdUpdate = new SqlCommand(sqlUpdate, cn);
-            cmdUpdate.Parameters.AddWithValue("id", id);
-            cmdUpdate.Parameters.AddWithValue("altura", mtbAltura.Text);
-            cmdUpdate.Parameters.AddWithValue("peso", mtbPeso.Text);
-            cn.Open();
-            cmdUpdate.CommandText = sqlUpdate;
-            cmdUpdate.ExecuteNonQuery();
-            cn.Close();
-            MessageBox.Show("Dados alterados com sucesso!", "Salvar", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            this.Close();
-        }
-
-        private void btLimpar_Click(object sender, EventArgs e)
-        {//btLimpar
-            if(mtbAltura.Text != "" || mtbPeso.Text != "")
-            {
-                if (MessageBox.Show("Os dados não salvos serão perdidos!\nDeseja mesmo limpar todos os campos?", "Limpar", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
-                {
-                    mtbPeso.Clear();
-                    mtbAltura.Clear();
-                } 
-            }
-            else
-            {
-                mtbPeso.Clear();
-                mtbAltura.Clear();
-            }  
-        }
-
         private void FormAtualizarPesoAltura_Load(object sender, EventArgs e)
         {
             SqlConnection cn = new SqlConnection(conec.ConexaoBD());
-            string sqlSelect = @"select altura,peso from ALUNO where idAluno = @id";
+            string sqlSelect = @"SELECT altura, peso FROM aluno WHERE idaluno = @id;";
             SqlCommand cmdSelect = new SqlCommand(sqlSelect, cn);
             cmdSelect.Parameters.AddWithValue("@id", id);
             cn.Open();
@@ -77,6 +44,50 @@ namespace academia
                 mtbAltura.Text = data["altura"].ToString();
             }
             cn.Close();
+        }
+
+        private void btLimpar_Click(object sender, EventArgs e)
+        {//btLimpar
+            if (mtbAltura.Text != "" || mtbPeso.Text != "")
+            {
+                if (MessageBox.Show("Os dados não salvos serão perdidos!\nDeseja mesmo limpar todos os campos?", "Limpar", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+                {
+                    mtbPeso.Clear();
+                    mtbAltura.Clear();
+                }
+            }
+            else
+            {
+                mtbPeso.Clear();
+                mtbAltura.Clear();
+            }
+        }
+
+        private void btAtualizar_Click(object sender, EventArgs e)
+        {//btAtualizar
+            SqlConnection cn = new SqlConnection(conec.ConexaoBD());
+
+            string sqlUpdate = "UPDATE aluno SET ";
+            if (mtbPeso.Text != "")
+                sqlUpdate = sqlUpdate + "peso = @peso,";
+            else
+                sqlUpdate = sqlUpdate + "peso = NULL,";
+            if (mtbAltura.Text != "")
+                sqlUpdate = sqlUpdate + "altura = @altura";
+            else
+                sqlUpdate = sqlUpdate + "altura = NULL";
+            sqlUpdate = sqlUpdate + " WHERE idaluno = @id;";
+
+            SqlCommand cmdUpdate = new SqlCommand(sqlUpdate, cn);
+            cmdUpdate.Parameters.AddWithValue("id", id);
+            cmdUpdate.Parameters.AddWithValue("altura", mtbAltura.Text);
+            cmdUpdate.Parameters.AddWithValue("peso", mtbPeso.Text);
+            cn.Open();
+            cmdUpdate.CommandText = sqlUpdate;
+            cmdUpdate.ExecuteNonQuery();
+            cn.Close();
+            MessageBox.Show("Dados alterados com sucesso!", "Salvar", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            this.Close();
         }
 
         #region Retornar

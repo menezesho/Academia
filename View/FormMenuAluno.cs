@@ -59,7 +59,7 @@ namespace academia
 
         private void btRedefinirSenha_Click(object sender, EventArgs e)
         {//btAlterarSenha
-            FormRedefinirSenha Frs = new FormRedefinirSenha(id, acesso);
+            FormAlterarSenha Frs = new FormAlterarSenha(id, acesso);
             Frs.ShowDialog();
         }
 

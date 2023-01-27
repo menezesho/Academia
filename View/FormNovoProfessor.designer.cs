@@ -485,7 +485,7 @@ namespace projetofinal
             this.lbSenha.AutoSize = true;
             this.lbSenha.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
             this.lbSenha.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
-            this.lbSenha.Location = new System.Drawing.Point(65, 169);
+            this.lbSenha.Location = new System.Drawing.Point(64, 168);
             this.lbSenha.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbSenha.Name = "lbSenha";
             this.lbSenha.Size = new System.Drawing.Size(73, 25);
@@ -498,7 +498,7 @@ namespace projetofinal
             this.tbSenha.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tbSenha.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.tbSenha.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
-            this.tbSenha.Location = new System.Drawing.Point(65, 197);
+            this.tbSenha.Location = new System.Drawing.Point(64, 196);
             this.tbSenha.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.tbSenha.MaxLength = 30;
             this.tbSenha.Name = "tbSenha";
@@ -512,7 +512,7 @@ namespace projetofinal
             this.lbUsuario.AutoSize = true;
             this.lbUsuario.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
             this.lbUsuario.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
-            this.lbUsuario.Location = new System.Drawing.Point(64, 99);
+            this.lbUsuario.Location = new System.Drawing.Point(63, 98);
             this.lbUsuario.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbUsuario.Name = "lbUsuario";
             this.lbUsuario.Size = new System.Drawing.Size(86, 25);
@@ -525,7 +525,7 @@ namespace projetofinal
             this.tbUsuario.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tbUsuario.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.tbUsuario.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
-            this.tbUsuario.Location = new System.Drawing.Point(64, 127);
+            this.tbUsuario.Location = new System.Drawing.Point(63, 126);
             this.tbUsuario.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.tbUsuario.MaxLength = 30;
             this.tbUsuario.Name = "tbUsuario";
@@ -619,6 +619,7 @@ namespace projetofinal
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.KeyPreview = true;
             this.Margin = new System.Windows.Forms.Padding(2);
+            this.MaximizeBox = false;
             this.MinimumSize = new System.Drawing.Size(674, 718);
             this.Name = "FormNovoProfessor";
             this.ShowInTaskbar = false;

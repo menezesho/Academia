@@ -74,14 +74,15 @@ namespace projetofinal
             Feaula.ShowDialog();
         }
 
-        private void btVerParticipantes_Click(object sender, EventArgs e)
-        {//btVerParticipantes
-            
+        private void btVerInscritos_Click(object sender, EventArgs e)
+        {//btVerInscritos
+            FormVerInscritos Fvi = new FormVerInscritos(id);
+            Fvi.ShowDialog();
         }
 
         private void btAlterarSenha_Click(object sender, EventArgs e)
         {//btAlterarSenha
-            FormRedefinirSenha Fas = new FormRedefinirSenha(id, acesso);
+            FormAlterarSenha Fas = new FormAlterarSenha(id, acesso);
             Fas.ShowDialog();
         }
 
