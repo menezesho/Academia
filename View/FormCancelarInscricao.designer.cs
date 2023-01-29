@@ -49,20 +49,20 @@
             this.lbSair.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.lbSair.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lbSair.Image = ((System.Drawing.Image)(resources.GetObject("lbSair.Image")));
-            this.lbSair.Location = new System.Drawing.Point(489, 561);
-            this.lbSair.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbSair.Location = new System.Drawing.Point(652, 690);
             this.lbSair.Name = "lbSair";
-            this.lbSair.Size = new System.Drawing.Size(35, 35);
-            this.lbSair.TabIndex = 153;
+            this.lbSair.Size = new System.Drawing.Size(47, 43);
+            this.lbSair.TabIndex = 10;
             this.lbSair.Click += new System.EventHandler(this.lbSair_Click);
             // 
             // pictureBox1
             // 
             this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(217, 488);
+            this.pictureBox1.Location = new System.Drawing.Point(289, 601);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(100, 30);
+            this.pictureBox1.Size = new System.Drawing.Size(133, 37);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 152;
             this.pictureBox1.TabStop = false;
@@ -72,11 +72,10 @@
             this.lbCancelarInscricao.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lbCancelarInscricao.Font = new System.Drawing.Font("Segoe UI", 22F, System.Drawing.FontStyle.Bold);
             this.lbCancelarInscricao.ForeColor = System.Drawing.Color.MediumSeaGreen;
-            this.lbCancelarInscricao.Location = new System.Drawing.Point(92, 82);
-            this.lbCancelarInscricao.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbCancelarInscricao.Location = new System.Drawing.Point(123, 101);
             this.lbCancelarInscricao.Name = "lbCancelarInscricao";
-            this.lbCancelarInscricao.Size = new System.Drawing.Size(351, 43);
-            this.lbCancelarInscricao.TabIndex = 151;
+            this.lbCancelarInscricao.Size = new System.Drawing.Size(468, 53);
+            this.lbCancelarInscricao.TabIndex = 0;
             this.lbCancelarInscricao.Text = "CANCELAR INSCRIÇÃO";
             this.lbCancelarInscricao.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -88,12 +87,12 @@
             this.tbHora.Enabled = false;
             this.tbHora.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.tbHora.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
-            this.tbHora.Location = new System.Drawing.Point(349, 330);
-            this.tbHora.Margin = new System.Windows.Forms.Padding(2);
+            this.tbHora.Location = new System.Drawing.Point(465, 406);
+            this.tbHora.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tbHora.MaxLength = 100;
             this.tbHora.Name = "tbHora";
-            this.tbHora.Size = new System.Drawing.Size(94, 29);
-            this.tbHora.TabIndex = 3;
+            this.tbHora.Size = new System.Drawing.Size(125, 29);
+            this.tbHora.TabIndex = 8;
             this.tbHora.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // mtbData
@@ -104,12 +103,12 @@
             this.mtbData.Enabled = false;
             this.mtbData.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.mtbData.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
-            this.mtbData.Location = new System.Drawing.Point(92, 330);
-            this.mtbData.Margin = new System.Windows.Forms.Padding(2);
+            this.mtbData.Location = new System.Drawing.Point(123, 406);
+            this.mtbData.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.mtbData.Mask = "00/00/0000";
             this.mtbData.Name = "mtbData";
-            this.mtbData.Size = new System.Drawing.Size(126, 29);
-            this.mtbData.TabIndex = 2;
+            this.mtbData.Size = new System.Drawing.Size(167, 29);
+            this.mtbData.TabIndex = 6;
             this.mtbData.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.mtbData.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
             // 
@@ -119,11 +118,10 @@
             this.lbHorario.AutoSize = true;
             this.lbHorario.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
             this.lbHorario.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
-            this.lbHorario.Location = new System.Drawing.Point(357, 303);
-            this.lbHorario.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbHorario.Location = new System.Drawing.Point(476, 373);
             this.lbHorario.Name = "lbHorario";
             this.lbHorario.Size = new System.Drawing.Size(78, 25);
-            this.lbHorario.TabIndex = 150;
+            this.lbHorario.TabIndex = 7;
             this.lbHorario.Text = "Horário";
             // 
             // lbData
@@ -132,11 +130,10 @@
             this.lbData.AutoSize = true;
             this.lbData.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
             this.lbData.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
-            this.lbData.Location = new System.Drawing.Point(128, 303);
-            this.lbData.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbData.Location = new System.Drawing.Point(171, 373);
             this.lbData.Name = "lbData";
             this.lbData.Size = new System.Drawing.Size(55, 25);
-            this.lbData.TabIndex = 149;
+            this.lbData.TabIndex = 5;
             this.lbData.Text = "Data";
             // 
             // btCancelar
@@ -147,11 +144,11 @@
             this.btCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btCancelar.Font = new System.Drawing.Font("Segoe UI Semibold", 14F, System.Drawing.FontStyle.Bold);
             this.btCancelar.ForeColor = System.Drawing.Color.White;
-            this.btCancelar.Location = new System.Drawing.Point(92, 403);
-            this.btCancelar.Margin = new System.Windows.Forms.Padding(2);
+            this.btCancelar.Location = new System.Drawing.Point(123, 496);
+            this.btCancelar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btCancelar.Name = "btCancelar";
-            this.btCancelar.Size = new System.Drawing.Size(351, 40);
-            this.btCancelar.TabIndex = 4;
+            this.btCancelar.Size = new System.Drawing.Size(468, 49);
+            this.btCancelar.TabIndex = 9;
             this.btCancelar.Text = "&Cancelar";
             this.btCancelar.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btCancelar.UseVisualStyleBackColor = false;
@@ -163,11 +160,10 @@
             this.lb2.AutoSize = true;
             this.lb2.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
             this.lb2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
-            this.lb2.Location = new System.Drawing.Point(92, 165);
-            this.lb2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lb2.Location = new System.Drawing.Point(123, 203);
             this.lb2.Name = "lb2";
             this.lb2.Size = new System.Drawing.Size(52, 25);
-            this.lb2.TabIndex = 148;
+            this.lb2.TabIndex = 1;
             this.lb2.Text = "Aula";
             // 
             // cbAula
@@ -183,11 +179,11 @@
             this.cbAula.FormattingEnabled = true;
             this.cbAula.Items.AddRange(new object[] {
             "Selecione"});
-            this.cbAula.Location = new System.Drawing.Point(92, 192);
-            this.cbAula.Margin = new System.Windows.Forms.Padding(2);
+            this.cbAula.Location = new System.Drawing.Point(123, 236);
+            this.cbAula.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cbAula.Name = "cbAula";
-            this.cbAula.Size = new System.Drawing.Size(351, 29);
-            this.cbAula.TabIndex = 0;
+            this.cbAula.Size = new System.Drawing.Size(467, 29);
+            this.cbAula.TabIndex = 2;
             this.cbAula.ValueMember = "IDAULA";
             this.cbAula.SelectedIndexChanged += new System.EventHandler(this.cbAula_SelectedIndexChanged);
             this.cbAula.Click += new System.EventHandler(this.cbAula_Click);
@@ -200,12 +196,12 @@
             this.tbProfessor.Enabled = false;
             this.tbProfessor.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.tbProfessor.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
-            this.tbProfessor.Location = new System.Drawing.Point(92, 261);
-            this.tbProfessor.Margin = new System.Windows.Forms.Padding(2);
+            this.tbProfessor.Location = new System.Drawing.Point(123, 321);
+            this.tbProfessor.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tbProfessor.MaxLength = 100;
             this.tbProfessor.Name = "tbProfessor";
-            this.tbProfessor.Size = new System.Drawing.Size(351, 29);
-            this.tbProfessor.TabIndex = 1;
+            this.tbProfessor.Size = new System.Drawing.Size(467, 29);
+            this.tbProfessor.TabIndex = 4;
             this.tbProfessor.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // lbProfessor
@@ -214,18 +210,17 @@
             this.lbProfessor.AutoSize = true;
             this.lbProfessor.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
             this.lbProfessor.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
-            this.lbProfessor.Location = new System.Drawing.Point(92, 234);
-            this.lbProfessor.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbProfessor.Location = new System.Drawing.Point(123, 288);
             this.lbProfessor.Name = "lbProfessor";
             this.lbProfessor.Size = new System.Drawing.Size(91, 25);
-            this.lbProfessor.TabIndex = 155;
+            this.lbProfessor.TabIndex = 3;
             this.lbProfessor.Text = "Professor";
             // 
             // FormCancelarInscricao
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(535, 605);
+            this.ClientSize = new System.Drawing.Size(713, 745);
             this.Controls.Add(this.tbProfessor);
             this.Controls.Add(this.lbProfessor);
             this.Controls.Add(this.lbSair);
@@ -240,9 +235,9 @@
             this.Controls.Add(this.cbAula);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.KeyPreview = true;
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.MaximizeBox = false;
-            this.MinimumSize = new System.Drawing.Size(551, 644);
+            this.MinimumSize = new System.Drawing.Size(729, 784);
             this.Name = "FormCancelarInscricao";
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

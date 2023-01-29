@@ -46,9 +46,10 @@
             // 
             this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(158, 175);
+            this.pictureBox1.Location = new System.Drawing.Point(211, 215);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(304, 216);
+            this.pictureBox1.Size = new System.Drawing.Size(405, 266);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 44;
             this.pictureBox1.TabStop = false;
@@ -61,10 +62,10 @@
             this.btInscrever.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btInscrever.Font = new System.Drawing.Font("Segoe UI Semibold", 14F, System.Drawing.FontStyle.Bold);
             this.btInscrever.ForeColor = System.Drawing.Color.White;
-            this.btInscrever.Location = new System.Drawing.Point(508, 175);
-            this.btInscrever.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btInscrever.Location = new System.Drawing.Point(677, 215);
+            this.btInscrever.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btInscrever.Name = "btInscrever";
-            this.btInscrever.Size = new System.Drawing.Size(346, 75);
+            this.btInscrever.Size = new System.Drawing.Size(461, 92);
             this.btInscrever.TabIndex = 0;
             this.btInscrever.Text = "&INSCREVER-SE";
             this.toolTip1.SetToolTip(this.btInscrever, "Realizar inscrição");
@@ -79,10 +80,10 @@
             this.btCancelarInscricao.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btCancelarInscricao.Font = new System.Drawing.Font("Segoe UI Semibold", 14F, System.Drawing.FontStyle.Bold);
             this.btCancelarInscricao.ForeColor = System.Drawing.Color.White;
-            this.btCancelarInscricao.Location = new System.Drawing.Point(508, 258);
-            this.btCancelarInscricao.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btCancelarInscricao.Location = new System.Drawing.Point(677, 318);
+            this.btCancelarInscricao.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btCancelarInscricao.Name = "btCancelarInscricao";
-            this.btCancelarInscricao.Size = new System.Drawing.Size(346, 75);
+            this.btCancelarInscricao.Size = new System.Drawing.Size(461, 92);
             this.btCancelarInscricao.TabIndex = 1;
             this.btCancelarInscricao.Text = "&CANCELAR INSCRIÇÃO";
             this.toolTip1.SetToolTip(this.btCancelarInscricao, "Cancelar inscrição");
@@ -97,11 +98,11 @@
             this.btAlterarSenha.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btAlterarSenha.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
             this.btAlterarSenha.ForeColor = System.Drawing.Color.White;
-            this.btAlterarSenha.Location = new System.Drawing.Point(712, 341);
-            this.btAlterarSenha.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btAlterarSenha.Location = new System.Drawing.Point(949, 420);
+            this.btAlterarSenha.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btAlterarSenha.Name = "btAlterarSenha";
-            this.btAlterarSenha.Size = new System.Drawing.Size(142, 50);
-            this.btAlterarSenha.TabIndex = 2;
+            this.btAlterarSenha.Size = new System.Drawing.Size(189, 62);
+            this.btAlterarSenha.TabIndex = 3;
             this.btAlterarSenha.Text = "ALTERAR SENHA";
             this.toolTip1.SetToolTip(this.btAlterarSenha, "Alterar senha");
             this.btAlterarSenha.UseVisualStyleBackColor = false;
@@ -112,10 +113,9 @@
             this.lbMensagem.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lbMensagem.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbMensagem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
-            this.lbMensagem.Location = new System.Drawing.Point(158, 208);
-            this.lbMensagem.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbMensagem.Location = new System.Drawing.Point(211, 256);
             this.lbMensagem.Name = "lbMensagem";
-            this.lbMensagem.Size = new System.Drawing.Size(304, 26);
+            this.lbMensagem.Size = new System.Drawing.Size(405, 32);
             this.lbMensagem.TabIndex = 60;
             this.lbMensagem.Text = "Mensagem...";
             this.lbMensagem.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -125,10 +125,9 @@
             this.lbInfoUsuario.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lbInfoUsuario.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbInfoUsuario.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
-            this.lbInfoUsuario.Location = new System.Drawing.Point(855, 9);
-            this.lbInfoUsuario.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbInfoUsuario.Location = new System.Drawing.Point(1140, 11);
             this.lbInfoUsuario.Name = "lbInfoUsuario";
-            this.lbInfoUsuario.Size = new System.Drawing.Size(169, 39);
+            this.lbInfoUsuario.Size = new System.Drawing.Size(225, 48);
             this.lbInfoUsuario.TabIndex = 61;
             this.lbInfoUsuario.Text = "Usuário...";
             this.lbInfoUsuario.TextAlign = System.Drawing.ContentAlignment.TopRight;
@@ -138,9 +137,10 @@
             this.lbSair.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.lbSair.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lbSair.Image = ((System.Drawing.Image)(resources.GetObject("lbSair.Image")));
-            this.lbSair.Location = new System.Drawing.Point(989, 527);
+            this.lbSair.Location = new System.Drawing.Point(1319, 649);
+            this.lbSair.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbSair.Name = "lbSair";
-            this.lbSair.Size = new System.Drawing.Size(35, 35);
+            this.lbSair.Size = new System.Drawing.Size(47, 43);
             this.lbSair.TabIndex = 62;
             this.lbSair.Click += new System.EventHandler(this.lbSair_Click);
             // 
@@ -152,11 +152,11 @@
             this.btAtualizarInformacoes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btAtualizarInformacoes.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
             this.btAtualizarInformacoes.ForeColor = System.Drawing.Color.White;
-            this.btAtualizarInformacoes.Location = new System.Drawing.Point(508, 341);
-            this.btAtualizarInformacoes.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btAtualizarInformacoes.Location = new System.Drawing.Point(677, 420);
+            this.btAtualizarInformacoes.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btAtualizarInformacoes.Name = "btAtualizarInformacoes";
-            this.btAtualizarInformacoes.Size = new System.Drawing.Size(198, 50);
-            this.btAtualizarInformacoes.TabIndex = 63;
+            this.btAtualizarInformacoes.Size = new System.Drawing.Size(264, 62);
+            this.btAtualizarInformacoes.TabIndex = 2;
             this.btAtualizarInformacoes.Text = "ATUALIZAR INFORMAÇÕES";
             this.toolTip1.SetToolTip(this.btAtualizarInformacoes, "Atualizar peso e altura");
             this.btAtualizarInformacoes.UseVisualStyleBackColor = false;
@@ -171,9 +171,9 @@
             // 
             // FormMenuAluno
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1035, 571);
+            this.ClientSize = new System.Drawing.Size(1380, 703);
             this.Controls.Add(this.btAtualizarInformacoes);
             this.Controls.Add(this.lbSair);
             this.Controls.Add(this.lbInfoUsuario);
@@ -184,7 +184,8 @@
             this.Controls.Add(this.pictureBox1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.KeyPreview = true;
-            this.MinimumSize = new System.Drawing.Size(1051, 610);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.MinimumSize = new System.Drawing.Size(1396, 742);
             this.Name = "FormMenuAluno";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Área do Aluno";

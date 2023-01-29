@@ -43,6 +43,7 @@
             // 
             this.rELATORIOAULABindingSource.DataMember = "RELATORIO_AULA";
             this.rELATORIOAULABindingSource.DataSource = this.bD_ACADEMIADataSet;
+            this.rELATORIOAULABindingSource.CurrentChanged += new System.EventHandler(this.rELATORIOAULABindingSource_CurrentChanged);
             // 
             // bD_ACADEMIADataSet
             // 

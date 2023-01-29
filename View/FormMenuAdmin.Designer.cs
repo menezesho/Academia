@@ -44,9 +44,10 @@
             // 
             this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(158, 123);
+            this.pictureBox1.Location = new System.Drawing.Point(211, 151);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(304, 324);
+            this.pictureBox1.Size = new System.Drawing.Size(405, 399);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 44;
             this.pictureBox1.TabStop = false;
@@ -59,10 +60,10 @@
             this.btEditarAluno.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btEditarAluno.Font = new System.Drawing.Font("Segoe UI Semibold", 14F, System.Drawing.FontStyle.Bold);
             this.btEditarAluno.ForeColor = System.Drawing.Color.White;
-            this.btEditarAluno.Location = new System.Drawing.Point(508, 206);
-            this.btEditarAluno.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btEditarAluno.Location = new System.Drawing.Point(677, 254);
+            this.btEditarAluno.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btEditarAluno.Name = "btEditarAluno";
-            this.btEditarAluno.Size = new System.Drawing.Size(346, 75);
+            this.btEditarAluno.Size = new System.Drawing.Size(461, 92);
             this.btEditarAluno.TabIndex = 1;
             this.btEditarAluno.Text = "EDITAR ALUNO";
             this.btEditarAluno.UseVisualStyleBackColor = false;
@@ -76,10 +77,10 @@
             this.btNovoAluno.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btNovoAluno.Font = new System.Drawing.Font("Segoe UI Semibold", 14F, System.Drawing.FontStyle.Bold);
             this.btNovoAluno.ForeColor = System.Drawing.Color.White;
-            this.btNovoAluno.Location = new System.Drawing.Point(508, 123);
-            this.btNovoAluno.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btNovoAluno.Location = new System.Drawing.Point(677, 151);
+            this.btNovoAluno.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btNovoAluno.Name = "btNovoAluno";
-            this.btNovoAluno.Size = new System.Drawing.Size(346, 75);
+            this.btNovoAluno.Size = new System.Drawing.Size(461, 92);
             this.btNovoAluno.TabIndex = 0;
             this.btNovoAluno.Text = "NOVO &ALUNO";
             this.btNovoAluno.UseVisualStyleBackColor = false;
@@ -93,10 +94,10 @@
             this.btEditarProfessor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btEditarProfessor.Font = new System.Drawing.Font("Segoe UI Semibold", 14F, System.Drawing.FontStyle.Bold);
             this.btEditarProfessor.ForeColor = System.Drawing.Color.White;
-            this.btEditarProfessor.Location = new System.Drawing.Point(508, 372);
-            this.btEditarProfessor.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btEditarProfessor.Location = new System.Drawing.Point(677, 458);
+            this.btEditarProfessor.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btEditarProfessor.Name = "btEditarProfessor";
-            this.btEditarProfessor.Size = new System.Drawing.Size(346, 75);
+            this.btEditarProfessor.Size = new System.Drawing.Size(461, 92);
             this.btEditarProfessor.TabIndex = 3;
             this.btEditarProfessor.Text = "EDITAR PROFESSOR";
             this.btEditarProfessor.UseVisualStyleBackColor = false;
@@ -110,10 +111,10 @@
             this.btNovoProfessor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btNovoProfessor.Font = new System.Drawing.Font("Segoe UI Semibold", 14F, System.Drawing.FontStyle.Bold);
             this.btNovoProfessor.ForeColor = System.Drawing.Color.White;
-            this.btNovoProfessor.Location = new System.Drawing.Point(508, 289);
-            this.btNovoProfessor.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btNovoProfessor.Location = new System.Drawing.Point(677, 356);
+            this.btNovoProfessor.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btNovoProfessor.Name = "btNovoProfessor";
-            this.btNovoProfessor.Size = new System.Drawing.Size(346, 75);
+            this.btNovoProfessor.Size = new System.Drawing.Size(461, 92);
             this.btNovoProfessor.TabIndex = 2;
             this.btNovoProfessor.Text = "NOVO &PROFESSOR";
             this.btNovoProfessor.UseVisualStyleBackColor = false;
@@ -124,10 +125,9 @@
             this.lbMensagem.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lbMensagem.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbMensagem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
-            this.lbMensagem.Location = new System.Drawing.Point(158, 210);
-            this.lbMensagem.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbMensagem.Location = new System.Drawing.Point(211, 258);
             this.lbMensagem.Name = "lbMensagem";
-            this.lbMensagem.Size = new System.Drawing.Size(304, 26);
+            this.lbMensagem.Size = new System.Drawing.Size(405, 32);
             this.lbMensagem.TabIndex = 60;
             this.lbMensagem.Text = "Mensagem...";
             this.lbMensagem.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -137,9 +137,10 @@
             this.lbSair.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.lbSair.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lbSair.Image = ((System.Drawing.Image)(resources.GetObject("lbSair.Image")));
-            this.lbSair.Location = new System.Drawing.Point(988, 527);
+            this.lbSair.Location = new System.Drawing.Point(1317, 649);
+            this.lbSair.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbSair.Name = "lbSair";
-            this.lbSair.Size = new System.Drawing.Size(35, 35);
+            this.lbSair.Size = new System.Drawing.Size(47, 43);
             this.lbSair.TabIndex = 61;
             this.lbSair.Click += new System.EventHandler(this.lbSair_Click);
             // 
@@ -148,19 +149,18 @@
             this.lbInfoUsuario.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lbInfoUsuario.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbInfoUsuario.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
-            this.lbInfoUsuario.Location = new System.Drawing.Point(854, 9);
-            this.lbInfoUsuario.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbInfoUsuario.Location = new System.Drawing.Point(1139, 11);
             this.lbInfoUsuario.Name = "lbInfoUsuario";
-            this.lbInfoUsuario.Size = new System.Drawing.Size(169, 39);
+            this.lbInfoUsuario.Size = new System.Drawing.Size(225, 48);
             this.lbInfoUsuario.TabIndex = 63;
             this.lbInfoUsuario.Text = "Usuário...";
             this.lbInfoUsuario.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // FormMenuAdmin
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1035, 571);
+            this.ClientSize = new System.Drawing.Size(1380, 703);
             this.Controls.Add(this.lbInfoUsuario);
             this.Controls.Add(this.lbSair);
             this.Controls.Add(this.lbMensagem);
@@ -171,7 +171,8 @@
             this.Controls.Add(this.pictureBox1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.KeyPreview = true;
-            this.MinimumSize = new System.Drawing.Size(1051, 610);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.MinimumSize = new System.Drawing.Size(1396, 742);
             this.Name = "FormMenuAdmin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Área do Administrador";

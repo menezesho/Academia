@@ -26,5 +26,10 @@ namespace academia
             // TODO: esta linha de código carrega dados na tabela 'bD_ACADEMIADataSet.AULA'. Você pode movê-la ou removê-la conforme necessário.
             this.reportViewer1.RefreshReport();
         }
+
+        private void rELATORIOAULABindingSource_CurrentChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
