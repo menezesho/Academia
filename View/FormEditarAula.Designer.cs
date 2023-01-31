@@ -74,7 +74,8 @@
             this.lbTipoFiltro.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lbTipoFiltro.Font = new System.Drawing.Font("Segoe UI Semibold", 8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
             this.lbTipoFiltro.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
-            this.lbTipoFiltro.Location = new System.Drawing.Point(161, 118);
+            this.lbTipoFiltro.Location = new System.Drawing.Point(121, 96);
+            this.lbTipoFiltro.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbTipoFiltro.Name = "lbTipoFiltro";
             this.lbTipoFiltro.Size = new System.Drawing.Size(10, 13);
             this.lbTipoFiltro.TabIndex = 3;
@@ -87,10 +88,9 @@
             this.lbLimparBusca.BackColor = System.Drawing.SystemColors.Window;
             this.lbLimparBusca.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lbLimparBusca.Image = ((System.Drawing.Image)(resources.GetObject("lbLimparBusca.Image")));
-            this.lbLimparBusca.Location = new System.Drawing.Point(752, 142);
-            this.lbLimparBusca.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbLimparBusca.Location = new System.Drawing.Point(564, 115);
             this.lbLimparBusca.Name = "lbLimparBusca";
-            this.lbLimparBusca.Size = new System.Drawing.Size(27, 25);
+            this.lbLimparBusca.Size = new System.Drawing.Size(20, 20);
             this.lbLimparBusca.TabIndex = 5;
             this.lbLimparBusca.Click += new System.EventHandler(this.lbLimparBusca_Click);
             // 
@@ -99,10 +99,9 @@
             this.lbBuscar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lbBuscar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lbBuscar.Image = ((System.Drawing.Image)(resources.GetObject("lbBuscar.Image")));
-            this.lbBuscar.Location = new System.Drawing.Point(792, 137);
-            this.lbBuscar.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbBuscar.Location = new System.Drawing.Point(594, 111);
             this.lbBuscar.Name = "lbBuscar";
-            this.lbBuscar.Size = new System.Drawing.Size(39, 36);
+            this.lbBuscar.Size = new System.Drawing.Size(29, 29);
             this.lbBuscar.TabIndex = 6;
             this.toolTip1.SetToolTip(this.lbBuscar, "Buscar");
             this.lbBuscar.Click += new System.EventHandler(this.lbBuscar_Click);
@@ -112,10 +111,9 @@
             this.lbSair.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.lbSair.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lbSair.Image = ((System.Drawing.Image)(resources.GetObject("lbSair.Image")));
-            this.lbSair.Location = new System.Drawing.Point(1592, 708);
-            this.lbSair.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbSair.Location = new System.Drawing.Point(1194, 575);
             this.lbSair.Name = "lbSair";
-            this.lbSair.Size = new System.Drawing.Size(47, 43);
+            this.lbSair.Size = new System.Drawing.Size(35, 35);
             this.lbSair.TabIndex = 12;
             this.lbSair.Click += new System.EventHandler(this.lbSair_Click);
             // 
@@ -123,10 +121,9 @@
             // 
             this.pictureBox2.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(796, 686);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox2.Location = new System.Drawing.Point(597, 557);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(133, 37);
+            this.pictureBox2.Size = new System.Drawing.Size(100, 30);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 157;
             this.pictureBox2.TabStop = false;
@@ -136,9 +133,10 @@
             this.lbListaAulas.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lbListaAulas.Font = new System.Drawing.Font("Segoe UI", 22F, System.Drawing.FontStyle.Bold);
             this.lbListaAulas.ForeColor = System.Drawing.Color.MediumSeaGreen;
-            this.lbListaAulas.Location = new System.Drawing.Point(95, 32);
+            this.lbListaAulas.Location = new System.Drawing.Point(71, 26);
+            this.lbListaAulas.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbListaAulas.Name = "lbListaAulas";
-            this.lbListaAulas.Size = new System.Drawing.Size(1461, 53);
+            this.lbListaAulas.Size = new System.Drawing.Size(1096, 43);
             this.lbListaAulas.TabIndex = 0;
             this.lbListaAulas.Text = "LISTA DE AULAS";
             this.lbListaAulas.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -149,7 +147,8 @@
             this.lbnome.AutoSize = true;
             this.lbnome.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
             this.lbnome.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
-            this.lbnome.Location = new System.Drawing.Point(59, 102);
+            this.lbnome.Location = new System.Drawing.Point(44, 83);
+            this.lbnome.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbnome.Name = "lbnome";
             this.lbnome.Size = new System.Drawing.Size(73, 25);
             this.lbnome.TabIndex = 0;
@@ -161,11 +160,11 @@
             this.tbNome.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tbNome.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.tbNome.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
-            this.tbNome.Location = new System.Drawing.Point(59, 137);
-            this.tbNome.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.tbNome.Location = new System.Drawing.Point(44, 111);
+            this.tbNome.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.tbNome.MaxLength = 100;
             this.tbNome.Name = "tbNome";
-            this.tbNome.Size = new System.Drawing.Size(567, 29);
+            this.tbNome.Size = new System.Drawing.Size(426, 29);
             this.tbNome.TabIndex = 1;
             // 
             // tbBusca
@@ -176,11 +175,11 @@
             this.tbBusca.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tbBusca.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.tbBusca.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
-            this.tbBusca.Location = new System.Drawing.Point(157, 137);
-            this.tbBusca.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tbBusca.Location = new System.Drawing.Point(118, 111);
+            this.tbBusca.Margin = new System.Windows.Forms.Padding(2);
             this.tbBusca.MaxLength = 100;
             this.tbBusca.Name = "tbBusca";
-            this.tbBusca.Size = new System.Drawing.Size(627, 29);
+            this.tbBusca.Size = new System.Drawing.Size(471, 29);
             this.tbBusca.TabIndex = 4;
             this.tbBusca.Enter += new System.EventHandler(this.tbBusca_Enter);
             this.tbBusca.Leave += new System.EventHandler(this.tbBusca_Leave);
@@ -210,8 +209,8 @@
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgaulas.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dgaulas.Location = new System.Drawing.Point(95, 190);
-            this.dgaulas.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dgaulas.Location = new System.Drawing.Point(71, 154);
+            this.dgaulas.Margin = new System.Windows.Forms.Padding(2);
             this.dgaulas.MultiSelect = false;
             this.dgaulas.Name = "dgaulas";
             this.dgaulas.ReadOnly = true;
@@ -227,7 +226,7 @@
             this.dgaulas.RowHeadersWidth = 51;
             this.dgaulas.RowTemplate.Height = 29;
             this.dgaulas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgaulas.Size = new System.Drawing.Size(736, 441);
+            this.dgaulas.Size = new System.Drawing.Size(552, 358);
             this.dgaulas.TabIndex = 7;
             this.dgaulas.TabStop = false;
             this.dgaulas.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgaulas_CellClick);
@@ -237,17 +236,16 @@
             this.lbFiltro.BackColor = System.Drawing.SystemColors.Window;
             this.lbFiltro.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lbFiltro.Image = ((System.Drawing.Image)(resources.GetObject("lbFiltro.Image")));
-            this.lbFiltro.Location = new System.Drawing.Point(95, 139);
-            this.lbFiltro.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbFiltro.Location = new System.Drawing.Point(71, 113);
             this.lbFiltro.Name = "lbFiltro";
-            this.lbFiltro.Size = new System.Drawing.Size(33, 31);
+            this.lbFiltro.Size = new System.Drawing.Size(25, 25);
             this.lbFiltro.TabIndex = 1;
             // 
             // cbFiltro
             // 
             this.cbFiltro.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cbFiltro.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbFiltro.DropDownWidth = 100;
+            this.cbFiltro.DropDownWidth = 150;
             this.cbFiltro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cbFiltro.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.cbFiltro.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
@@ -256,10 +254,10 @@
             this.cbFiltro.Items.AddRange(new object[] {
             "Nome",
             "Data (YYYY-MM-DD)"});
-            this.cbFiltro.Location = new System.Drawing.Point(95, 137);
-            this.cbFiltro.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cbFiltro.Location = new System.Drawing.Point(71, 111);
+            this.cbFiltro.Margin = new System.Windows.Forms.Padding(2);
             this.cbFiltro.Name = "cbFiltro";
-            this.cbFiltro.Size = new System.Drawing.Size(56, 29);
+            this.cbFiltro.Size = new System.Drawing.Size(43, 29);
             this.cbFiltro.TabIndex = 2;
             this.cbFiltro.SelectedIndexChanged += new System.EventHandler(this.cbFiltro_SelectedIndexChanged);
             // 
@@ -271,11 +269,11 @@
             this.mtbTotal.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.mtbTotal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
             this.mtbTotal.HidePromptOnLeave = true;
-            this.mtbTotal.Location = new System.Drawing.Point(512, 265);
-            this.mtbTotal.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.mtbTotal.Location = new System.Drawing.Point(384, 215);
+            this.mtbTotal.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.mtbTotal.Mask = "000";
             this.mtbTotal.Name = "mtbTotal";
-            this.mtbTotal.Size = new System.Drawing.Size(114, 29);
+            this.mtbTotal.Size = new System.Drawing.Size(86, 29);
             this.mtbTotal.TabIndex = 7;
             this.mtbTotal.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.mtbTotal.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
@@ -287,7 +285,8 @@
             this.lbLimite.AutoSize = true;
             this.lbLimite.Font = new System.Drawing.Font("Segoe UI Semibold", 14F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
             this.lbLimite.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
-            this.lbLimite.Location = new System.Drawing.Point(515, 231);
+            this.lbLimite.Location = new System.Drawing.Point(386, 188);
+            this.lbLimite.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbLimite.Name = "lbLimite";
             this.lbLimite.Size = new System.Drawing.Size(82, 25);
             this.lbLimite.TabIndex = 6;
@@ -302,12 +301,12 @@
             this.dtpData.CalendarTitleBackColor = System.Drawing.Color.LightGray;
             this.dtpData.Font = new System.Drawing.Font("Segoe UI Semilight", 13.2F, System.Drawing.FontStyle.Italic);
             this.dtpData.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpData.Location = new System.Drawing.Point(59, 265);
-            this.dtpData.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dtpData.Location = new System.Drawing.Point(44, 215);
+            this.dtpData.Margin = new System.Windows.Forms.Padding(2);
             this.dtpData.MaxDate = new System.DateTime(2030, 12, 31, 0, 0, 0, 0);
             this.dtpData.MinDate = new System.DateTime(2022, 1, 1, 0, 0, 0, 0);
             this.dtpData.Name = "dtpData";
-            this.dtpData.Size = new System.Drawing.Size(169, 31);
+            this.dtpData.Size = new System.Drawing.Size(128, 31);
             this.dtpData.TabIndex = 3;
             this.dtpData.Value = new System.DateTime(2022, 10, 31, 0, 0, 0, 0);
             // 
@@ -333,10 +332,10 @@
             "15h",
             "16h",
             "17h"});
-            this.cbHora.Location = new System.Drawing.Point(296, 265);
-            this.cbHora.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cbHora.Location = new System.Drawing.Point(222, 215);
+            this.cbHora.Margin = new System.Windows.Forms.Padding(2);
             this.cbHora.Name = "cbHora";
-            this.cbHora.Size = new System.Drawing.Size(152, 29);
+            this.cbHora.Size = new System.Drawing.Size(115, 29);
             this.cbHora.TabIndex = 5;
             // 
             // lbHorario
@@ -345,7 +344,8 @@
             this.lbHorario.AutoSize = true;
             this.lbHorario.Font = new System.Drawing.Font("Segoe UI Semibold", 14F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
             this.lbHorario.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
-            this.lbHorario.Location = new System.Drawing.Point(315, 231);
+            this.lbHorario.Location = new System.Drawing.Point(236, 188);
+            this.lbHorario.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbHorario.Name = "lbHorario";
             this.lbHorario.Size = new System.Drawing.Size(86, 25);
             this.lbHorario.TabIndex = 4;
@@ -358,7 +358,8 @@
             this.lbData.AutoSize = true;
             this.lbData.Font = new System.Drawing.Font("Segoe UI Semibold", 14F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
             this.lbData.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
-            this.lbData.Location = new System.Drawing.Point(108, 231);
+            this.lbData.Location = new System.Drawing.Point(81, 188);
+            this.lbData.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbData.Name = "lbData";
             this.lbData.Size = new System.Drawing.Size(63, 25);
             this.lbData.TabIndex = 2;
@@ -391,8 +392,8 @@
             dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgalunos.DefaultCellStyle = dataGridViewCellStyle5;
-            this.dgalunos.Location = new System.Drawing.Point(95, 190);
-            this.dgalunos.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dgalunos.Location = new System.Drawing.Point(71, 154);
+            this.dgalunos.Margin = new System.Windows.Forms.Padding(2);
             this.dgalunos.MultiSelect = false;
             this.dgalunos.Name = "dgalunos";
             this.dgalunos.ReadOnly = true;
@@ -408,7 +409,7 @@
             this.dgalunos.RowHeadersWidth = 51;
             this.dgalunos.RowTemplate.Height = 29;
             this.dgalunos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgalunos.Size = new System.Drawing.Size(736, 385);
+            this.dgalunos.Size = new System.Drawing.Size(552, 313);
             this.dgalunos.TabIndex = 168;
             this.dgalunos.TabStop = false;
             // 
@@ -417,11 +418,10 @@
             this.tcDados.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.tcDados.Controls.Add(this.tpDadosGerais);
             this.tcDados.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tcDados.Location = new System.Drawing.Point(864, 137);
-            this.tcDados.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tcDados.Location = new System.Drawing.Point(648, 111);
             this.tcDados.Name = "tcDados";
             this.tcDados.SelectedIndex = 0;
-            this.tcDados.Size = new System.Drawing.Size(692, 438);
+            this.tcDados.Size = new System.Drawing.Size(519, 356);
             this.tcDados.TabIndex = 8;
             // 
             // tpDadosGerais
@@ -437,10 +437,9 @@
             this.tpDadosGerais.Controls.Add(this.cbHora);
             this.tpDadosGerais.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
             this.tpDadosGerais.Location = new System.Drawing.Point(4, 30);
-            this.tpDadosGerais.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tpDadosGerais.Name = "tpDadosGerais";
-            this.tpDadosGerais.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.tpDadosGerais.Size = new System.Drawing.Size(684, 404);
+            this.tpDadosGerais.Padding = new System.Windows.Forms.Padding(3);
+            this.tpDadosGerais.Size = new System.Drawing.Size(511, 322);
             this.tpDadosGerais.TabIndex = 0;
             this.tpDadosGerais.Text = "DADOS GERAIS";
             // 
@@ -460,10 +459,10 @@
             this.btRelatorio.Font = new System.Drawing.Font("Segoe UI Semibold", 14F, System.Drawing.FontStyle.Bold);
             this.btRelatorio.ForeColor = System.Drawing.Color.White;
             this.btRelatorio.Image = ((System.Drawing.Image)(resources.GetObject("btRelatorio.Image")));
-            this.btRelatorio.Location = new System.Drawing.Point(865, 581);
-            this.btRelatorio.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btRelatorio.Location = new System.Drawing.Point(649, 472);
+            this.btRelatorio.Margin = new System.Windows.Forms.Padding(2);
             this.btRelatorio.Name = "btRelatorio";
-            this.btRelatorio.Size = new System.Drawing.Size(53, 49);
+            this.btRelatorio.Size = new System.Drawing.Size(40, 40);
             this.btRelatorio.TabIndex = 9;
             this.btRelatorio.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.toolTip1.SetToolTip(this.btRelatorio, "Gerar relatório");
@@ -478,10 +477,10 @@
             this.btExcluir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btExcluir.Font = new System.Drawing.Font("Segoe UI Semibold", 14F, System.Drawing.FontStyle.Bold);
             this.btExcluir.ForeColor = System.Drawing.Color.White;
-            this.btExcluir.Location = new System.Drawing.Point(924, 581);
-            this.btExcluir.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btExcluir.Location = new System.Drawing.Point(693, 472);
+            this.btExcluir.Margin = new System.Windows.Forms.Padding(2);
             this.btExcluir.Name = "btExcluir";
-            this.btExcluir.Size = new System.Drawing.Size(313, 49);
+            this.btExcluir.Size = new System.Drawing.Size(235, 40);
             this.btExcluir.TabIndex = 10;
             this.btExcluir.Text = "&Excluir";
             this.btExcluir.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -497,10 +496,10 @@
             this.btSalvar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btSalvar.Font = new System.Drawing.Font("Segoe UI Semibold", 14F, System.Drawing.FontStyle.Bold);
             this.btSalvar.ForeColor = System.Drawing.Color.White;
-            this.btSalvar.Location = new System.Drawing.Point(1243, 581);
-            this.btSalvar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btSalvar.Location = new System.Drawing.Point(932, 472);
+            this.btSalvar.Margin = new System.Windows.Forms.Padding(2);
             this.btSalvar.Name = "btSalvar";
-            this.btSalvar.Size = new System.Drawing.Size(313, 49);
+            this.btSalvar.Size = new System.Drawing.Size(235, 40);
             this.btSalvar.TabIndex = 11;
             this.btSalvar.Text = "&Salvar";
             this.btSalvar.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -510,9 +509,9 @@
             // 
             // FormEditarAula
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1655, 762);
+            this.ClientSize = new System.Drawing.Size(1241, 619);
             this.Controls.Add(this.btRelatorio);
             this.Controls.Add(this.btExcluir);
             this.Controls.Add(this.btSalvar);
@@ -530,8 +529,7 @@
             this.Controls.Add(this.dgalunos);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.KeyPreview = true;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.MinimumSize = new System.Drawing.Size(1671, 801);
+            this.MinimumSize = new System.Drawing.Size(1257, 658);
             this.Name = "FormEditarAula";
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

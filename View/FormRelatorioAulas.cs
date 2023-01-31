@@ -31,5 +31,11 @@ namespace academia
         {
 
         }
+
+        private void FormInscreverAluno_KeyDown(object sender, KeyEventArgs e)
+        {//ESC para retornar
+            if (e.KeyValue.Equals(27))
+                Close();
+        }
     }
 }

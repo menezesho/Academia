@@ -74,11 +74,13 @@
             this.ClientSize = new System.Drawing.Size(804, 649);
             this.Controls.Add(this.reportViewer1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.KeyPreview = true;
             this.Name = "FormRelatorioAulas";
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Relatório de Aulas";
             this.Load += new System.EventHandler(this.FormRelatorioAulas_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FormInscreverAluno_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.rELATORIOAULABindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bD_ACADEMIADataSet)).EndInit();
             this.ResumeLayout(false);

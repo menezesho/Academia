@@ -153,6 +153,7 @@ namespace projetofinal
             dgalunos.DataSource = alunoDAO.listarAlunos();
             lbBuscar.Focus();
         }
+
         private void lbTipoFiltro_Click(object sender, EventArgs e)
         {//lbTipoFiltro
             lbTipoFiltro.Text = "";
@@ -553,7 +554,7 @@ namespace projetofinal
                         conn.Close();
                     }
                 }
-                MessageBox.Show("Relatório gerado com sucesso!", "Gerar", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Relatório gerado com sucesso!", "Relatório", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 

@@ -495,7 +495,7 @@ namespace projetofinal
                         conn.Close();
                     }
                 }
-                MessageBox.Show("Relatório gerado com sucesso!", "Gerar", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Relatório gerado com sucesso!", "Relatório", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 

@@ -93,11 +93,11 @@
     <Compile Include="View\FormRelatorioAulas.Designer.cs">
       <DependentUpon>FormRelatorioAulas.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\FormAtualizarPesoAltura.cs">
+    <Compile Include="View\FormAtualizarInformacoes.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\FormAtualizarPesoAltura.Designer.cs">
-      <DependentUpon>FormAtualizarPesoAltura.cs</DependentUpon>
+    <Compile Include="View\FormAtualizarInformacoes.Designer.cs">
+      <DependentUpon>FormAtualizarInformacoes.cs</DependentUpon>
     </Compile>
     <Compile Include="View\FormAlterarSenha.cs">
       <SubType>Form</SubType>
@@ -185,8 +185,8 @@
     <EmbeddedResource Include="View\FormRelatorioAulas.resx">
       <DependentUpon>FormRelatorioAulas.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\FormAtualizarPesoAltura.resx">
-      <DependentUpon>FormAtualizarPesoAltura.cs</DependentUpon>
+    <EmbeddedResource Include="View\FormAtualizarInformacoes.resx">
+      <DependentUpon>FormAtualizarInformacoes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\FormAlterarSenha.resx">
       <DependentUpon>FormAlterarSenha.cs</DependentUpon>

@@ -38,6 +38,10 @@
 
 ✅ desenvolver formulário de ver participantes
 
-fazer uma contagem de tempo para poder se desinscrever de determinada aula
+⛔ fazer uma contagem de tempo para poder se desinscrever de determinada aula
 
-fazer listagem de aulas inscritas por determinado aluno na tela da área do aluno
+✅ implementar busca no formulario de visualizar os alunos inscritos
+
+⛔ possibilitar a alteração da idade do aluno
+
+✅ veriuficacao de espaços no formulario de atualizar informacoes

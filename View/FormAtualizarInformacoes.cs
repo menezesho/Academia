@@ -12,17 +12,17 @@ using System.Windows.Forms;
 
 namespace academia
 {
-    public partial class FormAtualizarPesoAltura : Form
+    public partial class FormAtualizarInformacoes : Form
     {
         Conexao conec = new Conexao();
         int id = 0;
 
-        public FormAtualizarPesoAltura()
+        public FormAtualizarInformacoes()
         {
             InitializeComponent();
         }
 
-        public FormAtualizarPesoAltura(int id)
+        public FormAtualizarInformacoes(int id)
         {
             InitializeComponent();
             this.id = id;
@@ -65,29 +65,57 @@ namespace academia
 
         private void btAtualizar_Click(object sender, EventArgs e)
         {//btAtualizar
-            SqlConnection cn = new SqlConnection(conec.ConexaoBD());
+            #region Verificação de espaços
 
-            string sqlUpdate = "UPDATE aluno SET ";
-            if (mtbPeso.Text != "")
-                sqlUpdate = sqlUpdate + "peso = @peso,";
-            else
-                sqlUpdate = sqlUpdate + "peso = NULL,";
-            if (mtbAltura.Text != "")
-                sqlUpdate = sqlUpdate + "altura = @altura";
-            else
-                sqlUpdate = sqlUpdate + "altura = NULL";
-            sqlUpdate = sqlUpdate + " WHERE idaluno = @id;";
+            try
+            {
+                if (mtbPeso.Text != "")
+                {
+                    int testePeso = int.Parse(mtbPeso.Text);
+                }
+                if (mtbAltura.Text != "")
+                {
+                    int testeAltura = int.Parse(mtbAltura.Text);
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Verifique se todos os campos numéricos foram preenchidos corretamente!", "Salvar", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
 
-            SqlCommand cmdUpdate = new SqlCommand(sqlUpdate, cn);
-            cmdUpdate.Parameters.AddWithValue("id", id);
-            cmdUpdate.Parameters.AddWithValue("altura", mtbAltura.Text);
-            cmdUpdate.Parameters.AddWithValue("peso", mtbPeso.Text);
-            cn.Open();
-            cmdUpdate.CommandText = sqlUpdate;
-            cmdUpdate.ExecuteNonQuery();
-            cn.Close();
-            MessageBox.Show("Dados alterados com sucesso!", "Salvar", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            this.Close();
+            #endregion
+
+            try
+            {
+                SqlConnection cn = new SqlConnection(conec.ConexaoBD());
+
+                string sqlUpdate = "UPDATE aluno SET ";
+                if (mtbPeso.Text != "")
+                    sqlUpdate = sqlUpdate + "peso = @peso,";
+                else
+                    sqlUpdate = sqlUpdate + "peso = NULL,";
+                if (mtbAltura.Text != "")
+                    sqlUpdate = sqlUpdate + "altura = @altura";
+                else
+                    sqlUpdate = sqlUpdate + "altura = NULL";
+                sqlUpdate = sqlUpdate + " WHERE idaluno = @id;";
+
+                SqlCommand cmdUpdate = new SqlCommand(sqlUpdate, cn);
+                cmdUpdate.Parameters.AddWithValue("id", id);
+                cmdUpdate.Parameters.AddWithValue("altura", mtbAltura.Text);
+                cmdUpdate.Parameters.AddWithValue("peso", mtbPeso.Text);
+                cn.Open();
+                cmdUpdate.CommandText = sqlUpdate;
+                cmdUpdate.ExecuteNonQuery();
+                cn.Close();
+                MessageBox.Show("Dados alterados com sucesso!", "Salvar", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.Close();
+            }
+            catch (Exception erro)
+            {
+                MessageBox.Show(erro.Message, "Erro na conexão, tente novamente!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         #region Retornar

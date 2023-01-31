@@ -1,6 +1,6 @@
 ﻿namespace academia
 {
-    partial class FormAtualizarPesoAltura
+    partial class FormAtualizarInformacoes
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormAtualizarPesoAltura));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormAtualizarInformacoes));
             this.btLimpar = new System.Windows.Forms.Button();
             this.btAtualizar = new System.Windows.Forms.Button();
             this.mtbAltura = new System.Windows.Forms.MaskedTextBox();

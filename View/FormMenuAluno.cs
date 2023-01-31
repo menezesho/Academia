@@ -53,7 +53,7 @@ namespace academia
 
         private void btAtualizarPesoAltura_Click(object sender, EventArgs e)
         {//btAtualizarPesoAltura
-            FormAtualizarPesoAltura Fapa = new FormAtualizarPesoAltura(id);
+            FormAtualizarInformacoes Fapa = new FormAtualizarInformacoes(id);
             Fapa.ShowDialog();
         }
 
