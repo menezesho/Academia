@@ -527,7 +527,7 @@ namespace projetofinal
                     writer.WriteLine("ID;Nome;CPF;Idade;Celular;E-mail;Usuário;Peso;Altura;Rua;Número;Apto;Bairro;Cidade;Estado");
                     using (SqlConnection conn = new SqlConnection(conec.ConexaoBD()))
                     {
-                        string query = "SELECT * FROM ALUNO;";
+                        string query = "SELECT idaluno, nome, cpf, idade, celular, email, usuario, ISNULL(peso, '-') as peso, ISNULL(altura, '-') as altura, rua, numero, ISNULL(apto, '-') as apto, bairro, cidade, estado FROM aluno;";
                         SqlCommand sqlComand = new SqlCommand(query, conn);
                         conn.Open();
                         using (IDataReader reader = sqlComand.ExecuteReader())

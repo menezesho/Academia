@@ -33,11 +33,6 @@ namespace projetofinal
             tbSenha.Text = " Senha";
             tbSenha.Font = new Font("Segoe UI Light", 14F, FontStyle.Italic);
             tbSenha.UseSystemPasswordChar = false;
-
-            //temporário
-            tbUsuario.Text = "joao-ds";
-            tbSenha.Text = "321654";
-            selecionado = 2;
         }
 
         private void btLogin_Click(object sender, EventArgs e)

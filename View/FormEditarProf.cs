@@ -464,20 +464,20 @@ namespace projetofinal
             if (MessageBox.Show("Deseja gerar um relatório de todos os professores?", "Relatório", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
             {
                 SqlConnection cn = new SqlConnection(conec.ConexaoBD());
-                string endereco = "C:\\Sistemas\\academia\\Relatórios\\relatorio-alunos.csv";
+                string endereco = "C:\\Sistemas\\academia\\Relatórios\\relatorio-professores.csv";
                 using (StreamWriter writer = new StreamWriter(endereco, false, Encoding.GetEncoding("iso-8859-15")))
                 {
                     writer.WriteLine("ID;Nome;CPF;Idade;Celular;E-mail;Usuário;Rua;Número;Apto;Bairro;Cidade;Estado");
                     using (SqlConnection conn = new SqlConnection(conec.ConexaoBD()))
                     {
-                        string query = "SELECT * FROM ALUNO;";
+                        string query = "SELECT idprofessor, nome, cpf, idade, celular, email, usuario, rua, numero, ISNULL(apto, '-') as apto, bairro, cidade, estado FROM professor;;";
                         SqlCommand sqlComand = new SqlCommand(query, conn);
                         conn.Open();
                         using (IDataReader reader = sqlComand.ExecuteReader())
                         {
                             while (reader.Read())
                             {
-                                writer.WriteLine(Convert.ToString(reader["idaluno"]) + ";" +
+                                writer.WriteLine(Convert.ToString(reader["idprofessor"]) + ";" +
                                     Convert.ToString(reader["nome"]) + ";" +
                                     Convert.ToString(reader["cpf"]) + ";" +
                                     Convert.ToString(reader["idade"]) + ";" +

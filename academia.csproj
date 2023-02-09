@@ -307,6 +307,7 @@
     <Content Include="Images\outros\logo-academia.png" />
     <Content Include="SQL\bd_academia.sql" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

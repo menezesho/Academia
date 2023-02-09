@@ -91,14 +91,15 @@ namespace academia
                 SqlConnection cn = new SqlConnection(conec.ConexaoBD());
 
                 string sqlUpdate = "UPDATE aluno SET ";
-                if (mtbPeso.Text != "")
-                    sqlUpdate = sqlUpdate + "peso = @peso,";
-                else
+                if (mtbPeso.Text.ToString() == "")
                     sqlUpdate = sqlUpdate + "peso = NULL,";
-                if (mtbAltura.Text != "")
-                    sqlUpdate = sqlUpdate + "altura = @altura";
                 else
+                    sqlUpdate = sqlUpdate + "peso = @peso,";
+                if (mtbAltura.Text.ToString() == "")
                     sqlUpdate = sqlUpdate + "altura = NULL";
+                else
+                    sqlUpdate = sqlUpdate + "altura = @altura";
+
                 sqlUpdate = sqlUpdate + " WHERE idaluno = @id;";
 
                 SqlCommand cmdUpdate = new SqlCommand(sqlUpdate, cn);
