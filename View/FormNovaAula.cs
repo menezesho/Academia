@@ -99,7 +99,7 @@ namespace academia
                                 sqlInsert = sqlInsert + ", total, contador) VALUES(@nome, @data, @hora, @idprofessor, @total, 0)";
                             else
                             {
-                                MessageBox.Show("O máximo de alunos deve ser maior que zero!", "Cadastrar", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                                MessageBox.Show("O máximo de alunos deve ser maior que zero!", "Cadastrar", MessageBoxButtons.OK, MessageBoxIcon.Error);
                                 return;
                             }
                         }

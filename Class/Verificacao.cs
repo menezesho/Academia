@@ -21,7 +21,7 @@ namespace academia.Class
 
         public bool verificarEmail(string email)
         {
-            var regExp = new Regex(@"[\w]+@+[\w]+[.]+[a-zA-Z]{2,6}$");
+            var regExp = new Regex(@"[\w]+@+[a-zA-Z.]+[.]+[a-zA-Z.]{2,6}$");
             return regExp.IsMatch(email);
         }
 

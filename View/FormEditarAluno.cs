@@ -406,6 +406,7 @@ namespace projetofinal
                                     {
                                         cn.Close();
                                         MessageBox.Show("Este usuário já está em uso!", "Salvar", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                        tbUsuario.Focus();
                                     }
                                     else
                                     {
@@ -494,21 +495,21 @@ namespace projetofinal
                             }
                             else
                             {
-                                MessageBox.Show("O E-mail informado é inválido!", "Salvar", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                                MessageBox.Show("O E-mail informado é inválido!", "Salvar", MessageBoxButtons.OK, MessageBoxIcon.Error);
                                 tcDados.SelectedTab = tpDadosPessoais;
                                 tbEmail.Focus();
                             }
                         }
                         else
                         {
-                            MessageBox.Show("O número de celular informado é inválido!", "Salvar", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            MessageBox.Show("O número de celular informado é inválido!", "Salvar", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             tcDados.SelectedTab = tpDadosPessoais;
                             mtbCelular.Focus();
                         }
                     }
                     else
                     {
-                        MessageBox.Show("O CPF informado é inválido!", "Salvar", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        MessageBox.Show("O CPF informado é inválido!", "Salvar", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         tcDados.SelectedTab = tpDadosPessoais;
                         mtbCpf.Focus();
                     }

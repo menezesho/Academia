@@ -49,7 +49,8 @@
             this.lbNovaSenha.AutoSize = true;
             this.lbNovaSenha.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
             this.lbNovaSenha.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
-            this.lbNovaSenha.Location = new System.Drawing.Point(80, 121);
+            this.lbNovaSenha.Location = new System.Drawing.Point(60, 98);
+            this.lbNovaSenha.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbNovaSenha.Name = "lbNovaSenha";
             this.lbNovaSenha.Size = new System.Drawing.Size(115, 25);
             this.lbNovaSenha.TabIndex = 3;
@@ -61,11 +62,11 @@
             this.tbNovaSenha.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tbNovaSenha.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.tbNovaSenha.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
-            this.tbNovaSenha.Location = new System.Drawing.Point(80, 155);
-            this.tbNovaSenha.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.tbNovaSenha.Location = new System.Drawing.Point(60, 126);
+            this.tbNovaSenha.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.tbNovaSenha.MaxLength = 30;
             this.tbNovaSenha.Name = "tbNovaSenha";
-            this.tbNovaSenha.Size = new System.Drawing.Size(447, 29);
+            this.tbNovaSenha.Size = new System.Drawing.Size(336, 29);
             this.tbNovaSenha.TabIndex = 4;
             this.tbNovaSenha.UseSystemPasswordChar = true;
             // 
@@ -75,7 +76,8 @@
             this.lbConfirmarNovaSenha.AutoSize = true;
             this.lbConfirmarNovaSenha.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
             this.lbConfirmarNovaSenha.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
-            this.lbConfirmarNovaSenha.Location = new System.Drawing.Point(80, 194);
+            this.lbConfirmarNovaSenha.Location = new System.Drawing.Point(60, 158);
+            this.lbConfirmarNovaSenha.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbConfirmarNovaSenha.Name = "lbConfirmarNovaSenha";
             this.lbConfirmarNovaSenha.Size = new System.Drawing.Size(203, 25);
             this.lbConfirmarNovaSenha.TabIndex = 6;
@@ -87,11 +89,11 @@
             this.tbConfirmarNovaSenha.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tbConfirmarNovaSenha.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.tbConfirmarNovaSenha.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
-            this.tbConfirmarNovaSenha.Location = new System.Drawing.Point(80, 229);
-            this.tbConfirmarNovaSenha.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.tbConfirmarNovaSenha.Location = new System.Drawing.Point(60, 186);
+            this.tbConfirmarNovaSenha.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.tbConfirmarNovaSenha.MaxLength = 30;
             this.tbConfirmarNovaSenha.Name = "tbConfirmarNovaSenha";
-            this.tbConfirmarNovaSenha.Size = new System.Drawing.Size(447, 29);
+            this.tbConfirmarNovaSenha.Size = new System.Drawing.Size(336, 29);
             this.tbConfirmarNovaSenha.TabIndex = 7;
             this.tbConfirmarNovaSenha.UseSystemPasswordChar = true;
             // 
@@ -101,7 +103,8 @@
             this.lbSenhaAtual.AutoSize = true;
             this.lbSenhaAtual.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
             this.lbSenhaAtual.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
-            this.lbSenhaAtual.Location = new System.Drawing.Point(80, 47);
+            this.lbSenhaAtual.Location = new System.Drawing.Point(60, 38);
+            this.lbSenhaAtual.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbSenhaAtual.Name = "lbSenhaAtual";
             this.lbSenhaAtual.Size = new System.Drawing.Size(115, 25);
             this.lbSenhaAtual.TabIndex = 0;
@@ -113,11 +116,11 @@
             this.tbSenhaAtual.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tbSenhaAtual.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.tbSenhaAtual.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
-            this.tbSenhaAtual.Location = new System.Drawing.Point(80, 81);
-            this.tbSenhaAtual.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.tbSenhaAtual.Location = new System.Drawing.Point(60, 66);
+            this.tbSenhaAtual.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.tbSenhaAtual.MaxLength = 30;
             this.tbSenhaAtual.Name = "tbSenhaAtual";
-            this.tbSenhaAtual.Size = new System.Drawing.Size(447, 29);
+            this.tbSenhaAtual.Size = new System.Drawing.Size(336, 29);
             this.tbSenhaAtual.TabIndex = 1;
             this.tbSenhaAtual.UseSystemPasswordChar = true;
             // 
@@ -128,9 +131,10 @@
             this.lbVerSenhaAtual.Font = new System.Drawing.Font("Segoe UI Semibold", 11.2F, System.Drawing.FontStyle.Bold);
             this.lbVerSenhaAtual.ForeColor = System.Drawing.SystemColors.Control;
             this.lbVerSenhaAtual.Image = ((System.Drawing.Image)(resources.GetObject("lbVerSenhaAtual.Image")));
-            this.lbVerSenhaAtual.Location = new System.Drawing.Point(528, 81);
+            this.lbVerSenhaAtual.Location = new System.Drawing.Point(396, 66);
+            this.lbVerSenhaAtual.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbVerSenhaAtual.Name = "lbVerSenhaAtual";
-            this.lbVerSenhaAtual.Size = new System.Drawing.Size(39, 36);
+            this.lbVerSenhaAtual.Size = new System.Drawing.Size(29, 29);
             this.lbVerSenhaAtual.TabIndex = 2;
             this.lbVerSenhaAtual.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.lbVerSenhaAtual.MouseCaptureChanged += new System.EventHandler(this.lbVerSenhaAtual_MouseCaptureChanged);
@@ -142,9 +146,10 @@
             this.lbVerNovaSenha.Font = new System.Drawing.Font("Segoe UI Semibold", 11.2F, System.Drawing.FontStyle.Bold);
             this.lbVerNovaSenha.ForeColor = System.Drawing.SystemColors.Control;
             this.lbVerNovaSenha.Image = ((System.Drawing.Image)(resources.GetObject("lbVerNovaSenha.Image")));
-            this.lbVerNovaSenha.Location = new System.Drawing.Point(528, 155);
+            this.lbVerNovaSenha.Location = new System.Drawing.Point(396, 126);
+            this.lbVerNovaSenha.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbVerNovaSenha.Name = "lbVerNovaSenha";
-            this.lbVerNovaSenha.Size = new System.Drawing.Size(39, 36);
+            this.lbVerNovaSenha.Size = new System.Drawing.Size(29, 29);
             this.lbVerNovaSenha.TabIndex = 5;
             this.lbVerNovaSenha.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.lbVerNovaSenha.MouseCaptureChanged += new System.EventHandler(this.lbVerNovaSenha_MouseCaptureChanged);
@@ -156,9 +161,10 @@
             this.lbVerConfirmarNovaSenha.Font = new System.Drawing.Font("Segoe UI Semibold", 11.2F, System.Drawing.FontStyle.Bold);
             this.lbVerConfirmarNovaSenha.ForeColor = System.Drawing.SystemColors.Control;
             this.lbVerConfirmarNovaSenha.Image = ((System.Drawing.Image)(resources.GetObject("lbVerConfirmarNovaSenha.Image")));
-            this.lbVerConfirmarNovaSenha.Location = new System.Drawing.Point(528, 229);
+            this.lbVerConfirmarNovaSenha.Location = new System.Drawing.Point(396, 186);
+            this.lbVerConfirmarNovaSenha.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbVerConfirmarNovaSenha.Name = "lbVerConfirmarNovaSenha";
-            this.lbVerConfirmarNovaSenha.Size = new System.Drawing.Size(39, 36);
+            this.lbVerConfirmarNovaSenha.Size = new System.Drawing.Size(29, 29);
             this.lbVerConfirmarNovaSenha.TabIndex = 8;
             this.lbVerConfirmarNovaSenha.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.lbVerConfirmarNovaSenha.MouseCaptureChanged += new System.EventHandler(this.lbVerConfirmarNovaSenha_MouseCaptureChanged);
@@ -171,10 +177,10 @@
             this.btSalvar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btSalvar.Font = new System.Drawing.Font("Segoe UI Semibold", 14F, System.Drawing.FontStyle.Bold);
             this.btSalvar.ForeColor = System.Drawing.Color.White;
-            this.btSalvar.Location = new System.Drawing.Point(307, 351);
-            this.btSalvar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btSalvar.Location = new System.Drawing.Point(230, 285);
+            this.btSalvar.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.btSalvar.Name = "btSalvar";
-            this.btSalvar.Size = new System.Drawing.Size(221, 49);
+            this.btSalvar.Size = new System.Drawing.Size(166, 40);
             this.btSalvar.TabIndex = 11;
             this.btSalvar.Text = "&Salvar";
             this.btSalvar.UseVisualStyleBackColor = false;
@@ -186,7 +192,8 @@
             this.lbMaximo.AutoSize = true;
             this.lbMaximo.Font = new System.Drawing.Font("Segoe UI Semibold", 7F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
             this.lbMaximo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
-            this.lbMaximo.Location = new System.Drawing.Point(132, 268);
+            this.lbMaximo.Location = new System.Drawing.Point(99, 218);
+            this.lbMaximo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbMaximo.Name = "lbMaximo";
             this.lbMaximo.Size = new System.Drawing.Size(258, 24);
             this.lbMaximo.TabIndex = 9;
@@ -202,10 +209,10 @@
             this.btLimpar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btLimpar.Font = new System.Drawing.Font("Segoe UI Semibold", 14F, System.Drawing.FontStyle.Bold);
             this.btLimpar.ForeColor = System.Drawing.Color.White;
-            this.btLimpar.Location = new System.Drawing.Point(80, 351);
-            this.btLimpar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btLimpar.Location = new System.Drawing.Point(60, 285);
+            this.btLimpar.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.btLimpar.Name = "btLimpar";
-            this.btLimpar.Size = new System.Drawing.Size(221, 49);
+            this.btLimpar.Size = new System.Drawing.Size(166, 40);
             this.btLimpar.TabIndex = 10;
             this.btLimpar.Text = "&Limpar";
             this.btLimpar.UseVisualStyleBackColor = false;
@@ -213,9 +220,10 @@
             // 
             // FormAlterarSenha
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AcceptButton = this.btSalvar;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(611, 450);
+            this.ClientSize = new System.Drawing.Size(458, 366);
             this.Controls.Add(this.lbMaximo);
             this.Controls.Add(this.btLimpar);
             this.Controls.Add(this.btSalvar);
@@ -230,7 +238,6 @@
             this.Controls.Add(this.tbNovaSenha);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.KeyPreview = true;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.MaximizeBox = false;
             this.Name = "FormAlterarSenha";
             this.ShowInTaskbar = false;

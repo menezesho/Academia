@@ -283,7 +283,7 @@ namespace academia
                                         sqlUpdate = sqlUpdate + " total = " + int.Parse(mtbTotal.Text);
                                     else
                                     {
-                                        MessageBox.Show("O máximo de alunos deve ser maior que zero!", "Salvar", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                                        MessageBox.Show("O máximo de alunos deve ser maior que zero!", "Salvar", MessageBoxButtons.OK, MessageBoxIcon.Error);
                                         return;
                                     }
                                 }

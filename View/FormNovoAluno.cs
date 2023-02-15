@@ -135,6 +135,7 @@ namespace projetofinal
                                     {
                                         cn.Close();
                                         MessageBox.Show("Este usuário já está em uso!", "Cadastrar", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                        tbUsuario.Focus();
                                     }
                                     else
                                     {
@@ -207,7 +208,7 @@ namespace projetofinal
                         }
                         else
                         {
-                            MessageBox.Show("O E-mail informado é inválido!", "Cadastrar", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            MessageBox.Show("O E-mail informado é inválido!", "Cadastrar", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             tcDados.SelectedTab = tpDadosPessoais;
                             tbEmail.Focus();
                             epValida.SetError(tbEmail, "O campo deve conter um e-mail válido!");
@@ -215,7 +216,7 @@ namespace projetofinal
                     }
                     else
                     {
-                        MessageBox.Show("O número de celular informado é inválido!", "Cadastrar", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        MessageBox.Show("O número de celular informado é inválido!", "Cadastrar", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         tcDados.SelectedTab = tpDadosPessoais;
                         mtbCelular.Focus();
                         epValida.SetError(mtbCelular, "O campo deve ser preenchido por completo!");
@@ -223,7 +224,7 @@ namespace projetofinal
                 }
                 else
                 {
-                    MessageBox.Show("O CPF informado é inválido!", "Cadastrar", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("O CPF informado é inválido!", "Cadastrar", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     tcDados.SelectedTab = tpDadosPessoais;
                     mtbCpf.Focus();
                     epValida.SetError(mtbCpf, "O campo deve ser preenchido por completo!");
