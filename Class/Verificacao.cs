@@ -29,6 +29,7 @@ namespace academia.Class
         {
             string caracteresEspeciais = ".+-[]*~_@#:?";
             string alfabeto = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+            string numeros = "0123456789";
 
             bool validacao = false;
             for (int i = 0; i < caracteresEspeciais.Length; i++)
@@ -38,7 +39,11 @@ namespace academia.Class
                     for (int j = 0; j < alfabeto.Length; j++)
                     {
                         if (senha.Contains(alfabeto[j].ToString()))
-                            validacao = true;
+                            for (int k = 0; k < numeros.Length; k++)
+                            {
+                                if (senha.Contains(numeros[k].ToString()))
+                                    validacao = true;
+                            }
                     }
                 }  
             }
