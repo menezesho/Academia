@@ -52,7 +52,7 @@
             this.lbNovaSenha.Location = new System.Drawing.Point(60, 98);
             this.lbNovaSenha.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbNovaSenha.Name = "lbNovaSenha";
-            this.lbNovaSenha.Size = new System.Drawing.Size(115, 25);
+            this.lbNovaSenha.Size = new System.Drawing.Size(137, 31);
             this.lbNovaSenha.TabIndex = 3;
             this.lbNovaSenha.Text = "Nova senha";
             // 
@@ -66,7 +66,7 @@
             this.tbNovaSenha.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.tbNovaSenha.MaxLength = 30;
             this.tbNovaSenha.Name = "tbNovaSenha";
-            this.tbNovaSenha.Size = new System.Drawing.Size(336, 29);
+            this.tbNovaSenha.Size = new System.Drawing.Size(336, 34);
             this.tbNovaSenha.TabIndex = 4;
             this.tbNovaSenha.UseSystemPasswordChar = true;
             // 
@@ -79,7 +79,7 @@
             this.lbConfirmarNovaSenha.Location = new System.Drawing.Point(60, 158);
             this.lbConfirmarNovaSenha.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbConfirmarNovaSenha.Name = "lbConfirmarNovaSenha";
-            this.lbConfirmarNovaSenha.Size = new System.Drawing.Size(203, 25);
+            this.lbConfirmarNovaSenha.Size = new System.Drawing.Size(245, 31);
             this.lbConfirmarNovaSenha.TabIndex = 6;
             this.lbConfirmarNovaSenha.Text = "Confirmar nova senha";
             // 
@@ -93,7 +93,7 @@
             this.tbConfirmarNovaSenha.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.tbConfirmarNovaSenha.MaxLength = 30;
             this.tbConfirmarNovaSenha.Name = "tbConfirmarNovaSenha";
-            this.tbConfirmarNovaSenha.Size = new System.Drawing.Size(336, 29);
+            this.tbConfirmarNovaSenha.Size = new System.Drawing.Size(336, 34);
             this.tbConfirmarNovaSenha.TabIndex = 7;
             this.tbConfirmarNovaSenha.UseSystemPasswordChar = true;
             // 
@@ -106,7 +106,7 @@
             this.lbSenhaAtual.Location = new System.Drawing.Point(60, 38);
             this.lbSenhaAtual.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbSenhaAtual.Name = "lbSenhaAtual";
-            this.lbSenhaAtual.Size = new System.Drawing.Size(115, 25);
+            this.lbSenhaAtual.Size = new System.Drawing.Size(137, 31);
             this.lbSenhaAtual.TabIndex = 0;
             this.lbSenhaAtual.Text = "Senha atual";
             // 
@@ -120,7 +120,7 @@
             this.tbSenhaAtual.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.tbSenhaAtual.MaxLength = 30;
             this.tbSenhaAtual.Name = "tbSenhaAtual";
-            this.tbSenhaAtual.Size = new System.Drawing.Size(336, 29);
+            this.tbSenhaAtual.Size = new System.Drawing.Size(336, 34);
             this.tbSenhaAtual.TabIndex = 1;
             this.tbSenhaAtual.UseSystemPasswordChar = true;
             // 
@@ -192,13 +192,13 @@
             this.lbMaximo.AutoSize = true;
             this.lbMaximo.Font = new System.Drawing.Font("Segoe UI Semibold", 7F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
             this.lbMaximo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
-            this.lbMaximo.Location = new System.Drawing.Point(99, 218);
+            this.lbMaximo.Location = new System.Drawing.Point(57, 218);
             this.lbMaximo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbMaximo.Name = "lbMaximo";
-            this.lbMaximo.Size = new System.Drawing.Size(258, 24);
+            this.lbMaximo.Size = new System.Drawing.Size(404, 30);
             this.lbMaximo.TabIndex = 9;
-            this.lbMaximo.Text = "A senha deve conter mínimo de 8 caracteres,\r\nincluindo uma letra maiúscula e um c" +
-    "aractere especial!\r\n";
+            this.lbMaximo.Text = "A senha deve conter mínimo de 8 caracteres, dentre eles letras e números,\r\ninclui" +
+    "ndo uma letra maiúscula e um caractere especial!\r\n";
             this.lbMaximo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // btLimpar

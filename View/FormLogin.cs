@@ -41,7 +41,7 @@ namespace projetofinal
             {
                 if (selecionado == 3)
                 {
-                    if (tbUsuario.Text.Trim().ToLower() == "admin" && tbSenha.Text == "123")
+                    if (tbUsuario.Text.Trim().ToLower() == "admin" && tbSenha.Text == "admin")
                     {
                         nome = "Administrador";
                         usuario = "admin";
