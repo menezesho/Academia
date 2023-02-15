@@ -21,11 +21,8 @@ namespace academia.Class
 
         public bool verificarEmail(string email)
         {
-            bool validacao = email.Contains("@") && email.Contains(".com");
-            if (validacao)
-                return true;
-            else
-                return false;
+            var regExp = new Regex(@"[\w]+@+[\w]+[.]+[a-zA-Z]{2,6}$");
+            return regExp.IsMatch(email);
         }
 
         public bool verificarSenha(string senha)
@@ -52,6 +49,15 @@ namespace academia.Class
         {
             var regExp = new Regex(@"^\d{2}.\d{2}.\d{4}");
             return regExp.IsMatch(data);
+        }*/
+
+        /*public bool verificarEmail(string email)
+        {
+            bool validacao = email.Contains("@") && email.Contains(".com");
+            if (validacao)
+                return true;
+            else
+                return false;
         }*/
     }
 }
